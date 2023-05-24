@@ -1,4 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+@GetMapping("about.do")
+	public String about() {
+		return "member/about";
+	}<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -18,15 +21,6 @@
 </head>
 <body>
  
-	<div class="container">
-	<jsp:include page="../common/header.jsp"></jsp:include>
-	  	<h2>Spring MVC03</h2>
-	  	<div class="panel panel-default">
-	    	<div class="panel-heading">Panel Heading</div>
-	    	<div class="panel-body">Panel Content</div>
-	    	<div class="panel-footer">스프링게시판-ㅂㅎㅇ</div>
-	  	</div>
-	</div>
 
 </body>
 </html>
