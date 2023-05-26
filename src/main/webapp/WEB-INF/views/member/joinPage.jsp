@@ -47,7 +47,7 @@
         <!-- Page Header End -->
         <div class="container-xxl py-5 page-header position-relative mb-5">
             <div class="container py-5">
-                <h1 class="display-2 text-white animated slideInDown mb-4">로그인</h1>
+                <h1 class="display-2 text-white animated slideInDown mb-4">회원가입</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
   
                 </nav>
@@ -76,65 +76,79 @@
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
                                 <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="#">회원가입</a>.</p>
-                                <form action="${contextPath}/login.do" method="post">
+                                <form action="${contextPath}/join.do" method="post">
                                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                                     <div class="row g-3">
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" name="user_id" id="subject" placeholder="아이디를 입력해주세요">
-                                                <label for="subject">ID</label>
+                                                <input type="text" class="form-control border-0" name="user_id" id="user_Id">
+                                                <label for="user_Id">아이디</label>
                                             </div>
                                         </div>
                                          <div class="col-6">
                                             <div class="form-floating">
-                                                <input type="password" class="form-control border-0" name="user_pw" id="" placeholder="비밀번호를 입력해주세요">
-                                                <label for="subject">PASSWORD</label>
+                                                <input type="password" class="form-control border-0" name="user_pw" id="pw1">
+                                                <label for="pw1">비밀번호</label>
                                             </div>
                                             </div>
                                             <div class="col-6">
                                             <div class="form-floating">
-                                                <input type="password" class="form-control border-0" name="user_pw" id="" placeholder="비밀번호를 입력해주세요">
-                                                <label for="subject">PASSWORD</label>
+                                                <input type="password" class="form-control border-0" id="pw2">
+                                                <label for="pw2">비밀번호 확인</label>
                                             </div>
                                         </div>
                                          <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" name="user_id" id="subject" placeholder="아이디를 입력해주세요">
-                                                <label for="subject">ID</label>
+                                                <input type="text" class="form-control border-0" name="user_name" id="user_Name">
+                                                <label for="user_Name">이름</label>
                                             </div>
                                         </div>
                                          <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" name="user_id" id="subject" placeholder="아이디를 입력해주세요">
-                                                <label for="subject">ID</label>
+                                                <input type="date" class="form-control border-0" name="user_bdate" id="user_Bdate">
+                                                <label for="user_Bdate">생년월일</label>
                                             </div>
                                         </div>
                                          <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" name="user_id" id="subject" placeholder="아이디를 입력해주세요">
-                                                <label for="subject">ID</label>
+                                                <input type="text" class="form-control border-0" name="user_childname" id="user_Childname">
+                                                <label for="user_Childname">자녀이름</label>
                                             </div>
                                         </div>
                                          <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" name="user_id" id="subject" placeholder="아이디를 입력해주세요">
-                                                <label for="subject">ID</label>
+                                                <input type="date" class="form-control border-0" name="user_childbdate" id="user_Childbdate">
+                                                <label for="user_Childbdate">자녀 생년월일</label>
                                             </div>
                                         </div>
                                          <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" name="user_id" id="subject" placeholder="아이디를 입력해주세요">
-                                                <label for="subject">ID</label>
+                                                <input type="text" class="form-control border-0" name="user_relation" id="user_Relation">
+                                                <label for="user_Relation">자녀와의 관계</label>
                                             </div>
                                         </div>
                                          <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" name="user_id" id="subject" placeholder="아이디를 입력해주세요">
-                                                <label for="subject">ID</label>
+                                                <input type="text" class="form-control border-0" name="user_address" id="user_Address">
+                                                <label for="user_Address">주소</label>
                                             </div>
+                                        </div>
+                                        
+                                         <div class="col-12">
+                                           <div id="pnlNames" style="margin-left: 28vw;">
+                                           <p>개인정보 제공 동의</p>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="Y" name="user_isagreed" id="namesYes" />
+                    <label class="form-check-label" for="namesYes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="N" name="user_isagreed" id="namesNo" />
+                    <label class="form-check-label" for="namesNo">No</label>
+                </div>
+            </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">로그인</button>
+                                            <button class="btn btn-primary w-100 py-3" type="submit">회원가입</button>
                                         </div>
                                     </div>
                                 </form>
