@@ -50,5 +50,15 @@ public class PageMovementController {
 	public String testimonial() {
 		return "member/testimonial";
 	}
+	
+	@GetMapping("loginPage.do")
+	public String loginPage() {
+		return "member/loginPage";
+	}
+	
+	@GetMapping("joinPage.do")
+	public String joinPage() {
+		return "member/joinPage";
+	}
 
 }
