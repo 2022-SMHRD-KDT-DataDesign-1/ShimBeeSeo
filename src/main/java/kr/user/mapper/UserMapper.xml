@@ -4,7 +4,7 @@
 
 	<select id="login" parameterType="kr.board.entity.User"
 		resultType="kr.board.entity.User">
-		select * from t_user where user_id=#{user_id} and user_pw = #{user_pw}
+		select * from t_user where user_id=#{user_id} and user_pw=#{user_pw}
 	</select>
 
 	<insert id="join" parameterType="kr.board.entity.User">
