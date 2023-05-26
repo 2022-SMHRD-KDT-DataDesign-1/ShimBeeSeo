@@ -74,7 +74,7 @@
    	<div class="panel-body">
 		탭메뉴
 	</div>
-   	<div class="panel-footer">스프링게시판-ㅂㅎㅇ</div>
+   	<div class="panel-footer">스프링게시판-심비서</div>
   </div>
 </div>
 
