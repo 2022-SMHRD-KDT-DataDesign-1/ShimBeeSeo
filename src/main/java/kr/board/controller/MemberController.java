@@ -40,37 +40,6 @@ public class MemberController {
 		return "member/loginForm";
 	}
 	
-	// 로그인 기능
-	@PostMapping("/login.do")
-	public String login(Member m, HttpSession session, RedirectAttributes rttr) {
-		
-		Member mvo = memberMapper.login(m);
-		if(m.getMemID() == null 		|| m.getMemID().equals("")|| 
-			m.getMemPassword() == null 	|| m.getMemPassword().equals("")) {
-			
-			rttr.addFlashAttribute("msgType", "로그인 실패");
-			rttr.addFlashAttribute("msg", "아이디 또는 비밀번호 입력해주세요.");
-			
-			return "redirect:/loginForm.do";
-		} else {
-			// 추가 비밀번호 일치 여부 체크
-			boolean isCheck = pwEncoder.matches(m.getMemPassword(), mvo.getMemPassword());
-			
-			if(mvo != null && isCheck) {
-				session.setAttribute("mvo", mvo);
-				rttr.addFlashAttribute("msgType", "로그인 성공");
-				rttr.addFlashAttribute("msg", mvo.getMemName()+"님, 안녕하세요.");
-				return "redirect:/";
-			} else {
-				rttr.addFlashAttribute("msgType", "로그인 실패");
-				rttr.addFlashAttribute("msg", "아이디와 비밀번호를 다시 입력해주세요.");
-				return "redirect:/loginForm.do";
-			}
-		}
-		
-		
-	}
-	
 	// 로그아웃 기능 /logout.do
 	@GetMapping("/logout.do")
 	public String logout(HttpSession session, RedirectAttributes rttr) {

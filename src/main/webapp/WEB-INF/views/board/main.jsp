@@ -49,7 +49,7 @@
 		  // 반복문을 통해 게시글을 만들어주는 부분 (main부분)
 		  $.each(data, function(index, obj){
 			  listHtml += "<tr>";
-			  listHtml += "<td>" + (index + 1) + "</td>`";
+			  listHtml += "<td>" + (index + 1) + "</td>";
 			  listHtml += "<td id='t"+obj.idx+"'><a href='javascript:goContent("+obj.idx+")'>" + obj.title + "</a></td>";
 			  listHtml += "<td>" + obj.writer + "</td>";
 			  listHtml += "<td>" + obj.indate + "</td>";
