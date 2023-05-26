@@ -4,7 +4,7 @@
 
 	<select id="login" parameterType="kr.board.entity.User"
 		resultType="kr.board.entity.User">
-		select * from t_user where user_id=#{user_id} and user_pw=#{user_pw}
+		select * from t_user where user_id=#{user_id}
 	</select>
 
 	<insert id="join" parameterType="kr.board.entity.User">
@@ -20,16 +20,16 @@
 		user_joindate,
 		user_isagreed)
 		VALUES
-		(user_id=#{user_id},
-		user_pw=#{user_pw},
-		user_name=#{user_name},
-		user_bdate=#{user_bdate},
-		user_childname=#{user_childname},
-		user_childbdate=#{user_childbdate},
-		user_relation=#{user_relation},
-		user_address=#{user_address},
+		(#{user_id},
+		#{user_pw},
+		#{user_name},
+		#{user_bdate},
+		#{user_childname},
+		#{user_childbdate},
+		#{user_relation},
+		#{user_address},
 		sysdate,
-		user_isagreed=#{user_isagreed})
+		#{user_isagreed})
 	</insert>
 
 </mapper>

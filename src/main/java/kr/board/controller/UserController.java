@@ -1,6 +1,5 @@
 package kr.board.controller;
 
-import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -10,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import kr.board.entity.Auth;
 import kr.board.entity.User;
 import kr.user.mapper.UserMapper;
 
@@ -25,8 +23,9 @@ public class UserController {
 	// 로그인 기능
 	@PostMapping("/login.do")
 	public String login(User m, HttpSession session, RedirectAttributes rttr) {
-		
+		System.out.println("내가 넣은 값 : "+m.toString());
 		User mvo = userMapper.login(m);
+
 		if(m.getUser_id() == null 		|| m.getUser_id().equals("")|| 
 			m.getUser_pw() == null 	|| m.getUser_pw().equals("")) {
 			

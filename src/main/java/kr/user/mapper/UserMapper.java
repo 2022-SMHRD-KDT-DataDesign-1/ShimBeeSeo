@@ -11,6 +11,6 @@ public interface UserMapper {
 
 	public int join(User m);
 
-// zz
+
 	
 }
