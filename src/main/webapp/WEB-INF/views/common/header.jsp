@@ -77,7 +77,7 @@
                     </div>
                     <a href="contact.do" class="nav-item nav-link">Contact Us</a>
                 </div>
-                <a href="" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Join Us<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="loginPage.do" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">로그인<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
