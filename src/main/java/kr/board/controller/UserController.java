@@ -26,7 +26,6 @@ public class UserController {
 	public String login(User m, HttpSession session, RedirectAttributes rttr) {
 		System.out.println("내가 넣은 값 : "+m.toString());
 		User mvo = userMapper.login(m);
-
 		if(m.getUser_id() == null 		|| m.getUser_id().equals("")|| 
 			m.getUser_pw() == null 	|| m.getUser_pw().equals("")) {
 			
