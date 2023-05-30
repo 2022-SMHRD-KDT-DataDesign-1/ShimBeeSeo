@@ -14,6 +14,8 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  	<!-- 카카오 로그인 API 스크립트 -->
+  	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
   	    <meta content="" name="keywords">
     <meta content="" name="description">
 
@@ -92,7 +94,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="img" type="button" ><img src="${contextPath}/resources/images/kakao_login.png"></button>
+                                            <a id="kakao-login-btn"></a>
                                             <button class="btn btn-primary w-100 py-3" type="submit">로그인</button>
                                         </div>
                                     </div>
@@ -133,6 +135,28 @@
     <script src="${contextPath}/resources/lib/easing/easing.min.js"></script>
     <script src="${contextPath}/resources/lib/waypoints/waypoints.min.js"></script>
     <script src="${contextPath}/resources/lib/owlcarousel/owl.carousel.min.js"></script>
+
+
+<!-- 카카오 로그인 API 시작-->
+
+<script type='text/javascript'>
+        //<![CDATA[
+        // 사용할 앱의 JavaScript 키를 설정해 주세요.
+        Kakao.init('d394e2fa88e8e559fa9dda45fb5d339c');
+        // 카카오 로그인 버튼을 생성합니다.
+        Kakao.Auth.createLoginButton({
+            container: '#kakao-login-btn',
+            success: function (authObj) {
+                alert(JSON.stringify(authObj));
+            },
+            fail: function (err) {
+                alert(JSON.stringify(err));
+            }
+        });
+      //]]>
+    </script>
+<!-- 카카오 로그인 API 끝 -->
+
 
     <!-- Template Javascript -->
     <script src="${contextPath}/resources/js/main.js"></script>

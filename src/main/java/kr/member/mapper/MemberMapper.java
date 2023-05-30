@@ -14,7 +14,6 @@ public interface MemberMapper {
 
 	Member registerCheck(String memID);
 
-	int join(Member m);
 
 	Member login(Member m);
 

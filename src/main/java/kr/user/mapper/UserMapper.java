@@ -9,5 +9,8 @@ public interface UserMapper {
 
 	public User login(User m);
 
+	public int join(User m);
+
+
 	
 }
