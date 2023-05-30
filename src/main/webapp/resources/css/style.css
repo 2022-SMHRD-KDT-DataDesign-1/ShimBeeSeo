@@ -217,7 +217,25 @@ h6,
     flex-direction: column;
 }
 
-.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-prev{
+	margin: 7px 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 45px;
+    font-size: 22px;
+    transition: .5s;
+    position: absolute;
+    margin-left: -80vw;
+	
+}
+
+
 .header-carousel .owl-nav .owl-next {
     margin: 7px 0;
     width: 45px;
@@ -354,7 +372,9 @@ h6,
     margin-top: -10px;
 }
 
-
+img {
+  max-width: 100%;
+}
 /*** Team ***/
 .team-item .team-text {
     position: absolute;
@@ -501,3 +521,4 @@ h6,
     padding-right: 0;
     border-right: none;
 }
+
