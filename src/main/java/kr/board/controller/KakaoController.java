@@ -32,7 +32,7 @@ private static final Logger logger = LoggerFactory.getLogger(KakaoController.cla
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "redirect:/";
+		return "index";
 	}
 	
 }
