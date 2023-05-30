@@ -8,28 +8,27 @@
 	</select>
 
 	<insert id="join" parameterType="kr.board.entity.User">
-		INSERT INTO t_user
-		(user_id,
-		user_pw,
-		user_name,
-		user_bdate,
-		user_childname,
-		user_childbdate,
-		user_relation,
-		user_address,
-		user_joindate,
-		user_isagreed)
-		VALUES
-		(user_id=#{user_id},
-		user_pw=#{user_pw},
-		user_name=#{user_name},
-		user_bdate=#{user_bdate},
-		user_childname=#{user_childname},
-		user_childbdate=#{user_childbdate},
-		user_relation=#{user_relation},
-		user_address=#{user_address},
-		sysdate,
-		user_isagreed=#{user_isagreed})
+		INSERT INTO t_user (
+		  user_id
+		, user_pw
+		, user_name
+		, user_bdate
+		, user_childname
+		, user_childbdate
+		, user_relation
+		, user_address
+		, user_joindate
+		, user_isagreed) VALUES (
+		  #{user_id}
+		, #{user_pw}
+		, #{user_name}
+		, #{user_bdate}
+		, #{user_childname}
+		, #{user_childbdate}
+		, #{user_relation}
+		, #{user_address}
+		, sysdate
+		, #{user_isagreed})
 	</insert>
 
 </mapper>
