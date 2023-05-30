@@ -7,15 +7,6 @@
    </select>
    
    
-   <insert id="join" parameterType="kr.board.entity.Member">
-      insert into member(memIdx,memID, memPassword, memName, memAge, 
-      memGender, memEmail, memProfile)
-      values((select IFNULL(MAX(memIdx)+1, 1) from member mem),
-      #{memID}, #{memPassword}, #{memName}, #{memAge}, 
-      #{memGender}, #{memEmail}, #{memProfile})
-   </insert>
-   
-   
    <select id="login" parameterType="kr.board.entity.Member" resultMap="memberMap">
       select * from member mem LEFT OUTER JOIN auth auth on 
       mem.memID = auth.memID where mem.memID = #{memID}
