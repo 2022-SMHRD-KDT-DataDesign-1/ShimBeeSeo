@@ -82,36 +82,6 @@
         </div>
         <!-- Carousel End -->
 
-<<<<<<< HEAD
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <h3>HOME</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div id="menu1" class="tab-pane fade">
-      <h3>게시판</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div id="menu2" class="tab-pane fade">
-      <h3>공지사항</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-    </div>
-  </div>
-  
-  <div class="panel panel-default">
-   	<div>
-   		<img alt="이미지입니다만" src="${contextPath}/resources/images/main.png" style="width: 85%; height:400px; margin-left: 7%;">
-   	</div>
-   	
-   	<div class="panel-body">
-		탭메뉴
-	</div>
-   	<div class="panel-footer">스프링게시판-심비서</div>
-  </div>
-</div>
-=======
->>>>>>> master
-
         <!-- Facilities Start -->
         <div class="container-xxl py-5">
             <div class="container">
