@@ -18,7 +18,6 @@
 
     <!-- Favicon -->
     <link href="${contextPath}/resources/img/favicon.ico" rel="icon">
-
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,8 +41,10 @@
 <body>
 <a href="chat">챗지피티 테스트 ㄱㄱ</a>
 
+<iframe src="http://127.0.0.1:5000/" height="500px" width="500px"></iframe>
+
    <div class="container-xxl bg-white p-0">
- 
+ <a> ajax 보내버리기</a>
 		<jsp:include page="common/header.jsp"></jsp:include>
 
         <!-- Carousel Start -->
@@ -648,6 +649,18 @@
 
     <!-- Template Javascript -->
     <script src="${contextPath}/resources/js/main.js"></script>
-
+    
+    <!-- Flask로 Json형태로 데이터 전송 -->
+	<script type="text/javascript">
+	var content = "우리아이 어떻게 키울까요???";
+	function GPTTest(content){
+	$.ajax({
+		url : "http://127.0.0.1:5000/jsontest, 
+		type : "get",
+		data : {"content": content},
+		dataType : "json", 
+		});
+	}
+	</script>
 </body>
 </html>
