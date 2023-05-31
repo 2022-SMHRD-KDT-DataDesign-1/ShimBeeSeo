@@ -12,47 +12,88 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
+//
+//@Controller
+//public class ChatController {
+//
+//    private RestTemplate restTemplate;
+//
+//    public ChatController() {
+//        this.restTemplate = new RestTemplate();
+//    }
+//
+//    @RequestMapping(value = "/chat", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+//    @ResponseBody
+//    public String chatWithGPT(@RequestBody String userMessage) {
+//    	System.out.println("들어오삼");
+//        String endpoint = "https://api.openai.com/v1/chat/completions";
+//        String apiKey = "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"; // Replace with your OpenAI API key
+//
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.setContentType(MediaType.APPLICATION_JSON);
+//        headers.set("Authorization", "Bearer " + apiKey);
+//        System.out.println("Authorization " + "Bearer " + apiKey);
+//
+//        String requestBody = "{\"messages\":[{\"role\":\"system\",\"content\":\"You are a user\"},{\"role\":\"user\",\"content\":\"" + userMessage + "\"}]}";
+//        HttpEntity<String> requestEntity = new HttpEntity<>(requestBody, headers);
+//
+//        ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.POST, requestEntity, String.class);
+//        
+//        return response.getBody();
+//    }
+//    
+//    
+//}
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 @Controller
 public class ChatController {
 
-    private RestTemplate restTemplate;
-
-    public ChatController() {
-        this.restTemplate = new RestTemplate();
-    }
-
-    @RequestMapping(value = "/chat", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/chat", method = RequestMethod.GET, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public String chatWithGPT(@RequestBody String userMessage) {
-    	System.out.println("들어오삼");
         String endpoint = "https://api.openai.com/v1/chat/completions";
-        String apiKey = "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"; // Replace with your OpenAI API key
+        String apiKey = "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"; // Replace with your OpenAI API key
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.set("Authorization", "Bearer " + apiKey);
-        System.out.println("Authorization " + "Bearer " + apiKey);
+        try {
+            URL url = new URL(endpoint);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Content-Type", "application/json");
+            conn.setRequestProperty("Authorization", "Bearer " + apiKey);
+            conn.setDoOutput(true);
 
-        String requestBody = "{\"messages\":[{\"role\":\"system\",\"content\":\"You are a user\"},{\"role\":\"user\",\"content\":\"" + userMessage + "\"}]}";
-        HttpEntity<String> requestEntity = new HttpEntity<>(requestBody, headers);
+            String requestBody = "{\"messages\":[{\"role\":\"system\",\"content\":\"You are a user\"},{\"role\":\"user\",\"content\":\"" + userMessage + "\"}]}";
+            try (OutputStream outputStream = conn.getOutputStream()) {
+                outputStream.write(requestBody.getBytes());
+                outputStream.flush();
+            }
 
-        ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.POST, requestEntity, String.class);
-        
-        return response.getBody();
+            int responseCode = conn.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                try (BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()))) {
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        response.append(line);
+                    }
+                    System.out.println("controller 들어옴 성공리턴 이전");
+                    return response.toString();
+                }
+            } else {
+                // Handle error response
+                System.out.println("Request failed with response code: " + responseCode);
+                return null;
+            }
+        } catch (Exception e) {
+            // Handle exception
+            e.printStackTrace();
+            return null;
+        }
     }
-    
-//    @PostMapping
-//    public ResponseEntity<?> sendQuestion(@RequestBody String request) {
-//        
-//        //1번에 발급받은 API key를 붙여 넣는다.
-//        OpenAiService service = new OpenAiService("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");
-//        CompletionRequest completionRequest = CompletionRequest.builder()
-//            .prompt(request)
-//            .model("text-davinci-003") // 이 모델로 해줘야 제대로 대화가 된다. 하지만 한국어는 잘 안된다. 다른 모델을 써야할듯...
-//            .echo(false) // 이 기능은 내가 질문한 걸 똑같이 뱉어주고 나서 그 질문의 답을 그 뒤에 붙여서 보내기 때문에 질문을 반복할 필요가 없기 때문에 false
-//            .build();
-//        return ResponseEntity.ok(service.createCompletion(completionRequest).getChoices());
-//    }
-    
 }
