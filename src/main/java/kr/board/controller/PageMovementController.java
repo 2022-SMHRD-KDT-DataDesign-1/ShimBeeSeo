@@ -2,6 +2,7 @@ package kr.board.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class PageMovementController {
@@ -60,5 +61,12 @@ public class PageMovementController {
 	public String joinPage() {
 		return "member/joinPage";
 	}
+	
+	@GetMapping("chat")
+	public String ChatGPT() {
+		return "member/ChatGPT";
+	}
+	
+
 
 }

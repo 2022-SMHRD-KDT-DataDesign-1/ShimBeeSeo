@@ -40,6 +40,7 @@
 
 </head>
 <body>
+<a href="chat">챗지피티 테스트 ㄱㄱ</a>
 
    <div class="container-xxl bg-white p-0">
  
