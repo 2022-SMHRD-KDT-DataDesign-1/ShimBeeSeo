@@ -40,11 +40,12 @@
 </head>
 <body>
 <a href="chat">챗지피티 테스트 ㄱㄱ</a>
+<a href="javascript:GPTTest('content')"> zzzzzzzzzzzz</a>
 
 <iframe src="http://127.0.0.1:5000/" height="500px" width="500px"></iframe>
 
    <div class="container-xxl bg-white p-0">
- <a> ajax 보내버리기</a>
+   
 		<jsp:include page="common/header.jsp"></jsp:include>
 
         <!-- Carousel Start -->
@@ -652,13 +653,17 @@
     
     <!-- Flask로 Json형태로 데이터 전송 -->
 	<script type="text/javascript">
+	function GPTTest(){
 	var content = "우리아이 어떻게 키울까요???";
-	function GPTTest(content){
 	$.ajax({
-		url : "http://127.0.0.1:5000/jsontest, 
+		url : "http://127.0.0.1:5000/", 
 		type : "get",
 		data : {"content": content},
 		dataType : "json", 
+		success : alert("굳"),
+        error : function(XMLHttpRequest, textStatus, errorThrown){ // 비동기 통신이 실패할경우 error 콜백으로 들어옵니다.
+            alert("통신 실패.")
+        }
 		});
 	}
 	</script>
