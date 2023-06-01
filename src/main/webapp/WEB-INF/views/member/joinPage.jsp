@@ -97,58 +97,53 @@
                                                 <label for="pw2">비밀번호 확인</label>
                                             </div>
                                         </div>
+                                         <div class="col-12" >
+                                         	<label class="form-check-label" for="flexRadioDefault1">자녀와의관계 </label><br>
+											<div class="form-check form-check-inline ">
+												<input class="form-check-input " type="radio" name="parents" id="sunject"  value="부">
+											 	<label class="form-check-label" for="flexRadioDefault1">부 </label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" name="parents" id="sunject"  value="모">
+												<label class="form-check-label" for="flexRadioDefault1">모 </label>
+											</div>
+										</div>
                                          <div class="col-12">
+                                         	<label class="form-check-label" for="flexRadioDefault1">부모의 생년월일</label><br>
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" name="user_name" id="user_Name">
-                                                <label for="user_Name">이름</label>
+
+                                                <input id="someDate" type="date">
                                             </div>
                                         </div>
                                          <div class="col-12">
+                                            <label class="form-check-label" for="flexRadioDefault1">자녀의 생년월일</label><br>
                                             <div class="form-floating">
-                                                <input type="date" class="form-control border-0" name="user_bdate" id="user_Bdate">
-                                                <label for="user_Bdate">생년월일</label>
+                                                <input id="someDate" type="date">
                                             </div>
                                         </div>
                                          <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" name="user_childname" id="user_Childname">
-                                                <label for="user_Childname">자녀이름</label>
-                                            </div>
-                                        </div>
+											<div class="dropdown">
+												<button class="btn btn-secondary dropdown-toggle"
+													type="button" id="region"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													지역을 선택하세요</button>
+												<ul class="dropdown-menu"
+													aria-labelledby="dropdownMenuButton1">
+													<li><a class="dropdown-item" href="#">광주</a></li>
+													<li><a class="dropdown-item" href="#">서울</a></li>
+													<li><a class="dropdown-item" href="#">부산</a></li>
+												</ul>
+											</div>
+										</div>
                                          <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="date" class="form-control border-0" name="user_childbdate" id="user_Childbdate">
-                                                <label for="user_Childbdate">자녀 생년월일</label>
-                                            </div>
-                                        </div>
-                                         <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" name="user_relation" id="user_Relation">
-                                                <label for="user_Relation">자녀와의 관계</label>
-                                            </div>
-                                        </div>
-                                         <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="text" class="form-control border-0" name="user_address" id="user_Address">
-                                                <label for="user_Address">주소</label>
-                                            </div>
-                                        </div>
-                                        
-                                         <div class="col-12">
-                                           <div id="pnlNames" style="margin-left: 28vw;">
-                                           <p>개인정보 제공 동의</p>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" value="Y" name="user_isagreed" id="namesYes" />
-                    <label class="form-check-label" for="namesYes">Yes</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" value="N" name="user_isagreed" id="namesNo" />
-                    <label class="form-check-label" for="namesNo">No</label>
-                </div>
-            </div>
-                                        </div>
+											<div class="form-check">
+											<label class="form-check-label" for="flexCheckDefault">개인정보 제공동의 </label>
+												<input class="form-check-input" type="checkbox" value="Y" id="flexCheckDefault"> 
+											</div>
+										</div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">회원가입</button>
+                                            <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">회원가입</button>
+                                            <button class="btn btn-primary w-100 py-3" type="submit">취소</button>
                                         </div>
                                     </div>
                                 </form>

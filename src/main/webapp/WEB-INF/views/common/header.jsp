@@ -9,13 +9,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Template</title>
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta charset="UTF-8">
+   <title>Template</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
  
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
  
- 	 	<meta content="" name="keywords">
+        <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
@@ -39,7 +39,7 @@
 
     <!-- Template Stylesheet -->
     <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
- 	
+    
 </head>
 <body>
   <!-- Spinner Start -->
@@ -62,7 +62,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
                     <a href="${contextPath}/" class="nav-item nav-link">Home</a>
-                    <a href="about.do" class="nav-item nav-link active">About Us</a>
+                    <a href="loginPage.do" class="nav-item nav-link active">로그인</a>
                     <a href="classes.do" class="nav-item nav-link">Classes</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -75,7 +75,7 @@
                             <a href="errorPage.do" class="dropdown-item">Error Page</a>
                         </div>
                     </div>
-                    <a href="contact.do+ class="nav-item nav-link">Contact Us</a>
+                    <a href="contact.do" class="nav-item nav-link">Contact Us</a>
                 </div>
                 <a href="loginPage.do" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">로그인<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
