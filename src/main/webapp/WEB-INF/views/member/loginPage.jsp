@@ -94,7 +94,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="img" type="button"><img src="${contextPath}/resources/images/kakao_login.png" ></button>
+                                            <button class="img" type="button"><img src="${contextPath}/resources/images/kakao_login.png"></button>
                                             <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">로그인</button>
                                             <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5px 0;">회원가입</button>
                                         </div>
