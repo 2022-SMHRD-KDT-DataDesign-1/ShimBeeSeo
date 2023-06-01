@@ -62,7 +62,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
                     <a href="${contextPath}/" class="nav-item nav-link">Home</a>
-                    <a href="about.do" class="nav-item nav-link active">About Us</a>
+                    <a href="loginPage.do" class="nav-item nav-link active">로그인</a>
                     <a href="classes.do" class="nav-item nav-link">Classes</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>

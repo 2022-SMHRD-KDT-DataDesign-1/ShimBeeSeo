@@ -1,6 +1,7 @@
 package kr.board.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -15,5 +16,4 @@ public class MainController {
 	 * // 이렇게 해도 index.jsp로 가지만 명시해주는 것을 권장
 	 * }
 	 */
-	
 }

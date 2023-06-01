@@ -67,6 +67,14 @@ public class PageMovementController {
 		return "member/ChatGPT";
 	}
 	
-
+	@GetMapping("check.do")
+	public String check() {
+		return "main/check";
+	}
+	
+	@GetMapping("upload.do")
+	public String upload() {
+		return "main/upload";
+	}
 
 }

@@ -372,7 +372,9 @@ h6,
     margin-top: -10px;
 }
 
-
+img {
+  max-width: 100%;
+}
 /*** Team ***/
 .team-item .team-text {
     position: absolute;
