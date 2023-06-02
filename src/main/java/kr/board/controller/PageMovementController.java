@@ -91,6 +91,12 @@ public class PageMovementController {
 		return "main/checkSucces";
 	}
 
+	// 김한송 개인 작업공간
+	@GetMapping("songSecret.do")
+	public String chart() {
+		return "member/songSecret";
+	}
+
 
 	
 	
