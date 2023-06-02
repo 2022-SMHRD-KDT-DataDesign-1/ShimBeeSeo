@@ -166,7 +166,6 @@
 				contentType: false,
 				cache: false,
 				timeout: 600000,
-
 			success: function(res) {
 
 					if (res =! null) {
