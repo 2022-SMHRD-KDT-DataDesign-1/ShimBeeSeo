@@ -40,7 +40,8 @@
 </head>
 <body>
 <a href="chat">챗지피티 테스트 ㄱㄱ</a>
-<a href="javascript:GPTTest('content')"> zzzzzzzzzzzz</a>
+<a href="javascript:GPTTest('content')"> 플라스크에 JSON 보내보기</a>
+<a href="http://localhost:5000/?id=testID1"> 쿼리스트링 테스트</a>
 
 <iframe src="http://127.0.0.1:5000/" height="500px" width="500px"></iframe>
 
