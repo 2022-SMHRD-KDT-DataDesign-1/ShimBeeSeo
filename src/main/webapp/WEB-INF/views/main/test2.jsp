@@ -124,21 +124,23 @@ function nextBtnShowing(){
 													<div style="width: 26rem;height: 25rem;padding: 5rem 0.5rem;">
 														<div id="que1" class="que" style="position:absolute;width:80vw;right:100%;">
 															<ul style="line-height: 30px">
-																<li style="list-style: none;"><span>이사람은남자인가요? 여자인가요?</span><br> 
-																<input type="radio"
-																	name="gender" value="m">남 <input type="radio"
-																	name="gender" value="w">여</li>
+																<li style="list-style: none;"><span>그림에 태양이 묘사되어 있나요?</span><br> 
+																<input type="radio" name="gender" value="m">태양이 반만 나와있다
+																<input type="radio" name="gender" value="w">태양이 무채색으로 표현되어 있다</li>
+																<input type="radio" name="gender" value="e">태양이 없다</li>
+																<input type="radio" name="gender" value="j">무난한 모습의 태양이다</li>
 																<li style="list-style: none;"><span>이사람의 머리는
 																		큰편인가요?</span><br> <input type="radio" name="headSize"
 																	value="big">큰편 <input type="radio"
 																	name="headSize" value="middle">중간 <input
 																	type="radio" name="headSize" value="small">작음</li>
-																<li style="list-style: none;"><span>이사람의 기분은
-																		어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의
-																		기분은 어떤가요?</span><br> <input type="radio" name="feeling"
-																	value="happy">기분좋음 <input type="radio"
-																	name="feeling" value="angry">화남 <input
-																	type="radio" name="feeling" value="sad">슬픔</li>
+																<li style="list-style: none;"><span>현관문의 크기와 모양은 어떻게 묘사되었나요?</span><br> 
+																<input type="radio" name="feeling" value="happy">과하게 큰 현관문 
+																<input type="radio" name="feeling" value="angry">과하게 작은 현관문 
+																<input type="radio" name="feeling" value="sad">덧칠되어 있는 현관문 또는 잠금장치가 있는 현관문</li>
+																<input type="radio" name="feeling" value="sad">현관문이 없다</li>
+																<input type="radio" name="feeling" value="sad">집의 측면에 있는 현관문</li>
+																<input type="radio" name="feeling" value="sad">특징이 없는 평범한 현관문</li>
 															</ul>
 														</div>
 														<div id="que2" class="que curQue" style="position:absolute;width:80vw;">
