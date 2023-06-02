@@ -95,9 +95,10 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-   											<div style="width:"100px" height:"40px"><a id="kakao-login-btn" ></a></div>
-                                            <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">회원가입</button>
-                                            <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5px 0;">로그인</button>
+
+                                       		 <a id="kakao-login-btn"></a>
+                                            <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">로그인</button>
+                                            <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5px 0;">회원가입</button>
                                         </div>
                                     </div>
                                 </form>
