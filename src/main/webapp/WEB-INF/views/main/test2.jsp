@@ -200,7 +200,7 @@ function nextBtnShowing(){
 							</div>
 							<br> <input class="btn btn-info"
 								style="background-color: #FE5D37; border-color: #FE5D37; color: white"
-								id="picSend" type="submit" value="다음단계로">
+								id="picSend" type="button" value="다음단계로" onclick="location.href='checkSucces.do'">
 							<div id="resultView">
 								<h3 id="resultTxt"></h3>
 							</div>

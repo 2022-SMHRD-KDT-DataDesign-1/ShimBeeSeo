@@ -86,5 +86,12 @@ public class PageMovementController {
 	public String test2() {
 		return "main/test2";
 	}
+	@GetMapping("checkSucces.do")
+	public String checkSucces() {
+		return "main/checkSucces";
+	}
 
+
+	
+	
 }
