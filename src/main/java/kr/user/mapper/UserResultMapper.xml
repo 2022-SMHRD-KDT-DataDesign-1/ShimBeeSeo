@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.user.mapper.UserResultMapper">
+
+	<select id="viewResult" parameterType="kr.board.entity.User_Result"
+		resultType="kr.board.entity.User_Result">
+		select * from t_user_result WHERE ROWNUM = 1
+	</select>
+
+
+</mapper>
+
+
+
+
+
+
+

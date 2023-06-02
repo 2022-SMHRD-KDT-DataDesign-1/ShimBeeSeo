@@ -76,5 +76,12 @@ public class PageMovementController {
 	public String upload() {
 		return "main/upload";
 	}
+	
+	// 김한송 개인 작업공간
+	@GetMapping("songSecret.do")
+	public String chart() {
+		return "member/songSecret";
+	}
+
 
 }
