@@ -29,7 +29,7 @@ public class User_Result {
     private Double result_depressed;
 
     // 대인회피 
-    private Double result_av_p_d;
+    private Double result_avpd;
 
     // 자존감 
     private Double result_self_esteem;
@@ -59,5 +59,5 @@ public class User_Result {
     private String result_direction;
 
     // 검사일 
-    private int result_date;
+    private String result_date;
 }

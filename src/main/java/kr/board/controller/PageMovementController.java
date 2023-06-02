@@ -77,6 +77,7 @@ public class PageMovementController {
 		return "main/upload";
 	}
 	
+<<<<<<< HEAD
 	@GetMapping("joinSucces.do")
 	public String joinSucces() {
 		return "member/joinSuccess";
@@ -86,5 +87,13 @@ public class PageMovementController {
 	public String test2() {
 		return "main/test2";
 	}
+=======
+	// 김한송 개인 작업공간
+	@GetMapping("songSecret.do")
+	public String chart() {
+		return "member/songSecret";
+	}
+
+>>>>>>> refs/remotes/origin/khs
 
 }
