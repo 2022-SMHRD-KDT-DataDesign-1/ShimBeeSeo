@@ -68,15 +68,19 @@
 												<!-- <label class="custom-file-label" for="imgInp2">Choose
 													file</label> -->
 											</div>
-											<<div><img class="img-bg" style="background-size: 100% 100%;" src="${contextPath}/resources/img/sk(1).png" alt="">
-											<img style="width: 30rem; height: 30rem;" id="foo2" />
+											<div style="width: 30rem; height: 30rem; background-image:url('${contextPath}/resources/img/sk(1).png'); background-repeat : no-repeat; background-size : 100% 100%; padding: 2rem 1.5rem;">
+												<div style="width: 26rem; height: 25rem;"><img style="width: 100%; height: 100%;" id="foo2" /></div>
 											</div>
 											
 										</div>
 									</div>
 									<br> <input class="btn btn-info"
 										style="background-color: #FE5D37; border-color: #FE5D37; color: white"
-										id="picSend" type="submit" value="다음단계로">
+										id="beforeSend" type="submit" value="이전페이지로">
+										<input class="btn btn-info"
+										style="background-color: #FE5D37; border-color: #FE5D37; color: white"
+										id="nextSend" type="button" value="다음단계로" onclick="location.href='test2.do'">
+									
 									<div id="resultView">
 										<h3 id="resultTxt"></h3>
 									</div>
