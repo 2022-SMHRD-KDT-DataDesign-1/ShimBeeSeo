@@ -212,39 +212,103 @@
 															<img style="width: 100%; height: 100%;" id="foo2" />
 														</div>
 													</div>
+													<!-- 다중 선택가능한 선택지 class="multi" -->
 													<div id="queWrap" class=""
 														style="width: 100%; height: 22rem; position: relative; overflow: hidden; left: 120%;">
 														<div id="que1" class="que"
 															style="position: absolute; width: 100%; right: 120%;">
 															<ul style="line-height: 30px">
-																<li><span>그림에 태양이 묘사되어 있나요?</span><br> <input
-																	type="radio" name="gender" value="m">태양이 반만
-																	나와있다 <input type="radio" name="gender" value="w">태양이
-																	무채색으로 표현되어 있다</li>
-																<input type="radio" name="gender" value="e">태양이
-																없다
-																</li>
-																<input type="radio" name="gender" value="j">무난한
-																모습의 태양이다
-																</li>
-																<li><span>이사람의 머리는 큰편인가요?</span><br> <input
-																	type="radio" name="headSize" value="big">큰편 <input
-																	type="radio" name="headSize" value="middle">중간
-																	<input type="radio" name="headSize" value="small">작음</li>
-																<li><span>현관문의 크기와 모양은 어떻게 묘사되었나요?</span><br>
-																	<input type="radio" name="feeling" value="happy">과하게
-																	큰 현관문 <input type="radio" name="feeling" value="angry">과하게
-																	작은 현관문 <input type="radio" name="feeling" value="sad">덧칠되어
-																	있는 현관문 또는 잠금장치가 있는 현관문</li>
-																<input type="radio" name="feeling" value="sad">현관문이
-																없다
-																</li>
-																<input type="radio" name="feeling" value="sad">집의
-																측면에 있는 현관문
-																</li>
-																<input type="radio" name="feeling" value="sad">특징이
-																없는 평범한 현관문
-																</li>
+																<li><span>1. 그림의 전체적인 분위기는 어떤가요?</span><br>
+																<input type="radio" name="mood" value="1">보통
+																<input type="radio" name="mood" value="2">조금 부정적
+																<input type="radio" name="mood" value="3">완전 부정적
+																
+															</ul>
+															<ul style="line-height: 30px">
+																<li><span>2. 종이의 전체 면적에서 집이 얼마나 차지하나요?</span><br>
+																<input type="radio" name="size" value="4">보통(중앙에서 2/3 정도 차지)
+																<input type="radio" name="size" value="5">지나치게 큼
+																<input type="radio" name="size" value="6">지나치게 작음
+																<input type="radio" name="size" value="7">파손 됨(절단된 집)
+																
+															</ul>
+															<ul style="line-height: 30px">
+																<li><span>3. 그림에서 집은 어느쪽에 위치해 있나요?</span><br>
+																<input type="radio" name="position" value="8">좌측
+																<input type="radio" name="position" value="9">우측
+																<input type="radio" name="position" value="10">하단
+																<input type="radio" name="position" value="11">중앙
+																
+															</ul>
+															<ul style="line-height: 30px">
+																<li><span>4. 어떤 시점으로 그림이 그려졌나요?</span><br>
+																<input type="radio" name="view" value="12">윗면(위에서 내려다보는)
+																<input type="radio" name="view" value="13">아랫면(아래에서 올려다보는)
+																<input type="radio" name="view" value="14">정면면(정면에서 바라보는)
+																
+															</ul>
+															<ul style="line-height: 30px" class="multi">
+																<li><span>5. 지붕은 어떻게 묘사되었나요?</span><br>
+																<input type="radio" name="roof" value="15">과도하게 큼, 강한선 묘사
+																<input type="radio" name="roof" value="16">과도한 무늬
+																<input type="radio" name="roof" value="17">뾰족함 또는 세모 모양
+																<input type="radio" name="roof" value="18">지붕을 덧칠 또는 뭉개는 채색
+																<input type="radio" name="roof" value="19">평범한 지붕
+																
+															</ul>
+															<ul style="line-height: 30px">
+																<li><span>6. 집을 구성하는 벽의 모습은 어떤가요?</span><br>
+																<input type="radio" name="wall" value="20">허술한 벽
+																<input type="radio" name="wall" value="21">지나치게 견고한 벽돌이나 벽면
+																<input type="radio" name="wall" value="22">평범한 벽
+																
+															</ul>
+															<ul style="line-height: 30px" class="multi">
+																<li><span>7. 현관문의 크기와 모양은 어떻게 묘사되었나요?</span><br>
+																<input type="radio" name="door" value="23">과하게 큼
+																<input type="radio" name="door" value="24">과하게 작음
+																<input type="radio" name="door" value="25">집의 측면에 위치
+																<input type="radio" name="door" value="26">덧칠된 또는 잠금장치가 있는 현관문
+																<input type="radio" name="door" value="27">없음
+																<input type="radio" name="door" value="28">특징 없는 평범한 현관문
+																
+															</ul>
+															<ul style="line-height: 30px" class="multi">
+																<li><span>8. 창문은 어떤 특징이 있나요?</span><br>
+																<input type="radio" name="window" value="29">없음
+																<input type="radio" name="window" value="30">3개 이상
+																<input type="radio" name="window" value="31">커튼으로 가려짐
+																<input type="radio" name="window" value="32">2층 이상의 지붕위에만 있음
+																
+															</ul>
+															<ul style="line-height: 30px">
+																<li><span>9. 굴뚝의 모습에 특징이 있나요?</span><br>
+																<input type="radio" name="chimney" value="33">없음
+																<input type="radio" name="chimney" value="34">있음
+																<input type="radio" name="chimney" value="35">연기나는 굴뚝
+																
+															</ul>
+															<ul style="line-height: 30px" class="multi">
+																<li><span>10. 그림에 태양이 묘사되어 있나요?</span><br>
+																<input type="radio" name="sun" value="36">반만 나온 태양
+																<input type="radio" name="sun" value="37">무채색 태양
+																<input type="radio" name="sun" value="38">없음
+																<input type="radio" name="sun" value="39">평범한 태양
+																
+															</ul>
+															<ul style="line-height: 30px" class="multi">
+																<li><span>11. 그림에 묘사된 다른 모습들이 있나요?</span><br>
+																<input type="radio" name="etc" value="40">산속 또는 숲속 집
+																<input type="radio" name="etc" value="41">울타리가 있거나 울타리같은 지면
+																<input type="radio" name="etc" value="42">연못, 우물, 비 표현
+																<input type="radio" name="etc" value="43">벽 등을 통해 투시되는 집 내부
+																<input type="radio" name="etc" value="44">의인화된 집
+																<input type="radio" name="etc" value="45">음영, 그림자 표현 또는 지웠다 그리기를 반복한 흔적
+																<input type="radio" name="etc" value="46">평면도형태의 집
+																<input type="radio" name="etc" value="47">덧칠된 채색
+																<input type="radio" name="etc" value="48">넓고 자세한 선으로 강조된 지면선
+																<input type="radio" name="etc" value="49">해당되는 특징 없음
+																
 															</ul>
 														</div>
 														<div id="que2" class="que curQue"
