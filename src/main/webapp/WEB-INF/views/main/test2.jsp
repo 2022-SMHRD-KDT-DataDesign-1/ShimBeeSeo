@@ -120,6 +120,36 @@
 		}
 	}
 </script>
+<!-- 미리보기 이미지 조정값 -->
+<style type="text/css">
+.flex-container {
+	display: flex;
+}
+
+.wrapper {
+	text-align: center;
+	flex-grow: 1;
+}
+
+.wrapper .image-box {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	display: block;
+	margin: 20px auto;
+}
+
+.wrapper .upload-btn {
+	border: 1px solid #ddd;
+	padding: 6px 12px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.wrapper .upload-btn input[type=file] {
+	display: none;
+}
+</style>
 </head>
 <body>
 	<div class="container-xxl bg-white p-0">
@@ -137,23 +167,35 @@
 					<div>
 						<div class="uploadPhoto">
 							<form method="POST" enctype="multipart/form-data" id="form_img">
-								<!-- <form action="http://192.168.56.1:9000/photo" method="POST" enctype="multipart/form-data"> -->
-								<!-- <form action="imgUpload.do" method="POST" enctype="multipart/form-data"> -->
-								<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> --%>
-								<div style="display: block; margin: 0 auto" class="col-md-4">
-									<div style="margin-bottom: 1rem;" class="custom-file">
-										<input type="file" name="file" id="imageInput"
-											accept="image/*">
-										<!-- <input previewnum="foo2" type="file" class="custom-file-input" id="imgInp2" name="imgInp2"> -->
-										<!-- <label class="custom-file-label" for="imgInp2">Choose
-									file</label> -->
+							
+								<div class="flex-container">
+									<div class="wrapper">
+										<h2>FileReader</h2>
+										<img
+											src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg"
+											class="image-box" /> <label for="file" class="upload-btn">
+											<input id="file" name="file" type="file" accept="image/*" /> <span>Upload
+												Image</span>
+										</label>
 									</div>
-									<br>
-									<button type="button" onclick="uploadFunction();"
-										class="form-control btn btn-primary">파일업로드</button>
-									<!-- <input id="btn_img_send" class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white"
-								type="submit" value="이미지업로드"> -->
+
+		<!-- 	============================= 이미지 하나만 사용	======================================
+									<div class="wrapper">
+										<h2>URL API</h2>
+										<img
+											src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg"
+											class="image-box" /> <label for="file2" class="upload-btn">
+											<input id="file2" type="file" accept="image/*" /> <span>Upload
+												Image</span>
+										</label>
+									</div> -->
 								</div>
+								<!-- 미리보기 이후 파일 업로드하기 -->
+								<button type="button" onclick="uploadFunction();"
+									class="form-control btn btn-primary" style="width: 150px">파일업로드</button>
+								<!--미리보기 테스트 끝 -->
+
+							
 							</form>
 							<div style="margin: 0">
 								<form name="inputImg" method="POST">
@@ -290,78 +332,74 @@
 	<!-- Template Javascript -->
 	<script src="${contextPath}/resources/js/main.js"></script>
 	<script type="text/javascript">
-	
 		/* event.preventDefault(); */
-		
-		let url = 'http://192.168.56.1:9000/photo'; 
-		
-	
-/*  		const response = fetch('http://192.168.56.1:9000/photo', {
-		     method: 'POST',
-		     body: formData
-		}); */
- 		
-		const formData = new FormData();
- 		
-/* 		$("#btn_img_send").cilck(function(){
- 		    console.log("getDataAjax");
-			formData.append('imgFile', imgFile.current);
-			
- 		    // 통신방법 Case 1 . AJjax
- 		    // - 장점 : jQuery를 통해 쉽게 구현이 가능
- 		    // - 단점 : jQuery가 없다면 코드가 복잡하다
- 		    
- 		     $.ajax({
 
- 			   url : url,
-			   type : "POST",
-			   data : formData,
-				   success : function(res){
-					   console.log("통신 성공!", res);
-				            
-			        },
-			        error : ()=>{
-			            console.log("통신 실패");
-			        }
-    
- 		    });
-			
-		}); */
-		
+		let url = 'http://192.168.56.1:9000/photo';
+
+		/*  		const response = fetch('http://192.168.56.1:9000/photo', {
+		 method: 'POST',
+		 body: formData
+		 }); */
+
+		const formData = new FormData();
+
+/* =========================이미지 모델에게 확인 요청 ================================= */
 		function uploadFunction() {
 			// 임의 test, id값 쿼리스트링으로 보내기
 			var id = 'samsam'
 			var data = new FormData(form_img);
 			console.log("파일 업로드 요청");
 
+			/* async : false -> 비동기 동기로 변경, 다만 값 받아오기 전에 페이지 이동해 버리면 값 못받고 넘어감!!
+								주의하자! */
 			$.ajax({
-				type: "POST",
-				enctype: 'multipart/form-data',
-				url: "http://192.168.56.1:9000/photo/"+id,
-				data: data,
-				async: false,
-				processData: false,
-				contentType: false,
-				cache: false,
-				timeout: 600000,
-			success: function(res) {
+				type : "POST",
+				enctype : 'multipart/form-data',
+				url : "http://192.168.56.1:9000/photo/" + id,
+				data : data,
+				processData : false,
+				contentType : false,
+				cache : false,
+				timeout : 600000,
+				success : function(items) {
 
-					if (res =! null) {
+					if (res = !null) {
 						console.log("파일 업로드 성공");
 						// res 출력은 true만 나옴.. 어케 받아오지..?
-						console.log(res);
-					}
-					else {
+						console.log(items);
+						// 값 받아와서 히든태그에 집어 넣기!!
+						// null값 체크해서 페이지 이동 막아줘야 함
+					} else {
 						console.log("파일 업로드 실패");
 					}
 				},
-				error: function(e) {
-						console.log("파일 업로드 에러");
+				error : function(e) {
+					console.log("파일 업로드 에러");
 				}
 			});
 		}
-		
-		
+	</script>
+	<!-- 이미지 미리보기 처리 -->
+	<script type="text/javascript">
+	const fileDOM = document.querySelector('#file');
+	const previews = document.querySelectorAll('.image-box');
+
+	fileDOM.addEventListener('change', () => {
+	  const reader = new FileReader();
+	  reader.onload = ({ target }) => {
+	    previews[0].src = target.result;
+	  };
+	  reader.readAsDataURL(fileDOM.files[0]);
+	});
+
+	/* 만약 이미지 두개 처리 할 거라면 */
+	const fileDOM2 = document.querySelector('#file2');
+
+	fileDOM2.addEventListener('change', () => {
+	  const imageSrc = URL.createObjectURL(fileDOM2.files[0]);
+	  previews[1].src = imageSrc;
+	});
+	
 	</script>
 </body>
 </html>
