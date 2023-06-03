@@ -49,7 +49,6 @@
 <!-- Template Stylesheet -->
 <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
 <style>
-<<<<<<< HEAD
 .que ul {padding-left:0;}
 .que ul li {list-style:none;}
 
@@ -58,15 +57,6 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-=======
-.que ul {
-	padding-left: 0;
-}
-
-.que ul li {
-	list-style: none;
->>>>>>> f4098716e67c31c60607d29268e544343cc8099e
-}
 </style>
 <script>
 	$(document).ready(function() {
@@ -190,7 +180,7 @@
 										</label>
 									</div>
 
-		<!-- 	============================= 이미지 하나만 사용	======================================
+		 	<!--  ============================= 이미지 하나만 사용	======================================
 									<div class="wrapper">
 										<h2>URL API</h2>
 										<img
@@ -199,8 +189,8 @@
 											<input id="file2" type="file" accept="image/*" /> <span>Upload
 												Image</span>
 										</label>
-									</div> -->
-								</div>
+									</div>
+								</div> -->
 								<!-- 미리보기 이후 파일 업로드하기 -->
 								<button type="button" onclick="uploadFunction();"
 									class="form-control btn btn-primary" style="width: 150px">파일업로드</button>
@@ -220,58 +210,23 @@
 													</div>
 													<div id="queWrap" class="" style="width:100%;height:96vw;position:relative;overflow:hidden;left:120%;">
 														<div id="que1" class="que" style="position:absolute;width:100%;right:120%;">
-															<div style="overflow:scroll;" class="btn-group-vertical" role="group"
+															<div class="btn-group-vertical" role="group"
 																aria-label="Vertical radio toggle button group">
-																<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">그림에 태양이 묘사되어 있나요?</strong>
+																<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">1. 그림의 전체적인 분위기는 어떤가요?</strong>
 																<input type="radio" class="btn-check" name="vbtn-radio"
-																	id="vbtn-radio1" autocomplete="off" checked> <label
-																	style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio1">태양이
-																	반만 나와있다</label> <input type="radio" class="btn-check"
+																	id="vbtn-radio1" autocomplete="off" checked> 
+																	<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;"
+																	class="btn btn-outline-danger" for="vbtn-radio1">보통</label>
+																	<input type="radio" class="btn-check"
 																	name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
 																<label
 																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio2">태양이
-																	무채색으로 표현되어 있다</label> <input type="radio" class="btn-check"
+																	class="btn btn-outline-danger" for="vbtn-radio2">조금 부정적</label>
+																<input type="radio" class="btn-check"
 																	name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
 																<label
 																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio3">태양이
-																	없다</label> <input type="radio" class="btn-check"
-																	name="vbtn-radio" id="vbtn-radio4" autocomplete="off">
-																<label style="border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio4">무난한
-																	모습의 태양이다</label>
-																<input type="radio" class="btn-check" name="vbtn-radio"
-																	id="vbtn-radio1" autocomplete="off" checked> <label
-																	style="margin-top: 1.5vw; margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio1">태양이
-																	반만 나와있다</label>
-																<input type="radio" class="btn-check" name="vbtn-radio"
-																	id="vbtn-radio1" autocomplete="off" checked> <label
-																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio1">태양이
-																	반만 나와있다</label>
-																<input type="radio" class="btn-check" name="vbtn-radio"
-																	id="vbtn-radio1" autocomplete="off" checked> <label
-																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio1">태양이
-																	반만 나와있다</label>
-																<input type="radio" class="btn-check" name="vbtn-radio"
-																	id="vbtn-radio1" autocomplete="off" checked> <label
-																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio1">태양이
-																	반만 나와있다</label>
-																<input type="radio" class="btn-check" name="vbtn-radio"
-																	id="vbtn-radio1" autocomplete="off" checked> <label
-																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio1">태양이
-																	반만 나와있다</label>
-																<input type="radio" class="btn-check" name="vbtn-radio"
-																	id="vbtn-radio1" autocomplete="off" checked> <label
-																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio1">태양이
-																	반만 나와있다</label>					
+																	class="btn btn-outline-danger" for="vbtn-radio3">완전 부정적</label> 
 															</div>
 															<!-- <ul style="line-height: 30px">
 																<li><span>그림에 태양이 묘사되어 있나요?</span><br> 
@@ -461,7 +416,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="container">
+		<!-- <div id="container">
         <div style="height: 93vw;" class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
             <label style="margin-bottom:1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio1">태양이 반만 나와있다</label>
@@ -471,12 +426,11 @@
             <label style="margin-bottom:1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio3">태양이 없다</label>
             <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio4" autocomplete="off">
             <label style=" border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio4">무난한 모습의 태양이다</label>
-          </div>
+          </div> -->
 
           <!-- div#result -->
           <div id="result"></div>
     </div>
-
 			<jsp:include page="../common/footer.jsp"></jsp:include>
 	</div>
 
