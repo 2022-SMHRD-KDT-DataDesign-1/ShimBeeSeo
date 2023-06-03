@@ -460,7 +460,6 @@
 					</div>
 				</div>
 			</div>
-<<<<<<< HEAD
 		</div>
 		<div id="container">
         <div style="height: 93vw;" class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
@@ -477,8 +476,6 @@
           <!-- div#result -->
           <div id="result"></div>
     </div>
-=======
->>>>>>> f4098716e67c31c60607d29268e544343cc8099e
 
 			<jsp:include page="../common/footer.jsp"></jsp:include>
 	</div>
