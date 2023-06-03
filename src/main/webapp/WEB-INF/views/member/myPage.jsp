@@ -10,7 +10,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Template</title>
+	<title>내 정보^오^</title>
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   	    <meta content="" name="keywords">
@@ -39,11 +39,45 @@
     <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
 </head>
 <body>
-
  <div class="container-xxl bg-white p-0">
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	<!-- 본문 내용 시작 -->
 	
+	 <!-- Page Header End -->
+        <div class="container-xxl py-5 page-header position-relative mb-5">
+            <div class="container py-5">
+                <h1 class="display-2 text-white animated slideInDown mb-4">내 정보^오^</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+       
+                </nav>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Testimonial Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">님 자녀들 검사결과</h1>
+                    <p>보고 잘키우셈</p>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                <!-- 검사결과 N개 생성 for문 여기에 적용 -->
+                    <div class="testimonial-item bg-light rounded p-5">
+                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
+                            <div class="ps-3">
+                                <h3 class="mb-1">Client Name</h3>
+                                <span>Profession</span>
+                            </div>
+                        </div>
+                        <p class="fs-5">Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
+                    </div>
+                 <!-- for문 끝 -->   
+ 					
+ 					
+ 					<!-- test용 시작-->
+ 					<div class="testimonial-item bg-light rounded p-5">
 	<div style="width: 900px; height: 900px;">
 	<!--차트가 그려질 부분-->
 	<canvas id="myChart"></canvas>
@@ -57,6 +91,16 @@
 	<input type="hidden" id="result_inferiority" value="${result.get(0).result_inferiority}">
 	<input type="hidden" id="result_regression" value="${result.get(0).result_regression}">
 </div>
+
+                        <p class="fs-5">Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
+                    </div>
+ 					<!-- test용 끝 -->
+ 					
+                   
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
 	
 	
 	<!-- 본문 내용 끝 -->
@@ -70,7 +114,10 @@
     <script src="${contextPath}/resources/lib/waypoints/waypoints.min.js"></script>
     <script src="${contextPath}/resources/lib/owlcarousel/owl.carousel.min.js"></script>
 	
-	  	<!-- Chart.js 불러오기 -->
+	    <!-- Template Javascript -->
+    <script src="${contextPath}/resources/js/main.js"></script>
+    
+    	  	<!-- Chart.js 불러오기 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 		<!-- Chart 내용 Javascript -->
 	<script type="text/javascript">
@@ -149,10 +196,6 @@
                 }
             });
         </script>
-	
-	
-	    <!-- Template Javascript -->
-    <script src="${contextPath}/resources/js/main.js"></script>
 	
 </body>
 </html>
