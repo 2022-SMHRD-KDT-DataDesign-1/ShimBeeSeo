@@ -1,5 +1,7 @@
 package kr.board.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +23,8 @@ public class UserResultController {
 	@RequestMapping("UserResult.do")
 	public String UserResult(User m, HttpSession session) {
 		
-		User_Result result = userResultMapper.viewResult(m);
+		List<User_Result> result = userResultMapper.viewResult(m);
 		session.setAttribute("result", result);
-		return "redirect:songSecret.do";
+		return "redirect:myPage.do";
 	};
 }

@@ -62,7 +62,13 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
                     <a href="${contextPath}/" class="nav-item nav-link">Home</a>
+                    <c:if test="${empty mvo}">
                     <a href="loginPage.do" class="nav-item nav-link active">로그인</a>
+                    </c:if>
+                    <c:if test="${not empty mvo}">
+                    <a href="UserResult.do" class="nav-item nav-link">내정보</a>
+                    
+                    </c:if>
                     <a href="classes.do" class="nav-item nav-link">Classes</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -71,13 +77,14 @@
                             <a href="team.do" class="dropdown-item">Popular Teachers</a>
                             <a href="callToAction.do" class="dropdown-item">Become A Teachers</a>
                             <a href="appointment.do" class="dropdown-item">Make Appointment</a>
-                            <a href="testimonial.do" class="dropdown-item">Testimonial</a>
                             <a href="errorPage.do" class="dropdown-item">Error Page</a>
                         </div>
                     </div>
                     <a href="contact.do" class="nav-item nav-link">Contact Us</a>
+                            <c:if test="${not empty mvo}">
+                   			<a href="${contextPath}/logout.do" class="nav-item nav-link active">로그아웃</a>
+                            </c:if>
                 </div>
-                <a href="loginPage.do" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">로그인<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->

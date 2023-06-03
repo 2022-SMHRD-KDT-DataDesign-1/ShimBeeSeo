@@ -4,7 +4,7 @@
 
 	<select id="viewResult" parameterType="kr.board.entity.User_Result"
 		resultType="kr.board.entity.User_Result">
-		select * from t_user_result WHERE ROWNUM = 1
+		select * from t_user_result order by result_date desc
 	</select>
 
 
