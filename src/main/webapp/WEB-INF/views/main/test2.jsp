@@ -49,12 +49,53 @@
 <!-- Template Stylesheet -->
 <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
 
+<script>
+function prevQue(){
+	var curQue = $(".curQue");//현재 화면에 떠있는 질문 div태그의 id
+	var prevQue = $(".curQue").prev();//현재 질문의 다음질문 div태그의 id
+	$('.prevBtn').css("display","");
+	curQue.attr("class","que");
+	curQue.css("left","100%");
+	prevQue.attr("class","curQue que");
+	prevQue.css("right","");
+	prevBtnShowing();
+	nextBtnShowing();
+}
+function nextQue(){
+	var curQue = $(".curQue");//현재 화면에 떠있는 질문 div태그의 id
+	var nextQue = $(".curQue").next();//현재 질문의 다음질문 div태그의 id
+	$('.prevBtn').css("display","");
+	curQue.attr("class","que");
+	curQue.css("right","100%");
+	nextQue.attr("class","curQue que");
+	nextQue.css("left","");
+	prevBtnShowing()
+	nextBtnShowing();
+}
+function prevBtnShowing(){
+	curId = $(".curQue").attr("id");
+	if(curId == "que1"){//첫번째 질문인경우 이전버튼 숨김처리
+		$('.prevBtn').css("display","none");
+	}else{
+		$('.prevBtn').css("display","");
+	}
+}
+function nextBtnShowing(){
+	curId = $(".curQue").attr("id");
+	lastId = $(".que").last().attr("id");//선택한 div태그의 형제div 중 마지막div태그의 id(대신 모든 형제태그가 같은 class 값을 가져야 함)
+	if(curId == lastId){//첫번째 질문인경우 다음버튼 숨김처리
+		$('.nextBtn').css("display","none");
+	}else{
+		$('.nextBtn').css("display","");
+	}
+}
+</script>
 </head>
 <body>
 
 	<div class="container-xxl bg-white p-0">
 
-		<jsp:include page="common/header.jsp"></jsp:include>
+		<jsp:include page="../common/header.jsp"></jsp:include>
 
 		<!-- 상자생성하고 사진넣어보기 -->
 		<section style="font-family: 'MaplestoryOTFBold';" id="projects"
@@ -70,46 +111,91 @@
 								<form name="inputImg" method="POST">
 									<div style="display: flex;" class="container">
 										<div style="display: block; margin: 0 auto" class="col-md-4">
-											<!-- <h3>
-												<strong style="font-family: 'NEXON Lv1 Gothic OTF'">사람</strong>
-											</h3> -->
-											<!-- <div style="margin-bottom: 1rem;" class="custom-file">
-												<input previewnum="foo2" type="file"
-													class="custom-file-input" id="imgInp2" name="imgInp2">
-												<label class="custom-file-label" for="imgInp2">Choose
-													file</label>
-											</div> -->
-												<div style=" width: 30rem; height: 30rem;" id="foo2"
+												<!-- <div style=" width: 30rem; height: 30rem;" id="foo2"> -->
 													<form action="" method="get">
-													<div style="position: relative;">
+													<%-- <div style="position: relative;">
 														<div style="background-image: src=${contextPath}/resources/img/sk(1).png"><img class="img-bg" style="background-size: 100% 100%;" src="${contextPath}/resources/img/sk(1).png" alt="">
-															<div style="absolute; top: 50%; left: 50%;">
-															이사람은 남자인가요? 여자인가요?<br>
-												       		<label><input type="radio" name="gender" value="m">남</label>
-												       		<label><input type="radio" name="gender" value="w">여</label>
+															
 														</div>
 													</div>
 														
+												</div> --%>
+												<div style="width: 30rem; height: 30rem; background-image:url('${contextPath}/resources/img/sk(1).png'); background-repeat : no-repeat; background-size : 100% 100%; padding: 2rem 1.5rem;">
+													<div style="width: 26rem;height: 25rem;padding: 5rem 0.5rem;">
+														<div id="que1" class="que" style="position:absolute;width:80vw;right:100%;">
+															<ul style="line-height: 30px">
+																<li style="list-style: none;"><span>그림에 태양이 묘사되어 있나요?</span><br> 
+																<input type="radio" name="gender" value="m">태양이 반만 나와있다
+																<input type="radio" name="gender" value="w">태양이 무채색으로 표현되어 있다</li>
+																<input type="radio" name="gender" value="e">태양이 없다</li>
+																<input type="radio" name="gender" value="j">무난한 모습의 태양이다</li>
+																<li style="list-style: none;"><span>이사람의 머리는
+																		큰편인가요?</span><br> <input type="radio" name="headSize"
+																	value="big">큰편 <input type="radio"
+																	name="headSize" value="middle">중간 <input
+																	type="radio" name="headSize" value="small">작음</li>
+																<li style="list-style: none;"><span>현관문의 크기와 모양은 어떻게 묘사되었나요?</span><br> 
+																<input type="radio" name="feeling" value="happy">과하게 큰 현관문 
+																<input type="radio" name="feeling" value="angry">과하게 작은 현관문 
+																<input type="radio" name="feeling" value="sad">덧칠되어 있는 현관문 또는 잠금장치가 있는 현관문</li>
+																<input type="radio" name="feeling" value="sad">현관문이 없다</li>
+																<input type="radio" name="feeling" value="sad">집의 측면에 있는 현관문</li>
+																<input type="radio" name="feeling" value="sad">특징이 없는 평범한 현관문</li>
+															</ul>
+														</div>
+														<div id="que2" class="que curQue" style="position:absolute;width:80vw;">
+															<ul style="line-height: 30px" >
+																<li style="list-style: none;"><span>이사람은
+																		2남자인가요? 여자인가요?</span><br> <input type="radio"
+																	name="gender" value="m">남 <input type="radio"
+																	name="gender" value="w">여</li>
+																<li style="list-style: none;"><span>2이사람의 머리는
+																		큰편인가요?</span><br> <input type="radio" name="headSize"
+																	value="big">큰편 <input type="radio"
+																	name="headSize" value="middle">중간 <input
+																	type="radio" name="headSize" value="small">작음</li>
+																<li style="list-style: none;"><span>2이사람의 기분은
+																		어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의
+																		기분은 어떤가요?</span><br> <input type="radio" name="feeling"
+																	value="happy">기분좋음 <input type="radio"
+																	name="feeling" value="angry">화남 <input
+																	type="radio" name="feeling" value="sad">슬픔</li>
+															</ul>
+														</div> 
+														<div id="que3" class="que" style="position:absolute;width:80vw;left:100%;">
+															<ul style="line-height: 30px" >
+																<li style="list-style: none;"><span>3이사람은
+																		남자인가요? 여자인가요?</span><br> <input type="radio"
+																	name="gender" value="m">남 <input type="radio"
+																	name="gender" value="w">여</li>
+																<li style="list-style: none;"><span>3이사람의 머리는
+																		큰편인가요?</span><br> <input type="radio" name="headSize"
+																	value="big">큰편 <input type="radio"
+																	name="headSize" value="middle">중간 <input
+																	type="radio" name="headSize" value="small">작음</li>
+																<li style="list-style: none;"><span>3이사람의 기분은
+																		어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의
+																		기분은 어떤가요?</span><br> <input type="radio" name="feeling"
+																	value="happy">기분좋음 <input type="radio"
+																	name="feeling" value="angry">화남 <input
+																	type="radio" name="feeling" value="sad">슬픔</li>
+															</ul>
+														</div>
+													</div>
+													<div class="qBtnWraper" style="margin: -70px">
+														<button type="button" class="prevBtn"  onclick="prevQue();">이전</button>
+														<button type="button" class="nextBtn" onclick="nextQue();">다음</button>
+													</div>
 												</div>
 															
 									       <!-- get : 도메인쪽에 내가 입력한 것이 붙어서 서버쪽으로 가는 것 -->
 									       <!-- post: 정보은닉이 되어 서버쪽으로 가는 것 -->
-										      			 <div>
-										      		 		이사람의 머리는 큰편인가요?<br>
-										      		 		<input type="radio" name="gender" value="big">큰편
-										       				<input type="radio" name="gender" value="middle">중간
-										       				<input type="radio" name="gender" value="small">작음
-										       			</div>
-										       			<div>
-										       				질문의 길이를 매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우매우 더더더더더더더더더더더더더더더더 길게 해보겠습니다.<br>
-										       				<input type="radio" name="gender" value="big">큰편
-										       				<input type="radio" name="gender" value="middle">중간
-										       				<input type="radio" name="gender" value="small">작음
-										       			</div>
+									       				
+										       			
 									       			<!-- checkbox는 name이 같아야함 -->
 									       			<!-- 여러개 선택할 수 있음 -->
 									   			</form>
-												</div>
+												<!-- </div> -->
 									</div>
 							</div>
 							<br> <input class="btn btn-info"
@@ -125,7 +211,7 @@
 			</div>
 		</div>
 
-	<jsp:include page="common/footer.jsp"></jsp:include>
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 	</div>
 
 	<!-- JavaScript Libraries -->

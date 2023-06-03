@@ -76,5 +76,15 @@ public class PageMovementController {
 	public String upload() {
 		return "main/upload";
 	}
+	
+	@GetMapping("joinSucces.do")
+	public String joinSucces() {
+		return "member/joinSuccess";
+	}
+	
+	@GetMapping("test2.do")
+	public String test2() {
+		return "main/test2";
+	}
 
 }

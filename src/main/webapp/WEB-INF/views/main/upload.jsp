@@ -55,40 +55,45 @@
 				<div>
 					<div style="display: block;">
 						<div class="uploadPhoto">
+						<h3>
+							<strong  style="font-family: 'NEXON Lv1 Gothic OTF'">사람</strong>
+						</h3>
+						<form  method="POST" enctype="multipart/form-data" id="form_img">
+					<!-- <form action="http://192.168.56.1:9000/photo" method="POST" enctype="multipart/form-data"> -->
+					<!-- <form action="imgUpload.do" method="POST" enctype="multipart/form-data"> -->
+						<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> --%>
+						<div style="display: block; margin : 0 auto" class="col-md-4">
+							<div style="margin-bottom: 1rem;" class="custom-file">
+								<input type="file" name="file" id="imageInput" accept="image/*">
+								<!-- <input previewnum="foo2" type="file" class="custom-file-input" id="imgInp2" name="imgInp2"> -->
+								<!-- <label class="custom-file-label" for="imgInp2">Choose
+									file</label> -->
+							</div>
+							<br>
+							<button type="button" onclick="uploadFunction();"class="form-control btn btn-primary">파일업로드</button>
+							<!-- <input id="btn_img_send" class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white"
+								type="submit" value="이미지업로드"> -->
+						</div>
+						</form>
 							<div style="margin: 0 !important;">
-								<h3>
-									<strong  style="font-family: 'NEXON Lv1 Gothic OTF'">집</strong>
-								</h3>
-								<form  method="POST" enctype="multipart/form-data" id="form_img">
-								<!-- <form action="http://192.168.56.1:9000/photo" method="POST" enctype="multipart/form-data"> -->
-								<!-- <form action="imgUpload.do" method="POST" enctype="multipart/form-data"> -->
-									<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> --%>
+							<form name="inputImg" method="POST">
+								<div style="display: flex;" class="container">
 									<div style="display: block; margin : 0 auto" class="col-md-4">
-										<div style="margin-bottom: 1rem;" class="custom-file">
-											<input type="file" name="file" id="imageInput" accept="image/*">
-											<!-- <input previewnum="foo2" type="file" class="custom-file-input" id="imgInp2" name="imgInp2"> -->
-											<!-- <label class="custom-file-label" for="imgInp2">Choose
-												file</label> -->
+
+										<div style="width: 30rem; height: 30rem; background-image:url('${contextPath}/resources/img/sk(1).png'); background-repeat : no-repeat; background-size : 100% 100%; padding: 2rem 1.5rem;">
+											<div style="width: 26rem; height: 25rem;"><img style="width: 100%; height: 100%;" id="foo2" /></div>
 										</div>
-										<br>
-										<button type="button" onclick="uploadFunction();"class="form-control btn btn-primary">파일업로드</button>
-										<!-- <input id="btn_img_send" class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white"
-											type="submit" value="이미지업로드"> -->
+										
 									</div>
-								</form>
-								<div>
-									<img class="img-bg" style="background-size: 100% 100%;" src="${contextPath}/resources/img/sk(1).png" alt="">
-									<img style="width: 30rem; height: 30rem;" id="foo2" />
-								</div>	
-
-								<form name="inputImg" method="POST">
-									<div style="display: flex;" class="container">
-
-									</div>
-									<br> <input class="btn btn-info"
-										style="background-color: #FE5D37; border-color: #FE5D37; color: white"
-										id="picSend" type="submit" value="다음단계로">
-									<div id="resultView">
+								</div>
+								<br> <input class="btn btn-info"
+									style="background-color: #FE5D37; border-color: #FE5D37; color: white"
+									id="beforeSend" type="submit" value="이전페이지로">
+									<input class="btn btn-info"
+									style="background-color: #FE5D37; border-color: #FE5D37; color: white"
+									id="nextSend" type="button" value="다음단계로" onclick="location.href='test2.do'">
+								
+								<div id="resultView">
 										<h3 id="resultTxt"></h3>
 									</div>
 								</form>
@@ -111,7 +116,7 @@
 
     <!-- Template Javascript -->
     <script src="${contextPath}/resources/js/main.js"></script>
-	<script type="text/javascript">
+		<script type="text/javascript">
 	
 		/* event.preventDefault(); */
 		

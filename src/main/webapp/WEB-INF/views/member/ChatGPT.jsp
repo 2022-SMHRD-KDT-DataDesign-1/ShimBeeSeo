@@ -18,6 +18,10 @@
             border: 1px solid #ccc;
         }
 
+<<<<<<< HEAD
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+=======
         #message-display {
             height: 300px;
             overflow-y: scroll;
@@ -25,6 +29,7 @@
             padding: 10px;
             margin-bottom: 10px;
         }
+>>>>>>> refs/remotes/origin/master
 
         #message-input {
             width: 100%;

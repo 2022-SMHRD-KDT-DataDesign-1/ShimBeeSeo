@@ -45,6 +45,7 @@
   <div class="container-xxl bg-white p-0">
 
 	<jsp:include page="../common/header.jsp"></jsp:include>
+	
 
         <!-- Page Header End -->
         <div class="container-xxl py-5 page-header position-relative mb-5">
@@ -59,7 +60,7 @@
 
 
         <!-- Contact Start -->
-        <div class="container-xxl py-5">
+         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">Get In Touch</h1>
@@ -94,7 +95,8 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="img" type="button"><img src="${contextPath}/resources/images/kakao_login.png"></button>
+
+                                       		 <a id="kakao-login-btn"></a>
                                             <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">로그인</button>
                                             <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5px 0;">회원가입</button>
                                         </div>
@@ -106,15 +108,15 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
         <!-- Contact End -->
 
-	<jsp:include page="../common/footer.jsp"></jsp:include>
+ 	<jsp:include page="../common/footer.jsp"></jsp:include> 
 
     </div>
     
           <!-- Modal content-->
-      <div id="messageType" class="modal-content panel-info"> <!-- panel-info >> 하늘색 -->
+       <div id="messageType" class="modal-content panel-info"> <!-- panel-info >> 하늘색 -->
         <div class="modal-header panel-heading"> <!-- 메세지 굵게 처리 -->
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">${msgType}</h4>
