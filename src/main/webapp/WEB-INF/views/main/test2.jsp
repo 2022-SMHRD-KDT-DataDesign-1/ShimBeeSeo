@@ -49,6 +49,7 @@
 <!-- Template Stylesheet -->
 <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
 <style>
+<<<<<<< HEAD
 .que ul {padding-left:0;}
 .que ul li {list-style:none;}
 
@@ -57,70 +58,78 @@
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+=======
+.que ul {
+	padding-left: 0;
+}
+
+.que ul li {
+	list-style: none;
+>>>>>>> f4098716e67c31c60607d29268e544343cc8099e
 }
 </style>
 <script>
-$(document).ready(function(){
-	//$(".page").
-	pagingSetting();
-});
+	$(document).ready(function() {
+		//$(".page").
+		pagingSetting();
+	});
 
-function pagingSetting(){
-	totalQuePage = $(".que").length;
-	curPage = $(".curQue").attr("id").substring(totalQuePage);
-	$(".page").text(curPage+"/"+totalQuePage);
-}
+	function pagingSetting() {
+		totalQuePage = $(".que").length;
+		curPage = $(".curQue").attr("id").substring(totalQuePage);
+		$(".page").text(curPage + "/" + totalQuePage);
+	}
 
-function goQuestion(){
-	imgWrapClass = $("#imgWrap").attr("class");
-	if(imgWrapClass == "on"){
-		$("#imgWrap").attr("class","");
-		$("#imgWrap").css("right","120%");
-		$("#queWrap").css("left","");
-	}else{
-		return;
+	function goQuestion() {
+		imgWrapClass = $("#imgWrap").attr("class");
+		if (imgWrapClass == "on") {
+			$("#imgWrap").attr("class", "");
+			$("#imgWrap").css("right", "120%");
+			$("#queWrap").css("left", "");
+		} else {
+			return;
+		}
 	}
-}
 
-function prevQue(){
-	var curQue = $(".curQue");//현재 화면에 떠있는 질문 div태그의 id
-	var prevQue = $(".curQue").prev();//현재 질문의 다음질문 div태그의 id
-	$('.prevBtn').css("display","");
-	curQue.attr("class","que");
-	curQue.css("left","100%");
-	prevQue.attr("class","curQue que");
-	prevQue.css("right","");
-	prevBtnShowing();
-	nextBtnShowing();
-}
-function nextQue(){
-	var curQue = $(".curQue");//현재 화면에 떠있는 질문 div태그의 id
-	var nextQue = $(".curQue").next();//현재 질문의 다음질문 div태그의 id
-	$('.prevBtn').css("display","");
-	curQue.attr("class","que");
-	curQue.css("right","100%");
-	nextQue.attr("class","curQue que");
-	nextQue.css("left","");
-	prevBtnShowing()
-	nextBtnShowing();
-}
-function prevBtnShowing(){
-	curId = $(".curQue").attr("id");
-	if(curId == "que1"){//첫번째 질문인경우 이전버튼 숨김처리
-		$('.prevBtn').css("display","none");
-	}else{
-		$('.prevBtn').css("display","");
+	function prevQue() {
+		var curQue = $(".curQue");//현재 화면에 떠있는 질문 div태그의 id
+		var prevQue = $(".curQue").prev();//현재 질문의 다음질문 div태그의 id
+		$('.prevBtn').css("display", "");
+		curQue.attr("class", "que");
+		curQue.css("left", "100%");
+		prevQue.attr("class", "curQue que");
+		prevQue.css("right", "");
+		prevBtnShowing();
+		nextBtnShowing();
 	}
-}
-function nextBtnShowing(){
-	curId = $(".curQue").attr("id");
-	lastId = $(".que").last().attr("id");//선택한 div태그의 형제div 중 마지막div태그의 id(대신 모든 형제태그가 같은 class 값을 가져야 함)
-	if(curId == lastId){//첫번째 질문인경우 다음버튼 숨김처리
-		$('.nextBtn').css("display","none");
-	}else{
-		$('.nextBtn').css("display","");
+	function nextQue() {
+		var curQue = $(".curQue");//현재 화면에 떠있는 질문 div태그의 id
+		var nextQue = $(".curQue").next();//현재 질문의 다음질문 div태그의 id
+		$('.prevBtn').css("display", "");
+		curQue.attr("class", "que");
+		curQue.css("right", "100%");
+		nextQue.attr("class", "curQue que");
+		nextQue.css("left", "");
+		prevBtnShowing()
+		nextBtnShowing();
 	}
-}
+	function prevBtnShowing() {
+		curId = $(".curQue").attr("id");
+		if (curId == "que1") {//첫번째 질문인경우 이전버튼 숨김처리
+			$('.prevBtn').css("display", "none");
+		} else {
+			$('.prevBtn').css("display", "");
+		}
+	}
+	function nextBtnShowing() {
+		curId = $(".curQue").attr("id");
+		lastId = $(".que").last().attr("id");//선택한 div태그의 형제div 중 마지막div태그의 id(대신 모든 형제태그가 같은 class 값을 가져야 함)
+		if (curId == lastId) {//첫번째 질문인경우 다음버튼 숨김처리
+			$('.nextBtn').css("display", "none");
+		} else {
+			$('.nextBtn').css("display", "");
+		}
+	}
 </script>
 </head>
 <body>
@@ -139,10 +148,30 @@ function nextBtnShowing(){
 				<div>
 					<div>
 						<div class="uploadPhoto">
-							<div style="margin: 0 ">
+							<form method="POST" enctype="multipart/form-data" id="form_img">
+								<!-- <form action="http://192.168.56.1:9000/photo" method="POST" enctype="multipart/form-data"> -->
+								<!-- <form action="imgUpload.do" method="POST" enctype="multipart/form-data"> -->
+								<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> --%>
+								<div style="display: block; margin: 0 auto" class="col-md-4">
+									<div style="margin-bottom: 1rem;" class="custom-file">
+										<input type="file" name="file" id="imageInput"
+											accept="image/*">
+										<!-- <input previewnum="foo2" type="file" class="custom-file-input" id="imgInp2" name="imgInp2"> -->
+										<!-- <label class="custom-file-label" for="imgInp2">Choose
+									file</label> -->
+									</div>
+									<br>
+									<button type="button" onclick="uploadFunction();"
+										class="form-control btn btn-primary">파일업로드</button>
+									<!-- <input id="btn_img_send" class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white"
+								type="submit" value="이미지업로드"> -->
+								</div>
+							</form>
+							<div style="margin: 0">
 								<form name="inputImg" method="POST">
-									<div style="display:flex;width:100%" class="container">
-										<div style="width:100%;display:block;margin:0 auto" class="col-md-4">
+									<div style="display: flex; width: 100%" class="container">
+										<div style="width: 100%; display: block; margin: 0 auto"
+											class="col-md-4">
 											<form action="" method="get">
 												<div style="width:100%;height:120vw;padding:9% 6% 17% 3%;overflow:hidden;background-image:url('${contextPath}/resources/img/sk(1).png'); background-repeat : no-repeat; background-size : 100% 100%;">
 													<div id="imgWrap" class="on" style="width:85%;height:390px;position:absolute;overflow:hidden;">
@@ -222,77 +251,77 @@ function nextBtnShowing(){
 																<input type="radio" name="feeling" value="sad">집의 측면에 있는 현관문</li>
 																<input type="radio" name="feeling" value="sad">특징이 없는 평범한 현관문</li>
 															</ul> -->
+
 														</div>
-														<div id="que2" class="que curQue" style="position:absolute;width:100%;">
-															<ul style="line-height: 30px" >
-																<li><span>이사람은
-																		2남자인가요? 여자인가요?</span><br> <input type="radio"
-																	name="gender" value="m">남 <input type="radio"
-																	name="gender" value="w">여</li>
-																<li><span>2이사람의 머리는
-																		큰편인가요?</span><br> <input type="radio" name="headSize"
-																	value="big">큰편 <input type="radio"
-																	name="headSize" value="middle">중간 <input
-																	type="radio" name="headSize" value="small">작음</li>
-																<li><span>2이사람의 기분은
-																		어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의
-																		기분은 어떤가요?</span><br> <input type="radio" name="feeling"
-																	value="happy">기분좋음 <input type="radio"
-																	name="feeling" value="angry">화남 <input
-																	type="radio" name="feeling" value="sad">슬픔</li>
+														<div id="que2" class="que curQue"
+															style="position: absolute; width: 100%;">
+															<ul style="line-height: 30px">
+																<li><span>이사람은 2남자인가요? 여자인가요?</span><br> <input
+																	type="radio" name="gender" value="m">남 <input
+																	type="radio" name="gender" value="w">여</li>
+																<li><span>2이사람의 머리는 큰편인가요?</span><br> <input
+																	type="radio" name="headSize" value="big">큰편 <input
+																	type="radio" name="headSize" value="middle">중간
+																	<input type="radio" name="headSize" value="small">작음</li>
+																<li><span>2이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의
+																		기분은 어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?</span><br> <input
+																	type="radio" name="feeling" value="happy">기분좋음
+																	<input type="radio" name="feeling" value="angry">화남
+																	<input type="radio" name="feeling" value="sad">슬픔</li>
 															</ul>
-														</div> 
-														<div id="que3" class="que" style="position:absolute;width:100%;left:120%;">
-															<ul style="line-height: 30px" >
-																<li><span>3이사람은
-																		남자인가요? 여자인가요?</span><br> <input type="radio"
-																	name="gender" value="m">남 <input type="radio"
-																	name="gender" value="w">여</li>
-																<li><span>3이사람의 머리는
-																		큰편인가요?</span><br> <input type="radio" name="headSize"
-																	value="big">큰편 <input type="radio"
-																	name="headSize" value="middle">중간 <input
-																	type="radio" name="headSize" value="small">작음</li>
-																<li><span>3이사람의 기분은
-																		어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의
-																		기분은 어떤가요?</span><br> <input type="radio" name="feeling"
-																	value="happy">기분좋음 <input type="radio"
-																	name="feeling" value="angry">화남 <input
-																	type="radio" name="feeling" value="sad">슬픔</li>
+														</div>
+														<div id="que3" class="que"
+															style="position: absolute; width: 100%; left: 120%;">
+															<ul style="line-height: 30px">
+																<li><span>3이사람은 남자인가요? 여자인가요?</span><br> <input
+																	type="radio" name="gender" value="m">남 <input
+																	type="radio" name="gender" value="w">여</li>
+																<li><span>3이사람의 머리는 큰편인가요?</span><br> <input
+																	type="radio" name="headSize" value="big">큰편 <input
+																	type="radio" name="headSize" value="middle">중간
+																	<input type="radio" name="headSize" value="small">작음</li>
+																<li><span>3이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의
+																		기분은 어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?</span><br> <input
+																	type="radio" name="feeling" value="happy">기분좋음
+																	<input type="radio" name="feeling" value="angry">화남
+																	<input type="radio" name="feeling" value="sad">슬픔</li>
 															</ul>
 														</div>
 													</div>
 													<div class="pagingWraper">
-														<button type="button" class="prevBtn"  onclick="prevQue();">이전</button>
+														<button type="button" class="prevBtn" onclick="prevQue();">이전</button>
 														<span class="page"></span>
 														<button type="button" class="nextBtn" onclick="nextQue();">다음</button>
 													</div>
 												</div>
-															
-									       <!-- get : 도메인쪽에 내가 입력한 것이 붙어서 서버쪽으로 가는 것 -->
-									       <!-- post: 정보은닉이 되어 서버쪽으로 가는 것 -->
-									       				
-										       			
-									       			<!-- checkbox는 name이 같아야함 -->
-									       			<!-- 여러개 선택할 수 있음 -->
-									   			</form>
-												<!-- </div> -->
+
+												<!-- get : 도메인쪽에 내가 입력한 것이 붙어서 서버쪽으로 가는 것 -->
+												<!-- post: 정보은닉이 되어 서버쪽으로 가는 것 -->
+
+
+												<!-- checkbox는 name이 같아야함 -->
+												<!-- 여러개 선택할 수 있음 -->
+											</form>
+											<!-- </div> -->
+										</div>
 									</div>
-							</div>
-							<br> 
-							<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white" id="picSend" type="button" value="다음단계로" 
-							onclick="goQuestion();"/>
-							<!-- <input class="btn btn-info"
+									<br> <input class="btn btn-info"
+										style="background-color: #FE5D37; border-color: #FE5D37; color: white"
+										id="picSend" type="button" value="다음단계로"
+										onclick="goQuestion();" />
+									<!-- <input class="btn btn-info"
 								style="background-color: #FE5D37; border-color: #FE5D37; color: white"
 								id="picSend" type="button" value="다음단계로" onclick="location.href='checkSucces.do'"> -->
-							<div id="resultView">
-								<h3 id="resultTxt"></h3>
+									<div id="resultView">
+										<h3 id="resultTxt"></h3>
+									</div>
+								</form>
 							</div>
-							</form>
 						</div>
 					</div>
 				</div>
 			</div>
+<<<<<<< HEAD
 		</div>
 		<div id="container">
         <div style="height: 93vw;" class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
@@ -309,8 +338,10 @@ function nextBtnShowing(){
           <!-- div#result -->
           <div id="result"></div>
     </div>
+=======
+>>>>>>> f4098716e67c31c60607d29268e544343cc8099e
 
-	<jsp:include page="../common/footer.jsp"></jsp:include>
+			<jsp:include page="../common/footer.jsp"></jsp:include>
 	</div>
 
 	<!-- JavaScript Libraries -->
@@ -325,6 +356,79 @@ function nextBtnShowing(){
 
 	<!-- Template Javascript -->
 	<script src="${contextPath}/resources/js/main.js"></script>
+	<script type="text/javascript">
+	
+		/* event.preventDefault(); */
+		
+		let url = 'http://192.168.56.1:9000/photo'; 
+		
+	
+/*  		const response = fetch('http://192.168.56.1:9000/photo', {
+		     method: 'POST',
+		     body: formData
+		}); */
+ 		
+		const formData = new FormData();
+ 		
+/* 		$("#btn_img_send").cilck(function(){
+ 		    console.log("getDataAjax");
+			formData.append('imgFile', imgFile.current);
+			
+ 		    // 통신방법 Case 1 . AJjax
+ 		    // - 장점 : jQuery를 통해 쉽게 구현이 가능
+ 		    // - 단점 : jQuery가 없다면 코드가 복잡하다
+ 		    
+ 		     $.ajax({
 
+ 			   url : url,
+			   type : "POST",
+			   data : formData,
+				   success : function(res){
+					   console.log("통신 성공!", res);
+				            
+			        },
+			        error : ()=>{
+			            console.log("통신 실패");
+			        }
+    
+ 		    });
+			
+		}); */
+		
+		function uploadFunction() {
+			// 임의 test, id값 쿼리스트링으로 보내기
+			var id = 'samsam'
+			var data = new FormData(form_img);
+			console.log("파일 업로드 요청");
+
+			$.ajax({
+				type: "POST",
+				enctype: 'multipart/form-data',
+				url: "http://192.168.56.1:9000/photo/"+id,
+				data: data,
+				async: false,
+				processData: false,
+				contentType: false,
+				cache: false,
+				timeout: 600000,
+			success: function(res) {
+
+					if (res =! null) {
+						console.log("파일 업로드 성공");
+						// res 출력은 true만 나옴.. 어케 받아오지..?
+						console.log(res);
+					}
+					else {
+						console.log("파일 업로드 실패");
+					}
+				},
+				error: function(e) {
+						console.log("파일 업로드 에러");
+				}
+			});
+		}
+		
+		
+	</script>
 </body>
 </html>

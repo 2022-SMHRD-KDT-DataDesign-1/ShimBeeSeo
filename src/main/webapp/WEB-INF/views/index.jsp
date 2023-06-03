@@ -12,8 +12,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
- 	
- 	<meta content="" name="keywords">
+    
+    <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
@@ -42,11 +42,9 @@
 <a href="chat">챗지피티 테스트 ㄱㄱ</a>
 <a href="javascript:GPTTest('content')"> 플라스크에 JSON 보내보기</a>
 <a href="http://localhost:5000/?id=testID1"> 쿼리스트링 테스트</a>
-
-<iframe src="http://127.0.0.1:5000/" height="500px" width="500px"></iframe>
+<a href="UserResult.do">Chart.JS 테스트</a>
 
    <div class="container-xxl bg-white p-0">
-   
 		<jsp:include page="common/header.jsp"></jsp:include>
 
         <!-- Carousel Start -->
@@ -75,7 +73,7 @@
         <!-- About Start -->
         <div class="container-xxl py-5">
             <div class="container">
-            	<div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
+               <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
                         <div class="row">
                             <div class="col-12 text-center">
                                 <img class="img-fluid w-75 rounded-circle bg-light p-3" src="${contextPath}/resources/img/home.png" alt="">
@@ -86,18 +84,18 @@
                             <div class="col-6 text-end" style="margin-top: -50px;">
                                 <img class="img-fluid w-100 rounded-circle bg-light p-3" src="${contextPath}/resources/img/person.png" alt="">
                             </div>
-					<div class="h-100 d-flex flex-column justify-content-center p-5">
-						<div class="row g-5 align-items-center">
-							<div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-								<h1 class="mb-4">HTP 검사란?</h1>
-								<p class="mb-4">집, 나무, 사람 그림을 그려서 검사하는 심리검사임</p>
-								<a class="btn btn-primary py-3 px-5" href="check.do">검사 하러
-									가기<i class="fa fa-arrow-right ms-2"></i>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
+               <div class="h-100 d-flex flex-column justify-content-center p-5">
+                  <div class="row g-5 align-items-center">
+                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <h1 class="mb-4">HTP 검사란?</h1>
+                        <p class="mb-4">집, 나무, 사람 그림을 그려서 검사하는 심리검사임</p>
+                        <a class="btn btn-primary py-3 px-5" href="check.do">검사 하러
+                           가기<i class="fa fa-arrow-right ms-2"></i>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
                 </div>
             </div>
         </div>
@@ -148,7 +146,7 @@
             </div>
         </div>
 
-	<jsp:include page="common/footer.jsp"></jsp:include>
+   <jsp:include page="common/footer.jsp"></jsp:include>
 
     </div>
 
