@@ -34,7 +34,7 @@ public class H_Scorelist {
     private Double score_h_depressed;
 
     // 대인회피 
-    private Double score_h_av_p_d;
+    private Double score_h_avpd;
 
     // 자존감 
     private Double score_h_self_esteem;

@@ -122,7 +122,6 @@
 </script>
 </head>
 <body>
-
 	<div class="container-xxl bg-white p-0">
 
 		<jsp:include page="../common/header.jsp"></jsp:include>
