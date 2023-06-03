@@ -37,6 +37,8 @@
 
     <!-- Template Stylesheet -->
     <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
+    
+    
 </head>
 <body>
  <div class="container-xxl bg-white p-0">
@@ -56,6 +58,8 @@
     <script src="${contextPath}/resources/lib/easing/easing.min.js"></script>
     <script src="${contextPath}/resources/lib/waypoints/waypoints.min.js"></script>
     <script src="${contextPath}/resources/lib/owlcarousel/owl.carousel.min.js"></script>
+    
+
 	
 	    <!-- Template Javascript -->
     <script src="${contextPath}/resources/js/main.js"></script>

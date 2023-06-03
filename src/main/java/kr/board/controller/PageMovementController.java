@@ -47,9 +47,9 @@ public class PageMovementController {
 		return "member/team";
 	}
 	
-	@GetMapping("testimonial.do")
+	@GetMapping("myPage.do")
 	public String testimonial() {
-		return "member/testimonial";
+		return "member/myPage";
 	}
 	
 	@GetMapping("loginPage.do")
@@ -67,6 +67,37 @@ public class PageMovementController {
 		return "member/ChatGPT";
 	}
 	
+	@GetMapping("check.do")
+	public String check() {
+		return "main/check";
+	}
+	
+	@GetMapping("upload.do")
+	public String upload() {
+		return "main/upload";
+	}
+	
+	@GetMapping("joinSucces.do")
+	public String joinSucces() {
+		return "member/joinSuccess";
+	}
+	
+	@GetMapping("test2.do")
+	public String test2() {
+		return "main/test2";
+	}
+	@GetMapping("checkSucces.do")
+	public String checkSucces() {
+		return "main/checkSucces";
+	}
+
+	// 김한송 개인 작업공간
+	@GetMapping("songSecret.do")
+	public String chart() {
+		return "member/songSecret";
+	}
 
 
+	
+	
 }

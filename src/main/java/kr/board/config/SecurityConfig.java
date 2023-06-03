@@ -22,6 +22,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		filter.setForceEncoding(true);
 		
 		http.addFilterBefore(filter,  CsrfFilter.class);
+		http.csrf().disable();//csrf 미적용
+		
+		
+		http.csrf().ignoringAntMatchers("http://192.168.56.1:9000/photo");
+		http.csrf().ignoringAntMatchers("/upload.do");
+		
 		
 	}
 	
@@ -30,4 +36,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		return new BCryptPasswordEncoder();
 	}
 	
+
 }
