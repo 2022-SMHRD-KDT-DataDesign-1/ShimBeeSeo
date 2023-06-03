@@ -48,7 +48,32 @@
 
 <!-- Template Stylesheet -->
 <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
+<style type="text/css">
+.flex-container {
+  display: flex;
+}
 
+.wrapper {
+  text-align: center;
+  flex-grow: 1;
+}
+.wrapper .image-box {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+}
+.wrapper .upload-btn {
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  display: inline-block;
+  cursor: pointer;
+}
+.wrapper .upload-btn input[type=file] {
+  display: none;
+}
+</style>
 </head>
 <body>
 
@@ -100,6 +125,8 @@
 												Image</span>
 										</label>
 									</div>
+									
+<!-- 								이미지 하나만 사용	
 									<div class="wrapper">
 										<h2>URL API</h2>
 										<img
@@ -108,7 +135,7 @@
 											<input id="file2" type="file" accept="image/*" /> <span>Upload
 												Image</span>
 										</label>
-									</div>
+									</div> -->
 								</div>
 								<!--미리보기 테스트 끝 -->
 
@@ -235,6 +262,27 @@
 				}
 			});
 		}
+	</script>
+	<!-- 이미지 미리보기 테스트 -->
+	<script type="text/javascript">
+	const fileDOM = document.querySelector('#file');
+	const previews = document.querySelectorAll('.image-box');
+
+	fileDOM.addEventListener('change', () => {
+	  const reader = new FileReader();
+	  reader.onload = ({ target }) => {
+	    previews[0].src = target.result;
+	  };
+	  reader.readAsDataURL(fileDOM.files[0]);
+	});
+
+	const fileDOM2 = document.querySelector('#file2');
+
+	fileDOM2.addEventListener('change', () => {
+	  const imageSrc = URL.createObjectURL(fileDOM2.files[0]);
+	  previews[1].src = imageSrc;
+	});
+	
 	</script>
 </body>
 </html>
