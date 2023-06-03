@@ -48,8 +48,33 @@
 
 <!-- Template Stylesheet -->
 <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
-
+<style>
+.que ul {padding-left:0;}
+.que ul li {list-style:none;}
+</style>
 <script>
+$(document).ready(function(){
+	//$(".page").
+	pagingSetting();
+});
+
+function pagingSetting(){
+	totalQuePage = $(".que").length;
+	curPage = $(".curQue").attr("id").substring(totalQuePage);
+	$(".page").text(curPage+"/"+totalQuePage);
+}
+
+function goQuestion(){
+	imgWrapClass = $("#imgWrap").attr("class");
+	if(imgWrapClass == "on"){
+		$("#imgWrap").attr("class","");
+		$("#imgWrap").css("right","120%");
+		$("#queWrap").css("left","");
+	}else{
+		return;
+	}
+}
+
 function prevQue(){
 	var curQue = $(".curQue");//현재 화면에 떠있는 질문 div태그의 id
 	var prevQue = $(".curQue").prev();//현재 질문의 다음질문 div태그의 id
@@ -105,36 +130,31 @@ function nextBtnShowing(){
 					<strong style="font-family: 'MaplestoryOTFBold';">질문 있어요</strong>
 				</h1>
 				<div>
-					<div style="display: block;">
+					<div>
 						<div class="uploadPhoto">
 							<div style="margin: 0 ">
 								<form name="inputImg" method="POST">
-									<div style="display: flex;" class="container">
-										<div style="display: block; margin: 0 auto" class="col-md-4">
-												<!-- <div style=" width: 30rem; height: 30rem;" id="foo2"> -->
-													<form action="" method="get">
-													<%-- <div style="position: relative;">
-														<div style="background-image: src=${contextPath}/resources/img/sk(1).png"><img class="img-bg" style="background-size: 100% 100%;" src="${contextPath}/resources/img/sk(1).png" alt="">
-															
-														</div>
+									<div style="display:flex;width:100%" class="container">
+										<div style="width:100%;display:block;margin:0 auto" class="col-md-4">
+											<form action="" method="get">
+												<div style="width:100%;height:30rem;padding:9% 6% 17% 3%;overflow:hidden;background-image:url('${contextPath}/resources/img/sk(1).png'); background-repeat : no-repeat; background-size : 100% 100%;">
+													<div id="imgWrap" class="on" style="width:85%;height:390px;position:absolute;overflow:hidden;">
+														<div style="width:100%;height:100%;border:1px solid #ccc;"><img style="width: 100%; height: 100%;" id="foo2" /></div>
 													</div>
-														
-												</div> --%>
-												<div style="width: 30rem; height: 30rem; background-image:url('${contextPath}/resources/img/sk(1).png'); background-repeat : no-repeat; background-size : 100% 100%; padding: 2rem 1.5rem;">
-													<div style="width: 26rem;height: 25rem;padding: 5rem 0.5rem;">
-														<div id="que1" class="que" style="position:absolute;width:80vw;right:100%;">
+													<div id="queWrap" class="" style="width:100%;height:22rem;position:relative;overflow:hidden;left:120%;">
+														<div id="que1" class="que" style="position:absolute;width:100%;right:120%;">
 															<ul style="line-height: 30px">
-																<li style="list-style: none;"><span>그림에 태양이 묘사되어 있나요?</span><br> 
+																<li><span>그림에 태양이 묘사되어 있나요?</span><br> 
 																<input type="radio" name="gender" value="m">태양이 반만 나와있다
 																<input type="radio" name="gender" value="w">태양이 무채색으로 표현되어 있다</li>
 																<input type="radio" name="gender" value="e">태양이 없다</li>
 																<input type="radio" name="gender" value="j">무난한 모습의 태양이다</li>
-																<li style="list-style: none;"><span>이사람의 머리는
+																<li><span>이사람의 머리는
 																		큰편인가요?</span><br> <input type="radio" name="headSize"
 																	value="big">큰편 <input type="radio"
 																	name="headSize" value="middle">중간 <input
 																	type="radio" name="headSize" value="small">작음</li>
-																<li style="list-style: none;"><span>현관문의 크기와 모양은 어떻게 묘사되었나요?</span><br> 
+																<li><span>현관문의 크기와 모양은 어떻게 묘사되었나요?</span><br> 
 																<input type="radio" name="feeling" value="happy">과하게 큰 현관문 
 																<input type="radio" name="feeling" value="angry">과하게 작은 현관문 
 																<input type="radio" name="feeling" value="sad">덧칠되어 있는 현관문 또는 잠금장치가 있는 현관문</li>
@@ -143,18 +163,18 @@ function nextBtnShowing(){
 																<input type="radio" name="feeling" value="sad">특징이 없는 평범한 현관문</li>
 															</ul>
 														</div>
-														<div id="que2" class="que curQue" style="position:absolute;width:80vw;">
+														<div id="que2" class="que curQue" style="position:absolute;width:100%;">
 															<ul style="line-height: 30px" >
-																<li style="list-style: none;"><span>이사람은
+																<li><span>이사람은
 																		2남자인가요? 여자인가요?</span><br> <input type="radio"
 																	name="gender" value="m">남 <input type="radio"
 																	name="gender" value="w">여</li>
-																<li style="list-style: none;"><span>2이사람의 머리는
+																<li><span>2이사람의 머리는
 																		큰편인가요?</span><br> <input type="radio" name="headSize"
 																	value="big">큰편 <input type="radio"
 																	name="headSize" value="middle">중간 <input
 																	type="radio" name="headSize" value="small">작음</li>
-																<li style="list-style: none;"><span>2이사람의 기분은
+																<li><span>2이사람의 기분은
 																		어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의
 																		기분은 어떤가요?</span><br> <input type="radio" name="feeling"
 																	value="happy">기분좋음 <input type="radio"
@@ -162,18 +182,18 @@ function nextBtnShowing(){
 																	type="radio" name="feeling" value="sad">슬픔</li>
 															</ul>
 														</div> 
-														<div id="que3" class="que" style="position:absolute;width:80vw;left:100%;">
+														<div id="que3" class="que" style="position:absolute;width:100%;left:120%;">
 															<ul style="line-height: 30px" >
-																<li style="list-style: none;"><span>3이사람은
+																<li><span>3이사람은
 																		남자인가요? 여자인가요?</span><br> <input type="radio"
 																	name="gender" value="m">남 <input type="radio"
 																	name="gender" value="w">여</li>
-																<li style="list-style: none;"><span>3이사람의 머리는
+																<li><span>3이사람의 머리는
 																		큰편인가요?</span><br> <input type="radio" name="headSize"
 																	value="big">큰편 <input type="radio"
 																	name="headSize" value="middle">중간 <input
 																	type="radio" name="headSize" value="small">작음</li>
-																<li style="list-style: none;"><span>3이사람의 기분은
+																<li><span>3이사람의 기분은
 																		어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의
 																		기분은 어떤가요?</span><br> <input type="radio" name="feeling"
 																	value="happy">기분좋음 <input type="radio"
@@ -182,8 +202,9 @@ function nextBtnShowing(){
 															</ul>
 														</div>
 													</div>
-													<div class="qBtnWraper" style="margin: -70px">
+													<div class="pagingWraper">
 														<button type="button" class="prevBtn"  onclick="prevQue();">이전</button>
+														<span class="page"></span>
 														<button type="button" class="nextBtn" onclick="nextQue();">다음</button>
 													</div>
 												</div>
@@ -198,9 +219,12 @@ function nextBtnShowing(){
 												<!-- </div> -->
 									</div>
 							</div>
-							<br> <input class="btn btn-info"
+							<br> 
+							<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white" id="picSend" type="button" value="다음단계로" 
+							onclick="goQuestion();"/>
+							<!-- <input class="btn btn-info"
 								style="background-color: #FE5D37; border-color: #FE5D37; color: white"
-								id="picSend" type="button" value="다음단계로" onclick="location.href='checkSucces.do'">
+								id="picSend" type="button" value="다음단계로" onclick="location.href='checkSucces.do'"> -->
 							<div id="resultView">
 								<h3 id="resultTxt"></h3>
 							</div>
