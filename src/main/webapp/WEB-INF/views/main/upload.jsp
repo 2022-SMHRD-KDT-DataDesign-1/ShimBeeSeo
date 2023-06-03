@@ -50,28 +50,31 @@
 <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
 <style type="text/css">
 .flex-container {
-  display: flex;
+	display: flex;
 }
 
 .wrapper {
-  text-align: center;
-  flex-grow: 1;
+	text-align: center;
+	flex-grow: 1;
 }
+
 .wrapper .image-box {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  margin: 20px auto;
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	display: block;
+	margin: 20px auto;
 }
+
 .wrapper .upload-btn {
-  border: 1px solid #ddd;
-  padding: 6px 12px;
-  display: inline-block;
-  cursor: pointer;
+	border: 1px solid #ddd;
+	padding: 6px 12px;
+	display: inline-block;
+	cursor: pointer;
 }
+
 .wrapper .upload-btn input[type=file] {
-  display: none;
+	display: none;
 }
 </style>
 </head>
@@ -94,10 +97,10 @@
 							<h3>
 								<strong style="font-family: 'NEXON Lv1 Gothic OTF'">사람</strong>
 							</h3>
-							<form method="POST" enctype="multipart/form-data" id="form_img">
+							<%-- <form method="POST" enctype="multipart/form-data" id="form_img">
 								<!-- <form action="http://192.168.56.1:9000/photo" method="POST" enctype="multipart/form-data"> -->
 								<!-- <form action="imgUpload.do" method="POST" enctype="multipart/form-data"> -->
-								<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> --%>
+								<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 								<div style="display: block; margin: 0 auto" class="col-md-4">
 									<div style="margin-bottom: 1rem;" class="custom-file">
 										<input type="file" name="file" id="imageInput"
@@ -112,21 +115,23 @@
 									<!-- <input id="btn_img_send" class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white"
 								type="submit" value="이미지업로드"> -->
 								</div>
+							</form> --%>
 
 
-								<!--미리보기 테스트 -->
+							<!--미리보기 테스트 -->
+							<form method="POST" enctype="multipart/form-data" id="form_img">
 								<div class="flex-container">
 									<div class="wrapper">
 										<h2>FileReader</h2>
 										<img
 											src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg"
 											class="image-box" /> <label for="file" class="upload-btn">
-											<input id="file" type="file" accept="image/*" /> <span>Upload
+											<input id="file" name="file" type="file" accept="image/*" /> <span>Upload
 												Image</span>
 										</label>
 									</div>
-									
-<!-- 								이미지 하나만 사용	
+
+		<!-- 	============================= 이미지 하나만 사용	======================================
 									<div class="wrapper">
 										<h2>URL API</h2>
 										<img
@@ -137,13 +142,10 @@
 										</label>
 									</div> -->
 								</div>
+								<!-- 미리보기 이후 파일 업로드하기 -->
+								<button type="button" onclick="uploadFunction();"
+									class="form-control btn btn-primary" style="width: 150px">파일업로드</button>
 								<!--미리보기 테스트 끝 -->
-
-
-
-
-
-
 
 
 							</form>
@@ -206,53 +208,32 @@
 
 		const formData = new FormData();
 
-		/* 		$("#btn_img_send").cilck(function(){
-		 console.log("getDataAjax");
-		 formData.append('imgFile', imgFile.current);
-		
-		 // 통신방법 Case 1 . AJjax
-		 // - 장점 : jQuery를 통해 쉽게 구현이 가능
-		 // - 단점 : jQuery가 없다면 코드가 복잡하다
-		
-		 $.ajax({
-
-		 url : url,
-		 type : "POST",
-		 data : formData,
-		 success : function(res){
-		 console.log("통신 성공!", res);
-		
-		 },
-		 error : ()=>{
-		 console.log("통신 실패");
-		 }
-		
-		 });
-		
-		 }); */
-
+/* =========================이미지 모델에게 확인 요청 ================================= */
 		function uploadFunction() {
 			// 임의 test, id값 쿼리스트링으로 보내기
 			var id = 'samsam'
 			var data = new FormData(form_img);
 			console.log("파일 업로드 요청");
 
+			/* async : false -> 비동기 동기로 변경, 다만 값 받아오기 전에 페이지 이동해 버리면 값 못받고 넘어감!!
+								주의하자! */
 			$.ajax({
 				type : "POST",
 				enctype : 'multipart/form-data',
 				url : "http://192.168.56.1:9000/photo/" + id,
 				data : data,
-				async : false,
 				processData : false,
 				contentType : false,
 				cache : false,
 				timeout : 600000,
-				success : function(res) {
+				success : function(items) {
 
 					if (res = !null) {
 						console.log("파일 업로드 성공");
 						// res 출력은 true만 나옴.. 어케 받아오지..?
-						console.log(res);
+						console.log(items);
+						// 값 받아와서 히든태그에 집어 넣기!!
+						// null값 체크해서 페이지 이동 막아줘야 함
 					} else {
 						console.log("파일 업로드 실패");
 					}
@@ -263,7 +244,7 @@
 			});
 		}
 	</script>
-	<!-- 이미지 미리보기 테스트 -->
+	<!-- 이미지 미리보기 처리 -->
 	<script type="text/javascript">
 	const fileDOM = document.querySelector('#file');
 	const previews = document.querySelectorAll('.image-box');
@@ -276,6 +257,7 @@
 	  reader.readAsDataURL(fileDOM.files[0]);
 	});
 
+	/* 만약 이미지 두개 처리 할 거라면 */
 	const fileDOM2 = document.querySelector('#file2');
 
 	fileDOM2.addEventListener('change', () => {

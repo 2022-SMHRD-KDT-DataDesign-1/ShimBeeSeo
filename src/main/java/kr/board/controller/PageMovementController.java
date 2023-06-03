@@ -47,9 +47,9 @@ public class PageMovementController {
 		return "member/team";
 	}
 	
-	@GetMapping("testimonial.do")
+	@GetMapping("myPage.do")
 	public String testimonial() {
-		return "member/testimonial";
+		return "member/myPage";
 	}
 	
 	@GetMapping("loginPage.do")

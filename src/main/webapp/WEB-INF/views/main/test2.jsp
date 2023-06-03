@@ -131,9 +131,38 @@
 		}
 	}
 </script>
+<!-- 미리보기 이미지 조정값 -->
+<style type="text/css">
+.flex-container {
+	display: flex;
+}
+
+.wrapper {
+	text-align: center;
+	flex-grow: 1;
+}
+
+.wrapper .image-box {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	display: block;
+	margin: 20px auto;
+}
+
+.wrapper .upload-btn {
+	border: 1px solid #ddd;
+	padding: 6px 12px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.wrapper .upload-btn input[type=file] {
+	display: none;
+}
+</style>
 </head>
 <body>
-
 	<div class="container-xxl bg-white p-0">
 
 		<jsp:include page="../common/header.jsp"></jsp:include>
@@ -149,23 +178,35 @@
 					<div>
 						<div class="uploadPhoto">
 							<form method="POST" enctype="multipart/form-data" id="form_img">
-								<!-- <form action="http://192.168.56.1:9000/photo" method="POST" enctype="multipart/form-data"> -->
-								<!-- <form action="imgUpload.do" method="POST" enctype="multipart/form-data"> -->
-								<%-- <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/> --%>
-								<div style="display: block; margin: 0 auto" class="col-md-4">
-									<div style="margin-bottom: 1rem;" class="custom-file">
-										<input type="file" name="file" id="imageInput"
-											accept="image/*">
-										<!-- <input previewnum="foo2" type="file" class="custom-file-input" id="imgInp2" name="imgInp2"> -->
-										<!-- <label class="custom-file-label" for="imgInp2">Choose
-									file</label> -->
+							
+								<div class="flex-container">
+									<div class="wrapper">
+										<h2>FileReader</h2>
+										<img
+											src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg"
+											class="image-box" /> <label for="file" class="upload-btn">
+											<input id="file" name="file" type="file" accept="image/*" /> <span>Upload
+												Image</span>
+										</label>
 									</div>
-									<br>
-									<button type="button" onclick="uploadFunction();"
-										class="form-control btn btn-primary">파일업로드</button>
-									<!-- <input id="btn_img_send" class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white"
-								type="submit" value="이미지업로드"> -->
+
+		<!-- 	============================= 이미지 하나만 사용	======================================
+									<div class="wrapper">
+										<h2>URL API</h2>
+										<img
+											src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg"
+											class="image-box" /> <label for="file2" class="upload-btn">
+											<input id="file2" type="file" accept="image/*" /> <span>Upload
+												Image</span>
+										</label>
+									</div> -->
 								</div>
+								<!-- 미리보기 이후 파일 업로드하기 -->
+								<button type="button" onclick="uploadFunction();"
+									class="form-control btn btn-primary" style="width: 150px">파일업로드</button>
+								<!--미리보기 테스트 끝 -->
+
+							
 							</form>
 							<div style="margin: 0">
 								<form name="inputImg" method="POST">
@@ -252,6 +293,104 @@
 																<input type="radio" name="feeling" value="sad">특징이 없는 평범한 현관문</li>
 															</ul> -->
 
+													<!-- 다중 선택가능한 선택지 class="multi" -->
+													<div id="queWrap" class=""
+														style="width: 100%; height: 22rem; position: relative; overflow: hidden; left: 120%;">
+														<div id="que1" class="que"
+															style="position: absolute; width: 100%; right: 120%;">
+															<ul style="line-height: 30px">
+																<li><span>1. 그림의 전체적인 분위기는 어떤가요?</span><br>
+																<input type="radio" name="mood" value="1">보통
+																<input type="radio" name="mood" value="2">조금 부정적
+																<input type="radio" name="mood" value="3">완전 부정적
+																
+															</ul>
+															<ul style="line-height: 30px">
+																<li><span>2. 종이의 전체 면적에서 집이 얼마나 차지하나요?</span><br>
+																<input type="radio" name="size" value="4">보통(중앙에서 2/3 정도 차지)
+																<input type="radio" name="size" value="5">지나치게 큼
+																<input type="radio" name="size" value="6">지나치게 작음
+																<input type="radio" name="size" value="7">파손 됨(절단된 집)
+																
+															</ul>
+															<ul style="line-height: 30px">
+																<li><span>3. 그림에서 집은 어느쪽에 위치해 있나요?</span><br>
+																<input type="radio" name="position" value="8">좌측
+																<input type="radio" name="position" value="9">우측
+																<input type="radio" name="position" value="10">하단
+																<input type="radio" name="position" value="11">중앙
+																
+															</ul>
+															<ul style="line-height: 30px">
+																<li><span>4. 어떤 시점으로 그림이 그려졌나요?</span><br>
+																<input type="radio" name="view" value="12">윗면(위에서 내려다보는)
+																<input type="radio" name="view" value="13">아랫면(아래에서 올려다보는)
+																<input type="radio" name="view" value="14">정면면(정면에서 바라보는)
+																
+															</ul>
+															<ul style="line-height: 30px" class="multi">
+																<li><span>5. 지붕은 어떻게 묘사되었나요?</span><br>
+																<input type="radio" name="roof" value="15">과도하게 큼, 강한선 묘사
+																<input type="radio" name="roof" value="16">과도한 무늬
+																<input type="radio" name="roof" value="17">뾰족함 또는 세모 모양
+																<input type="radio" name="roof" value="18">지붕을 덧칠 또는 뭉개는 채색
+																<input type="radio" name="roof" value="19">평범한 지붕
+																
+															</ul>
+															<ul style="line-height: 30px">
+																<li><span>6. 집을 구성하는 벽의 모습은 어떤가요?</span><br>
+																<input type="radio" name="wall" value="20">허술한 벽
+																<input type="radio" name="wall" value="21">지나치게 견고한 벽돌이나 벽면
+																<input type="radio" name="wall" value="22">평범한 벽
+																
+															</ul>
+															<ul style="line-height: 30px" class="multi">
+																<li><span>7. 현관문의 크기와 모양은 어떻게 묘사되었나요?</span><br>
+																<input type="radio" name="door" value="23">과하게 큼
+																<input type="radio" name="door" value="24">과하게 작음
+																<input type="radio" name="door" value="25">집의 측면에 위치
+																<input type="radio" name="door" value="26">덧칠된 또는 잠금장치가 있는 현관문
+																<input type="radio" name="door" value="27">없음
+																<input type="radio" name="door" value="28">특징 없는 평범한 현관문
+																
+															</ul>
+															<ul style="line-height: 30px" class="multi">
+																<li><span>8. 창문은 어떤 특징이 있나요?</span><br>
+																<input type="radio" name="window" value="29">없음
+																<input type="radio" name="window" value="30">3개 이상
+																<input type="radio" name="window" value="31">커튼으로 가려짐
+																<input type="radio" name="window" value="32">2층 이상의 지붕위에만 있음
+																
+															</ul>
+															<ul style="line-height: 30px">
+																<li><span>9. 굴뚝의 모습에 특징이 있나요?</span><br>
+																<input type="radio" name="chimney" value="33">없음
+																<input type="radio" name="chimney" value="34">있음
+																<input type="radio" name="chimney" value="35">연기나는 굴뚝
+																
+															</ul>
+															<ul style="line-height: 30px" class="multi">
+																<li><span>10. 그림에 태양이 묘사되어 있나요?</span><br>
+																<input type="radio" name="sun" value="36">반만 나온 태양
+																<input type="radio" name="sun" value="37">무채색 태양
+																<input type="radio" name="sun" value="38">없음
+																<input type="radio" name="sun" value="39">평범한 태양
+																
+															</ul>
+															<ul style="line-height: 30px" class="multi">
+																<li><span>11. 그림에 묘사된 다른 모습들이 있나요?</span><br>
+																<input type="radio" name="etc" value="40">산속 또는 숲속 집
+																<input type="radio" name="etc" value="41">울타리가 있거나 울타리같은 지면
+																<input type="radio" name="etc" value="42">연못, 우물, 비 표현
+																<input type="radio" name="etc" value="43">벽 등을 통해 투시되는 집 내부
+																<input type="radio" name="etc" value="44">의인화된 집
+																<input type="radio" name="etc" value="45">음영, 그림자 표현 또는 지웠다 그리기를 반복한 흔적
+																<input type="radio" name="etc" value="46">평면도형태의 집
+																<input type="radio" name="etc" value="47">덧칠된 채색
+																<input type="radio" name="etc" value="48">넓고 자세한 선으로 강조된 지면선
+																<input type="radio" name="etc" value="49">해당되는 특징 없음
+																
+															</ul>
 														</div>
 														<div id="que2" class="que curQue"
 															style="position: absolute; width: 100%;">
@@ -357,78 +496,74 @@
 	<!-- Template Javascript -->
 	<script src="${contextPath}/resources/js/main.js"></script>
 	<script type="text/javascript">
-	
 		/* event.preventDefault(); */
-		
-		let url = 'http://192.168.56.1:9000/photo'; 
-		
-	
-/*  		const response = fetch('http://192.168.56.1:9000/photo', {
-		     method: 'POST',
-		     body: formData
-		}); */
- 		
-		const formData = new FormData();
- 		
-/* 		$("#btn_img_send").cilck(function(){
- 		    console.log("getDataAjax");
-			formData.append('imgFile', imgFile.current);
-			
- 		    // 통신방법 Case 1 . AJjax
- 		    // - 장점 : jQuery를 통해 쉽게 구현이 가능
- 		    // - 단점 : jQuery가 없다면 코드가 복잡하다
- 		    
- 		     $.ajax({
 
- 			   url : url,
-			   type : "POST",
-			   data : formData,
-				   success : function(res){
-					   console.log("통신 성공!", res);
-				            
-			        },
-			        error : ()=>{
-			            console.log("통신 실패");
-			        }
-    
- 		    });
-			
-		}); */
-		
+		let url = 'http://192.168.56.1:9000/photo';
+
+		/*  		const response = fetch('http://192.168.56.1:9000/photo', {
+		 method: 'POST',
+		 body: formData
+		 }); */
+
+		const formData = new FormData();
+
+/* =========================이미지 모델에게 확인 요청 ================================= */
 		function uploadFunction() {
 			// 임의 test, id값 쿼리스트링으로 보내기
 			var id = 'samsam'
 			var data = new FormData(form_img);
 			console.log("파일 업로드 요청");
 
+			/* async : false -> 비동기 동기로 변경, 다만 값 받아오기 전에 페이지 이동해 버리면 값 못받고 넘어감!!
+								주의하자! */
 			$.ajax({
-				type: "POST",
-				enctype: 'multipart/form-data',
-				url: "http://192.168.56.1:9000/photo/"+id,
-				data: data,
-				async: false,
-				processData: false,
-				contentType: false,
-				cache: false,
-				timeout: 600000,
-			success: function(res) {
+				type : "POST",
+				enctype : 'multipart/form-data',
+				url : "http://192.168.56.1:9000/photo/" + id,
+				data : data,
+				processData : false,
+				contentType : false,
+				cache : false,
+				timeout : 600000,
+				success : function(items) {
 
-					if (res =! null) {
+					if (res = !null) {
 						console.log("파일 업로드 성공");
 						// res 출력은 true만 나옴.. 어케 받아오지..?
-						console.log(res);
-					}
-					else {
+						console.log(items);
+						// 값 받아와서 히든태그에 집어 넣기!!
+						// null값 체크해서 페이지 이동 막아줘야 함
+					} else {
 						console.log("파일 업로드 실패");
 					}
 				},
-				error: function(e) {
-						console.log("파일 업로드 에러");
+				error : function(e) {
+					console.log("파일 업로드 에러");
 				}
 			});
 		}
-		
-		
+	</script>
+	<!-- 이미지 미리보기 처리 -->
+	<script type="text/javascript">
+	const fileDOM = document.querySelector('#file');
+	const previews = document.querySelectorAll('.image-box');
+
+	fileDOM.addEventListener('change', () => {
+	  const reader = new FileReader();
+	  reader.onload = ({ target }) => {
+	    previews[0].src = target.result;
+	  };
+	  reader.readAsDataURL(fileDOM.files[0]);
+	});
+
+	/* 만약 이미지 두개 처리 할 거라면 */
+	const fileDOM2 = document.querySelector('#file2');
+
+	fileDOM2.addEventListener('change', () => {
+	  const imageSrc = URL.createObjectURL(fileDOM2.files[0]);
+	  previews[1].src = imageSrc;
+	});
+	
 	</script>
 </body>
 </html>
