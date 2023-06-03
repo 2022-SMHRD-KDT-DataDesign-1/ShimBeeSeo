@@ -117,7 +117,6 @@ function nextBtnShowing(){
 </script>
 </head>
 <body>
-
 	<div class="container-xxl bg-white p-0">
 
 		<jsp:include page="../common/header.jsp"></jsp:include>
@@ -143,10 +142,13 @@ function nextBtnShowing(){
 													</div>
 													<div id="queWrap" class="" style="width:100%;height:22rem;position:relative;overflow:hidden;left:120%;">
 														<div id="que1" class="que" style="position:absolute;width:100%;right:120%;">
+															<c:forEach var="vo" items=${list} varStatus="s">
+																
+															</c:forEach>
 															<ul style="line-height: 30px">
-																<li><span>그림에 태양이 묘사되어 있나요?</span><br> 
-																<input type="radio" name="gender" value="m">태양이 반만 나와있다
-																<input type="radio" name="gender" value="w">태양이 무채색으로 표현되어 있다</li>
+																<li><span>1. 그림의 전체적인 분위기는 어떤가요?</span><br> 
+																<input type="radio" name="gender" value="m">보통
+																<input type="radio" name="gender" value="w">조금 부정적</li>
 																<input type="radio" name="gender" value="e">태양이 없다</li>
 																<input type="radio" name="gender" value="j">무난한 모습의 태양이다</li>
 																<li><span>이사람의 머리는
