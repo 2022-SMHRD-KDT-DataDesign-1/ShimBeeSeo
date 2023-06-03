@@ -1,3 +1,4 @@
+<%@page import="kr.board.entity.User_Result"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -43,44 +44,23 @@
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	<!-- 본문 내용 시작 -->
 	
-	 <!-- Page Header End -->
-        <div class="container-xxl py-5 page-header position-relative mb-5">
-            <div class="container py-5">
-                <h1 class="display-2 text-white animated slideInDown mb-4">내 정보^오^</h1>
-                <nav aria-label="breadcrumb animated slideInDown">
-       
-                </nav>
-            </div>
-        </div>
-        <!-- Page Header End -->
+	
 
-
-        <!-- Testimonial Start -->
-        <div class="container-xxl py-5">
+	<section class="about-section section-padding" id="section_2">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">님 자녀들 검사결과</h1>
-                    <p>보고 잘키우셈</p>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <!-- 검사결과 N개 생성 for문 여기에 적용 -->
-                    <div class="testimonial-item bg-light rounded p-5">
-                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
-                            <div class="ps-3">
-                                <h3 class="mb-1">Client Name</h3>
-                                <span>Profession</span>
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <div class="pb-5 mb-5">
+                            <div class="section-title-wrap mb-4">
+                                <h4 class="section-title text-center">검사 결과</h4>
                             </div>
-                        </div>
-                        <p class="fs-5">Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
-                    </div>
-                 <!-- for문 끝 -->   
- 					
- 					
- 					<!-- test용 시작-->
- 					<div class="testimonial-item bg-light rounded p-5">
-	<div style="width: 900px; height: 900px;">
+                            
+    <div class="testimonial-item bg-light rounded p-5">
+	<div style="width: 100%; height: 100%;">
 	<!--차트가 그려질 부분-->
 	<canvas id="myChart"></canvas>
+	
 	<input type="hidden" id="result_aggressive" value="${result.get(0).result_aggressive}">
 	<input type="hidden" id="result_social_anxiety" value="${result.get(0).result_social_anxiety}">
 	<input type="hidden" id="result_depressed" value="${result.get(0).result_depressed}">
@@ -92,15 +72,185 @@
 	<input type="hidden" id="result_regression" value="${result.get(0).result_regression}">
 </div>
 
-                        <p class="fs-5">Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
+                        <p class="fs-5"> 아프다 이 아이</p>
                     </div>
- 					<!-- test용 끝 -->
- 					
-                   
+
+
+                        </div>
+                    </div>
+
+ 				<div class="col-lg-8 col-12 mx-auto">
+                        <div class="pb-5 mb-5">
+                            <div class="section-title-wrap mb-4">
+                                <h4 class="section-title text-center">검사 내용</h4>
+                            </div>
+                            
+	<!-- test용 시작-->
+    <div class="testimonial-item bg-light rounded p-5">
+                        <p class="fs-5"> 검사 결과 텍스트 들어갈 곳!!!!!!!!!!!!!!!!! </p>
+</div>
+                    </div>
+                        </div>
+                        
+                         <div class="col-lg-8 col-12 mx-auto">
+                        <div class="pb-5 mb-5">
+                            <div class="section-title-wrap mb-4">
+                                <h4 class="section-title text-center">지도 방향</h4>
+                            </div>
+                            
+    <div class="testimonial-item bg-light rounded p-5">
+
+                        <p class="fs-5"> 지피티의 답이 들어가야함!!!!!!!!!!</p>
+                    </div>
+
+
+                        </div>
+                    </div>
+                        
+                    </div>
+
+
+
+                    <div class="col-lg-12 col-12">
+                        <div class="section-title-wrap mb-5">
+                            <h4 class="section-title">요건 어떠심?</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="team-thumb bg-white shadow-lg">
+                            <%-- <img src="${contextPath}/resources/img/g.png"
+                                class="about-image img-fluid" alt="">
+ --%>						
+ 							<h4 class="mb-2">
+                                    1번
+                                </h4><br>
+                            <div class="team-info">
+                                
+                                    <img src="${contextPath}/resources/img/oh.png" style="width: 100%; height: auto;" class="verified-image img-fluid" alt="">
+                                
+<!-- 
+                                <span class="badge">이거슨 무엇일까?</span>
+
+                                <span class="badge">Fashion</span> -->
+                            </div>
+
+                            <!-- <div class="social-share">
+                                <ul class="social-icon">
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-twitter"></a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-facebook"></a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-pinterest"></a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="team-thumb bg-white shadow-lg">
+                            <!-- <img src="images/profile/handsome-asian-man-listening-music-through-headphones.jpg"
+                                class="about-image img-fluid" alt=""> -->
+
+                            <div class="team-info">
+                                <h4 class="mb-2">
+                                    2번
+                                 </h4><br>
+                                 <img src="${contextPath}/resources/img/why.png" style="width: 100%; height: auto;" class="verified-image img-fluid" alt="">
+
+                                <!-- <span class="badge">Creative</span>
+
+                                <span class="badge">Design</span> -->
+                            </div>
+
+                            <!-- <div class="social-share">
+                                <ul class="social-icon">
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-twitter"></a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-facebook"></a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-pinterest"></a>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 mb-md-0">
+                        <div class="team-thumb bg-white shadow-lg">
+                            <img src="images/profile/smart-attractive-asian-glasses-male-standing-smile-with-freshness-joyful-casual-blue-shirt-portrait-white-background.jpg"
+                                class="about-image img-fluid" alt="">
+
+                            <div class="team-info">
+                                <h4 class="mb-2">
+                                    3번
+                                    <img src="images/verified.png" class="verified-image img-fluid" alt="">
+                                </h4>
+
+                                <span class="badge">Education</span>
+                            </div>
+
+                            <div class="social-share">
+                                <ul class="social-icon">
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-linkedin"></a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-whatsapp"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+
+                   <%--  <div class="col-lg-3 col-md-6 col-12">
+                        <div class="team-thumb bg-white shadow-lg">
+                            <img src="images/profile/smiling-business-woman-with-folded-hands-against-white-wall-toothy-smile-crossed-arms.jpg"
+                                class="about-image img-fluid" alt="">
+
+                            <div class="team-info">
+                                <h4 class="mb-2">
+                                    4번
+                                    <img src="${contextPath}/resources/img/g.png" class="verified-image img-fluid" alt="">
+                                </h4>
+
+                                <span class="badge">Storytelling</span>
+
+                                <span class="badge">Business</span>
+                            </div>
+
+                            <div class="social-share">
+                                <ul class="social-icon">
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-twitter"></a>
+                                    </li>
+
+                                    <li class="social-icon-item">
+                                        <a href="#" class="social-icon-link bi-facebook"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
+            </div> --%>
+        </section>
+ 					
+ 		
+
 	
 	
 	<!-- 본문 내용 끝 -->
@@ -142,7 +292,7 @@
                     ],
                     datasets: [
                         { //데이터
-                            label: 'test1', //차트 제목
+                            label: '심리검사 결과', //차트 제목
                             fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
                             data: [
                             	result_aggressive,result_social_anxiety,result_depressed,result_avpd,result_self_esteem,result_emotional_instability,result_deprivation,result_inferiority,result_regression //x축 label에 대응되는 데이터 값
