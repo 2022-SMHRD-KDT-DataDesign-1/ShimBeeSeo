@@ -29,4 +29,10 @@ public class ScoreListController {
 		return "test2";
 	};
 	
+	@GetMapping("ScoreResult.do")
+	public String ScoreResult(Model model) {
+		
+		return "";
+	}
+	
 }
