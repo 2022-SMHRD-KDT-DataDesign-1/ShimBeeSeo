@@ -70,7 +70,7 @@
 		$(".page").text(curPage + "/" + totalQuePage);
 	}
 
-	function goQuestion() {
+	/* function goQuestion() {
 		imgWrapClass = $("#imgWrap").attr("class");
 		if (imgWrapClass == "on") {
 			$("#imgWrap").attr("class", "");
@@ -79,7 +79,7 @@
 		} else {
 			return;
 		}
-	}
+	} */
 
 	function prevQue() {
 		var curQue = $(".curQue");//현재 화면에 떠있는 질문 div태그의 id
@@ -122,7 +122,7 @@
 	}
 </script>
 <!-- 미리보기 이미지 조정값 -->
-<style type="text/css">
+<!-- <style type="text/css">
 .flex-container {
 	display: flex;
 }
@@ -150,7 +150,7 @@
 .wrapper .upload-btn input[type=file] {
 	display: none;
 }
-</style>
+</style> -->
 </head>
 <body>
 	<div class="container-xxl bg-white p-0">
@@ -204,12 +204,12 @@
 										<div style="width: 100%; display: block; margin: 0 auto"
 											class="col-md-4">
 											<form action="" method="get">
-												<div style="width:100%;height:120vw;padding:9% 6% 17% 3%;overflow:hidden;background-image:url('${contextPath}/resources/img/sk(1).png'); background-repeat : no-repeat; background-size : 100% 100%;">
-													<div id="imgWrap" class="on" style="width:85%;height:390px;position:absolute;overflow:hidden;">
+												<div style="width:100%;height:auto; min-height:700px;position:relative;overflow:hidden;background-image:url('${contextPath}/resources/img/sk(1).png'); background-repeat : no-repeat; background-size : 100% 100%;">
+													<!-- <div id="imgWrap" class="on" style="width:85%;height:390px;position:absolute;overflow:hidden;">
 														<div style="width:100%;height:100%;border:1px solid #ccc;"><img style="width: 100%; height: 100%;" id="foo2" /></div>
-													</div>
-													<div id="queWrap" class="" style="width:100%;height:96vw;position:relative;overflow:hidden;left:120%;">
-														<div id="que1" class="que" style="position:absolute;width:100%;right:120%;">
+													</div> -->
+													<div id="queWrap" class="" style="width:100%;height:auto;position:relative;padding:25px 40px 90px 18px;">
+														<div id="que1" class="que" style="width:100%;">
 															<div class="btn-group-vertical" role="group"
 																aria-label="Vertical radio toggle button group">
 																<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">1. 그림의 전체적인 분위기는 어떤가요?</strong>
@@ -249,7 +249,7 @@
 															</ul> -->
 
 													<!-- 다중 선택가능한 선택지 class="multi" -->
-													<div id="queWrap" class=""
+													<!-- <div id="queWrap" class=""
 														style="width: 100%; height: 22rem; position: relative; overflow: hidden; left: 120%;">
 														<div id="que1" class="que"
 															style="position: absolute; width: 100%; right: 120%;">
@@ -381,12 +381,8 @@
 																	<input type="radio" name="feeling" value="sad">슬픔</li>
 															</ul>
 														</div>
-													</div>
-													<div class="pagingWraper">
-														<button type="button" class="prevBtn" onclick="prevQue();">이전</button>
-														<span class="page"></span>
-														<button type="button" class="nextBtn" onclick="nextQue();">다음</button>
-													</div>
+													</div> -->
+													
 												</div>
 
 												<!-- get : 도메인쪽에 내가 입력한 것이 붙어서 서버쪽으로 가는 것 -->
@@ -395,10 +391,65 @@
 
 												<!-- checkbox는 name이 같아야함 -->
 												<!-- 여러개 선택할 수 있음 -->
-											</form>
-											<!-- </div> -->
+												<div id="que2" class="que curQue"
+															style="position: absolute; width: 100%; left: 120%">
+															<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">2. 종이의 전체 면적에서 집이 얼마나 차지하나요?</strong>
+																<input type="radio" class="btn-check" name="vbtn-radio"
+																	id="vbtn-radio1" autocomplete="off" checked> 
+																	<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;"
+																	class="btn btn-outline-danger" for="vbtn-radio1">보통</label>
+																	<input type="radio" class="btn-check"
+																	name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+																<label
+																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
+																	class="btn btn-outline-danger" for="vbtn-radio2">지나치게 큼</label>
+																<input type="radio" class="btn-check"
+																	name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+																<label
+																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
+																	class="btn btn-outline-danger" for="vbtn-radio3">지나치게 작음</label> 
+																<input type="radio" class="btn-check"
+																	name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+																<label
+																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
+																	class="btn btn-outline-danger" for="vbtn-radio3">파손 됨(절단된 집)</label> 
+												</div>
+												
+												<div id="que3" class="que"
+															style="position: absolute; width: 100%; left: 120%;">
+															<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">3. 그림에서 집은 어느쪽에 위치해 있나요?</strong>
+																<input type="radio" class="btn-check" name="vbtn-radio"
+																	id="vbtn-radio1" autocomplete="off" checked> 
+																	<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;"
+																	class="btn btn-outline-danger" for="vbtn-radio1">좌측</label>
+																	<input type="radio" class="btn-check"
+																	name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+																<label
+																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
+																	class="btn btn-outline-danger" for="vbtn-radio2">우측</label>
+																<input type="radio" class="btn-check"
+																	name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+																<label
+																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
+																	class="btn btn-outline-danger" for="vbtn-radio3">하단</label> 
+																<input type="radio" class="btn-check"
+																	name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+																<label
+																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
+																	class="btn btn-outline-danger" for="vbtn-radio3">중앙</label> 
+												</div>
+												
+											</div>
+											<div class="pagingWraper" style="position:absolute;left:35%;bottom:0;padding-bottom:60px">
+												<button type="button" class="prevBtn" onclick="prevQue();">이전</button>
+												<span class="page"></span>
+												<button type="button" class="nextBtn" onclick="nextQue();">다음</button>
+											</div>
 										</div>
-									</div>
+									</form>
+											<!-- </div> -->
+								</div>
+							</div>
 									<br> <input class="btn btn-info"
 										style="background-color: #FE5D37; border-color: #FE5D37; color: white"
 										id="picSend" type="button" value="다음단계로"
@@ -461,13 +512,12 @@
 /* =========================이미지 모델에게 확인 요청 ================================= */
 		function uploadFunction() {
 			// 임의 test, id값 쿼리스트링으로 보내기
-			var id = 'samsam'
+			var id = 'samsam';
 			var data = new FormData(form_img);
 			console.log("파일 업로드 요청");
-
-			/* async : false -> 비동기 동기로 변경, 다만 값 받아오기 전에 페이지 이동해 버리면 값 못받고 넘어감!!
-								주의하자! */
-			$.ajax({
+			saveImageBeforeUpload(data);
+			/* async : false -> 비동기 동기로 변경, 다만 값 받아오기 전에 페이지 이동해 버리면 값 못받고 넘어감!! 주의하자! */
+			/* $.ajax({
 				type : "POST",
 				enctype : 'multipart/form-data',
 				url : "http://192.168.56.1:9000/photo/" + id,
@@ -491,8 +541,34 @@
 				error : function(e) {
 					console.log("파일 업로드 에러");
 				}
+			}); */
+		}
+		
+		function saveImageBeforeUpload(data){
+			var csrfHeaderName = "${_csrf.headerName}";
+			var csrfTokenValue = "${_csrf.token}";
+			$.ajax({
+				type:"POST",
+				enctype : 'multipart/form-data',
+				url : "saveImage.do",
+				data : data,
+				async : false,
+				processData : false,
+				contentType : false,
+				beforeSend : function(xhr){
+	    			 xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+	    		 },
+				success : function(data){
+					if(data == "success"){
+						alert(data);
+					}
+				},
+				error : function(e) {
+					console.log("파일 저장 에러");
+				}
 			});
 		}
+		
 	</script>
 	<!-- 이미지 미리보기 처리 -->
 	<script type="text/javascript">
