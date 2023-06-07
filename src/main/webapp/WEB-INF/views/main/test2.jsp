@@ -49,24 +49,27 @@
 <!-- Template Stylesheet -->
 <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
 <style>
-.que ul {padding-left:0;}
-.que ul li {list-style:none;}
 
 @font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'GmarketSansMedium';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 </style>
 <script>
 	$(document).ready(function() {
 		//$(".page").
 		pagingSetting();
+		$("#queWrap").css("display","");
 	});
 
 	function pagingSetting() {
-		totalQuePage = $(".que").length;
-		curPage = $(".curQue").attr("id").substring(totalQuePage);
+		var totalQuePage = $(".que").length;
+		var curPageId = $(".curQue").attr("id");
+		var curPage = curPageId.substring(curPageId.indexOf("que")+3);
 		$(".page").text(curPage + "/" + totalQuePage);
 	}
 
@@ -84,24 +87,26 @@
 	function prevQue() {
 		var curQue = $(".curQue");//현재 화면에 떠있는 질문 div태그의 id
 		var prevQue = $(".curQue").prev();//현재 질문의 다음질문 div태그의 id
-		$('.prevBtn').css("display", "");
+		//$('.prevBtn').css("display", "");
 		curQue.attr("class", "que");
-		curQue.css("left", "100%");
+		curQue.css("display", "none");
 		prevQue.attr("class", "curQue que");
-		prevQue.css("right", "");
+		prevQue.css("display", "");
 		prevBtnShowing();
 		nextBtnShowing();
+		pagingSetting();
 	}
 	function nextQue() {
 		var curQue = $(".curQue");//현재 화면에 떠있는 질문 div태그의 id
 		var nextQue = $(".curQue").next();//현재 질문의 다음질문 div태그의 id
-		$('.prevBtn').css("display", "");
-		curQue.attr("class", "que");
-		curQue.css("right", "100%");
+		//$('.prevBtn').css("display", "");//.css("display","")와 같이 빈란으로 속성을 적용하는 경우 이전 상태로 복원하는 것임(이전 상태에 아무것도 하지않은 상태면 css자체에서나 브라우저에서 자체적으로 지정하는 css 기본값으로 적용될 수도있음)
+		curQue.attr("class", "que");//요소에 class 속성 값으로 que를 대입한다 = 값이 que인 class 속성을 추가한다.
+		curQue.css("display", "none");
 		nextQue.attr("class", "curQue que");
-		nextQue.css("left", "");
-		prevBtnShowing()
+		nextQue.css("display", "");
+		prevBtnShowing();
 		nextBtnShowing();
+		pagingSetting();
 	}
 	function prevBtnShowing() {
 		curId = $(".curQue").attr("id");
@@ -122,367 +127,142 @@
 	}
 </script>
 <!-- 미리보기 이미지 조정값 -->
-<!-- <style type="text/css">
-.flex-container {
-	display: flex;
+<style type="text/css">
+.que{
+	width: 100%;
 }
-
-.wrapper {
-	text-align: center;
-	flex-grow: 1;
-}
-
-.wrapper .image-box {
-	width: 200px;
-	height: 200px;
-	object-fit: cover;
-	display: block;
-	margin: 20px auto;
-}
-
-.wrapper .upload-btn {
-	border: 1px solid #ddd;
-	padding: 6px 12px;
-	display: inline-block;
-	cursor: pointer;
-}
-
 .wrapper .upload-btn input[type=file] {
 	display: none;
 }
-</style> -->
+</style>
 </head>
 <body>
 	<div class="container-xxl bg-white p-0">
-
 		<jsp:include page="../common/header.jsp"></jsp:include>
-
 		<!-- 상자생성하고 사진넣어보기 -->
-		<section style="font-family: 'MaplestoryOTFBold';" id="projects"
-			class="about-section text-center">
+		<section style="font-family: 'MaplestoryOTFBold';" id="projects" class="about-section text-center">
 			<div style="margin-top: 0;" class="testView">
-				<h1>
-					<strong style="font-family: 'MaplestoryOTFBold';">질문 있어요</strong>
-				</h1>
+				<h1><strong style="font-family: 'MaplestoryOTFBold';">집</strong></h1>
 				<div>
-					<div>
-						<div class="uploadPhoto">
-							<form method="POST" enctype="multipart/form-data" id="form_img">
-							
-								<div class="flex-container">
-									<div class="wrapper">
-										<h2>FileReader</h2>
-										<img
-											src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg"
-											class="image-box" /> <label for="file" class="upload-btn">
-											<input id="file" name="file" type="file" accept="image/*" /> <span>Upload
-												Image</span>
-										</label>
-									</div>
-
-		 	<!--  ============================= 이미지 하나만 사용	======================================
-									<div class="wrapper">
-										<h2>URL API</h2>
-										<img
-											src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg"
-											class="image-box" /> <label for="file2" class="upload-btn">
-											<input id="file2" type="file" accept="image/*" /> <span>Upload
-												Image</span>
-										</label>
-									</div>
-								</div> -->
-								<!-- 미리보기 이후 파일 업로드하기 -->
-								<button type="button" onclick="uploadFunction();"
-									class="form-control btn btn-primary" style="width: 150px">파일업로드</button>
-								<!--미리보기 테스트 끝 -->
-
-							
-							</form>
-							<div style="margin: 0">
-								<form name="inputImg" method="POST">
-									<div style="display: flex; width: 100%" class="container">
-										<div style="width: 100%; display: block; margin: 0 auto"
-											class="col-md-4">
-											<form action="" method="get">
-												<div style="width:100%;height:auto; min-height:700px;position:relative;overflow:hidden;background-image:url('${contextPath}/resources/img/sk(1).png'); background-repeat : no-repeat; background-size : 100% 100%;">
-													<!-- <div id="imgWrap" class="on" style="width:85%;height:390px;position:absolute;overflow:hidden;">
-														<div style="width:100%;height:100%;border:1px solid #ccc;"><img style="width: 100%; height: 100%;" id="foo2" /></div>
-													</div> -->
-													<div id="queWrap" class="" style="width:100%;height:auto;position:relative;padding:25px 40px 90px 18px;">
-														<div id="que1" class="que" style="width:100%;">
-															<div class="btn-group-vertical" role="group"
-																aria-label="Vertical radio toggle button group">
-																<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">1. 그림의 전체적인 분위기는 어떤가요?</strong>
-																<input type="radio" class="btn-check" name="vbtn-radio"
-																	id="vbtn-radio1" autocomplete="off" checked> 
-																	<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio1">보통</label>
-																	<input type="radio" class="btn-check"
-																	name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
-																<label
-																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio2">조금 부정적</label>
-																<input type="radio" class="btn-check"
-																	name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
-																<label
-																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio3">완전 부정적</label> 
-															</div>
-															<!-- <ul style="line-height: 30px">
-																<li><span>그림에 태양이 묘사되어 있나요?</span><br> 
-																<input type="radio" name="gender" value="m">태양이 반만 나와있다
-																<input type="radio" name="gender" value="w">태양이 무채색으로 표현되어 있다</li>
-																<input type="radio" name="gender" value="e">태양이 없다</li>
-																<input type="radio" name="gender" value="j">무난한 모습의 태양이다</li>
-																<li><span>이사람의 머리는
-																		큰편인가요?</span><br> <input type="radio" name="headSize"
-																	value="big">큰편 <input type="radio"
-																	name="headSize" value="middle">중간 <input
-																	type="radio" name="headSize" value="small">작음</li>
-																<li><span>현관문의 크기와 모양은 어떻게 묘사되었나요?</span><br> 
-																<input type="radio" name="feeling" value="happy">과하게 큰 현관문 
-																<input type="radio" name="feeling" value="angry">과하게 작은 현관문 
-																<input type="radio" name="feeling" value="sad">덧칠되어 있는 현관문 또는 잠금장치가 있는 현관문</li>
-																<input type="radio" name="feeling" value="sad">현관문이 없다</li>
-																<input type="radio" name="feeling" value="sad">집의 측면에 있는 현관문</li>
-																<input type="radio" name="feeling" value="sad">특징이 없는 평범한 현관문</li>
-															</ul> -->
-
-													<!-- 다중 선택가능한 선택지 class="multi" -->
-													<!-- <div id="queWrap" class=""
-														style="width: 100%; height: 22rem; position: relative; overflow: hidden; left: 120%;">
-														<div id="que1" class="que"
-															style="position: absolute; width: 100%; right: 120%;">
-															<ul style="line-height: 30px">
-																<li><span>1. 그림의 전체적인 분위기는 어떤가요?</span><br>
-																<input type="radio" name="mood" value="1">보통
-																<input type="radio" name="mood" value="2">조금 부정적
-																<input type="radio" name="mood" value="3">완전 부정적
-																
-															</ul>
-															<ul style="line-height: 30px">
-																<li><span>2. 종이의 전체 면적에서 집이 얼마나 차지하나요?</span><br>
-																<input type="radio" name="size" value="4">보통(중앙에서 2/3 정도 차지)
-																<input type="radio" name="size" value="5">지나치게 큼
-																<input type="radio" name="size" value="6">지나치게 작음
-																<input type="radio" name="size" value="7">파손 됨(절단된 집)
-																
-															</ul>
-															<ul style="line-height: 30px">
-																<li><span>3. 그림에서 집은 어느쪽에 위치해 있나요?</span><br>
-																<input type="radio" name="position" value="8">좌측
-																<input type="radio" name="position" value="9">우측
-																<input type="radio" name="position" value="10">하단
-																<input type="radio" name="position" value="11">중앙
-																
-															</ul>
-															<ul style="line-height: 30px">
-																<li><span>4. 어떤 시점으로 그림이 그려졌나요?</span><br>
-																<input type="radio" name="view" value="12">윗면(위에서 내려다보는)
-																<input type="radio" name="view" value="13">아랫면(아래에서 올려다보는)
-																<input type="radio" name="view" value="14">정면면(정면에서 바라보는)
-																
-															</ul>
-															<ul style="line-height: 30px" class="multi">
-																<li><span>5. 지붕은 어떻게 묘사되었나요?</span><br>
-																<input type="radio" name="roof" value="15">과도하게 큼, 강한선 묘사
-																<input type="radio" name="roof" value="16">과도한 무늬
-																<input type="radio" name="roof" value="17">뾰족함 또는 세모 모양
-																<input type="radio" name="roof" value="18">지붕을 덧칠 또는 뭉개는 채색
-																<input type="radio" name="roof" value="19">평범한 지붕
-																
-															</ul>
-															<ul style="line-height: 30px">
-																<li><span>6. 집을 구성하는 벽의 모습은 어떤가요?</span><br>
-																<input type="radio" name="wall" value="20">허술한 벽
-																<input type="radio" name="wall" value="21">지나치게 견고한 벽돌이나 벽면
-																<input type="radio" name="wall" value="22">평범한 벽
-																
-															</ul>
-															<ul style="line-height: 30px" class="multi">
-																<li><span>7. 현관문의 크기와 모양은 어떻게 묘사되었나요?</span><br>
-																<input type="radio" name="door" value="23">과하게 큼
-																<input type="radio" name="door" value="24">과하게 작음
-																<input type="radio" name="door" value="25">집의 측면에 위치
-																<input type="radio" name="door" value="26">덧칠된 또는 잠금장치가 있는 현관문
-																<input type="radio" name="door" value="27">없음
-																<input type="radio" name="door" value="28">특징 없는 평범한 현관문
-																
-															</ul>
-															<ul style="line-height: 30px" class="multi">
-																<li><span>8. 창문은 어떤 특징이 있나요?</span><br>
-																<input type="radio" name="window" value="29">없음
-																<input type="radio" name="window" value="30">3개 이상
-																<input type="radio" name="window" value="31">커튼으로 가려짐
-																<input type="radio" name="window" value="32">2층 이상의 지붕위에만 있음
-																
-															</ul>
-															<ul style="line-height: 30px">
-																<li><span>9. 굴뚝의 모습에 특징이 있나요?</span><br>
-																<input type="radio" name="chimney" value="33">없음
-																<input type="radio" name="chimney" value="34">있음
-																<input type="radio" name="chimney" value="35">연기나는 굴뚝
-																
-															</ul>
-															<ul style="line-height: 30px" class="multi">
-																<li><span>10. 그림에 태양이 묘사되어 있나요?</span><br>
-																<input type="radio" name="sun" value="36">반만 나온 태양
-																<input type="radio" name="sun" value="37">무채색 태양
-																<input type="radio" name="sun" value="38">없음
-																<input type="radio" name="sun" value="39">평범한 태양
-																
-															</ul>
-															<ul style="line-height: 30px" class="multi">
-																<li><span>11. 그림에 묘사된 다른 모습들이 있나요?</span><br>
-																<input type="radio" name="etc" value="40">산속 또는 숲속 집
-																<input type="radio" name="etc" value="41">울타리가 있거나 울타리같은 지면
-																<input type="radio" name="etc" value="42">연못, 우물, 비 표현
-																<input type="radio" name="etc" value="43">벽 등을 통해 투시되는 집 내부
-																<input type="radio" name="etc" value="44">의인화된 집
-																<input type="radio" name="etc" value="45">음영, 그림자 표현 또는 지웠다 그리기를 반복한 흔적
-																<input type="radio" name="etc" value="46">평면도형태의 집
-																<input type="radio" name="etc" value="47">덧칠된 채색
-																<input type="radio" name="etc" value="48">넓고 자세한 선으로 강조된 지면선
-																<input type="radio" name="etc" value="49">해당되는 특징 없음
-																
-															</ul>
-														</div>
-														<div id="que2" class="que curQue"
-															style="position: absolute; width: 100%;">
-															<ul style="line-height: 30px">
-																<li><span>이사람은 2남자인가요? 여자인가요?</span><br> <input
-																	type="radio" name="gender" value="m">남 <input
-																	type="radio" name="gender" value="w">여</li>
-																<li><span>2이사람의 머리는 큰편인가요?</span><br> <input
-																	type="radio" name="headSize" value="big">큰편 <input
-																	type="radio" name="headSize" value="middle">중간
-																	<input type="radio" name="headSize" value="small">작음</li>
-																<li><span>2이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의
-																		기분은 어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?</span><br> <input
-																	type="radio" name="feeling" value="happy">기분좋음
-																	<input type="radio" name="feeling" value="angry">화남
-																	<input type="radio" name="feeling" value="sad">슬픔</li>
-															</ul>
-														</div>
-														<div id="que3" class="que"
-															style="position: absolute; width: 100%; left: 120%;">
-															<ul style="line-height: 30px">
-																<li><span>3이사람은 남자인가요? 여자인가요?</span><br> <input
-																	type="radio" name="gender" value="m">남 <input
-																	type="radio" name="gender" value="w">여</li>
-																<li><span>3이사람의 머리는 큰편인가요?</span><br> <input
-																	type="radio" name="headSize" value="big">큰편 <input
-																	type="radio" name="headSize" value="middle">중간
-																	<input type="radio" name="headSize" value="small">작음</li>
-																<li><span>3이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?이사람의
-																		기분은 어떤가요?이사람의 기분은 어떤가요?이사람의 기분은 어떤가요?</span><br> <input
-																	type="radio" name="feeling" value="happy">기분좋음
-																	<input type="radio" name="feeling" value="angry">화남
-																	<input type="radio" name="feeling" value="sad">슬픔</li>
-															</ul>
-														</div>
-													</div> -->
-													
-												</div>
-
-												<!-- get : 도메인쪽에 내가 입력한 것이 붙어서 서버쪽으로 가는 것 -->
-												<!-- post: 정보은닉이 되어 서버쪽으로 가는 것 -->
-
-
-												<!-- checkbox는 name이 같아야함 -->
-												<!-- 여러개 선택할 수 있음 -->
-												<div id="que2" class="que curQue"
-															style="position: absolute; width: 100%; left: 120%">
-															<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">2. 종이의 전체 면적에서 집이 얼마나 차지하나요?</strong>
-																<input type="radio" class="btn-check" name="vbtn-radio"
-																	id="vbtn-radio1" autocomplete="off" checked> 
-																	<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio1">보통</label>
-																	<input type="radio" class="btn-check"
-																	name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
-																<label
-																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio2">지나치게 큼</label>
-																<input type="radio" class="btn-check"
-																	name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
-																<label
-																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio3">지나치게 작음</label> 
-																<input type="radio" class="btn-check"
-																	name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
-																<label
-																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio3">파손 됨(절단된 집)</label> 
-												</div>
-												
-												<div id="que3" class="que"
-															style="position: absolute; width: 100%; left: 120%;">
-															<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">3. 그림에서 집은 어느쪽에 위치해 있나요?</strong>
-																<input type="radio" class="btn-check" name="vbtn-radio"
-																	id="vbtn-radio1" autocomplete="off" checked> 
-																	<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio1">좌측</label>
-																	<input type="radio" class="btn-check"
-																	name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
-																<label
-																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio2">우측</label>
-																<input type="radio" class="btn-check"
-																	name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
-																<label
-																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio3">하단</label> 
-																<input type="radio" class="btn-check"
-																	name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
-																<label
-																	style="margin-bottom: 1.9vw; border-radius: .6rem;"
-																	class="btn btn-outline-danger" for="vbtn-radio3">중앙</label> 
-												</div>
-												
-											</div>
-											<div class="pagingWraper" style="position:absolute;left:35%;bottom:0;padding-bottom:60px">
-												<button type="button" class="prevBtn" onclick="prevQue();">이전</button>
-												<span class="page"></span>
-												<button type="button" class="nextBtn" onclick="nextQue();">다음</button>
-											</div>
-										</div>
-									</form>
-											<!-- </div> -->
+					<div class="uploadPhoto">
+						<form method="POST" enctype="multipart/form-data" id="form_img">
+							<div class="flex-container">
+								<div class="wrapper">
+									<h2 style="font-family: 'GmarketSansMedium'";>FileReader</h2>
+									<img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" class="image-box" /> 
+									<label for="file" class="upload-btn">
+									<input id="file" name="file" type="file" accept="image/*" />
+									<span>Upload Image</span>
+									</label>
 								</div>
+								<!-- 미리보기 이후 파일 업로드하기 -->
+								<button type="button" onclick="uploadFunction();" class="form-control btn btn-primary" style="width: 150px">파일업로드</button>
+								<!--미리보기 테스트 끝 -->
 							</div>
-									<br> <input class="btn btn-info"
-										style="background-color: #FE5D37; border-color: #FE5D37; color: white"
-										id="picSend" type="button" value="다음단계로"
-										onclick="goQuestion();" />
-									<!-- <input class="btn btn-info"
-								style="background-color: #FE5D37; border-color: #FE5D37; color: white"
-								id="picSend" type="button" value="다음단계로" onclick="location.href='checkSucces.do'"> -->
-									<div id="resultView">
-										<h3 id="resultTxt"></h3>
-									</div>
-								</form>
-							</div>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- <div id="container">
-        <div style="height: 93vw;" class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
-            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
-            <label style="margin-bottom:1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio1">태양이 반만 나와있다</label>
-            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
-            <label style="margin-bottom:1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio2">태양이 무채색으로 표현되어 있다</label>
-            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
-            <label style="margin-bottom:1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio3">태양이 없다</label>
-            <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio4" autocomplete="off">
-            <label style=" border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio4">무난한 모습의 태양이다</label>
-          </div> -->
+			<div style="margin: 0">
+				<div style="display: flex; width: 100%" class="container">
+					<div style="width: 100%; display: block; margin: 0 auto" class="col-md-4">
+						<form action="" method="get">
+							<div style="width:100%; height:auto; min-height:700px; position:relative; overflow:hidden; background-image:url('${contextPath}/resources/img/sk(1).png'); background-repeat : no-repeat; background-size : 100% 100%;">
+								<div id="queWrap" class="" style="width: 100%; height: auto;  padding: 25px 40px 90px 18px;">
+									<div id="que1" class="que curQue" style="width: 100%;">
+										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group" style="margin-top: 10px">
+											<strong style="margin-top: 2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color: black">1.그림의 전체적인 분위기는 어떤가요?</strong> 
+											<input type="radio" class="btn-check" name="mood" value="1" id="vbtn-radio1" autocomplete="off"> 
+											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio1">보통</label>
+											<input type="radio" class="btn-check" name="mood" value="2" id="vbtn-radio2" autocomplete="off"> 
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio2">조금 부정적</label>
+											<input type="radio" class="btn-check" name="mood" value="3" id="vbtn-radio3" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio3">완전 부정적</label> <br>
+											<strong style="margin-top: 2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color: black">2. 종이의 전체 면적에서 집이 얼마나 차지하나요?</strong>
+											<input type="radio" class="btn-check" name="size" value="4" id="vbtn-radio4" autocomplete="off">
+											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio4">보통(중앙에서 2/3 정도 차지)</label>
+											<input type="radio" class="btn-check" name="size" value="5" id="vbtn-radio5" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio5">지나치게 큼</label>
+											<input type="radio" class="btn-check" name="size" value="6" id="vbtn-radio6" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio6">지나치게 작음</label>
+											<input type="radio" class="btn-check" name="size" value="7" id="vbtn-radio7" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio7">파손 됨(절단된 집)</label>
+										</div>
+									</div>
 
-          <!-- div#result -->
-          <div id="result"></div>
-    </div>
-			<jsp:include page="../common/footer.jsp"></jsp:include>
+											<!-- get : 도메인쪽에 내가 입력한 것이 붙어서 서버쪽으로 가는 것 -->
+											<!-- post: 정보은닉이 되어 서버쪽으로 가는 것 -->
+
+
+											<!-- checkbox는 name이 같아야함 -->
+											<!-- 여러개 선택할 수 있음 -->
+									<div id="que2" class="que" style="display:none;">
+										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group" style="margin-top:10px">
+											<strong style="margin-top:2vw ; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">3. 그림에서 집은 어느쪽에 위치해 있나요?</strong>
+											<input type="radio" class="btn-check" name="position" value="8" id="vbtn-radio8" autocomplete="off">
+											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio8">좌측</label>
+											<input type="radio" class="btn-check" name="position" value="9" id="vbtn-radio9" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio9">우측</label>
+											<input type="radio" class="btn-check" name="position" value="10" id="vbtn-radio10" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radi10">하단</label>
+											<input type="radio" class="btn-check" name="position" value="11" id="vbtn-radio11" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radi11">중앙</label> <br>
+											
+											<strong style="margin-top:2vw ; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">4. 어떤 시점으로 그림이 그려졌나요?</strong>
+											<input type="radio" class="btn-check" name="view" value="12" id="vbtn-radio12" autocomplete="off">
+											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio12">윗면(위에서 내려다보는)</label>
+											<input type="radio" class="btn-check" name="view" value="13" id="vbtn-radio13" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio13">아랫면(아래에서 올려다보는)</label>
+											<input type="radio" class="btn-check" name="view" value="14" id="vbtn-radio14" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio14">정면(정면에서 바라보는)</label>
+										</div>
+									</div>
+									
+									<div id="que3" class="que" style="display:none;">
+										<div class="btn-group-vertical" role="group" aria-label="Vertical checkbox toggle button group" style="margin-top:10px">
+											<strong style="margin-top:2vw ; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">5. 지붕은 어떻게 묘사되었나요?(중복선택 가능)</strong>
+											<input type="checkbox" class="btn-check" name="roof" value="15" id="vbtn-radio15" autocomplete="off" checked>
+											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio15">과도하게 큼, 강한선 묘사</label>
+											<input type="checkbox" class="btn-check" name="roof" value="16" id="vbtn-radio16" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio16">과도한 무늬</label>
+											<input type="checkbox" class="btn-check" name="roof" value="17" id="vbtn-radio17" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radi17">뾰족함 또는 세모 모양</label>
+											<input type="checkbox" class="btn-check" name="roof" value="18" id="vbtn-radio18" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radi18">지붕을 덧칠 또는 뭉개는 채색</label>
+											<input type="checkbox" class="btn-check" name="roof" value="19" id="vbtn-radio19" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radi19">평범한 지붕</label> <br>
+											 <br>
+																
+											<strong style="margin-top:2vw ; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">4. 어떤 시점으로 그림이 그려졌나요?</strong>
+											<input type="radio" class="btn-check" name="view" value="12" id="vbtn-radio12" autocomplete="off" checked>
+											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio12">윗면(위에서 내려다보는)</label>
+											<input type="radio" class="btn-check" name="view" value="13" id="vbtn-radio13" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio13">아랫면(아래에서 올려다보는)</label>
+											<input type="radio" class="btn-check" name="view" value="14" id="vbtn-radio14" autocomplete="off">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="vbtn-radio14">정면(정면에서 바라보는)</label> 
+										</div>
+									</div>
+
+									<div class="pagingWraper" style="position: absolute;  left: 35%; bottom: 0; padding-bottom: 60px; z-index:999">
+										<button type="button" class="prevBtn" onclick="prevQue();">이전</button>
+										<span class="page"></span>
+										<button type="button" class="nextBtn" onclick="nextQue();">다음</button>
+									</div>
+								</div>
+							</div>
+						</form>
+						<br><input class="btn btn-info"
+						style="background-color: #FE5D37; border-color: #FE5D37; color: white; margin-right:37px";
+						id="picSend" type="button" value="다음단계로" onclick="goQuestion();" />
+						<button type="button" onclick=""></button>
+					</div>
+				</div>
+
+				<!-- div#result -->
+			</div>
+				<!-- <div id="result"></div> -->
+				<jsp:include page="../common/footer.jsp"></jsp:include>
+		</section>
 	</div>
 
 	<!-- JavaScript Libraries -->
