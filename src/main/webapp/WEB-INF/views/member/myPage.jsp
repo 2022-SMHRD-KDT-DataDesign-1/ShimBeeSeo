@@ -1,3 +1,4 @@
+<%@page import="kr.board.entity.User_Result"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -43,71 +44,136 @@
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	<!-- 본문 내용 시작 -->
 	
-	 <!-- Page Header End -->
-        <div class="container-xxl py-5 page-header position-relative mb-5">
-            <div class="container py-5">
-                <h1 class="display-2 text-white animated slideInDown mb-4">내 정보^오^</h1>
-                <nav aria-label="breadcrumb animated slideInDown">
-       
-                </nav>
-            </div>
-        </div>
-        <!-- Page Header End -->
+	
 
-
-        <!-- Testimonial Start -->
-        <div class="container-xxl py-5">
+	<section class="about-section section-padding" id="section_2">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">님 자녀들 검사결과</h1>
-                    <p>보고 잘키우셈</p>
-                </div>
-                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-                <!-- 검사결과 N개 생성 for문 여기에 적용 -->
-                    <div class="testimonial-item bg-light rounded p-5">
-                        <div class="d-flex align-items-center bg-white me-n5" style="border-radius: 50px 0 0 50px;">
-                            <div class="ps-3">
-                                <h3 class="mb-1">Client Name</h3>
-                                <span>Profession</span>
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <div class="pb-5 mb-5">
+                            <div class="section-title-wrap mb-4">
+                                <h4 class="section-title text-center">검사 결과</h4>
                             </div>
-                        </div>
-                        <p class="fs-5">Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
-                    </div>
-                 <!-- for문 끝 -->   
- 					
- 					
- 					<!-- test용 시작-->
- 					<div class="testimonial-item bg-light rounded p-5">
-	<div style="width: 900px; height: 900px;">
+                            
+        <!-- 날짜선택 -->                    
+                            <label for="dateSelect">검사 날짜 선택:</label>
+<select name="date" id="dateSelect" onchange="changeDate()">
+    <option value="">--검사 날짜를 선택해주세요--</option>
+    
+    <option id="result_date"></option>
+
+</select>
+
+
+
+                            
+    <div class="testimonial-item bg-light rounded p-5">
+	<div style="width: 100%; height: 100%;">
+	
+	
+	
 	<!--차트가 그려질 부분-->
 	<canvas id="myChart"></canvas>
-	<input type="hidden" id="result_aggressive" value="${result.get(0).result_aggressive}">
-	<input type="hidden" id="result_social_anxiety" value="${result.get(0).result_social_anxiety}">
-	<input type="hidden" id="result_depressed" value="${result.get(0).result_depressed}">
-	<input type="hidden" id="result_avpd" value="${result.get(0).result_avpd}">
-	<input type="hidden" id="result_self_esteem" value="${result.get(0).result_self_esteem}">
-	<input type="hidden" id="result_emotional_instability" value="${result.get(0).result_emotional_instability}">
-	<input type="hidden" id="result_deprivation" value="${result.get(0).result_deprivation}">
-	<input type="hidden" id="result_inferiority" value="${result.get(0).result_inferiority}">
-	<input type="hidden" id="result_regression" value="${result.get(0).result_regression}">
+	
+
+
+	
+	
 </div>
 
-                        <p class="fs-5">Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum rebum stet dolor amet diam stet. Est stet ea lorem amet est kasd kasd erat eos</p>
+                        <p class="fs-5"> 아프다 이 아이</p>
                     </div>
- 					<!-- test용 끝 -->
+
+
+                        </div>
+                    </div>
+
+ 				<div class="col-lg-8 col-12 mx-auto">
+                        <div class="pb-5 mb-5">
+                            <div class="section-title-wrap mb-4">
+                                <h4 class="section-title text-center">검사 내용</h4>
+                            </div>
+                            
+	<!-- test용 시작-->
+    <div class="testimonial-item bg-light rounded p-5">
+                        <p class="fs-5" id="result_o_text">  </p>
+</div>
+                    </div>
+                        </div>
+                        
+                         <div class="col-lg-8 col-12 mx-auto">
+                        <div class="pb-5 mb-5">
+                            <div class="section-title-wrap mb-4">
+                                <h4 class="section-title text-center">지도 방향</h4>
+                            </div>
+                            
+    <div class="testimonial-item bg-light rounded p-5">
+
+                        <p class="fs-5" id="result_direction"> </p>
+                    </div>
+
+
+                        </div>
+                    </div>
+                        
+                    </div>
+
+
+
+                    <div class="col-lg-12 col-12">
+                        <div class="section-title-wrap mb-5">
+                            <h4 class="section-title">요건 어떠심?</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="team-thumb bg-white shadow-lg">
+					
+ 							<h4 class="mb-2">
+                                    1번
+                                </h4><br>
+                            <div class="team-info">
+                                
+                                    <img src="${contextPath}/resources/img/oh.png" style="width: 100%; height: auto;" class="verified-image img-fluid" alt="">
+                                
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="team-thumb bg-white shadow-lg">
+                            <!-- <img src="images/profile/handsome-asian-man-listening-music-through-headphones.jpg"
+                                class="about-image img-fluid" alt=""> -->
+
+                            <div class="team-info">
+                                <h4 class="mb-2">
+                                    2번
+                                 </h4><br>
+                                 <img src="${contextPath}/resources/img/why.png" style="width: 100%; height: auto;" class="verified-image img-fluid" alt="">
+
+                                <!-- <span class="badge">Creative</span>
+
+                                <span class="badge">Design</span> -->
+                            </div>
+
+                        </div>
+                    </div>
+
+
+        </section>
  					
-                   
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
+ 		
+
 	
 	
 	<!-- 본문 내용 끝 -->
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 	</div>
 	
-	    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="${contextPath}/resources/lib/wow/wow.min.js"></script>
     <script src="${contextPath}/resources/lib/easing/easing.min.js"></script>
@@ -119,82 +185,151 @@
     
     	  	<!-- Chart.js 불러오기 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		
 		<!-- Chart 내용 Javascript -->
-	<script type="text/javascript">
-			var result_aggressive = document.getElementById("result_aggressive").value;
-			var result_social_anxiety = document.getElementById("result_social_anxiety").value;
-			var result_depressed = document.getElementById("result_depressed").value;
-			var result_avpd = document.getElementById("result_avpd").value;
-			var result_self_esteem = document.getElementById("result_self_esteem").value;
-			var result_emotional_instability = document.getElementById("result_emotional_instability").value;
-			var result_deprivation = document.getElementById("result_deprivation").value;
-			var result_inferiority = document.getElementById("result_inferiority").value;
-			var result_regression = document.getElementById("result_regression").value;
-            var context = document
-                .getElementById('myChart')
-                .getContext('2d');
-            var myChart = new Chart(context, {
-                type: 'bar', // 차트의 형태
-                data: { // 차트에 들어갈 데이터
-                    labels: [
-                        //x 축
-                        '공격성','사회불안','우울','대인회피','자존감','정서불안','애정결핍','열등감','퇴행'
-                    ],
-                    datasets: [
-                        { //데이터
-                            label: 'test1', //차트 제목
-                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
-                            data: [
-                            	result_aggressive,result_social_anxiety,result_depressed,result_avpd,result_self_esteem,result_emotional_instability,result_deprivation,result_inferiority,result_regression //x축 label에 대응되는 데이터 값
-                            ],
-                            backgroundColor: [
-                                //색상
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                //경계선 색상
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 1 //경계선 굵기
-                        }/* ,
-                        {
-                            label: 'test2',
-                            fill: false,
-                            data: [
-                                8, 34, 12, 24
-                            ],
-                            backgroundColor: 'rgb(157, 109, 12)',
-                            borderColor: 'rgb(157, 109, 12)'
-                        } */
-                    ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [
-                            {
-                            	ticks: {
-                            		/* y축 설정 변경 */
-            						min: 0,
-            						max: 20,
-            						stepSize : 2,
-            						fontSize : 14,
-            						
-            						}
-                            }
-                        ]
-                    }
-                }
-            });
+
+        
+        <script type="text/javascript">
+        
+    	$(document).ready(function() {
+    		loadResult();	
+    		});
+        
+        /* JSON형태로 사용자 검사 결과 받아오는 함수 */
+    	function loadResult() {
+    		$.ajax({
+    			url : "resultList.do",
+    			type : "get",
+    			dataType : "json",
+    			success : makeSelect, /* callback 함수 요청되고나서 실행하는 함수*/
+    			error : function() {
+    				alert("loadResult error");
+    			}
+    		});
+    	}
+        
+    	/* 셀렉트에 사용자가 실시했던 검사날짜에 따른 option 추가 */
+        function makeSelect(data){
+        	var listHtml = "<option>--검사 날짜를 선택해주세요--</option>";
+			console.log("makeselect실행완료")
+        	$.each(data,function(index, obj){
+        		listHtml+="<option value='"+(obj.result_date)+"'>"+(obj.result_date)+"</option>";
+        		$("#dateSelect").html(listHtml);
+        	});
+        	  	
+        };
+        
+    	function changeDate(){
+    		$.ajax({
+    			url : "resultList.do",
+    			type:"get",
+    			dataType : "json",
+    			success : function(result){
+    				var result_date= document.getElementById('dateSelect').value;
+    				for (var i = 0 ; i< result.length ; i++ ){
+    					var tf = result[i].result_date
+    					if(result_date == tf){
+    						index = i;
+    					}
+    				}
+    				
+    				var result_aggressive = result[index].result_aggressive;
+    	    		var result_social_anxiety = result[index].result_social_anxiety;
+    	    		var result_depressed = result[index].result_depressed;
+    	    		var result_avpd = result[index].result_avpd;
+    	    		var result_self_esteem = result[index].result_self_esteem;
+    	    		var result_emotional_instability = result[index].result_emotional_instability;
+    	    		var result_deprivation =result[index].result_deprivation;
+    	    		var result_inferiority =result[index].result_inferiority;
+    	    		var result_regression = result[index].result_regression;
+					var result_o_text = result[index].result_o_text;
+					var result_direction = result[index].result_direction;
+					$('#result_o_text').text(result_o_text);
+					$('result_direction').text(result_direction);
+					
+					
+    	            var context = document.getElementById('myChart').getContext('2d');
+    	            var myChart = new Chart(context, {
+    	                type: 'bar', // 차트의 형태
+    	                data: { // 차트에 들어갈 데이터
+    	                    labels: [
+    	                        //x 축
+    	                        '공격성','사회불안','우울','대인회피','자존감','정서불안','애정결핍','열등감','퇴행'
+    	                    ],
+    	                    datasets: [
+    	                        { //데이터
+    	                            label: '심리검사 결과', //차트 제목
+    	                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+    	                            data: [
+    	                            	result_aggressive,result_social_anxiety,result_depressed,result_avpd,result_self_esteem,result_emotional_instability,result_deprivation,result_inferiority,result_regression //x축 label에 대응되는 데이터 값
+    	                            ],
+    	                            backgroundColor: [
+    	                                //색상
+    	                                'rgba(255, 99, 132, 0.2)',
+    	                                'rgba(54, 162, 235, 0.2)',
+    	                                'rgba(255, 206, 86, 0.2)',
+    	                                'rgba(75, 192, 192, 0.2)',
+    	                                'rgba(153, 102, 255, 0.2)',
+    	                                'rgba(255, 159, 64, 0.2)'
+    	                            ],
+    	                            borderColor: [
+    	                                //경계선 색상
+    	                                'rgba(255, 99, 132, 1)',
+    	                                'rgba(54, 162, 235, 1)',
+    	                                'rgba(255, 206, 86, 1)',
+    	                                'rgba(75, 192, 192, 1)', 
+    	                                'rgba(153, 102, 255, 1)',
+    	                                'rgba(255, 159, 64, 1)'
+    	                            ],
+    	                            borderWidth: 1 //경계선 굵기
+    	                        }/* ,
+    	                        {
+    	                            label: 'test2',
+    	                            fill: false,
+    	                            data: [
+    	                                8, 34, 12, 24
+    	                            ],
+    	                            backgroundColor: 'rgb(157, 109, 12)',
+    	                            borderColor: 'rgb(157, 109, 12)'
+    	                        } */
+    	                    ]
+    	                },
+    	                options: {
+    	                    scales: {
+    	                        yAxes: [
+    	                            {
+    	                            	ticks: {
+    	                            		/* y축 설정 변경 */
+    	            						min: 0,
+    	            						max: 20,
+    	            						stepSize : 2,
+    	            						fontSize : 14,
+    	            						
+    	            						}
+    	                            }
+    	                        ]
+    	                    }
+    	                }
+    	            });
+    	            	
+    	            }
+    	    		
+    	    		
+    	    		
+    	    		
+    			
+    			,error : function(){
+    				alert("error");
+    			}
+    		});
+    	}
+    	
+    	
+
+    		
+
+        
+        
         </script>
 	
 </body>
