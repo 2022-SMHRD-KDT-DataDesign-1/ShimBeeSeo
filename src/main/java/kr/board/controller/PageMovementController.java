@@ -102,7 +102,10 @@ public class PageMovementController {
 		return "member/jyjtest";
 	}
 
-
+	@GetMapping("UserResult.do")
+	public String UserResult() {
+		return "member/myPage";
+	}
 	
 	
 }
