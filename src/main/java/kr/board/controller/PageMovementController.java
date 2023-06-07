@@ -96,7 +96,10 @@ public class PageMovementController {
 		return "member/songSecret";
 	}
 
-
+	@GetMapping("UserResult.do")
+	public String UserResult() {
+		return "member/myPage";
+	}
 	
 	
 }
