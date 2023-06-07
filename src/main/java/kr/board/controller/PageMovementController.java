@@ -102,5 +102,9 @@ public class PageMovementController {
 		return "member/myPage";
 	}
 	
+	@GetMapping("admin.do")
+	public String admin() {
+		return "main/admin";
+	}
 	
 }
