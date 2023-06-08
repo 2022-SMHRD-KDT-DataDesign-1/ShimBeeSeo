@@ -27,7 +27,6 @@ public class UserResultController {
 		
 		List<User_Result> result = userResultMapper.viewResult(m);
 		for(int i = 0 ; i<result.size(); i++) {
-			System.out.println(result.get(i).getResult_date());
 		};
 		System.out.println("컨트롤러에서 페이지로 잘 넘겨짐");
 		return result;
