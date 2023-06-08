@@ -517,7 +517,7 @@
 			console.log("파일 업로드 요청");
 			saveImageBeforeUpload(data);
 			/* async : false -> 비동기 동기로 변경, 다만 값 받아오기 전에 페이지 이동해 버리면 값 못받고 넘어감!! 주의하자! */
-			/* $.ajax({
+			$.ajax({
 				type : "POST",
 				enctype : 'multipart/form-data',
 				url : "http://192.168.56.1:9000/photo/" + id,
@@ -541,7 +541,7 @@
 				error : function(e) {
 					console.log("파일 업로드 에러");
 				}
-			}); */
+			});
 		}
 		
 		function saveImageBeforeUpload(data){

@@ -123,10 +123,9 @@
 								<div class="flex-container">
 									<div class="wrapper">
 										<h2>FileReader</h2>
-										<img
-											src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg"
-											class="image-box" /> <label for="file" class="upload-btn">
-											<input id="file" name="file" type="file" accept="image/*" /> <span>Upload
+										<img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg"
+											class="image-box" style="display: none;"/> <label for="file" class="upload-btn">
+											<input id="file" multiple name="file" type="file" accept="image/*" /> <span>Upload
 												Image</span>
 										</label>
 									</div>
@@ -220,7 +219,7 @@
 			$.ajax({
 				type : "POST",
 				enctype : 'multipart/form-data',
-				url : "http://192.168.56.1:9000/photo/" + id,
+				url : "http://192.168.56.1:9000/h_photo/" + id,
 				data : data,
 				processData : false,
 				contentType : false,
@@ -252,6 +251,7 @@
 	fileDOM.addEventListener('change', () => {
 	  const reader = new FileReader();
 	  reader.onload = ({ target }) => {
+		  
 	    previews[0].src = target.result;
 	  };
 	  reader.readAsDataURL(fileDOM.files[0]);
