@@ -45,11 +45,19 @@
   <div class="container-xxl bg-white p-0" style="position: relative;" >
 
 	<jsp:include page="../common/header.jsp"></jsp:include>
-			<div style="position: absolute; top: 40%; left: 50%">
-			<h1>회원 가입에 성공하셨습니다. 축하드립니다.</h1>
-		
-			<a class="btn btn-primary py-3 px-5" href="loginPage.do">로그인 페이지로 이동<i class="fa fa-arrow-right ms-2"></i></a>
-			</div>
+			<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+           		<div class="container text-center">
+                	<div class="row justify-content-center">
+                    	<div class="col-lg-6">
+                        	<!-- <i class="bi bi-exclamation-triangle display-1 text-success"></i> -->
+                        	<div style="width:50%; height: auto; margin-left: 100px;"><img src="${contextPath}/resources/images/logo.png"></div>
+                        	<h1 class="mb-4" style="font-family: GmarketSansMedium;">회원 가입에 성공하셨습니다.</h1>
+                        	<p class="mb-4">회원이 되신걸 환영합니다.</p>
+                        	<a class="btn btn-primary rounded-pill py-3 px-5" href="loginPage.do">로그인 <i class="fa fa-arrow-right ms-2"></i></a>
+                    	</div>
+                	</div>
+            	</div>
+        	</div>
 	    <!-- Page Header End -->
         <!-- <div class="container-xxl py-5 page-header position-relative mb-5">
             <div class="container py-5">

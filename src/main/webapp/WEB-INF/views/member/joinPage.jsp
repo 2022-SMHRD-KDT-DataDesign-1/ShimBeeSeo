@@ -142,8 +142,8 @@
 											</div>
 										</div>
                                         <div class="col-12"><!-- <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">회원가입</button> -->
-                                            <a class="btn btn-primary py-3 px-5" href="joinSucces.do">회원가입<i class="fa fa-arrow-right ms-2"></i></a>
-                                            <button class="btn btn-primary w-100 py-3" type="submit">취소</button>
+                                            <a class="btn btn-primary py-3 px-5" href="joinSucces.do" style="width:100%; height: auto;">회원가입<i class="fa fa-arrow-right ms-2"></i></a>
+                                            <button class="btn btn-primary w-100 py-3 px-5" type="button" onclick="location.href='loginPage.do'" style="margin-top:15px;">취소</button>
                                         </div>
                                     </div>
                                 </form>

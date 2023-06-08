@@ -94,9 +94,28 @@ public class PageMovementController {
 	@GetMapping("songSecret.do")
 	public String chart() {
 		return "member/songSecret";
+
+	}
+	
+	// 체크리스트
+	@GetMapping("jyjtest.do")
+	public String scoreList() {
+		return "member/jyjtest";
 	}
 
-
+	@GetMapping("UserResult.do")
+	public String UserResult() {
+		return "member/myPage";
+	}
 	
+	@GetMapping("main.do")
+	public String PageBoardMain() {
+		return "board/main";
+	}
+	
+	@GetMapping("admin.do")
+	public String admin() {
+		return "main/admin";
+	}
 	
 }

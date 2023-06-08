@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.board.entity.User;
 import kr.board.entity.User_Result;
@@ -20,11 +21,14 @@ public class UserResultController {
 	private UserResultMapper userResultMapper;
 	
 	// 검사 후 결과 보여주기
-	@RequestMapping("UserResult.do")
-	public String UserResult(User m, HttpSession session) {
+	@ResponseBody
+	@GetMapping("resultList.do")
+	public List<User_Result> UserResult(User m) {
 		
 		List<User_Result> result = userResultMapper.viewResult(m);
-		session.setAttribute("result", result);
-		return "redirect:myPage.do";
+		for(int i = 0 ; i<result.size(); i++) {
+		};
+		System.out.println("컨트롤러에서 페이지로 잘 넘겨짐");
+		return result;
 	};
 }

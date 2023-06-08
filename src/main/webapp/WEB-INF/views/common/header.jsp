@@ -63,27 +63,24 @@
                 <div class="navbar-nav mx-auto">
                     <a href="${contextPath}/" class="nav-item nav-link">Home</a>
                     <c:if test="${empty mvo}">
-                    <a href="loginPage.do" class="nav-item nav-link active">로그인</a>
+                    <a href="loginPage.do" class="nav-item nav-link">로그인</a>
                     </c:if>
                     <c:if test="${not empty mvo}">
                     <a href="UserResult.do" class="nav-item nav-link">내정보</a>
                     
                     </c:if>
-                    <a href="classes.do" class="nav-item nav-link">Classes</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                            <a href="facility.do" class="dropdown-item">School Facilities</a>
-                            <a href="team.do" class="dropdown-item">Popular Teachers</a>
-                            <a href="callToAction.do" class="dropdown-item">Become A Teachers</a>
-                            <a href="appointment.do" class="dropdown-item">Make Appointment</a>
-                            <a href="errorPage.do" class="dropdown-item">Error Page</a>
-                        </div>
-                    </div>
-                    <a href="contact.do" class="nav-item nav-link">Contact Us</a>
-                            <c:if test="${not empty mvo}">
-                   			<a href="${contextPath}/logout.do" class="nav-item nav-link active">로그아웃</a>
-                            </c:if>
+<<<<<<< HEAD
+                    <a href="classes.do" class="nav-item nav-link">공유 게시판</a>
+                    <a href="" class="nav-item nav-link">문의 게시판</a>
+                    <c:if test="${mvo.get().user_id eq 'admin'}">
+=======
+                    <c:if test="${mvo.user_id eq 'admin'}">
+>>>>>>> refs/remotes/origin/khs
+                    <a href="admin.do" class="nav-item nav-link"> 관리자페이지 </a>
+                    </c:if>
+                    <c:if test="${not empty mvo}">
+           			<a href="${contextPath}/logout.do" class="nav-item nav-link active">로그아웃</a>
+                    </c:if>
                 </div>
             </div>
         </nav>
