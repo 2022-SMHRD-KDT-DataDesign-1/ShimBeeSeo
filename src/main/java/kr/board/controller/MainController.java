@@ -12,9 +12,9 @@ public class MainController {
 		return "index";
 	}
 	
-	@RequestMapping("/test223-06-05")
-	 public String test223() {
-		return "main/test223-06-05";
+	@RequestMapping("/joinSucces")
+	 public String joinSucces() {
+		return "main/joinSucces";
 	}
 	/*
 	 * public void index() {
