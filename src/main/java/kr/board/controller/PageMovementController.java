@@ -107,5 +107,10 @@ public class PageMovementController {
 		return "member/myPage";
 	}
 	
+	@GetMapping("main.do")
+	public String PageBoardMain() {
+		return "board/main";
+	}
+	
 	
 }

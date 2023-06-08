@@ -63,15 +63,14 @@
          <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Get In Touch</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit
-                        eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
+                    <h1 class="mb-3" style="font-family: GmarketSansMedium">로그인</h1>
+                    <p>심비서는 개인정보를 무단으로 사용하지 않습니다.</p>
                 </div>
 
                 <div class="bg-light rounded">
                     <div class="row g-0">
-                                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
-                            <div class="position-relative h-100">
+                    	<div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                        	<div class="position-relative h-100">
                                                <img src="${contextPath}/resources/images/logo.png" class="position-relative rounded"
                                 frameborder="0" style="height:90%; width:90%; margin-left:5%;margin-top:5%;" >
                             </div>
@@ -95,10 +94,10 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-
-                                       		 <a id="kakao-login-btn"></a>
+                                       		<div style="background-size:cover;"><a id="kakao-login-btn"></a></div>
+                                       		<!-- submit button으로 바꿈 -->
                                             <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">로그인</button>
-                                            <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5px 0;">회원가입</button>
+                                            <button class="btn btn-primary w-100 py-3" type="button" style="margin: 5px 0;" onClick="location.href='joinPage.do'">회원가입</button>
                                         </div>
                                     </div>
                                 </form>
@@ -108,7 +107,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>  
         <!-- Contact End -->
 
  	<jsp:include page="../common/footer.jsp"></jsp:include> 
