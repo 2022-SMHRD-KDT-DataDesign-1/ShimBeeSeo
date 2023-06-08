@@ -94,7 +94,7 @@ public class PageMovementController {
 	@GetMapping("songSecret.do")
 	public String chart() {
 		return "member/songSecret";
-<<<<<<< HEAD
+
 	}
 	
 	// 체크리스트
@@ -102,9 +102,6 @@ public class PageMovementController {
 	public String scoreList() {
 		return "member/jyjtest";
 	}
-=======
-	}  
->>>>>>> refs/remotes/origin/khs
 
 	@GetMapping("UserResult.do")
 	public String UserResult() {
