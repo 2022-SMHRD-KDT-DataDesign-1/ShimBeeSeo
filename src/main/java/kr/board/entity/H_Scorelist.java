@@ -13,10 +13,10 @@ import lombok.ToString;
 @ToString
 public class H_Scorelist {
     // 집채점 순번 
-    private Double score_h_seq;
+    private int score_h_seq;
 
     // 분류 순번 
-    private Double cate_seq;
+    private int cate_seq;
 
     // 문항 
     private String score_h_q;
@@ -24,30 +24,32 @@ public class H_Scorelist {
     // 보기 
     private String score_h_ex;
 
-    // 공격성 
-    private Double score_h_aggressive;
+    // 공격성
+    private int score_h_aggressive;
 
     // 사회불안 
-    private Double score_h_social_anxiety;
+    private int score_h_social_anxiety;
 
     // 우울 
-    private Double score_h_depressed;
+    private int score_h_depressed;
 
     // 대인회피 
-    private Double score_h_avpd;
+    private int score_h_avpd;
 
     // 자존감 
-    private Double score_h_self_esteem;
+    private int score_h_self_esteem;
 
     // 정서불안 
-    private Double score_h_emotional_instability;
+    private int score_h_emotional_instability;
 
     // 애정결핍 
-    private Double score_h_deprivation;
+    private int score_h_deprivation;
 
     // 열등감 
-    private Double score_h_inferiority;
+    private int score_h_inferiority;
 
     // 퇴행 
-    private Double score_h_regression;
+    private int score_h_regression;
+    
+    
 }

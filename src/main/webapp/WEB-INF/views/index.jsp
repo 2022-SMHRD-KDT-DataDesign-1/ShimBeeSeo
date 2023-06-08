@@ -74,20 +74,20 @@
         <div class="container-xxl py-5">
             <div class="container">
                <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="row">
+                        <div class="row" style="position: relative;">
                             <div class="col-12 text-center">
-                                <img class="img-fluid w-75 rounded-circle bg-light p-3" src="${contextPath}/resources/img/home.png" alt="">
+                                <img class="img-fluid w-75 rounded-circle bg-light p-3" src="${contextPath}/resources/img/home.jpg" alt="">
                             </div>
-                            <div class="col-6 text-start" style="margin-top: -50px;">
-                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="${contextPath}/resources/img/tree.png" alt="">
+                            <div class="col-6 text-start" style="position: absolute; margin-top: 35%; margin-left: 10%;">
+                                <img class="img-fluid w-70 rounded-circle bg-light p-3" style="width: 80%; height: auto;" src="${contextPath}/resources/img/tree.png" alt="">
                             </div>
-                            <div class="col-6 text-end" style="margin-top: -50px;">
-                                <img class="img-fluid w-100 rounded-circle bg-light p-3" src="${contextPath}/resources/img/person.png" alt="">
+                            <div class="col-6 text-end" style="position: absolute; margin-top: 37%; margin-left: 48%; width: 40%;">
+                                <img class="img-fluid w-100 rounded-circle bg-light p-3" style="height: 165px"; src="${contextPath}/resources/img/person.jpg" alt="">
                             </div>
                <div class="h-100 d-flex flex-column justify-content-center p-5">
                   <div class="row g-5 align-items-center">
-                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                        <h1 class="mb-4">HTP 검사란?</h1>
+                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="margin-top:40%;">
+                        <h1 class="mb-4" style="font-family: GmarketSansMedium">HTP 검사란?</h1>
                         <p class="mb-4">집, 나무, 사람 그림을 그려서 검사하는 심리검사임</p>
                         <a class="btn btn-primary py-3 px-5" href="check.do">검사 하러
                            가기<i class="fa fa-arrow-right ms-2"></i>
@@ -117,7 +117,7 @@
                                 <h1 class="mb-4">함께 공유해요</h1>
                                 <p class="mb-4">좋은게 있으면 함께 공유합시다. (혼자만 알지말고)
                                 </p>
-                                <a class="btn btn-primary py-3 px-5" href="">게시판으로 이동<i class="fa fa-arrow-right ms-2"></i></a>
+                                <a class="btn btn-primary py-3 px-5" href="main.do">게시판으로 이동<i class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>

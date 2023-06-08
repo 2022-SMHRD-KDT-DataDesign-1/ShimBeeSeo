@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="facility-item" onclick="location.href='upload.do';">
+                        <div class="facility-item" onclick="location.href='test2.do';">
                             <div class="facility-icon bg-warning">
                                 <span class="bg-warning"></span>
                                 <i class="fa fa-home fa-3x text-warning"></i>
