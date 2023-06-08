@@ -95,7 +95,7 @@ public class PageMovementController {
 	@GetMapping("songSecret.do")
 	public String chart() {
 		return "member/songSecret";
-	}
+	}  
 
 	@GetMapping("UserResult.do")
 	public String UserResult() {
