@@ -71,11 +71,12 @@
     <div class="testimonial-item bg-light rounded p-5">
 	<div style="width: 100%; height: 100%;">
 	
-	
+	<div id="resetChart">
 	
 	<!--차트가 그려질 부분-->
 	<canvas id="myChart"></canvas>
 	
+	</div>
 
 
 	
@@ -247,6 +248,8 @@
 					$('#result_o_text').text(result_o_text);
 					$('result_direction').text(result_direction);
 					
+					document.getElementById('resetChart').innerHTML = ""; 
+					document.getElementById('resetChart').innerHTML = "<canvas id='myChart'></canvas>"; 
 					
     	            var context = document.getElementById('myChart').getContext('2d');
     	            var myChart = new Chart(context, {
