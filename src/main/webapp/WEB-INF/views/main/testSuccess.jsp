@@ -50,14 +50,17 @@
                 	<div class="row justify-content-center">
                     	<div class="col-lg-6">
                         	<!-- <i class="bi bi-exclamation-triangle display-1 text-success"></i> -->
-                        	<div style="width:50%; height: auto; margin-left: 100px;"><img src="${contextPath}/resources/images/logo.png"></div>
-                        	<h1 class="mb-4">회원 가입에 성공하셨습니다.</h1>
-                        	<p class="mb-4">회원이 되신걸 환영합니다.</p>
+                        	<h1 class="mb-4" style="color:#ea1e52;">HTP 검사 완료</h1>
+                        	<div style="width:50%; height: auto; margin-left: 100px;"><img src="${contextPath}/resources/img/checkresult2.png"></div>
+                        	
+                        	<p class="mb-4"></p>
                         	<a class="btn btn-primary rounded-pill py-3 px-5" href="loginPage.do">로그인 <i class="fa fa-arrow-right ms-2"></i></a>
                     	</div>
                 	</div>
             	</div>
         	</div>
+        	
+     <jsp:include page="../common/footer.jsp"></jsp:include>
 	    <!-- Page Header End -->
         <!-- <div class="container-xxl py-5 page-header position-relative mb-5">
             <div class="container py-5">
