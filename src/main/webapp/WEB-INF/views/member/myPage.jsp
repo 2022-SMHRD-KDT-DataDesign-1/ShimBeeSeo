@@ -47,60 +47,59 @@
 	
 
 	<section class="about-section section-padding" id="section_2">
-            <div class="container">
-                <div class="row">
+    	<div class="container">
+        	<div class="row">
 
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <div class="pb-5 mb-5">
-                            <div class="section-title-wrap mb-4">
-                                <h4 class="section-title text-center">검사 결과</h4>
-                            </div>
+            	<div class="col-lg-8 col-12">
+                	<div class="pb-5 mb-5">
+                    	<div class="section-title-wrap mb-4">
+                        	<h4 class="section-title text-center">검사 결과</h4>
+                       	</div>
                             
         <!-- 날짜선택 -->                    
-                            <label for="dateSelect">검사 날짜 선택:</label>
-<select name="date" id="dateSelect" onchange="changeDate()">
-    <option value="">--검사 날짜를 선택해주세요--</option>
-    
-    <option id="result_date"></option>
+                   		<label for="dateSelect">검사 날짜 선택:</label>
+						<select name="date" id="dateSelect" onchange="changeDate()">
+    					<option value="">--검사 날짜를 선택해주세요--</option>
+    					<option id="result_date"></option>
 
-</select>
+						</select>
 
 
 
                             
-    <div class="testimonial-item bg-light rounded p-5">
-	<div style="width: 100%; height: 100%;">
+    					<div class="bg-light rounded">
+							<div style="width: 100%; height: 100%;">
 	
 	
 	
-	<!--차트가 그려질 부분-->
-	<canvas id="myChart"></canvas>
+						<!--차트가 그려질 부분-->
+						<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
 	
 
 
 	
 	
-</div>
-
-                        <p class="fs-5"> 아프다 이 아이</p>
+						</div>
+						<p class="fs-5"> 아프다 이 아이</p>
                     </div>
 
 
-                        </div>
-                    </div>
+               	  </div>
+               	 
+             </div>
 
  				<div class="col-lg-8 col-12 mx-auto">
-                        <div class="pb-5 mb-5">
-                            <div class="section-title-wrap mb-4">
-                                <h4 class="section-title text-center">검사 내용</h4>
-                            </div>
+            		<div class="pb-5 mb-5">
+                		<div class="section-title-wrap mb-4">
+                     		<h4 class="section-title text-center">검사 내용</h4>
+                    	</div>
                             
-	<!-- test용 시작-->
-    <div class="testimonial-item bg-light rounded p-5">
-                        <p class="fs-5" id="result_o_text">  </p>
-</div>
-                    </div>
-                        </div>
+			<!-- test용 시작-->
+    					<div class="testimonial-item bg-light rounded p-5">
+                			<p class="fs-5" id="result_o_text">  </p>
+						</div>
+               		</div>
+           		</div>
                         
                          <div class="col-lg-8 col-12 mx-auto">
                         <div class="pb-5 mb-5">

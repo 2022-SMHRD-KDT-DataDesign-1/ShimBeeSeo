@@ -165,7 +165,7 @@
 										<div style="position: relative;">
 											<img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" class="image-box" style="min-width:350px"; height="350px"; />
 												<label for="file" class="upload-btn">
-												<input id="file" name="file" type="file" accept="image/*" style="display: none;" />
+												<input id="file" name="file" type="file" accept="image/*" style="display: none";/>
 												</label>
 										</div>
 										
@@ -392,14 +392,14 @@
 	<script type="text/javascript">
 		/* event.preventDefault(); */
 
-		let url = 'http://192.168.56.1:9000/photo';
+		/* let url = 'http://192.168.56.1:9000/photo'; */
 
-		/*  		const response = fetch('http://192.168.56.1:9000/photo', {
+		/* 	 	const response = fetch('http://192.168.56.1:9000/photo', {
 		 method: 'POST',
 		 body: formData
 		 }); */
 
-		const formData = new FormData();
+		/* const formData = new FormData(); */
 
 /* =========================이미지 모델에게 확인 요청 ================================= */
 		function uploadFunction() {
@@ -414,6 +414,7 @@
 				enctype : 'multipart/form-data',
 				url : "http://192.168.56.1:9000/photo/" + id,
 				data : data,
+				async : false,
 				processData : false,
 				contentType : false,
 				cache : false,
@@ -444,7 +445,6 @@
 				enctype : 'multipart/form-data',
 				url : "saveImage.do",
 				data : data,
-				async : false,
 				processData : false,
 				contentType : false,
 				beforeSend : function(xhr){
