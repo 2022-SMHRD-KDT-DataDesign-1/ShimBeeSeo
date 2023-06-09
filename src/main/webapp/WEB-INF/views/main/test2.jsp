@@ -454,6 +454,8 @@
 				success : function(data){
 					if(data == "success"){
 						alert(data);
+					} else {
+						
 					}
 				},
 				error : function(e) {
