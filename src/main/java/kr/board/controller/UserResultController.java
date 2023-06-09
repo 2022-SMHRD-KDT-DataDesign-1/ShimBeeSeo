@@ -26,9 +26,15 @@ public class UserResultController {
 	public List<User_Result> UserResult(User m) {
 		
 		List<User_Result> result = userResultMapper.viewResult(m);
-		for(int i = 0 ; i<result.size(); i++) {
-		};
 		System.out.println("컨트롤러에서 페이지로 잘 넘겨짐");
 		return result;
 	};
+	
+	@ResponseBody
+	@GetMapping("ajaxTest.do")
+	public String ajaxTest() {
+		String res = "ajax굳";
+		return res;
+	}
+	
 }
