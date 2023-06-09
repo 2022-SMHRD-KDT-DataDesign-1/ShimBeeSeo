@@ -36,13 +36,16 @@
 
     <!-- Template Stylesheet -->
     <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
+    
+    <style>
+    	p{
+    	color:black;}
+    </style>
 
 </head>
 <body>
-<a href="chat">챗지피티 테스트 ㄱㄱ</a>
 <a href="javascript:GPTTest('content')"> 플라스크에 JSON 보내보기</a>
-<a href="http://localhost:5000/?id=testID1"> 쿼리스트링 테스트</a>
-<a href="UserResult.do">Chart.JS 테스트</a>
+<a href="songSecret.do">들어오지마셈</a>
 
    <div class="container-xxl bg-white p-0">
 		<jsp:include page="common/header.jsp"></jsp:include>
@@ -60,7 +63,7 @@
                     </div>
                 </div>
                 <div class="owl-carousel-item position-relative">
-                    <img class="img-fluid" src="${contextPath}/resources/img/i.png" alt="">
+                    <img class="img-fluid" src="${contextPath}/resources/img/i.png"  alt="">
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
                         <div class="container">
                             </div>
@@ -82,15 +85,16 @@
                                 <img class="img-fluid w-70 rounded-circle bg-light p-3" style="width: 80%; height: auto;" src="${contextPath}/resources/img/tree.png" alt="">
                             </div>
                             <div class="col-6 text-end" style="position: absolute; margin-top: 37%; margin-left: 48%; width: 40%;">
-                                <img class="img-fluid w-100 rounded-circle bg-light p-3" style="height: 165px"; src="${contextPath}/resources/img/person.jpg" alt="">
+                                <img class="img-fluid w-100 rounded-circle bg-light p-3" style="height: 145px"; src="${contextPath}/resources/img/person.jpg" alt="">
                             </div>
                <div class="h-100 d-flex flex-column justify-content-center p-5">
                   <div class="row g-5 align-items-center">
                      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="margin-top:40%;">
-                        <h1 class="mb-4" style="font-family: GmarketSansMedium">HTP 검사란?</h1>
-                        <p class="mb-4">집, 나무, 사람 그림을 그려서 검사하는 심리검사임</p>
-                        <a class="btn btn-primary py-3 px-5" href="check.do">검사 하러
-                           가기<i class="fa fa-arrow-right ms-2"></i>
+                        <h1 class="mb-4">HTP 검사를 이용하는 이유!</h1>
+                        <p class="mb-4">1.집, 나무, 사람은 나이가 어린 아동들에게 친숙하다</p>
+                        <p class="mb-4">2.집, 나무 사람 그림은 검사자의 무의식과 관련하여 풍부한 상징을 나타낸다.</p>
+                        <p class="mb-4">3.실시가 용이하고 짧은시간안에 파악할 수 있다.</p>
+                        <a class="btn btn-primary py-3 px-5" href="check.do">검사 하러가기<i class="fa fa-arrow-right ms-2"></i>
                         </a>
                      </div>
                   </div>
@@ -109,14 +113,13 @@
                     <div class="row g-0">
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
                             <div class="position-relative h-100">
-                                <img class="position-absolute w-100 h-100 rounded" src="${contextPath}/resources/img/call-to-action.jpg" style="object-fit: cover;">
+                                <img class="position-absolute w-100 h-100 rounded" src="${contextPath}/resources/img/board.png" style="object-fit: fill;">
                             </div>
+                            <!-- call-to-action.jpg -->
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
                                 <h1 class="mb-4">함께 공유해요</h1>
-                                <p class="mb-4">좋은게 있으면 함께 공유합시다. (혼자만 알지말고)
-                                </p>
                                 <a class="btn btn-primary py-3 px-5" href="main.do">게시판으로 이동<i class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
@@ -131,13 +134,12 @@
                     <div class="row g-0">
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
                             <div class="position-relative h-100">
-                                <img class="position-absolute w-100 h-100 rounded" src="${contextPath}/resources/img/Inquire.jpg" style="object-fit: cover;">
+                                <img class="position-absolute w-100 h-100 rounded" src="${contextPath}/resources/img/help.png" style="object-fit: fill;">
                             </div>
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <h1 class="mb-4">무엇을 도와드릴까요??</h1>
-                                <p class="mb-4">궁금한게 있으면 언제든 문의주세요!!!! </p>
+                                <h1 class="mb-4">무엇을 도와드릴까요?</h1>
                                 <a class="btn btn-primary py-3 px-5" href="">문의하러가기!<i class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>

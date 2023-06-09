@@ -51,10 +51,12 @@
                             <div class="section-title-wrap mb-4">
                                 <h4 class="section-title text-center">검사 결과</h4>
                             </div>
-                            <img  src="${contextPath}/resources/img/g.png"
-                                class="about-image mt-5 img-fluid" alt="">
+                            <!-- 그래프 들어갈 자리 -->
+                            <div>  src="${contextPath}/resources/img/g.png"
+                                class="about-image mt-5 img-fluid" alt="" </div>
 
-                            <p>이 아이는 우울감이 높고 폭력성이 높은 상태이며 매우 위험한 상황입니다. 집에서의
+							<!-- 검사결과를 출력해주는 -->
+                            <div style="margin-top:5%"><p>이 아이는 우울감이 높고 폭력성이 높은 상태이며 매우 위험한 상황입니다. 집에서의
                             주도 면밀한 관찰이 필요하며 부모님의 관심과 사랑이 필요한 상태입니다 잘부탁드립니다.
                             힘내시고 아이키우는게 쉽지 않지만 부모님의 사랑과 이해로 감싸주신다면 어떻게든 이뤄
                             낼 수 있습니다. 항상 화이팅 하시고 안녕과 평화를 기원합니다.
@@ -98,6 +100,7 @@
                             주도 면밀한 관찰이 필요하며 부모님의 관심과 사랑이 필요한 상태입니다 잘부탁드립니다.
                             힘내시고 아이키우는게 쉽지 않지만 부모님의 사랑과 이해로 감싸주신다면 어떻게든 이뤄
                             낼 수 있습니다. 항상 화이팅 하시고 안녕과 평화를 기원합니다.</p>
+                            </div>
 
                             <!-- <p>You are not allowed to redistribute the downloadable template ZIP file on any other
                                 website without a permission. Please contact TemplateMo website for further information.

@@ -5,18 +5,16 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-
-  
 <!DOCTYPE html>
+
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>내 정보^오^</title>
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   	    <meta content="" name="keywords">
     <meta content="" name="description">
-
+    
     <!-- Favicon -->
     <link href="${contextPath}/resources/img/favicon.ico" rel="icon">
 
@@ -40,64 +38,69 @@
     <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
 </head>
 <body>
- <div class="container-xxl bg-white p-0">
+	<div class="container-xxl bg-white p-0">
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	<!-- 본문 내용 시작 -->
 	
 	
 
 	<section class="about-section section-padding" id="section_2">
-    	<div class="container">
-        	<div class="row">
+            <div class="container">
+                <div class="row">
 
-            	<div class="col-lg-8 col-12">
-                	<div class="pb-5 mb-5">
-                    	<div class="section-title-wrap mb-4">
-                        	<h4 class="section-title text-center">검사 결과</h4>
-                       	</div>
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <div class="pb-5 mb-5">
+                            <div class="section-title-wrap mb-4">
+                                <h4 class="section-title text-center">검사 결과</h4>
+                            </div>
                             
         <!-- 날짜선택 -->                    
-                   		<label for="dateSelect">검사 날짜 선택:</label>
-						<select name="date" id="dateSelect" onchange="changeDate()">
-    					<option value="">--검사 날짜를 선택해주세요--</option>
-    					<option id="result_date"></option>
 
-						</select>
+                            <!-- <label for="dateSelect">검사 날짜 선택:</label>
+<select name="date" id="dateSelect" onchange="changeDate()">
+    <option value="">--검사 날짜를 선택해주세요--</option>
+    
+    <option id="result_date"></option>
+</select>
 
 
 
                             
-    					<div class="bg-light rounded">
-							<div style="width: 100%; height: 100%;">
+    <div class="testimonial-item bg-light rounded p-5">
+	<div style="width: 100%; height: 100%;">
 	
 	<div id="resetChart">
 	
-						<!--차트가 그려질 부분-->
-							<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
+	<!--차트가 그려질 부분-->
+	<canvas id="myChart" width:"100%"></canvas>
+	
+	
 	</div>
 
 
 	
 	
-						</div>
-						<p class="fs-5"> 아프다 이 아이</p>
+</div>
+
+                        <p class="fs-5"> 아프다 이 아이</p>
                     </div>
 
-               	  </div>
-               	 
-             </div>
+   
+                        </div>
+                    </div>
+
  				<div class="col-lg-8 col-12 mx-auto">
-            		<div class="pb-5 mb-5">
-                		<div class="section-title-wrap mb-4">
-                     		<h4 class="section-title text-center">검사 내용</h4>
-                    	</div>
+                        <div class="pb-5 mb-5">
+                            <div class="section-title-wrap mb-4">
+                                <h4 class="section-title text-center">검사 내용</h4>
+                            </div>
                             
-			<!-- test용 시작-->
-    					<div class="testimonial-item bg-light rounded p-5">
-                			<p class="fs-5" id="result_o_text">  </p>
-						</div>
-               		</div>
-           		</div>
+	<!-- test용 시작-->
+    <div class="testimonial-item bg-light rounded p-5">
+                        <p class="fs-5" id="result_o_text">  </p>
+</div>
+                    </div>
+                        </div>
                         
                          <div class="col-lg-8 col-12 mx-auto">
                         <div class="pb-5 mb-5">
@@ -195,10 +198,10 @@
         /* JSON형태로 사용자 검사 결과 받아오는 함수 */
     	function loadResult() {
     		$.ajax({
-    			url : "resultList.do",
+    			url : "testResult.do",
     			type : "get",
     			dataType : "json",
-    			success : makeSelect, /* callback 함수 요청되고나서 실행하는 함수*/
+    			success : changeDate, /* callback 함수 요청되고나서 실행하는 함수*/
     			error : function() {
     				alert("loadResult error");
     			}
@@ -218,42 +221,36 @@
         
     	function changeDate(){
     		$.ajax({
-    			url : "resultList.do",
+    			url : "testResult.do",
     			type:"get",
     			dataType : "json",
     			success : function(result){
-    				var result_date= document.getElementById('dateSelect').value;
-    				for (var i = 0 ; i< result.length ; i++ ){
-    					var tf = result[i].result_date
-    					if(result_date == tf){
-    						index = i;
-    					}
+    				
+    				var result_aggressive = result.result_aggressive;
+    	    		var result_social_anxiety = result.result_social_anxiety;
+    	    		var result_depressed = result.result_depressed;
+    	    		var result_avpd = result.result_avpd;
+    	    		var result_self_esteem = result.result_self_esteem;
+    	    		var result_emotional_instability = result.result_emotional_instability;
+    	    		var result_deprivation =result.result_deprivation;
+    	    		var result_inferiority =result.result_inferiority;
+    	    		var result_regression = result.result_regression;
+					var result_o_text = result.result_o_text;
+					var result_c_text = result.result_c_text;
+					var result_direction = result.result_direction;
+    				
+    				if(result.cate_seq === 1) {
+    					result_aggressive = (result.result_aggressive / 9 * 100).toFixed(1);
+        	    		result_social_anxiety = (result.result_social_anxiety / 12 * 100).toFixed(1);
+        	    		result_depressed = (result.result_depressed / 18 * 100).toFixed(1);
+        	    		result_avpd = (result.result_avpd / 8 * 100).toFixed(1);
+        	    		result_self_esteem = (result.result_self_esteem / 29 * 100).toFixed(1);
+        	    		result_emotional_instability = (result.result_emotional_instability / 24 * 100).toFixed(1);
+        	    		result_deprivation = (result.result_deprivation / 13 * 100).toFixed(1);
+        	    		result_inferiority = (result.result_inferiority / 16 * 100).toFixed(1);
+        	    		result_regression = (result.result_regression / 11 * 100).toFixed(1);
     				}
     				
-    				var result_aggressive = result[index].result_aggressive;
-    	    		var result_social_anxiety = result[index].result_social_anxiety;
-    	    		var result_depressed = result[index].result_depressed;
-    	    		var result_avpd = result[index].result_avpd;
-    	    		var result_self_esteem = result[index].result_self_esteem;
-    	    		var result_emotional_instability = result[index].result_emotional_instability;
-    	    		var result_deprivation =result[index].result_deprivation;
-    	    		var result_inferiority =result[index].result_inferiority;
-    	    		var result_regression = result[index].result_regression;
-					var result_o_text = result[index].result_o_text;
-					var result_direction = result[index].result_direction;
-					
-					if(result[index].cate_seq === 1) {
-    					result_aggressive = (result[index].result_aggressive / 9 * 100).toFixed(1);
-        	    		result_social_anxiety = (result[index].result_social_anxiety / 12 * 100).toFixed(1);
-        	    		result_depressed = (result[index].result_depressed / 18 * 100).toFixed(1);
-        	    		result_avpd = (result[index].result_avpd / 8 * 100).toFixed(1);
-        	    		result_self_esteem = (result[index].result_self_esteem / 29 * 100).toFixed(1);
-        	    		result_emotional_instability = (result[index].result_emotional_instability / 24 * 100).toFixed(1);
-        	    		result_deprivation = (result[index].result_deprivation / 13 * 100).toFixed(1);
-        	    		result_inferiority = (result[index].result_inferiority / 16 * 100).toFixed(1);
-        	    		result_regression = (result[index].result_regression / 11 * 100).toFixed(1);
-    				}
-					
 					$('#result_o_text').text(result_o_text);
 					$('result_direction').text(result_direction);
 					
@@ -262,7 +259,7 @@
 					
     	            var context = document.getElementById('myChart').getContext('2d');
     	            var myChart = new Chart(context, {
-    	                type: 'horizontalBar', // 차트의 형태
+    	                type: 'bar', // 차트의 형태
     	                data: { // 차트에 들어갈 데이터
     	                    labels: [
     	                        //x 축
@@ -282,10 +279,7 @@
     	                                'rgba(255, 206, 86, 0.2)',
     	                                'rgba(75, 192, 192, 0.2)',
     	                                'rgba(153, 102, 255, 0.2)',
-    	                                'rgba(255, 159, 64, 0.2)',
-    	                                'rgba(255, 99, 132, 0.2)',
-    	                                'rgba(54, 162, 235, 0.2)',
-    	                                'rgba(255, 206, 86, 0.2)'
+    	                                'rgba(255, 159, 64, 0.2)'
     	                            ],
     	                            borderColor: [
     	                                //경계선 색상
@@ -294,10 +288,7 @@
     	                                'rgba(255, 206, 86, 1)',
     	                                'rgba(75, 192, 192, 1)', 
     	                                'rgba(153, 102, 255, 1)',
-    	                                'rgba(255, 159, 64, 1)',
-    	                                'rgba(255, 99, 132, 1)',
-    	                                'rgba(54, 162, 235, 1)',
-    	                                'rgba(255, 206, 86, 1)'
+    	                                'rgba(255, 159, 64, 1)'
     	                            ],
     	                            borderWidth: 1 //경계선 굵기
     	                        }/* ,

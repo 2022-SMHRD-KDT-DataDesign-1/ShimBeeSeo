@@ -11,40 +11,40 @@ import lombok.ToString;
 @ToString
 public class User_Result {
     // 결과 순번 
-    private Double result_seq;
+    private int result_seq;
 
     // 사용자 아이디 
     private String user_id;
 
     // 분류 순번 
-    private Double cate_seq;
+    private int cate_seq;
 
     // 공격성 
-    private Double result_aggressive;
+    private int result_aggressive;
 
     // 사회불안 
-    private Double result_social_anxiety;
+    private int result_social_anxiety;
 
     // 우울 
-    private Double result_depressed;
+    private int result_depressed;
 
     // 대인회피 
-    private Double result_avpd;
+    private int result_avpd;
 
     // 자존감 
-    private Double result_self_esteem;
+    private int result_self_esteem;
 
     // 정서불안 
-    private Double result_emotional_instability;
+    private int result_emotional_instability;
 
     // 애정결핍 
-    private Double result_deprivation;
+    private int result_deprivation;
 
     // 열등감 
-    private Double result_inferiority;
+    private int result_inferiority;
 
     // 퇴행 
-    private Double result_regression;
+    private int result_regression;
 
     // 그림 
     private String result_path;
@@ -60,4 +60,9 @@ public class User_Result {
 
     // 검사일 
     private String result_date;
+
+	
+
 }
+
+
