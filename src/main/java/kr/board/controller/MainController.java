@@ -16,6 +16,11 @@ public class MainController {
 	 public String joinSucces() {
 		return "main/joinSucces";
 	}
+	
+	@RequestMapping("/testSuccess")
+	 public String testSucces() {
+		return "main/testSuccess";
+	}
 	/*
 	 * public void index() {
 	 * // 이렇게 해도 index.jsp로 가지만 명시해주는 것을 권장

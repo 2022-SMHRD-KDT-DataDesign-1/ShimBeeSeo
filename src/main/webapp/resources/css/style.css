@@ -1,4 +1,9 @@
 /********** Template CSS **********/
+
+body{
+	font-family: GmarketSansMedium;
+}
+
 :root {
     --primary: #FE5D37;
     --light: #FFF5F3;
@@ -8,7 +13,7 @@
 .back-to-top {
     position: fixed;
     display: none;
-    right: 45px;
+    right: 5px;
     bottom: 45px;
     z-index: 99;
 }
@@ -81,7 +86,6 @@ h4,
 .display-4,
 .display-5,
 .display-6 {
-    font-family: 'Lobster Two', cursive;
     font-weight: 700;
 }
 
@@ -90,10 +94,6 @@ h6,
 .h5,
 .h6 {
     font-weight: 600;
-}
-
-.font-secondary {
-    font-family: 'Lobster Two', cursive;
 }
 
 

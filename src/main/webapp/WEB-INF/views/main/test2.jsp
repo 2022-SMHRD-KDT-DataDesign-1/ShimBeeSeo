@@ -48,17 +48,7 @@
 
 <!-- Template Stylesheet -->
 <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
-<style>
 
-@font-face {
-	font-family: 'GmarketSansMedium';
-	src:
-		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
-		format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-</style>
 <script>
 	$(document).ready(function() {
 		//$(".page").
@@ -171,14 +161,18 @@
 							
 								<div class="flex-container">
 									<div class="wrapper">
-										<h2>FileReader</h2>
-										<img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" class="image-box" />
-										<label for="file" class="upload-btn">
-											<input id="file" name="file" type="file" accept="image/*" /> <span>Upload Image</span>
-										</label>
+										<h2>FileUpload</h2>
+										<div style="position: relative;">
+											<img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" class="image-box" style="min-width:350px"; height="350px"; />
+												<label for="file" class="upload-btn">
+												<input id="file" name="file" type="file" accept="image/*" style="display: none;" />
+												</label>
+										</div>
+										
 									</div>
 
 								<!-- 미리보기 이후 파일 업로드하기 -->
+									<!-- if문 써야함 대기중 -->
 									<button type="button" onclick="uploadFunction();" class="form-control btn btn-primary" style="width: 150px">파일업로드</button>
 								<!--미리보기 테스트 끝 -->
 								</div>
@@ -191,10 +185,10 @@
 					<div style="width: 100%; display: block; margin: 0 auto" class="col-md-4">
 						<form id="checkboxes" action="${contextPath}/ScoreList.do" method="POST">
 							<div style="width:100%;height:auto; min-height:700px;position:relative;overflow:hidden;background-image:url('${contextPath}/resources/img/sk(1).png'); background-repeat : no-repeat; background-size : 100% 100%;">
-								<div id="queWrap" class="" style="width:100%;height:auto; padding:25px 40px 90px 18px;">
+								<div id="queWrap" class="" style="width:100%;height:auto; padding:55px 40px 90px 18px;">
 									<div id="que1" class="que curQue" style="width:100%;">
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
-											<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">1. 그림의 전체적인 분위기는 어떤가요?</strong>
+											<strong style="margin-top:2vw; font-size: 20pt; color:black">1. 그림의 전체적인 분위기는 어떤가요?</strong>
 											<input type="radio" class="btn-check" name="mood" value="1" id="mood1" autocomplete="off"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="mood1">보통</label>
 											<input type="radio" class="btn-check" name="mood" value="2" id="mood2" autocomplete="off">
@@ -204,7 +198,7 @@
 										</div>
 										
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
-											<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">2. 종이의 전체 면적에서 집이 얼마나 차지하나요?</strong>
+											<strong style="margin-top:2vw; font-size: 20pt; color:black">2. 종이의 전체 면적에서 집이 얼마나 차지하나요?</strong>
 											<input type="checkbox" class="btn-check" name="size" value="4" id="size1" autocomplete="off"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="size1">보통(중앙에서 2/3 정도 차지)</label>
 											<input type="checkbox" class="btn-check" name="size" value="5" id="size2" autocomplete="off">
@@ -216,7 +210,7 @@
 										</div>
 											
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
-											<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">3. 그림에서 집은 어느쪽에 위치해 있나요?</strong>
+											<strong style="margin-top:2vw; font-size: 20pt; color:black">3. 그림에서 집은 어느쪽에 위치해 있나요?</strong>
 											<input type="radio" class="btn-check" name="position" value="8" id="position1" autocomplete="off"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="position1">좌측</label>
 											<input type="radio" class="btn-check" name="position" value="9" id="position2" autocomplete="off">
@@ -230,7 +224,7 @@
 										
 									<div id="que2" class="que" style="display:none;">
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
-											<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">4. 어떤 시점으로 그림이 그려졌나요?</strong>
+											<strong style="margin-top:2vw; font-size: 20pt; color:black">4. 어떤 시점으로 그림이 그려졌나요?</strong>
 											<input type="radio" class="btn-check" name="sight" value="12" id="sight1" autocomplete="off"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sight1">윗면(위에서 내려다보는)</label>
 											<input type="radio" class="btn-check" name="sight" value="13" id="sight2" autocomplete="off">
@@ -240,7 +234,7 @@
 										</div>
 											
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
-											<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">5. 지붕은 어떻게 묘사되었나요?</strong>
+											<strong style="margin-top:2vw; font-size: 20pt; color:black">5. 지붕은 어떻게 묘사되었나요?</strong>
 											<input type="checkbox" class="btn-check" name="roof" value="15" id="roof1" autocomplete="off"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="roof1">과도하게 큼, 강한선 묘사</label>
 											<input type="checkbox" class="btn-check" name="roof" value="16" id="roof2" autocomplete="off">
@@ -256,7 +250,7 @@
 										
 									<div id="que3" class="que" style="display:none;">
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
-											<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">6. 집을 구성하는 벽의 모습은 어떤가요?</strong>
+											<strong style="margin-top:2vw; font-size: 20pt; color:black">6. 집을 구성하는 벽의 모습은 어떤가요?</strong>
 											<input type="radio" class="btn-check" name="wall" value="20" id="wall1" autocomplete="off"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="wall1">허술한 벽</label>
 											<input type="radio" class="btn-check" name="wall" value="21" id="wall2" autocomplete="off">
@@ -266,7 +260,7 @@
 										</div>
 											
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
-											<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">7. 현관문의 크기와 모양은 어떻게 묘사되었나요?</strong>
+											<strong style="margin-top:2vw; font-size: 20pt; color:black">7. 현관문의 크기와 모양은 어떻게 묘사되었나요?</strong>
 											<input type="checkbox" class="btn-check" name="door" value="23" id="door1" autocomplete="off" checked> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="door1">과하게 큼</label>
 											<input type="checkbox" class="btn-check" name="door" value="24" id="door2" autocomplete="off">
@@ -284,7 +278,7 @@
 										
 									<div id="que4" class="que" style="display:none;">
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
-											<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">8. 창문은 어떤 특징이 있나요?</strong>
+											<strong style="margin-top:2vw; font-size: 20pt; color:black">8. 창문은 어떤 특징이 있나요?</strong>
 											<input type="checkbox" class="btn-check" name="window" value="29" id="window1" autocomplete="off" checked> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="window1">없음</label>
 											<input type="checkbox" class="btn-check" name="window" value="30" id="window2" autocomplete="off">
@@ -296,7 +290,7 @@
 										</div>
 											
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
-											<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">9. 굴뚝의 모습에 특징이 있나요?</strong>
+											<strong style="margin-top:2vw; font-size: 20pt; color:black">9. 굴뚝의 모습에 특징이 있나요?</strong>
 											<input type="radio" class="btn-check" name="chimney" value="33" id="chimney1" autocomplete="off" checked> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="chimney1">없음</label>
 											<input type="radio" class="btn-check" name="chimney" value="34" id="chimney2" autocomplete="off">
@@ -306,7 +300,7 @@
 										</div>
 											
 										<div class="btn-group-vertical" role="group"aria-label="Vertical radio toggle button group">
-											<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">10. 그림에 태양이 묘사되어 있나요?</strong>
+											<strong style="margin-top:2vw; font-size: 20pt; color:black">10. 그림에 태양이 묘사되어 있나요?</strong>
 											<input type="checkbox" class="btn-check" name="sun" value="36" id="sun1" autocomplete="off" checked> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sun1">반만 나온 태양</label>
 											<input type="checkbox" class="btn-check" name="sun" value="37" id="sun2" autocomplete="off">
@@ -320,7 +314,7 @@
 										
 									<div id="que5" class="que" style="display:none;">
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
-											<strong style="margin-top:2vw; font-family: 'GmarketSansMedium'; font-size: 20pt; color:black">11. 그림에 묘사된 다른 모습들이 있나요?</strong>
+											<strong style="margin-top:2vw; font-size: 20pt; color:black">11. 그림에 묘사된 다른 모습들이 있나요?</strong>
 											<input type="checkbox" class="btn-check" name="etc" value="40" id="etc1" autocomplete="off" checked> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc1">산속 또는 숲속 집</label>
 											<input type="checkbox" class="btn-check" name="etc" value="41" id="etc2" autocomplete="off">
@@ -357,10 +351,12 @@
 												<!-- checkbox는 name이 같아야함 -->
 												<!-- 여러개 선택할 수 있음 -->
 												
-											
-										<br> <input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white;" 
-										id="picSend" type="button" value="이전단계로" onclick="location.href='check.do'" />
-										<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white; margin-right:40px;" id="picSend" type="submit" value="submit">
+										
+							</div>
+							<div>
+								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white;" 
+									id="picSend" type="button" value="이전단계로" onclick="location.href='check.do'" />
+								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white; margin-right:30px;" id="picSend" type="submit" value="검사 완료">
 								</div>
 							</form>
 						</div>
@@ -377,8 +373,8 @@
 					<h3 id="resultTxt"></h3>
 					</div>	
           	<div id="result"></div>
-			<jsp:include page="../common/footer.jsp"></jsp:include>
 		</section>
+		<jsp:include page="../common/footer.jsp"></jsp:include>
 	</div>
 
 	<!-- JavaScript Libraries -->
@@ -413,7 +409,7 @@
 			console.log("파일 업로드 요청");
 			saveImageBeforeUpload(data);
 			/* async : false -> 비동기 동기로 변경, 다만 값 받아오기 전에 페이지 이동해 버리면 값 못받고 넘어감!! 주의하자! */
-			$.ajax({
+			 $.ajax({
 				type : "POST",
 				enctype : 'multipart/form-data',
 				url : "http://192.168.56.1:9000/photo/" + id,
@@ -437,7 +433,8 @@
 				error : function(e) {
 					console.log("파일 업로드 에러");
 				}
-			});
+			}); 
+
 		}
 		
 		function saveImageBeforeUpload(data){
@@ -469,8 +466,11 @@
 	<!-- 이미지 미리보기 처리 -->
 	<script type="text/javascript">
 	const fileDOM = document.querySelector('#file');
+	const upload = document.querySelector('.image-box')
 	const previews = document.querySelectorAll('.image-box');
-
+	
+	upload.addEventListener('click', () => fileDOM.click());
+	
 	fileDOM.addEventListener('change', () => {
 	  const reader = new FileReader();
 	  reader.onload = ({ target }) => {
