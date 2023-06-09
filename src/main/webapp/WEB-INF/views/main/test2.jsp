@@ -409,10 +409,11 @@
 			console.log("파일 업로드 요청");
 			saveImageBeforeUpload(data);
 			/* async : false -> 비동기 동기로 변경, 다만 값 받아오기 전에 페이지 이동해 버리면 값 못받고 넘어감!! 주의하자! */
+			// http://211.105.164.246:9000/test
 			 $.ajax({
 				type : "POST",
-				enctype : 'multipart/form-data',
-				url : "http://192.168.56.1:9000/photo/" + id,
+				enctype : "multipart/form-data",
+				url : "http://211.105.164.246:9000/h_photo",
 				data : data,
 				async : false,
 				processData : false,
@@ -436,7 +437,7 @@
 				}
 			}); 
 		}
-		
+		//http://211.105.164.246:9000/test
 		function saveImageBeforeUpload(data){
 			var csrfHeaderName = "${_csrf.headerName}";
 			var csrfTokenValue = "${_csrf.token}";
@@ -478,13 +479,6 @@
 	  reader.readAsDataURL(fileDOM.files[0]);
 	});
 
-	/* 만약 이미지 두개 처리 할 거라면 */
-	const fileDOM2 = document.querySelector('#file2');
-
-	fileDOM2.addEventListener('change', () => {
-	  const imageSrc = URL.createObjectURL(fileDOM2.files[0]);
-	  previews[1].src = imageSrc;
-	});
 	
 	</script>
 </body>

@@ -73,7 +73,7 @@
 	
 	
 						<!--차트가 그려질 부분-->
-						<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
+							<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
 	
 
 
