@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.board.entity.H_Scorelist;
+import kr.board.entity.User;
+import kr.board.entity.User_Result;
 import kr.score.mapper.ScoreMapper;
+import kr.user.mapper.UserResultMapper;
 
 @Controller
 public class ScoreListController {
@@ -24,13 +27,18 @@ public class ScoreListController {
 	@Autowired
 	private ScoreMapper scoreMapper;
 	
+	@Autowired
+	private UserResultMapper resultMapper;
+	
 	@PostMapping("/ScoreList.do")
 //	public String ScoreList(@RequestParam(value="valueArr[]") List<String> valueArr,  Model model) {
 //	public String ScoreList(String mood, @RequestParam List<String> size) {
 		
-	public String ScoreList(String mood, @RequestParam List<String> size, String position, String sight, @RequestParam List<String> roof, String wall,
+	public String ScoreList(HttpSession session, String mood, @RequestParam List<String> size, String position, String sight, @RequestParam List<String> roof, String wall,
 			@RequestParam List<String> door, @RequestParam List<String> window, String chimney, @RequestParam List<String> sun, @RequestParam List<String> etc, Model model) {
 
+		User mvo = (User)session.getAttribute("mvo");
+		String user_id = mvo.getUser_id();
 		List<H_Scorelist> list = scoreMapper.scoreList();
 
 		List<Integer> checkedList = new ArrayList<Integer> ();
@@ -84,24 +92,28 @@ public class ScoreListController {
 				}
 			}
 		}
-		H_Scorelist totalScore = new H_Scorelist(0, 1, "총점", "총점", aggressive, anxiety, depressed, avpd, esteem, instability, deprivation, inferiority, regression);
+		User_Result checkedResult = new User_Result(0, user_id, 1, aggressive, anxiety, depressed, avpd, esteem, instability, deprivation, inferiority, regression, null, null, null, null, null);
 		
 //		System.out.println("mood출력 : " + mood);
 //		System.out.println("size출력 : " + size.size());
 
-		model.addAttribute("totalScore", totalScore);
+		model.addAttribute("checkedResult", checkedResult);
 		
+		resultMapper.insertResult(checkedResult);
 		
+		System.out.println(checkedResult.toString());
 		
-		System.out.println(totalScore.toString());
-		
-		return "redirect:/jyjtest.do";
+		return "redirect:/TestResult.do";
 	};
 	
-	@GetMapping("/ScoreResult.do")
-	public String ScoreResult(Model model) {
-		
-		return "";
-	}
+	/*
+	 * @ResponseBody
+	 * 
+	 * @GetMapping("/ScoreResult.do") public String ScoreResult(Model model) {
+	 * 
+	 * 
+	 * 
+	 * return ""; }
+	 */
 	
 }

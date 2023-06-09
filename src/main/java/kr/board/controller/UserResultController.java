@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,7 +27,9 @@ public class UserResultController {
 	public List<User_Result> UserResult(User m) {
 		
 		List<User_Result> result = userResultMapper.viewResult(m);
-		System.out.println("컨트롤러에서 페이지로 잘 넘겨짐");
+		for(int i = 0 ; i<result.size(); i++) {
+		};
+		System.out.println("컨트롤러에서 페이지로 잘 넘겨짐(list)");
 		return result;
 	};
 	
@@ -36,5 +39,17 @@ public class UserResultController {
 		String res = "ajax굳";
 		return res;
 	}
+	
+	@GetMapping("testResult.do")
+	public User_Result UserOneResult(HttpSession session) {
+		
+		User mvo = (User)session.getAttribute("mvo");
+		String user_id = mvo.getUser_id();
+		
+		User_Result result = userResultMapper.viewOneResult(user_id);
+		
+		System.out.println("컨트롤러에서 페이지로 잘 넘겨짐(one)");
+		return result;
+	};
 	
 }

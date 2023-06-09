@@ -118,4 +118,9 @@ public class PageMovementController {
 		return "main/admin";
 	}
 	
+	@GetMapping("TestResult.do")
+	public String TestResult() {
+		return "member/testResult";
+	}
+	
 }

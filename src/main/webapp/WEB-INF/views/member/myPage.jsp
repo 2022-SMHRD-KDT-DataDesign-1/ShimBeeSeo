@@ -74,7 +74,7 @@
 	<div id="resetChart">
 	
 	<!--차트가 그려질 부분-->
-	<canvas id="myChart"></canvas>
+	<canvas id="myChart" width:"200%"></canvas>
 	
 	</div>
 
@@ -245,6 +245,19 @@
     	    		var result_regression = result[index].result_regression;
 					var result_o_text = result[index].result_o_text;
 					var result_direction = result[index].result_direction;
+					
+					if(result[index].cate_seq === 1) {
+    					result_aggressive = (result[index].result_aggressive / 9 * 100).toFixed(1);
+        	    		result_social_anxiety = (result[index].result_social_anxiety / 12 * 100).toFixed(1);
+        	    		result_depressed = (result[index].result_depressed / 18 * 100).toFixed(1);
+        	    		result_avpd = (result[index].result_avpd / 8 * 100).toFixed(1);
+        	    		result_self_esteem = (result[index].result_self_esteem / 29 * 100).toFixed(1);
+        	    		result_emotional_instability = (result[index].result_emotional_instability / 24 * 100).toFixed(1);
+        	    		result_deprivation = (result[index].result_deprivation / 13 * 100).toFixed(1);
+        	    		result_inferiority = (result[index].result_inferiority / 16 * 100).toFixed(1);
+        	    		result_regression = (result[index].result_regression / 11 * 100).toFixed(1);
+    				}
+					
 					$('#result_o_text').text(result_o_text);
 					$('result_direction').text(result_direction);
 					
@@ -253,7 +266,7 @@
 					
     	            var context = document.getElementById('myChart').getContext('2d');
     	            var myChart = new Chart(context, {
-    	                type: 'bar', // 차트의 형태
+    	                type: 'horizontalBar', // 차트의 형태
     	                data: { // 차트에 들어갈 데이터
     	                    labels: [
     	                        //x 축
@@ -273,7 +286,10 @@
     	                                'rgba(255, 206, 86, 0.2)',
     	                                'rgba(75, 192, 192, 0.2)',
     	                                'rgba(153, 102, 255, 0.2)',
-    	                                'rgba(255, 159, 64, 0.2)'
+    	                                'rgba(255, 159, 64, 0.2)',
+    	                                'rgba(255, 99, 132, 0.2)',
+    	                                'rgba(54, 162, 235, 0.2)',
+    	                                'rgba(255, 206, 86, 0.2)'
     	                            ],
     	                            borderColor: [
     	                                //경계선 색상
@@ -282,7 +298,10 @@
     	                                'rgba(255, 206, 86, 1)',
     	                                'rgba(75, 192, 192, 1)', 
     	                                'rgba(153, 102, 255, 1)',
-    	                                'rgba(255, 159, 64, 1)'
+    	                                'rgba(255, 159, 64, 1)',
+    	                                'rgba(255, 99, 132, 1)',
+    	                                'rgba(54, 162, 235, 1)',
+    	                                'rgba(255, 206, 86, 1)'
     	                            ],
     	                            borderWidth: 1 //경계선 굵기
     	                        }/* ,
@@ -304,8 +323,8 @@
     	                            	ticks: {
     	                            		/* y축 설정 변경 */
     	            						min: 0,
-    	            						max: 20,
-    	            						stepSize : 2,
+    	            						max: 100,
+    	            						stepSize : 10,
     	            						fontSize : 14,
     	            						
     	            						}
