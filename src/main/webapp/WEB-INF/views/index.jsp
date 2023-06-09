@@ -40,13 +40,7 @@
 </head>
 <body>
 <a href="javascript:GPTTest('content')"> 플라스크에 JSON 보내보기</a>
-<<<<<<< HEAD
 <a href="songSecret.do">들어오지마셈</a>
-
-=======
-<a href="http://localhost:5000/?id=testID2"> 쿼리스트링 테스트</a>
-<a href="UserResult.do">Chart.JS 테스트</a>
->>>>>>> jyj
 
    <div class="container-xxl bg-white p-0">
 		<jsp:include page="common/header.jsp"></jsp:include>
@@ -79,10 +73,7 @@
             <div class="container">
                <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
                         <div class="row" style="position: relative;">
-	                        <!-- <div class="col-12 text-center"> -->
-	                        	<img class="img-fluid w-75 rounded-circle bg-light p-3" src="${contextPath}/resources/img/htp.png" alt="">
-	                        <!-- </div> -->
-                            <%-- <div class="col-12 text-center">
+                            <div class="col-12 text-center">
                                 <img class="img-fluid w-75 rounded-circle bg-light p-3" src="${contextPath}/resources/img/home.jpg" alt="">
                             </div>
                             <div class="col-6 text-start" style="position: absolute; margin-top: 35%; margin-left: 10%;">
@@ -90,7 +81,7 @@
                             </div>
                             <div class="col-6 text-end" style="position: absolute; margin-top: 37%; margin-left: 48%; width: 40%;">
                                 <img class="img-fluid w-100 rounded-circle bg-light p-3" style="height: 165px"; src="${contextPath}/resources/img/person.jpg" alt="">
-                            </div> --%>
+                            </div>
                <div class="h-100 d-flex flex-column justify-content-center p-5">
                   <div class="row g-5 align-items-center">
                      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="margin-top:40%;">
