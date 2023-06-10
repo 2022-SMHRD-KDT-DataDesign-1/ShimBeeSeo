@@ -36,7 +36,7 @@ public class FileUpDownController {
 					}
 					file.transferTo(serverSaveFile);
 					if(serverSaveFile.exists()) {//톰캣 서버에 파일이 저장되면 이클립스 경로에 파일 저장
-						copyImageProjectPath(file);
+						resultMsg = copyImageProjectPath(file);
 					}
 				}
 			} catch (IllegalStateException e) {
@@ -46,15 +46,20 @@ public class FileUpDownController {
 		return resultMsg;
 	}
 	
-	public void copyImageProjectPath(MultipartFile file) {//이클립스 경로에 파일저장
+	public String copyImageProjectPath(MultipartFile file) {//이클립스 경로에 파일저장
 		String projectPath = "C:\\eGovFrame-4.0.0\\workspace.edu\\ShimBeeSeo\\src\\main\\webapp\\resources\\upload\\";
 		try {
 			file.transferTo(new File(projectPath+file.getOriginalFilename()));
+			System.out.println(projectPath+file.getOriginalFilename());
+			return projectPath+file.getOriginalFilename();
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
+			return null;
 		} catch (IOException e) {
 			e.printStackTrace();
+			return null;
 		}
+		
 	}
 	
 	//@RequestMapping("saveImage.do")
