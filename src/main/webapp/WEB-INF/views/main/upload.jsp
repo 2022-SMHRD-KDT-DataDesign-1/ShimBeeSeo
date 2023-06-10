@@ -235,13 +235,38 @@
 						// 값 받아와서 히든태그에 집어 넣기!!
 						// null값 체크해서 페이지 이동 막아줘야 함
 						
+						
+						// ChatGPT에 객체 탐지 결과 불러와서 질문 집어넣기
 						var prompt = "";
 						var cnt = 1;
 						var inputText = items['message'];
 						var keyword = inputText.split(",");
 						prompt += "HTP검사중에 집그림 검사를 시작할거야 대상은 8세 미만의 아동이야\n";
 						for(var i = 0 ; i < keyword.length-1; i++){
-							prompt+=cnt+"."+ keyword[i] + "이 존재함 \n";
+							if(keword[i]== 'house'){								
+							prompt+=cnt+".집"+이 존재함 \n";
+							}
+							if(keword[i]== 'door'){								
+							prompt+=cnt+".문"+이 존재함 \n";
+							}
+							if(keword[i]== 'window'){								
+							prompt+=cnt+".창문"+이 존재함 \n";
+							}
+							if(keword[i]== 'wall'){								
+							prompt+=cnt+".벽"+이 존재함 \n";
+							}
+							if(keword[i]== 'chimney'){								
+							prompt+=cnt+".굴뚝"+이 존재함 \n";
+							}
+							if(keword[i]== 'roof'){								
+							prompt+=cnt+".지붕"+이 존재함 \n";
+							}
+							if(keword[i]== 'sun'){								
+							prompt+=cnt+".태양"+이 존재함 \n";
+							}else{
+								prompt+="";
+								}
+							
 							cnt++;
 						};
 						prompt += "위 검사를 토대로 검사 결과를 해석해줘 결과는 자녀의 부모님에게 설명하는 것 처럼 설명해줘 \n 추가로 위 검사 결과를 바탕으로 아이의 양육방식에 대하여 부모님의 관점으로 10가지 말해줘";
