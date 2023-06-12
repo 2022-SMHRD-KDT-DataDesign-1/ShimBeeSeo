@@ -420,14 +420,15 @@
 				contentType : false,
 				cache : false,
 				timeout : 600000,
-				success : function(items) {
+				success : function(item) {
 
 					if (res = !null) {
 						console.log("파일 업로드 성공");
 						// res 출력은 true만 나옴.. 어케 받아오지..?
-						console.log(items);
+						console.log(items['message']);
 						// 값 받아와서 히든태그에 집어 넣기!!
 						// null값 체크해서 페이지 이동 막아줘야 함
+<<<<<<< HEAD
 						
 						
 		
@@ -484,6 +485,10 @@
 									console.log("flask에서 아무고토 못받음");
 								}
 							});
+=======
+						var addInput = document.querySelector('#que1');
+						addInput.innerHTML += "<input type='hidden' name='item' value='"+itmes['message']+"'>"
+>>>>>>> branch 'khs' of https://github.com/2022-SMHRD-KDT-DataDesign-1/ShimBeeSeo.git
 					} else {
 						console.log("파일 업로드 실패");
 					}
@@ -510,7 +515,8 @@
 					if(data == "success"){
 						alert(data);
 					} else {
-						
+						var addInput = document.querySelector('#que1');
+						addInput.innerHTML += "<input type='hidden' name='photo' value="+data+">"
 					}
 				},
 				error : function(e) {

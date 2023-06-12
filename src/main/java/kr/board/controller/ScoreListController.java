@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import kr.board.entity.H_Scorelist;
 import kr.board.entity.User;
 import kr.board.entity.User_Result;
+import kr.cases.mapper.H_CaseMapper;
 import kr.score.mapper.ScoreMapper;
 import kr.user.mapper.UserResultMapper;
 
@@ -30,17 +31,28 @@ public class ScoreListController {
 	@Autowired
 	private UserResultMapper resultMapper;
 	
+	@Autowired
+	private H_CaseMapper hcaseMapper;
+	
 	@PostMapping("/ScoreList.do")
 //	public String ScoreList(@RequestParam(value="valueArr[]") List<String> valueArr,  Model model) {
 //	public String ScoreList(String mood, @RequestParam List<String> size) {
 		
-	public String ScoreList(HttpSession session, String mood, @RequestParam List<String> size, String position, String sight, @RequestParam List<String> roof, String wall,
+	public String ScoreList(HttpSession session, String item, String photo, String mood, @RequestParam List<String> size, String position, String sight, @RequestParam List<String> roof, String wall,
 			@RequestParam List<String> door, @RequestParam List<String> window, String chimney, @RequestParam List<String> sun, @RequestParam List<String> etc, Model model) {
 
+		// 객체 탐지 결과
+		String[] items = item.split(",");
+		System.out.println(items.toString());
+		
+		// user_id 불러오기
 		User mvo = (User)session.getAttribute("mvo");
 		String user_id = mvo.getUser_id();
+		
+		// 채점리스트 불러오기
 		List<H_Scorelist> list = scoreMapper.scoreList();
 
+		// 체크된 값 가져오기
 		List<Integer> checkedList = new ArrayList<Integer> ();
 		checkedList.add(Integer.parseInt(mood));
 		for (int i = 0; i < size.size(); i++) {
@@ -65,6 +77,7 @@ public class ScoreListController {
 		for (int i = 0; i < etc.size(); i++) {
 			checkedList.add(Integer.parseInt(etc.get(i)));
 		}
+		
 		int aggressive = 0;
 		int anxiety = 0;
 		int depressed = 0;
@@ -75,7 +88,7 @@ public class ScoreListController {
 		int inferiority = 0;
 		int regression = 0;
 		
-		
+		// 체크된 값 가져와서 계산하기
 		for (int i = 0; i < checkedList.size(); i++) {
 			for (int j = 0; j < list.size(); j++) {
 				if(checkedList.get(i) == list.get(j).getScore_h_seq()) {
@@ -92,12 +105,9 @@ public class ScoreListController {
 				}
 			}
 		}
-		User_Result checkedResult = new User_Result(0, user_id, 1, aggressive, anxiety, depressed, avpd, esteem, instability, deprivation, inferiority, regression, null, null, null, null, null);
 		
-//		System.out.println("mood출력 : " + mood);
-//		System.out.println("size출력 : " + size.size());
-
-		model.addAttribute("checkedResult", checkedResult);
+		// 계산 결과 DB 삽입
+		User_Result checkedResult = new User_Result(0, user_id, 1, aggressive, anxiety, depressed, avpd, esteem, instability, deprivation, inferiority, regression, photo, null, null, null, null);
 		
 		resultMapper.insertResult(checkedResult);
 		
@@ -105,15 +115,6 @@ public class ScoreListController {
 		
 		return "redirect:/TestResult.do";
 	};
-	
-	/*
-	 * @ResponseBody
-	 * 
-	 * @GetMapping("/ScoreResult.do") public String ScoreResult(Model model) {
-	 * 
-	 * 
-	 * 
-	 * return ""; }
-	 */
+
 	
 }

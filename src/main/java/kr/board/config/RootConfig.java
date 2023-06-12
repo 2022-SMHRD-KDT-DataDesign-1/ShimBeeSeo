@@ -15,7 +15,7 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@MapperScan(basePackages = {"kr.board.mapper","kr.member.mapper","kr.user.mapper","kr.score.mapper"})
+@MapperScan(basePackages = {"kr.board.mapper","kr.member.mapper","kr.user.mapper","kr.score.mapper", "kr.cases.mapper"})
 @PropertySource({"classpath:persistence-mysql.properties"})
 public class RootConfig {
    // root-context.xml을 대체할 클래스
