@@ -428,6 +428,62 @@
 						console.log(items);
 						// 값 받아와서 히든태그에 집어 넣기!!
 						// null값 체크해서 페이지 이동 막아줘야 함
+						
+						
+		
+						
+						
+						// ChatGPT에 객체 탐지 결과 불러와서 질문 집어넣기
+						var prompt = "";
+						var cnt = 1;
+						var inputText = items['message'];
+						var keyword = inputText.split(",");
+						prompt += "HTP검사중에 집그림 검사를 시작할거야 대상은 8세 미만의 아동이야\n";
+						for(var i = 0 ; i < keyword.length-1; i++){
+							if(keyword[i]== 'house'){								
+							prompt+=cnt+".집이 존재함 \n";
+							}
+							if(keyword[i]== 'doors'){								
+							prompt+=cnt+".문이 존재함 \n";
+							}
+							if(keyword[i]== 'windows'){								
+							prompt+=cnt+".창문이 존재함 \n";
+							}
+							if(keyword[i]== 'wall'){								
+							prompt+=cnt+".벽이 존재함 \n";
+							}
+							if(keyword[i]== 'chimney'){								
+							prompt+=cnt+".굴뚝이 존재함 \n";
+							}
+							if(keyword[i]== 'roof'){								
+							prompt+=cnt+".지붕이 존재함 \n";
+							}
+							if(keyword[i]== 'sun'){								
+							prompt+=cnt+".태양이 존재함 \n";
+							}else{
+								prompt+="";
+								}
+							
+							cnt++;
+						};
+						prompt += "위 검사를 토대로 검사 결과를 해석해줘 결과는 자녀의 부모님에게 설명하는 것 처럼 설명해줘 \n 추가로 위 검사 결과를 바탕으로 아이의 양육방식에 대하여 부모님의 관점으로 10가지 말해줘";
+						console.log(prompt);
+						
+
+							$.ajax({
+								url : "http://localhost:5000/chatbot",
+								Type : "get",
+								data : {"message" : prompt},
+								dataType : "json",
+								contentType: 'application/json; charset=utf-8',
+								success : function (chatbot_response){
+									console.log(chatbot_response);
+									
+								},
+								error : function (){
+									console.log("flask에서 아무고토 못받음");
+								}
+							});
 					} else {
 						console.log("파일 업로드 실패");
 					}
@@ -435,8 +491,7 @@
 				error : function(e) {
 					console.log("파일 업로드 에러");
 				}
-			}); 
-		}
+		}); };
 		//http://211.105.164.246:9000/test
 		function saveImageBeforeUpload(data){
 			var csrfHeaderName = "${_csrf.headerName}";
@@ -462,9 +517,9 @@
 					console.log("파일 저장 에러");
 				}
 			});
-		}
-		
+		};
 	</script>
+	
 	<!-- 이미지 미리보기 처리 -->
 	<script type="text/javascript">
 	const fileDOM = document.querySelector('#file');
