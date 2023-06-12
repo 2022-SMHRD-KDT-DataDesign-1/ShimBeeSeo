@@ -26,4 +26,8 @@ public class MainController {
 	 * // 이렇게 해도 index.jsp로 가지만 명시해주는 것을 권장
 	 * }
 	 */
+	@RequestMapping("/myPage2")
+	 public String myPage2() {
+		return "member/myPage2";
+	}
 }
