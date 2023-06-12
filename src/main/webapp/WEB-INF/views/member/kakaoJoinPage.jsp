@@ -14,8 +14,6 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  	<!-- 카카오 로그인 API 스크립트 -->
-  	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
   	    <meta content="" name="keywords">
     <meta content="" name="description">
 
@@ -45,12 +43,11 @@
   <div class="container-xxl bg-white p-0">
 
 	<jsp:include page="../common/header.jsp"></jsp:include>
-	
 
         <!-- Page Header End -->
         <div class="container-xxl py-5 page-header position-relative mb-5">
             <div class="container py-5">
-                <h1 class="display-2 text-white animated slideInDown mb-4">로그인</h1>
+                <h1 class="display-2 text-white animated slideInDown mb-4">회원가입</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
   
                 </nav>
@@ -60,46 +57,79 @@
 
 
         <!-- Contact Start -->
-         <div class="container-xxl py-5">
+        <div class="container-xxl py-5">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">로그인</h1>
-                    <p>심비서는 개인정보를 무단으로 사용하지 않습니다.</p>
-                </div>
-
                 <div class="bg-light rounded">
                     <div class="row g-0">
-                    	<div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
-                        	<div class="position-relative h-100">
+                                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                            <div class="position-relative h-100">
                                                <img src="${contextPath}/resources/images/logo.png" class="position-relative rounded"
                                 frameborder="0" style="height:90%; width:90%; margin-left:5%;margin-top:5%;" >
                             </div>
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <p class="mb-4">회원이 아니신가요? <a href="joinPage.do">회원가입</a></p>
-                                <form action="${contextPath}/login.do" method="post">
-                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+                                <form action="${contextPath}/kakaoJoin.do" method="get">
                                     <div class="row g-3">
+
+                                                <input type="hidden" class="form-control border-0" name="user_id" id="user_Id" value="${nmvo.user_id}">
+                                                <input type="hidden" class="form-control border-0" name="user_pw" id="pw1" value="${nmvo.user_pw}">
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" name="user_id" id="subject" placeholder="아이디를 입력해주세요">
-                                                <label for="subject">ID</label>
+                                                <input type="text" class="form-control border-0" name="user_name" id="user_Name">
+                                                <label for="user_Name">가입자 이름</label>
                                             </div>
                                         </div>
+                                        <div class="col-12">
+                                         	<label class="form-check-label" for="flexRadioDefault1">가입자의 생년월일</label><br>
+                                            <div class="form-floating">
+												<input type="date" name="user_bdate" id="user_Bdate">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control border-0" name="user_childname" id="user_Childname">
+                                                <label for="user_Childname">자녀 이름</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                         	<label class="form-check-label" for="flexRadioDefault1">자녀의 생년월일</label><br>
+                                            <div class="form-floating">
+												<input type="date" name="user_childbdate" id="user_Childbdate">
+                                            </div>
+                                        </div>
+                                         <div class="col-12" >
+                                         	<label class="form-check-label" for="flexRadioDefault1">자녀와의관계 </label><br>
+											<div class="form-check form-check-inline ">
+												<input class="form-check-input " type="radio" name="user_relation" id="user_Relation"  value="부">
+											 	<label class="form-check-label" for="flexRadioDefault1">부 </label>
+											</div>
+											<div class="form-check form-check-inline">
+												<input class="form-check-input" type="radio" name="user_relation" id="user_Relation"  value="모">
+												<label class="form-check-label" for="flexRadioDefault1">모 </label>
+											</div>
+										</div>
+
                                          <div class="col-12">
-                                            <div class="form-floating">
-                                                <input type="password" class="form-control border-0" name="user_pw" id="" placeholder="비밀번호를 입력해주세요">
-                                                <label for="subject">PASSWORD</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                       		<div style="background-size:cover;"><a class="btn_yel" href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1ff4c9cbe51272559a48887a3811f7a0&redirect_uri=http://localhost:8081/controller/kakaoLogin">
-                    <span>카카오 로그인</span>
-                </a></div>
-                                       		<!-- submit button으로 바꿈 -->
-                                            <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">로그인</button>
-                                            <button class="btn btn-primary w-100 py-3" type="button" style="margin: 5px 0;" onClick="location.href='joinPage.do'">회원가입</button>
+											<div class="dropdown">
+												<select class="form-select"  aria-label="Default select example" name="user_address" id="user_Address" style="color:black;">
+  													<option selected>지역을 선택하세요</option>
+  													<option value="광주">광주</option>
+  													<option value="서울">서울</option>
+  													<option value="부산">부산</option>
+												</select>
+											</div>
+										</div>
+                                         <div class="col-12">
+											<div class="form-check">
+											<label class="form-check-label" for="flexCheckDefault">개인정보 제공동의 </label>
+												<input class="form-check-input" type="checkbox" value="Y" name="user_isagreed" id="user_Isagreed"> 
+											</div>
+										</div>
+                                        <div class="col-12"><!-- <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">회원가입</button> -->
+                                            <input class="btn btn-primary py-3 px-5" type="submit" value="회원가입" href="join.do" style="width:100%; height: auto;"></a>
+                                            <button class="btn btn-primary w-100 py-3 px-5" type="button" onclick="location.href='loginPage.do'" style="margin-top:15px;">취소</button>
+                                        	<!-- <i class="fa fa-arrow-right ms-2"></i> -->
                                         </div>
                                     </div>
                                 </form>
@@ -109,15 +139,15 @@
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
         <!-- Contact End -->
 
- 	<jsp:include page="../common/footer.jsp"></jsp:include> 
+	<jsp:include page="../common/footer.jsp"></jsp:include>
 
     </div>
     
           <!-- Modal content-->
-       <div id="messageType" class="modal-content panel-info"> <!-- panel-info >> 하늘색 -->
+      <div id="messageType" class="modal-content panel-info"> <!-- panel-info >> 하늘색 -->
         <div class="modal-header panel-heading"> <!-- 메세지 굵게 처리 -->
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">${msgType}</h4>
@@ -139,28 +169,6 @@
     <script src="${contextPath}/resources/lib/easing/easing.min.js"></script>
     <script src="${contextPath}/resources/lib/waypoints/waypoints.min.js"></script>
     <script src="${contextPath}/resources/lib/owlcarousel/owl.carousel.min.js"></script>
-
-
-<!-- 카카오 로그인 API 시작-->
-
-<script type='text/javascript'>
-        //<![CDATA[
-        // 사용할 앱의 JavaScript 키를 설정해 주세요.
-        Kakao.init('d394e2fa88e8e559fa9dda45fb5d339c');
-        // 카카오 로그인 버튼을 생성합니다.
-        Kakao.Auth.createLoginButton({
-            container: '#kakao-login-btn',
-            success: function (authObj) {
-                console.log(JSON.stringify(authObj));
-            },
-            fail: function (err) {
-                alert(JSON.stringify(err));
-            }
-        });
-      //]]>
-    </script>
-<!-- 카카오 로그인 API 끝 -->
-
 
     <!-- Template Javascript -->
     <script src="${contextPath}/resources/js/main.js"></script>
