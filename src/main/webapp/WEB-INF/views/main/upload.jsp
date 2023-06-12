@@ -280,6 +280,7 @@
 								contentType: 'application/json; charset=utf-8',
 								success : function (chatbot_response){
 									console.log(chatbot_response);
+									
 								},
 								error : function (){
 									console.log("flask에서 아무고토 못받음");
