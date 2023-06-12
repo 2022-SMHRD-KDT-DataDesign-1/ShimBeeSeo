@@ -420,7 +420,7 @@
 				contentType : false,
 				cache : false,
 				timeout : 600000,
-				success : function(item) {
+				success : function(items) {
 
 					if (res = !null) {
 						console.log("파일 업로드 성공");
@@ -429,7 +429,7 @@
 						// 값 받아와서 히든태그에 집어 넣기!!
 						// null값 체크해서 페이지 이동 막아줘야 함
 						var addInput = document.querySelector('#que1');
-						addInput.innerHTML += "<input type='hidden' name='item' value='"+itmes['message']+"'>"
+						addInput.innerHTML += "<input type='hidden' name='item' value='"+items['message']+"'>"
 					} else {
 						console.log("파일 업로드 실패");
 					}
@@ -448,6 +448,7 @@
 				enctype : 'multipart/form-data',
 				url : "saveImage.do",
 				data : data,
+				/* async : false, */
 				processData : false,
 				contentType : false,
 				beforeSend : function(xhr){

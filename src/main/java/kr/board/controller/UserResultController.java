@@ -40,7 +40,8 @@ public class UserResultController {
 		return res;
 	}
 	
-	@GetMapping("testResult.do")
+	@ResponseBody
+	@GetMapping("testResultOne.do")
 	public User_Result UserOneResult(HttpSession session) {
 		
 		User mvo = (User)session.getAttribute("mvo");
