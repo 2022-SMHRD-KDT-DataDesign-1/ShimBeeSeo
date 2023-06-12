@@ -354,10 +354,12 @@
 										
 							</div>
 							<div>
+								<input type="hidden" name="result_direction" id="result_direction"> 
 								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white;" 
 									id="picSend" type="button" value="이전단계로" onclick="location.href='check.do'" />
 								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white; margin-right:30px;" id="picSend" type="submit" value="검사 완료">
 								</div>
+								
 							</form>
 						</div>
 					</div>
@@ -420,7 +422,7 @@
 				contentType : false,
 				cache : false,
 				timeout : 600000,
-				success : function(item) {
+				success : function(items) {
 
 					if (res = !null) {
 						console.log("파일 업로드 성공");
@@ -428,7 +430,9 @@
 						console.log(items['message']);
 						// 값 받아와서 히든태그에 집어 넣기!!
 						// null값 체크해서 페이지 이동 막아줘야 함
-<<<<<<< HEAD
+						
+						var addInput = document.querySelector('#que1');
+						addInput.innerHTML += "<input type='hidden' name='item' value='"+items['message']+"'>"
 						
 						
 		
@@ -479,16 +483,12 @@
 								contentType: 'application/json; charset=utf-8',
 								success : function (chatbot_response){
 									console.log(chatbot_response);
-									
+									$('#result_direction').attr("value",chatbot_response);
 								},
 								error : function (){
 									console.log("flask에서 아무고토 못받음");
 								}
 							});
-=======
-						var addInput = document.querySelector('#que1');
-						addInput.innerHTML += "<input type='hidden' name='item' value='"+itmes['message']+"'>"
->>>>>>> branch 'khs' of https://github.com/2022-SMHRD-KDT-DataDesign-1/ShimBeeSeo.git
 					} else {
 						console.log("파일 업로드 실패");
 					}
