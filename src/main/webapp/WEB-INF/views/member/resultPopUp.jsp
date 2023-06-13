@@ -55,56 +55,61 @@
 	<div class="container-xxl bg-white p-0">
 
 		<div class="bg-light rounded">
-		
-               	<div class="pb-5 mb-5">
-                    	<div class="section-title-wrap mb-4">
-                        	<h4 class="section-title text-center">검사 결과</h4>
-                       	</div>
-                            
-        <!-- 날짜선택 -->                    
-                   		<label for="dateSelect">검사 날짜 선택:</label>
-						<select name="date" id="dateSelect" onchange="changeDate()">
-    					<option value="">--검사 날짜를 선택해주세요--</option>
-    					<option id="result_date"></option>
 
-						</select>
+			<div class="pb-5 mb-5">
+				<div class="section-title-wrap mb-4">
+					<h4 class="section-title text-center">감정별 지수 변화</h4>
+				</div>
 
+				<!-- 날짜선택 -->
+				<label for="dateSelect">검사 날짜 선택:</label> <select name="date"
+					id="dateSelect" onchange="changeDate()">
+					<option value="">--검사 날짜를 선택해주세요--</option>
+					<option id="result_date"></option>
 
-
-                            
-    					<div class="bg-light rounded">
-							<div style="width: 100%; height: 100%;">
-	
-	<div id="resetChart">
-	
-						<!--차트가 그려질 부분-->
-							<canvas id="myChart" width="300px" height="100%" margin-left="15px" padding-left="25px"></canvas>
-	</div>
+				</select>
 
 
-	
-	
+
+
+				<div class="bg-light rounded">
+					<div style="width: 100%; height: 100%;">
+
+						<div id="resetChart">
+
+							<!--차트가 그려질 부분-->
+							<canvas id="myChart" width="300px" height="100%"
+								margin-left="15px" padding-left="25px"></canvas>
 						</div>
-						<p class="fs-5"> 아프다 이 아이</p>
-                    </div>
 
-               	  </div>
+
+
+
+					</div>
+					<p class="fs-5">아프다 이 아이</p>
+				</div>
+
+			</div>
 		</div>
 
 	</div>
 
 
-
+    	  	<!-- Chart.js 불러오기 -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+		
 
 	<script type="text/javascript">
 	$(document).ready(function() {
-		loadResult();	
+		user_id = "${mvo.user_id}";
+		console.log(user_id);
+		loadResult(user_id);	
 		});
     
     /* JSON형태로 사용자 검사 결과 받아오는 함수 */
-	function loadResult() {
+	function loadResult(user_id) {
 		$.ajax({
-			url : "resultList.do",
+			url : "resultList.do/" + user_id,
 			type : "get",
 			dataType : "json",
 			success : makeSelect, /* callback 함수 요청되고나서 실행하는 함수*/
@@ -127,7 +132,7 @@
     
 	function changeDate(){
 		$.ajax({
-			url : "resultList.do",
+			url : "resultList.do/" + user_id,
 			type:"get",
 			dataType : "json",
 			success : function(result){
@@ -240,7 +245,24 @@
 	            });
 	            	
 	            
+	            document.getElementById("myChart").onclick = function(evt) {
+	                var activePoints = myChart.getElementsAtEvent(evt);
 
+	                if(activePoints.length > 0)
+	                {
+	                    var clickedElementindex = activePoints[0]["_index"];
+
+	                    var label = myChart.data.labels[clickedElementindex];
+	                    console.log("label : " + label);
+
+	                    var value = myChart.data.datasets[0].data[clickedElementindex];
+	                    console.log("value : " + value);
+	                    
+	                    window.open("http://localhost:8081/controller/resultPopUp.do","팝업 테스트","width=800, height=800, top=10, left=10");
+
+	                    
+	                };
+	            };
 	            
 	            }
 	    		
@@ -253,6 +275,13 @@
 			}
 		});
 	}
+	
+	
+
+		
+
+    
+    
 	</script>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
