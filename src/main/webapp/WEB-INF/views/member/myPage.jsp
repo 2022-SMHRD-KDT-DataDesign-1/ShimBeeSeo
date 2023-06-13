@@ -53,8 +53,8 @@
             	<div class="col-lg-8 col-12">
                 	<div class="pb-5 mb-5">
                 		<div class=".d-md-block gap-2" style="margin-top: 6vw;">
-                			<div style="float: left; width: 50%;"><button style="width:100%; height: 6vw;">이전</button></div>
-         					<div style="float: left; width: 50%;"><button style="width:100%; height: 6vw;">다음</button></div>
+                			<div style="float: left; width: 50%;"><button id="date" style="width:100%; height: 6vw;">이전</button></div>
+         					<div style="float: left; width: 50%;"><button id="emtion"style="width:100%; height: 6vw;">다음</button></div>
          				</div>
                     	<div class="section-title-wrap mb-4" style="margin-top:6vw;">
                         	<h1 class="section-title text-center">날짜별 검사 결과</h1>
