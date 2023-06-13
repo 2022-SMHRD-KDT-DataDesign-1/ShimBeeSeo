@@ -55,7 +55,8 @@
                     	<div class="section-title-wrap mb-4">
                         	<h4 class="section-title text-center">검사 결과</h4>
                        	</div>
-                            
+                        
+                        <input type="hidden" value="${mvo.user_id}" id ="idCheck">    
         <!-- 날짜선택 -->                    
                    		<label for="dateSelect">검사 날짜 선택:</label>
 						<select name="date" id="dateSelect" onchange="changeDate()">
@@ -235,13 +236,15 @@
         <script type="text/javascript">
         
     	$(document).ready(function() {
-    		loadResult();	
+    		user_id = "${mvo.user_id}";
+    		console.log(user_id);
+    		loadResult(user_id);	
     		});
         
         /* JSON형태로 사용자 검사 결과 받아오는 함수 */
-    	function loadResult() {
+    	function loadResult(user_id) {
     		$.ajax({
-    			url : "resultList.do",
+    			url : "resultList.do/" + user_id,
     			type : "get",
     			dataType : "json",
     			success : makeSelect, /* callback 함수 요청되고나서 실행하는 함수*/
@@ -264,7 +267,7 @@
         
     	function changeDate(){
     		$.ajax({
-    			url : "resultList.do",
+    			url : "resultList.do/" + user_id,
     			type:"get",
     			dataType : "json",
     			success : function(result){
@@ -390,10 +393,13 @@
     	                    var value = myChart.data.datasets[0].data[clickedElementindex];
     	                    console.log("value : " + value);
     	                    
+    	                    window.open("http://localhost:8081/controller/resultPopUp.do","팝업 테스트","width=800, height=800, top=10, left=10");
+
+    	                    
     	                };
     	            };
     	            
-    	            };
+    	            }
     	    		
     	    		
     	    		

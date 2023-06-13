@@ -11,7 +11,7 @@ import kr.board.entity.User_Result;
 public interface UserResultMapper {
 
 	// 모든 검사 불러오기
-	public List<User_Result> viewResult(User m);
+	public List<User_Result> viewResult(String user_id);
 	
 	public User_Result viewOneResult(String user_id);
 
