@@ -439,36 +439,85 @@
 						var prompt = "";
 						var cnt = 1;
 						var inputText = items['message'];
-						var keyword = inputText.split(",");
+						var keywordSplitYes = inputText.split(";")[0];
+						var keywordSplitNo = inputText.split(";")[1];
+						var keywordExist = keywordSplitYes.split(",");
+						var keywordNull = keywordSplitNo.split(",");
+						
+						console.log(keywordExist);
+						console.log(keywordNull);
 						prompt += "HTP검사중에 집그림 검사를 시작할거야 대상은 8세 미만의 아동이야\n";
-						for(var i = 0 ; i < keyword.length-1; i++){
-							if(keyword[i]== 'house'){								
+						for(var i = 0 ; i < keywordExist.length; i++){
+							if(keywordExist[i]== 'house'){								
 							prompt+=cnt+".집이 존재함 \n";
 							}
-							if(keyword[i]== 'doors'){								
+							if(keywordExist[i]== 'door'){								
 							prompt+=cnt+".문이 존재함 \n";
 							}
-							if(keyword[i]== 'windows'){								
+							if(keywordExist[i]== 'window'){								
 							prompt+=cnt+".창문이 존재함 \n";
 							}
-							if(keyword[i]== 'wall'){								
+							if(keywordExist[i]== 'wall'){								
 							prompt+=cnt+".벽이 존재함 \n";
 							}
-							if(keyword[i]== 'chimney'){								
+							if(keywordExist[i]== 'chimney'){								
 							prompt+=cnt+".굴뚝이 존재함 \n";
 							}
-							if(keyword[i]== 'roof'){								
+							if(keywordExist[i]== 'roof'){								
 							prompt+=cnt+".지붕이 존재함 \n";
 							}
-							if(keyword[i]== 'sun'){								
+							if(keywordExist[i]== 'sun'){								
 							prompt+=cnt+".태양이 존재함 \n";
+							}
+							if(keywordExist[i]== 'c_smoke'){
+							prompt+=cnt+"굴뚝과 연기가 존재함 \n";
+							}
+							if(keywordExist[i]== 'fence'){
+							prompt+=cnt+"울타리가 존재함 \n";
+							}
+							if(keywordExist[i]== 'tree'){
+								prompt+=cnt+"나무가 존재함 \n";
 							}else{
 								prompt+="";
 								}
-							
+							cnt++;
+						}
+							for(var i = 0 ; i < keywordNull.length; i++){
+								if(keywordExist[i]== 'house'){								
+								prompt+=cnt+".집이 없음 \n";
+								}
+								if(keywordExist[i]== 'door'){								
+								prompt+=cnt+".문이 없음 \n";
+								}
+								if(keywordExist[i]== 'window'){								
+								prompt+=cnt+".창문이 없음 \n";
+								}
+								if(keywordExist[i]== 'wall'){								
+								prompt+=cnt+".벽이 없음 \n";
+								}
+								if(keywordExist[i]== 'chimney'){								
+								prompt+=cnt+".굴뚝이 없음 \n";
+								}
+								if(keywordExist[i]== 'roof'){								
+								prompt+=cnt+".지붕이 없음 \n";
+								}
+								if(keywordExist[i]== 'sun'){								
+								prompt+=cnt+".태양이 없음 \n";
+								}
+								if(keywordExist[i]== 'c_smoke'){
+								prompt+=cnt+"굴뚝과 연기가 없음 \n";
+								}
+								if(keywordExist[i]== 'fence'){
+								prompt+=cnt+"울타리가 없음 \n";
+								}
+								if(keywordExist[i]== 'tree'){
+									prompt+=cnt+"나무가 없음 \n";
+									}else{
+									prompt+="";
+									}
 							cnt++;
 						};
-						prompt += "위 검사를 토대로 검사 결과를 해석해줘 결과는 자녀의 부모님에게 설명하는 것 처럼 설명해줘 \n 추가로 위 검사 결과를 바탕으로 아이의 양육방식에 대하여 부모님의 관점으로 10가지 말해줘";
+						prompt += "위 검사 결과를 바탕으로 아이의 양육방식에 대하여 부모님의 관점으로 5가지 말해줘";
 						console.log(prompt);
 						
 
@@ -480,7 +529,7 @@
 								contentType: 'application/json; charset=utf-8',
 								success : function (chatbot_response){
 									console.log(chatbot_response);
-									$('#result_direction').attr("value",chatbot_response);
+									$('#result_direction').val(chatbot_response);
 								},
 								error : function (){
 									console.log("flask에서 아무고토 못받음");
