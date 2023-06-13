@@ -123,4 +123,9 @@ public class PageMovementController {
 		return "member/testResult";
 	}
 	
+	@GetMapping("resultPopUp.do")
+	public String resultPopUP() {
+		return "member/resultPopUp";
+	}
+	
 }
