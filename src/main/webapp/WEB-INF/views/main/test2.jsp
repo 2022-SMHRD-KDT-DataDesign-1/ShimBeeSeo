@@ -483,34 +483,34 @@
 							cnt++;
 						}
 							for(var i = 0 ; i < keywordNull.length; i++){
-								if(keywordExist[i]== 'house'){								
+								if(keywordNull[i]== 'house'){								
 								prompt+=cnt+".집이 없음 \n";
 								}
-								if(keywordExist[i]== 'door'){								
+								if(keywordNull[i]== 'door'){								
 								prompt+=cnt+".문이 없음 \n";
 								}
-								if(keywordExist[i]== 'window'){								
+								if(keywordNull[i]== 'window'){								
 								prompt+=cnt+".창문이 없음 \n";
 								}
-								if(keywordExist[i]== 'wall'){								
+								if(keywordNull[i]== 'wall'){								
 								prompt+=cnt+".벽이 없음 \n";
 								}
-								if(keywordExist[i]== 'chimney'){								
+								if(keywordNull[i]== 'chimney'){								
 								prompt+=cnt+".굴뚝이 없음 \n";
 								}
-								if(keywordExist[i]== 'roof'){								
+								if(keywordNull[i]== 'roof'){								
 								prompt+=cnt+".지붕이 없음 \n";
 								}
-								if(keywordExist[i]== 'sun'){								
+								if(keywordNull[i]== 'sun'){								
 								prompt+=cnt+".태양이 없음 \n";
 								}
-								if(keywordExist[i]== 'c_smoke'){
+								if(keywordNull[i]== 'c_smoke'){
 								prompt+=cnt+"굴뚝과 연기가 없음 \n";
 								}
-								if(keywordExist[i]== 'fence'){
+								if(keywordNull[i]== 'fence'){
 								prompt+=cnt+"울타리가 없음 \n";
 								}
-								if(keywordExist[i]== 'tree'){
+								if(keywordNull[i]== 'tree'){
 									prompt+=cnt+"나무가 없음 \n";
 									}else{
 									prompt+="";
@@ -528,8 +528,9 @@
 								dataType : "json",
 								contentType: 'application/json; charset=utf-8',
 								success : function (chatbot_response){
-									console.log(chatbot_response);
-									$('#result_direction').val(chatbot_response);
+									console.log(chatbot_response['response']);
+									
+									$('#result_direction').val(chatbot_response['response']);
 								},
 								error : function (){
 									console.log("flask에서 아무고토 못받음");
