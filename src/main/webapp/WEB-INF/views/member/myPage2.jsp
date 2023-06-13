@@ -38,42 +38,107 @@
 
     <!-- Template Stylesheet -->
     <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
+ <script>
+	 $(function() {
+		  var x = 0;
+		  var tabx = 0;
+		  var xx = 0;
+		  var limit = $("table").width() - $(".cc").width();
+		  $("table").bind('touchstart', function(e) {
+		    var event = e.originalEvent;
+		    x = event.touches[0].screenX;
+		    tabx = $("table").css("transform").replace(/[^0-9\-.,]/g, '').split(',')[4];
+		  });
+		  $("table").bind('touchmove', function(e) {
+		    var event = e.originalEvent;
+		    xx = parseInt(tabx) + parseInt(event.touches[0].screenX - x);
+		    $("table").css("transform", "translate(" + xx + "px, 0px)");
+		    event.preventDefault();
+		  });
+		  $("table").bind('touchend', function(e) {
+		    if ((xx > 0) && (tabx <= 0)) {
+		      $("table").css("transform", "translate(0px, 0px)");
+		    }
+		    if (Math.abs(xx) > limit) {
+		      $("table").css("transform", "translate(" + -limit + "px, 0px)");
+		    }
+		  });
+	
+		});
+ </script>   
     
 <style>
     table, th, td {
     border: 5px; 
     text-align: center;
-  }
-  table {
-    width: 100%;
-    height: auto;
+}
+table {
+    width: 800px;
+    height: 10px;
+    transform: translate(0px, 0px);
+    transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+    transition-duration: 400ms;
   }
   th, td{
-  	width: 10%;
+  	width: 200px;
   }
+
+.cc{
+  overflow: hidden;
+  position: relative;
+}
+.hh{
+	margin-bottom: 50px;
+}
+
+strong{
+	color:black;
+	margin-left: 20px;
+}
+.bi-person-fill{
+	font-size: 60px;
+	line-height: 60px;
+	color: #CBD5E1;
+}
+  
+/*   * {
+  margin: 0;
+  padding: 0;
+} */
+
+
+
+
+/* a {
+  display: inline-block;
+  padding: 5px;
+} */
   
     </style>
 </head>
 <body>
- <div class="container-xxl bg-white p-0">
+ <div class="container-xxl bg-white p-0" style="width: 100%; height: auto;">
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	<!-- 본문 내용 시작 -->
-	
-	
-
 	<section class="about-section section-padding" id="section_2">
     	<div class="container">
+    		<div class="hh"><strong>마이페이지</strong></div>
+    		<div class="col-lg-8 col-12" style="display:flex">
+    			<div style="display:flex; height: 100px;"><i class="bi bi-person-fill"></i><strong>양진영</strong>님, 안녕하세요!</div>
+    		</div>
+    		<div style="display: flex;">
+    			<div style="text-align: center; display: flex;"><i class="bi bi-file-earmark-check"><br>검사내역</i></div>
+    			<div style="text-align: center; display: flex;"><i class="bi bi-file-earmark-check"><br>검사내역</i></div>
+    			<div style="text-align: center; display: flex;"><i class="bi bi-file-earmark-check"><br>검사내역</i></div>
+    		</div>
         	<div class="row">
-        		
-        		
-				
             	<div class="col-lg-8 col-12">
                 	<div class="pb-5 mb-5">
-                   		<table class="table table-bordered border-dark border border-2" >
+                   		<!-- <table class="table table-bordered border-dark border border-2" style="width: 1000px;" >
 								<th></th>
 								<th>공격성</th>
 								<th>사회불안</th>
-								<th style="text-align:center;">우울</th>
+								<th>우울</th>
 								<th>대인회피</th>
 								<th>자존감</th>
 								<th>정서불안</th>
@@ -81,7 +146,7 @@
 								<th>열등감</th>
 								<th>퇴행</th>
 							<tr>
-								<td>마지막 검사결과</td>
+								<td style="width:15%">마지막 검사결과</td>
 								<td>30</td>
 								<td>40</td>
 								<td>50</td>
@@ -116,150 +181,54 @@
 								<td>0</td>
 								<td>0</td>
 							</tr> 
-						</table>
-
-
-                            
-    					<div class="bg-light rounded">
-							<div style="width: 100%; height: 100%;">
-	
-	<div id="resetChart">
-	
-						<!--차트가 그려질 부분-->
-							<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
-	</div>
-
-
-	
-	
-						</div>
-						<p class="fs-5"> 아프다 이 아이</p>
-                    </div>
-
-               	  </div>
-               	 
-             </div>
- 				<div class="col-lg-8 col-12 mx-auto">
-            		<div class="pb-5 mb-5">
-                		<div class="section-title-wrap mb-4">
-                     		<h4 class="section-title text-center">검사 내용</h4>
-                    	</div>
-                            
-			<!-- test용 시작-->
-    					<div class="testimonial-item bg-light rounded p-5">
-                			<p class="fs-5" id="result_o_text">  </p>
-						</div>
-               		</div>
-           		</div>
+						</table> -->
+               	  	</div>              	 
+             	</div>		
+        	</div>
+		</div>
                         
-                         <div class="col-lg-8 col-12 mx-auto">
-                        <div class="pb-5 mb-5">
-                            <div class="section-title-wrap mb-4">
-                                <h4 class="section-title text-center">지도 방향</h4>
-                            </div>
-                            
-    <div class="testimonial-item bg-light rounded p-5">
 
-                        <p class="fs-5" id="result_direction"> </p>
-                    </div>
-                    	
+	</section>	
+<!-- 본문 내용 끝 -->
+<jsp:include page="../common/footer.jsp"></jsp:include>
+</div>
 
-                   		</div>
-                    </div>
-                        
-                    </div>
-
-
-
-                    <div class="col-lg-12 col-12">
-                        <div class="section-title-wrap mb-5">
-                            <h4 class="section-title">요건 어떠심?</h4>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-                        <div class="team-thumb bg-white shadow-lg">
-					
- 							<h4 class="mb-2">
-                                    1번
-                                </h4><br>
-                            <div class="team-info">
-                                
-                                    <img src="${contextPath}/resources/img/oh.png" style="width: 100%; height: auto;" class="verified-image img-fluid" alt="">
-                                
-
-                            </div>
-
-
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-                        <div class="team-thumb bg-white shadow-lg">
-                            <!-- <img src="images/profile/handsome-asian-man-listening-music-through-headphones.jpg"
-                                class="about-image img-fluid" alt=""> -->
-
-                            <div class="team-info">
-                                <h4 class="mb-2">
-                                    2번
-                                 </h4><br>
-                                 <img src="${contextPath}/resources/img/why.png" style="width: 100%; height: auto;" class="verified-image img-fluid" alt="">
-
-                                <!-- <span class="badge">Creative</span>
-
-                                <span class="badge">Design</span> -->
-                            </div>
-
-                        </div>
-                    </div>
-
-
-        </section>
- 					
- 		
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="${contextPath}/resources/lib/wow/wow.min.js"></script>
+<script src="${contextPath}/resources/lib/easing/easing.min.js"></script>
+<script src="${contextPath}/resources/lib/waypoints/waypoints.min.js"></script>
+<script src="${contextPath}/resources/lib/owlcarousel/owl.carousel.min.js"></script>
 	
-	
-	<!-- 본문 내용 끝 -->
-	<jsp:include page="../common/footer.jsp"></jsp:include>
-	</div>
-	
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="${contextPath}/resources/lib/wow/wow.min.js"></script>
-    <script src="${contextPath}/resources/lib/easing/easing.min.js"></script>
-    <script src="${contextPath}/resources/lib/waypoints/waypoints.min.js"></script>
-    <script src="${contextPath}/resources/lib/owlcarousel/owl.carousel.min.js"></script>
-	
-	    <!-- Template Javascript -->
-    <script src="${contextPath}/resources/js/main.js"></script>
+<!-- Template Javascript -->
+<script src="${contextPath}/resources/js/main.js"></script>
     
-    	  	<!-- Chart.js 불러오기 -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<!-- Chart.js 불러오기 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 		
-		<!-- Chart 내용 Javascript -->
+<!-- Chart 내용 Javascript -->
 
         
-        <script type="text/javascript">
+<script type="text/javascript">
+   /*      
+	$(document).ready(function() {
+    	loadResult();	
+    }); */
         
-    	$(document).ready(function() {
-    		loadResult();	
-    		});
-        
-        /* JSON형태로 사용자 검사 결과 받아오는 함수 */
-    	function loadResult() {
-    		$.ajax({
-    			url : "resultList.do",
-    			type : "get",
-    			dataType : "json",
-    			success : makeSelect, /* callback 함수 요청되고나서 실행하는 함수*/
-    			error : function() {
-    				alert("loadResult error");
-    			}
+/* JSON형태로 사용자 검사 결과 받아오는 함수 */
+	/* function loadResult() {
+    	$.ajax({
+    		url : "resultList.do",
+    		type : "get",
+    		dataType : "json",
+    		success : makeSelect, /* callback 함수 요청되고나서 실행하는 함수*/
+    	/* 	error : function() {
+    		alert("loadResult error");
+    		}
     		});
     	}
-        
+         */
     	/* 셀렉트에 사용자가 실시했던 검사날짜에 따른 option 추가 */
-        function makeSelect(data){
+        /* function makeSelect(data){
         	var listHtml = "<option>--검사 날짜를 선택해주세요--</option>";
 			console.log("makeselect실행완료")
         	$.each(data,function(index, obj){
@@ -353,7 +322,7 @@
     	                                'rgba(255, 206, 86, 1)'
     	                            ],
     	                            borderWidth: 1 //경계선 굵기
-    	                        }/* ,
+    	                        } *//* ,
     	                        {
     	                            label: 'test2',
     	                            fill: false,
@@ -363,15 +332,15 @@
     	                            backgroundColor: 'rgb(157, 109, 12)',
     	                            borderColor: 'rgb(157, 109, 12)'
     	                        } */
-    	                    ]
+    	       /*              ]
     	                },
     	                options: {
     	                    scales: {
     	                        yAxes: [
     	                            {
-    	                            	ticks: {
+    	                            	ticks: { */
     	                            		/* y축 설정 변경 */
-    	            						min: 0,
+    	       /*      						min: 0,
     	            						max: 100,
     	            						stepSize : 10,
     	            						fontSize : 14,
@@ -393,15 +362,7 @@
     				alert("error");
     			}
     		});
-    	}
-    	
-    	
-
-    		
-
-        
-        
-        </script>
-	
+    	} */
+</script>
 </body>
 </html>

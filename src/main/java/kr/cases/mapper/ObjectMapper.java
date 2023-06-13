@@ -4,15 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import kr.board.entity.H_Case;
-
 @Mapper
-public interface H_CaseMapper {
+public interface ObjectMapper {
 
-	List<H_Case> selectAllList();
-	
-	
-	
-	
-	
+	List<kr.board.entity.Object> selectAllList();
+
 }
