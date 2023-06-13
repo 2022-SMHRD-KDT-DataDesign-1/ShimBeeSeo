@@ -376,7 +376,24 @@
     	                }
     	            });
     	            	
-    	            }
+    	            
+    	            document.getElementById("myChart").onclick = function(evt) {
+    	                var activePoints = myChart.getElementsAtEvent(evt);
+
+    	                if(activePoints.length > 0)
+    	                {
+    	                    var clickedElementindex = activePoints[0]["_index"];
+
+    	                    var label = myChart.data.labels[clickedElementindex];
+    	                    console.log("label : " + label);
+
+    	                    var value = myChart.data.datasets[0].data[clickedElementindex];
+    	                    console.log("value : " + value);
+    	                    
+    	                };
+    	            };
+    	            
+    	            };
     	    		
     	    		
     	    		
