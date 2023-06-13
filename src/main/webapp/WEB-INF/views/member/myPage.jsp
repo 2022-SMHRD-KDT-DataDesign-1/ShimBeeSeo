@@ -52,8 +52,15 @@
 
             	<div class="col-lg-8 col-12">
                 	<div class="pb-5 mb-5">
+                		<div class=".d-md-block gap-2" style="margin-top: 6vw;">
+                			<div style="float: left; width: 50%;"><button style="width:100%; height: 6vw;">이전</button></div>
+         					<div style="float: left; width: 50%;"><button style="width:100%; height: 6vw;">다음</button></div>
+         				</div>
+                    	<div class="section-title-wrap mb-4" style="margin-top:6vw;">
+                        	<h1 class="section-title text-center">날짜별 검사 결과</h1>
+                       	</div>
                     	<div class="section-title-wrap mb-4">
-                        	<h4 class="section-title text-center">검사 결과</h4>
+                        	<h4 class="section-title text-center">감정 그래프</h4>
                        	</div>
                         
                         <input type="hidden" value="${mvo.user_id}" id ="idCheck">    
@@ -304,7 +311,7 @@
     				}
 					
 					$('#result_o_text').text(result_o_text);
-					$('result_direction').text(result_direction);
+					$('#result_direction').text(result_direction);
 					
 					document.getElementById('resetChart').innerHTML = ""; 
 					document.getElementById('resetChart').innerHTML = "<canvas id='myChart'></canvas>"; 
@@ -393,7 +400,6 @@
     	                    var value = myChart.data.datasets[0].data[clickedElementindex];
     	                    console.log("value : " + value);
     	                    
-    	                    window.open("http://localhost:8081/controller/resultPopUp.do","팝업 테스트","width=800, height=800, top=10, left=10");
 
     	                    
     	                };
