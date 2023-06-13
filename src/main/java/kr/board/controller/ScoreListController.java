@@ -41,7 +41,7 @@ public class ScoreListController {
 	private ObjectMapper objectMapper;
 	
 	@PostMapping("/ScoreList.do")		
-	public String ScoreList(HttpSession session, String item, String photo, String mood, @RequestParam List<String> size, String position, String sight, @RequestParam List<String> roof, String wall,
+	public String ScoreList(HttpSession session, String item, String photo, String result_direction, String mood, @RequestParam List<String> size, String position, String sight, @RequestParam List<String> roof, String wall,
 			@RequestParam List<String> door, @RequestParam List<String> window, String chimney, @RequestParam List<String> sun, @RequestParam List<String> etc, Model model) {
 
 		// 객체 탐지 결과
@@ -58,10 +58,16 @@ public class ScoreListController {
 		// 객체 유무에 따른 케이스 문장 생성
 		for(int i = 0; i < items_yu.length; i++) {
 			for(int j = 0; j < objects.size(); j++) {
-				if(items_yu[i].equals(objects.get(j).getObject_name()) || items_yu[i].equals(objects.get(j).getObject_name() + "s")) {
-					result_o_text += objects.get(j).getObject_content();
-				} else if(items_mu[i].equals(objects.get(j).getObject_name()) && objects.get(j).getObject_exist() == 0) {
-					result_o_text += objects.get(j).getObject_content();
+				if(items_yu[i].equals(objects.get(j).getObject_name()) && objects.get(j).getObject_exist() == 1) {
+					result_o_text += objects.get(j).getObject_content() + "\t";
+				} 
+				
+			}
+		}
+		for(int i = 0; i < items_mu.length; i++) {
+			for(int j = 0; j < objects.size(); j++) {
+				if(items_mu[i].equals(objects.get(j).getObject_name()) && objects.get(j).getObject_exist() == 0) {
+					result_o_text += objects.get(j).getObject_content() + "\t";
 				}
 			}
 		}
@@ -130,31 +136,33 @@ public class ScoreListController {
 		
 		List<H_Case> h_cases = hcaseMapper.selectAllList();
 		String result_c_text = "";
+		String result_c_text2 = "";
 		
 		for(int i = 0; i < h_cases.size(); i++) {
 			if(h_cases.get(i).getCase_h_emotion().equals("공격성") && (aggressive >= h_cases.get(i).getCase_h_s() && aggressive <= h_cases.get(i).getCase_h_e())) {
-				result_c_text += h_cases.get(i).getCase_h_content();
+				result_c_text +=  "\t" + h_cases.get(i).getCase_h_content() + "\t";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("사회불안") && (anxiety >= h_cases.get(i).getCase_h_s() && anxiety <= h_cases.get(i).getCase_h_e())) {
-				result_c_text += h_cases.get(i).getCase_h_content();
+				result_c_text +=  "\t" + h_cases.get(i).getCase_h_content() + "\t";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("우울") && (depressed >= h_cases.get(i).getCase_h_s() && depressed <= h_cases.get(i).getCase_h_e())) {
-				result_c_text += h_cases.get(i).getCase_h_content();
+				result_c_text +=  "\t" + h_cases.get(i).getCase_h_content() + "\t";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("대인회피") && (avpd >= h_cases.get(i).getCase_h_s() && avpd <= h_cases.get(i).getCase_h_e())) {
-				result_c_text += h_cases.get(i).getCase_h_content();
+				result_c_text +=  "\t" + h_cases.get(i).getCase_h_content() + "\t";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("자존감") && (esteem >= h_cases.get(i).getCase_h_s() && esteem <= h_cases.get(i).getCase_h_e())) {
-				result_c_text += h_cases.get(i).getCase_h_content();
+				result_c_text +=  "\t" + h_cases.get(i).getCase_h_content() + "\t";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("정서불안") && (instability >= h_cases.get(i).getCase_h_s() && instability <= h_cases.get(i).getCase_h_e())) {
-				result_c_text += h_cases.get(i).getCase_h_content();
+				result_c_text2 +=  "\t" + h_cases.get(i).getCase_h_content() + "\t";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("애정결핍") && (deprivation >= h_cases.get(i).getCase_h_s() && deprivation <= h_cases.get(i).getCase_h_e())) {
-				result_c_text += h_cases.get(i).getCase_h_content();
+				result_c_text2 +=  "\t" + h_cases.get(i).getCase_h_content() + "\t";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("열등감") && (inferiority >= h_cases.get(i).getCase_h_s() && inferiority <= h_cases.get(i).getCase_h_e())) {
-				result_c_text += h_cases.get(i).getCase_h_content();
+				result_c_text2 +=  "\t" + h_cases.get(i).getCase_h_content() + "\t";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("퇴행") && (regression >= h_cases.get(i).getCase_h_s() && regression <= h_cases.get(i).getCase_h_e())) {
-				result_c_text += h_cases.get(i).getCase_h_content();
+				result_c_text2 +=  "\t" + h_cases.get(i).getCase_h_content() + "\t";
 			}
 		}
+		System.out.println(result_c_text);
 		
 		// 계산 결과 DB 삽입
-		User_Result checkedResult = new User_Result(0, user_id, 1, aggressive, anxiety, depressed, avpd, esteem, instability, deprivation, inferiority, regression, photo, result_o_text, result_c_text, null, null);
+		User_Result checkedResult = new User_Result(0, user_id, 1, aggressive, anxiety, depressed, avpd, esteem, instability, deprivation, inferiority, regression, photo, result_o_text, result_c_text, result_direction, null, result_c_text2);
 		
 		resultMapper.insertResult(checkedResult);
 		

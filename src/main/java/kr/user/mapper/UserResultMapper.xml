@@ -31,6 +31,7 @@
 		              , result_c_text
 		              , result_direction
 		              , result_date
+		              , result_c_text2
 		           FROM t_user_result
 		          WHERE user_id=#{user_id} 
 	              ORDER BY result_date DESC
@@ -52,8 +53,12 @@
 					              , result_deprivation
 					              , result_inferiority
 					              , result_regression
-					              <!-- , result_path -->
+					              , result_path
+					              , result_o_text
+					              , result_c_text
+					              , result_direction
 					              , result_date
+					              , result_c_text2
 					              ) values (
 					              	#{user_id}
 					              , #{cate_seq}
@@ -66,8 +71,12 @@
 					              , #{result_deprivation}
 					              , #{result_inferiority}
 					              , #{result_regression}
-					              <!-- , #{result_path} -->
+					              , #{result_path}
+					              , #{result_o_text}
+					              , #{result_c_text}
+					              , #{result_direction}
 					              , sysdate
+					              , #{result_c_text2}
 					              )
 	</insert>
 
