@@ -529,7 +529,6 @@
 								contentType: 'application/json; charset=utf-8',
 								success : function (chatbot_response){
 									console.log(chatbot_response['response']);
-									
 									$('#result_direction').val(chatbot_response['response']);
 								},
 								error : function (){

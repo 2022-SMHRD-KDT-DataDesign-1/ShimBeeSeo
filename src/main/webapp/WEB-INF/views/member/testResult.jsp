@@ -214,6 +214,8 @@
     			dataType : "json",
     			success : function(result){
     				
+    				console.log(result);
+    				
     				var result_aggressive = result.result_aggressive;
     	    		var result_social_anxiety = result.result_social_anxiety;
     	    		var result_depressed = result.result_depressed;
@@ -225,8 +227,8 @@
     	    		var result_regression = result.result_regression;
 					var result_o_text = result.result_o_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
 					var result_c_text = result.result_c_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_c_text2 = result.result_c_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_direction = result.result_direction;
+					var result_c_text2 = result.result_c_text2.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_direction = result.result_direction.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
 					
 					if(result.cate_seq === 1) {
     					result_aggressive = (result.result_aggressive / 9 * 100).toFixed(1);
@@ -243,8 +245,9 @@
 					$('#result_o_text').text(result_o_text);
 					/* $('#result_c_text').text(result_c_text); */
 					document.getElementById('result_o_text').innerHTML = result_o_text;
-					document.getElementById('result_c_text').innerHTML = result_c_text + result_c_test2;
-					$('result_direction').text(result_direction);
+					document.getElementById('result_c_text').innerHTML = result_c_text + result_c_text2;
+					document.getElementById('result_direction').innerHTML = result_direction;
+					/* $('result_direction').text(result_direction); */
 					
 					document.getElementById('resetChart').innerHTML = ""; 
 					document.getElementById('resetChart').innerHTML = "<canvas id='myChart'></canvas>"; 
