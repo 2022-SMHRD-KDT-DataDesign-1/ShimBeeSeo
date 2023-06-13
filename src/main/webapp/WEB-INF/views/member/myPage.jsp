@@ -312,17 +312,8 @@
         	    		result_inferiority = (result[index].result_inferiority / 16 * 100).toFixed(1);
         	    		result_regression = (result[index].result_regression / 11 * 100).toFixed(1);
     				}
-					
-<<<<<<< HEAD
-					/* $('#result_o_text').text(result_o_text);
-					$('result_direction').text(result_direction); */
 					document.getElementById('result_o_text').innerHTML = result_o_text;
 					document.getElementById('result_c_text').innerHTML = result_c_text;
-=======
-					$('#result_o_text').text(result_o_text);
-					$('#result_direction').text(result_direction);
->>>>>>> 5bfa65bec48adcc099fbb37c23f64062ad9a6d82
-					
 					document.getElementById('resetChart').innerHTML = ""; 
 					document.getElementById('resetChart').innerHTML = "<canvas id='myChart'></canvas>"; 
 					
