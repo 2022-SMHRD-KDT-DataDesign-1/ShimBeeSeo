@@ -3,8 +3,8 @@
 <mapper namespace="kr.cases.mapper.H_CaseMapper">
 	
 	<!-- 집 겁사 감정단계 유형 불러오기 -->
-	<select id="">
-		
+	<select id="selectAllList" resultType="kr.board.entity.H_Case">
+		select * from t_h_case
 	</select>
 	
 </mapper>
