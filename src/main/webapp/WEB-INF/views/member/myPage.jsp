@@ -55,7 +55,8 @@
                     	<div class="section-title-wrap mb-4">
                         	<h4 class="section-title text-center">검사 결과</h4>
                        	</div>
-                            
+                        
+                        <input type="hidden" value="${mvo.user_id}" id ="idCheck">    
         <!-- 날짜선택 -->                    
                    		<label for="dateSelect">검사 날짜 선택:</label>
 						<select name="date" id="dateSelect" onchange="changeDate()">
@@ -88,7 +89,10 @@
              </div>
  				<div class="col-lg-8 col-12 mx-auto">
             		<div class="pb-5 mb-5">
-                		<div class="section-title-wrap mb-4">
+            		<div class="testimonial-item bg-light rounded p-5">
+						<p class="fs-5" id="result_c_text"> </p>
+                    </div>
+                		<!-- <div class="section-title-wrap mb-4">
                      		<h4 class="section-title text-center">검사 내용</h4>
                      		<p>이아이는 공격성이 높으며 사회불안은 안정적이면서 상대적으로 우울감은 높게 나타나고 있습니다. 대인
                      		회피의 수치도 높게 나타나며 자존감은 높으나 열등감이 높은 상태이니 아이에 대한 관심 부탁드립니다.
@@ -121,7 +125,7 @@
                      		이아이는 공격성이 높으며 사회불안은 안정적이면서 상대적으로 우울감은 높게 나타나고 있습니다. 대인
                      		회피의 수치도 높게 나타나며 자존감은 높으나 열등감이 높은 상태이니 아이에 대한 관심 부탁드립니다.
                      		 </p>
-                    	</div>
+                    	</div> -->
                             
 			<!-- test용 시작-->
     					<div class="testimonial-item bg-light rounded p-5">
@@ -235,13 +239,15 @@
         <script type="text/javascript">
         
     	$(document).ready(function() {
-    		loadResult();	
+    		user_id = "${mvo.user_id}";
+    		console.log(user_id);
+    		loadResult(user_id);	
     		});
         
         /* JSON형태로 사용자 검사 결과 받아오는 함수 */
-    	function loadResult() {
+    	function loadResult(user_id) {
     		$.ajax({
-    			url : "resultList.do",
+    			url : "resultList.do/" + user_id,
     			type : "get",
     			dataType : "json",
     			success : makeSelect, /* callback 함수 요청되고나서 실행하는 함수*/
@@ -264,7 +270,7 @@
         
     	function changeDate(){
     		$.ajax({
-    			url : "resultList.do",
+    			url : "resultList.do/" + user_id,
     			type:"get",
     			dataType : "json",
     			success : function(result){
@@ -300,8 +306,10 @@
         	    		result_regression = (result[index].result_regression / 11 * 100).toFixed(1);
     				}
 					
-					$('#result_o_text').text(result_o_text);
-					$('result_direction').text(result_direction);
+					/* $('#result_o_text').text(result_o_text);
+					$('result_direction').text(result_direction); */
+					document.getElementById('result_o_text').innerHTML = result_o_text;
+					document.getElementById('result_c_text').innerHTML = result_c_text;
 					
 					document.getElementById('resetChart').innerHTML = ""; 
 					document.getElementById('resetChart').innerHTML = "<canvas id='myChart'></canvas>"; 
@@ -376,6 +384,26 @@
     	                }
     	            });
     	            	
+    	            
+    	            document.getElementById("myChart").onclick = function(evt) {
+    	                var activePoints = myChart.getElementsAtEvent(evt);
+
+    	                if(activePoints.length > 0)
+    	                {
+    	                    var clickedElementindex = activePoints[0]["_index"];
+
+    	                    var label = myChart.data.labels[clickedElementindex];
+    	                    console.log("label : " + label);
+
+    	                    var value = myChart.data.datasets[0].data[clickedElementindex];
+    	                    console.log("value : " + value);
+    	                    
+    	                    window.open("http://localhost:8081/controller/resultPopUp.do","팝업 테스트","width=800, height=800, top=10, left=10");
+
+    	                    
+    	                };
+    	            };
+    	            
     	            }
     	    		
     	    		

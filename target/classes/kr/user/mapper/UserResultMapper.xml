@@ -4,9 +4,9 @@
 
 
 	<!-- 모든 검사 불러오기 -->
-	<select id="viewResult" parameterType="kr.board.entity.User_Result"
+	<select id="viewResult" parameterType="kr.board.entity.User"
 		resultType="kr.board.entity.User_Result">
-		select * from t_user_result order by result_date desc
+		select * from t_user_result where user_id = #{user_id} order by result_date desc
 	</select>
 	
 	<!-- 직전 검사 결과 불러오기 -->

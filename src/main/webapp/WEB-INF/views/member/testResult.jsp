@@ -225,6 +225,7 @@
     	    		var result_regression = result.result_regression;
 					var result_o_text = result.result_o_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
 					var result_c_text = result.result_c_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_c_text2 = result.result_c_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
 					var result_direction = result.result_direction;
 					
 					if(result.cate_seq === 1) {
@@ -242,7 +243,7 @@
 					$('#result_o_text').text(result_o_text);
 					/* $('#result_c_text').text(result_c_text); */
 					document.getElementById('result_o_text').innerHTML = result_o_text;
-					document.getElementById('result_c_text').innerHTML = result_c_text;
+					document.getElementById('result_c_text').innerHTML = result_c_text + result_c_test2;
 					$('result_direction').text(result_direction);
 					
 					document.getElementById('resetChart').innerHTML = ""; 
