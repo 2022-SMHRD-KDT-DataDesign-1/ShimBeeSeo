@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
 <meta charset="UTF-8">
 <title>내 정보^오^</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,6 +50,44 @@
 
 <!-- Template Stylesheet -->
 <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
+=======
+	<meta charset="UTF-8">
+	<title>내 정보^오^</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  	    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="${contextPath}/resources/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="${contextPath}/resources/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="${contextPath}/resources/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
+    
+    <style>
+    	#myChart{
+    		display: block;
+    		height: 310px;
+    		width: 436px;
+    	}
+    </style>
+>>>>>>> yjy
 </head>
 <body>
 	<div class="container-xxl bg-white p-0">
@@ -93,7 +132,11 @@
 
 						<div class="bg-light rounded">
 							<div style="width: 100%; height: 100%;">
-
+	<div id="resetChart">
+	
+						<!--차트가 그려질 부분-->
+							<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
+	</div>
 								<div id="resetChart">
 
 									<!--차트가 그려질 부분-->
@@ -105,7 +148,7 @@
 
 
 							</div>
-							<p class="fs-5">아프다 이 아이</p>
+							<!-- <p class="fs-5">아프다 이 아이</p> -->
 						</div>
 
 					</div>
@@ -116,7 +159,6 @@
 						<div class="testimonial-item bg-light rounded p-5">
 							<p class="fs-5" id="result_c_text"></p>
 						</div>
-
 						<!-- test용 시작-->
 						<div class="testimonial-item bg-light rounded p-5">
 							<p class="fs-5" id="result_o_text"></p>
@@ -266,6 +308,20 @@
 						<div class="testimonial-item bg-light rounded p-5">
 
 							<p class="fs-5" id="e_result_direction"></p>
+                    </div>
+
+               	  </div>
+               	 
+             </div>
+ 				<div class="col-lg-8 col-12 mx-auto">
+            		<div class="pb-5 mb-5">
+                		<div class="section-title-wrap mb-4">
+                     		<h4 class="section-title text-center">검사 내용</h4>
+                    	</div>
+                            
+			<!-- test용 시작-->
+    					<div class="testimonial-item bg-light rounded p-5">
+                			<p class="fs-5" id="result_o_text">  </p>
 						</div>
 
 
