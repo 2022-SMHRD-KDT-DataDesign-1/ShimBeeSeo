@@ -96,9 +96,6 @@
              </div>
  				<div class="col-lg-8 col-12 mx-auto">
             		<div class="pb-5 mb-5">
-            		<div class="testimonial-item bg-light rounded p-5">
-						<p class="fs-5" id="result_c_text"> </p>
-                    </div>
                 		<!-- <div class="section-title-wrap mb-4">
                      		<h4 class="section-title text-center">검사 내용</h4>
                      		<p>이아이는 공격성이 높으며 사회불안은 안정적이면서 상대적으로 우울감은 높게 나타나고 있습니다. 대인
@@ -138,6 +135,9 @@
     					<div class="testimonial-item bg-light rounded p-5">
                 			<p class="fs-5" id="result_o_text">  </p>
 						</div>
+						<div class="testimonial-item bg-light rounded p-5">
+							<p class="fs-5" id="result_c_text"> </p>
+                    	</div>
                		</div>
            		</div>
                         
@@ -299,6 +299,8 @@
     	    		var result_inferiority =result[index].result_inferiority;
     	    		var result_regression = result[index].result_regression;
 					var result_o_text = result[index].result_o_text;
+					var result_c_text = result[index].result_c_text;
+					var result_c_text2 = result[index].result_c_text2;
 					var result_direction = result[index].result_direction;
 					
 					if(result[index].cate_seq === 1) {
@@ -313,16 +315,10 @@
         	    		result_regression = (result[index].result_regression / 11 * 100).toFixed(1);
     				}
 					
-<<<<<<< HEAD
 					/* $('#result_o_text').text(result_o_text);
 					$('result_direction').text(result_direction); */
 					document.getElementById('result_o_text').innerHTML = result_o_text;
-					document.getElementById('result_c_text').innerHTML = result_c_text;
-=======
-					$('#result_o_text').text(result_o_text);
-					$('#result_direction').text(result_direction);
->>>>>>> 5bfa65bec48adcc099fbb37c23f64062ad9a6d82
-					
+					document.getElementById('result_c_text').innerHTML = result_c_text + result_c_text2;
 					document.getElementById('resetChart').innerHTML = ""; 
 					document.getElementById('resetChart').innerHTML = "<canvas id='myChart'></canvas>"; 
 					
