@@ -335,7 +335,6 @@
                             </div>
                             
     <div class="testimonial-item bg-light rounded p-5">
->>>>>>> jyj
 
 
 					</div>
