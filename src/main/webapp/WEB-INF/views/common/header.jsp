@@ -69,7 +69,7 @@
                     	<c:if test="${mvo.user_id eq '진짱' }">
                     	<a href="loginPage.do" class="nav-item nav-link">관리자페이지</a>
                     	</c:if>
-                    <a href="UserResult.do" class="nav-item nav-link">내정보</a>
+                    <a href="myPage.do" class="nav-item nav-link">내정보</a>
                     
                     </c:if>
                     <a href="classes.do" class="nav-item nav-link">공유 게시판</a>

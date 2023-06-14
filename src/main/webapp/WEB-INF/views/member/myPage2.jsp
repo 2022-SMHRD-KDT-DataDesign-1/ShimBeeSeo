@@ -143,17 +143,17 @@ strong{
     			<strong style="margin-bottom:10px; font-size:20px;">마이페이지</strong></div>
     		</div>
     		<div class="col-lg-8 col-12">
-    			<div style="display:flex; height: auto;"><i class="bi bi-person-fill"></i><strong>양진영</strong>님, 안녕하세요!</div>
+    			<div style="display:flex; height: auto;"><i class="bi bi-person-fill"></i><strong>${mvo.user_name}</strong>님, 안녕하세요!</div>
     		</div>
     		<div style="display: flex; margin-top:40px;">
     			<div style="text-align: center; width: 33%; padding : 25px 0; background-color: rgba( 226, 249, 202, 1);">
-    			<i class="bi bi-heart"><br><p style="font-size: 15px;">찜 목록</p></i>
+    			<i class="bi bi-heart"><br><a style="font-size: 15px;">찜 목록</a></i>
     			</div>
     			<div style="text-align: center; width: 33%; padding : 25px 0; background-color: rgba( 226, 249, 202, 1);">
-    			<i class="bi bi-file-earmark-check"><br><p style="font-size: 15px;">검사내역</p></i>
+    			<i class="bi bi-file-earmark-check"><br><a style="font-size: 15px; display:block;" href="UserResult.do">검사내역</a></i>
     			</div>
     			<div style="text-align: center; width: 33%; padding : 25px 0; background-color: rgba( 226, 249, 202, 1);">
-    			<i class="bi bi-chat-dots"><br><p style="font-size: 15px;">내 리뷰</p></i>
+    			<i class="bi bi-chat-dots"><br><a style="font-size: 15px;">내 리뷰</a></i>
     			</div>
     		</div>
         	<div class="row" style="margin-top:30px;">
