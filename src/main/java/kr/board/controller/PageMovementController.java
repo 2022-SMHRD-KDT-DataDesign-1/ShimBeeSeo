@@ -122,5 +122,4 @@ public class PageMovementController {
 	public String resultPopUP() {
 		return "member/resultPopUp";
 	}
-	
 }
