@@ -122,5 +122,4 @@ public class PageMovementController {
 	public String TestResult() {
 		return "member/testResult";
 	}
-	
 }

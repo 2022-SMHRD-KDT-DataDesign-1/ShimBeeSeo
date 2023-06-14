@@ -37,35 +37,7 @@
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
- <script>
-	 $(function() {
-		  var x = 0;
-		  var tabx = 0;
-		  var xx = 0;
-		  var limit = $("table").width() - $(".cc").width();
-		  $("table").bind('touchstart', function(e) {
-		    var event = e.originalEvent;
-		    x = event.touches[0].screenX;
-		    tabx = $("table").css("transform").replace(/[^0-9\-.,]/g, '').split(',')[4];
-		  });
-		  $("table").bind('touchmove', function(e) {
-		    var event = e.originalEvent;
-		    xx = parseInt(tabx) + parseInt(event.touches[0].screenX - x);
-		    $("table").css("transform", "translate(" + xx + "px, 0px)");
-		    event.preventDefault();
-		  });
-		  $("table").bind('touchend', function(e) {
-		    if ((xx > 0) && (tabx <= 0)) {
-		      $("table").css("transform", "translate(0px, 0px)");
-		    }
-		    if (Math.abs(xx) > limit) {
-		      $("table").css("transform", "translate(" + -limit + "px, 0px)");
-		    }
-		  });
-	
-		});
- </script>   
+    <link href="${contextPath}/resources/css/style.css" rel="stylesheet"> 
     
 <style>
     table, th, td {
@@ -103,12 +75,14 @@ strong{
 .bi-heart{
 	font-size: 40px;
 	line-height: 40px;
-	color: #CBD5E1;
+	color: gray;
 }
 .bi-file-earmark-check{
 	font-size: 40px;
 	line-height: 40px;
 	color: gray;
+	
+	/* #FFF5F3 */
 }
 .bi-chat-dots{
 	font-size: 40px;
@@ -126,13 +100,21 @@ strong{
 	line-height: 20px;
 	color: gray;
 }
-.bi-hospital{
+.bi-shop{
 	font-size: 20px;
 	line-height: 20px;
 	color: gray;
 }
 .text{
 	font-size: 20px;
+}
+.gg{
+	background-color: #FFF5F3;
+}
+.bi-chevron-left{
+	font-size: 30px;
+	line-height: 20px;
+	color: gray;
 }
 /*   * {
   margin: 0;
@@ -154,28 +136,40 @@ strong{
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	<!-- 본문 내용 시작 -->
 	<section class="about-section section-padding" id="section_2">
-    	<div class="container">
-    		<div class="hh"><strong>마이페이지</strong></div>
-    		<div class="col-lg-8 col-12">
-    			<div style="display:flex; height: 100px;"><i class="bi bi-person-fill"></i><strong>양진영</strong>님, 안녕하세요!</div>
+    	<div class="gg">
+    		<div class="hh">
+    			<div style="padding-top: 30px;">
+    			<a href=""><i class="bi bi-chevron-left"></i></a>
+    			<strong style="margin-bottom:10px; font-size:20px;">마이페이지</strong></div>
     		</div>
-    		<div style="display: flex; margin-top:20px;">
-    			<div style="text-align: center; display: flex: 1; width: 33%"><i class="bi bi-heart"><br><p style="font-size: 15px;">찜 목록</p></i></div>
-    			<div style="text-align: center; display: flex: 1; width: 33%"><i class="bi bi-file-earmark-check"><br><p style="font-size: 15px;">검사내역</p></i></div>
-    			<div style="text-align: center; display: flex: 1; width: 33%"><i class="bi bi-chat-dots"><br><p style="font-size: 15px;">내 리뷰</p></i></div>
+    		<div class="col-lg-8 col-12">
+    			<div style="display:flex; height: auto;"><i class="bi bi-person-fill"></i><strong>양진영</strong>님, 안녕하세요!</div>
+    		</div>
+    		<div style="display: flex; margin-top:40px;">
+    			<div style="text-align: center; width: 33%; padding : 25px 0; background-color: rgba( 226, 249, 202, 1);">
+    			<i class="bi bi-heart"><br><p style="font-size: 15px;">찜 목록</p></i>
+    			</div>
+    			<div style="text-align: center; width: 33%; padding : 25px 0; background-color: rgba( 226, 249, 202, 1);">
+    			<i class="bi bi-file-earmark-check"><br><p style="font-size: 15px;">검사내역</p></i>
+    			</div>
+    			<div style="text-align: center; width: 33%; padding : 25px 0; background-color: rgba( 226, 249, 202, 1);">
+    			<i class="bi bi-chat-dots"><br><p style="font-size: 15px;">내 리뷰</p></i>
+    			</div>
     		</div>
         	<div class="row" style="margin-top:30px;">
             	<div class="col-lg-8 col-12">
                 	<div class="pb-5 mb-5">
-                   		<div style="float:left;"><i class="bi bi-file-text"></i></div>
-                   		<div><p class="text">결제 내역</p></div>
-                   		<div style="float:left;"><i class="bi bi-gear"></i></div>
-                   		<div><p class="text">내 정보 수정</p></div>
-                   		<div style="float:left;"><i class="bi bi-hospital"></i></div>
-                   		<div><p class="text">연계 기관 소개</p></div>
+                   		<div style="float:left; margin-top:4px;"><i class="bi bi-file-text"></i></div>
+                   		<div style="margin-left: 50px;"><p class="text">결제 내역</p></div>
+                   		<div style="float:left; margin-top:4px;"><i class="bi bi-gear"></i></div>
+                   		<div style="margin-left: 50px;"><p class="text" >내 정보 수정</p></div>
+                   		<div style="float:left; margin-top:4px;"><i class="bi bi-shop"></i></div>
+                   		<div style="margin-left: 50px;"><p class="text">연계 기관 소개</p></div>
                	  	</div>              	 
              	</div>		
         	</div>
+        	
+        	<button class="btn btn-primary w-100 py-3" type="button">로그아웃</button>
 		</div>
                         
 
