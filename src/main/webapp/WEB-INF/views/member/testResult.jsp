@@ -84,12 +84,15 @@
     					<div class="testimonial-item bg-light rounded p-5">
                 			<p class="fs-5" id="result_o_text">  </p>
 						</div>
+	    				<div class="testimonial-item bg-light rounded p-5">
+							<p class="fs-5" id="result_c_text"> </p>
+	                    </div>
                		</div>
            		</div>
            	<div class="col-lg-8 col-12 mx-auto">
            		<div class="pb-5 mb-5">
                 	<div class="section-title-wrap mb-4">
-                    	<h4 class="section-title text-center">지도 방향</h4>
+                    	<!-- <h4 class="section-title text-center">지도 방향</h4>
                     	<p>공격성과 사회불안이 높은 아이에 대한 지도교육 방향은 다양한 전략과 접근법을 조합하여 개별적인 상황에 맞게 결정되어야 합니다. 아래의 지도교육 방향은 참고할 수 있는 일반적인 가이드라인입니다.
 						<br>
 						1.개별 평가와 개별화된 계획 수립: 아이의 공격성과 사회불안의 원인을 파악하기 위해 개별 평가가 필요합니다. 전문가인 심리학자, 교사, 상담사 등과 협력하여 아이의 강점, 약점, 관심사, 학습 스타일 등을 평가하고 개별화된 교육 계획을 수립해야 합니다.
@@ -104,7 +107,7 @@
 						<br>
 						6.보호자 교육 및 지원: 아이의 보호자에게 지원과 교육이 필요합니다. 아동의 공격성과 사회불안에 대한 이해를 높이고, 아이의 교육을 위한 적절한 전략과 기술을 습득할 수 있도록 상담 및 교육 프로그램을 제공하는 것이 중요합니다. 보호자와 교사, 상담사 등의 협력과 연계를 강화하여 아이에게 일관된 지원을 제공할 수 있도록 합니다.
 						<br>
-						이러한 지도교육 방향은 전문가의 도움과 함께 개별 아이에게 맞추어 적용되어야 하며, 학교와 가정의 협력과 지원이 필요합니다.</p>
+						이러한 지도교육 방향은 전문가의 도움과 함께 개별 아이에게 맞추어 적용되어야 하며, 학교와 가정의 협력과 지원이 필요합니다.</p> -->
                     </div>
                             
     				<div class="testimonial-item bg-light rounded p-5">
@@ -220,7 +223,8 @@
     	    		var result_deprivation =result.result_deprivation;
     	    		var result_inferiority =result.result_inferiority;
     	    		var result_regression = result.result_regression;
-					var result_o_text = result.result_o_text;
+					var result_o_text = result.result_o_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_c_text = result.result_c_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
 					var result_direction = result.result_direction;
 					
 					if(result.cate_seq === 1) {
@@ -236,6 +240,9 @@
     				}
 					
 					$('#result_o_text').text(result_o_text);
+					/* $('#result_c_text').text(result_c_text); */
+					document.getElementById('result_o_text').innerHTML = result_o_text;
+					document.getElementById('result_c_text').innerHTML = result_c_text;
 					$('result_direction').text(result_direction);
 					
 					document.getElementById('resetChart').innerHTML = ""; 
