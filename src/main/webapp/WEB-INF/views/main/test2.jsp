@@ -165,7 +165,7 @@
 										<div style="position: relative;">
 											<img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" class="image-box" style="min-width:350px"; height="350px"; />
 												<label for="file" class="upload-btn">
-												<input id="file" name="file" type="file" accept="image/*" style="display: none;" />
+												<input id="file" name="file" type="file" accept="image/*" style="display: none";/>
 												</label>
 										</div>
 										
@@ -392,14 +392,14 @@
 	<script type="text/javascript">
 		/* event.preventDefault(); */
 
-		let url = 'http://192.168.56.1:9000/photo';
+		/* let url = 'http://192.168.56.1:9000/photo'; */
 
-		/*  		const response = fetch('http://192.168.56.1:9000/photo', {
+		/* 	 	const response = fetch('http://192.168.56.1:9000/photo', {
 		 method: 'POST',
 		 body: formData
 		 }); */
 
-		const formData = new FormData();
+		/* const formData = new FormData(); */
 
 /* =========================이미지 모델에게 확인 요청 ================================= */
 		function uploadFunction() {
@@ -409,11 +409,16 @@
 			console.log("파일 업로드 요청");
 			saveImageBeforeUpload(data);
 			/* async : false -> 비동기 동기로 변경, 다만 값 받아오기 전에 페이지 이동해 버리면 값 못받고 넘어감!! 주의하자! */
+<<<<<<< HEAD
+=======
+			// http://211.105.164.246:9000/test
+>>>>>>> 2ab3ced08b29c4f6536763a56c6ac3cf331ef3db
 			 $.ajax({
 				type : "POST",
-				enctype : 'multipart/form-data',
-				url : "http://192.168.56.1:9000/photo/" + id,
+				enctype : "multipart/form-data",
+				url : "http://211.105.164.246:9000/h_photo",
 				data : data,
+				async : false,
 				processData : false,
 				contentType : false,
 				cache : false,
@@ -434,9 +439,12 @@
 					console.log("파일 업로드 에러");
 				}
 			}); 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2ab3ced08b29c4f6536763a56c6ac3cf331ef3db
 		}
-		
+		//http://211.105.164.246:9000/test
 		function saveImageBeforeUpload(data){
 			var csrfHeaderName = "${_csrf.headerName}";
 			var csrfTokenValue = "${_csrf.token}";
@@ -445,7 +453,6 @@
 				enctype : 'multipart/form-data',
 				url : "saveImage.do",
 				data : data,
-				async : false,
 				processData : false,
 				contentType : false,
 				beforeSend : function(xhr){
@@ -454,6 +461,8 @@
 				success : function(data){
 					if(data == "success"){
 						alert(data);
+					} else {
+						
 					}
 				},
 				error : function(e) {
@@ -479,13 +488,6 @@
 	  reader.readAsDataURL(fileDOM.files[0]);
 	});
 
-	/* 만약 이미지 두개 처리 할 거라면 */
-	const fileDOM2 = document.querySelector('#file2');
-
-	fileDOM2.addEventListener('change', () => {
-	  const imageSrc = URL.createObjectURL(fileDOM2.files[0]);
-	  previews[1].src = imageSrc;
-	});
 	
 	</script>
 </body>

@@ -57,6 +57,11 @@
 	<input type="hidden" id="result_inferiority" value="${result.get(0).result_inferiority}">
 	<input type="hidden" id="result_regression" value="${result.get(0).result_regression}">
 </div>
+
+	<div>
+		<button id="flask_Test" onclick="flasktest()">Flask 테스트</button>
+	
+	</div>
 	
 	
 	<!-- 본문 내용 끝 -->
@@ -149,7 +154,37 @@
                 }
             });
         </script>
-	
+        
+		<script type="text/javascript">
+		var testword = "너는 누구니????";
+		var prompt = "";
+		var cnt = 0;
+		var inputText = "";
+		var keyword = inputText.split(",");
+		prompt += "HTP검사중에 집그림 검사를 시작할거야 대상은 8세 미만의 아동이야\n";
+		for(var i = 0 ; i < keyword.length-1; i++){
+			prompt+=cnt+"."+ keyword[i] + "이 존재함 \n";
+			cnt++;
+		}
+		prompt += "위 검사를 토대로 검사 결과를 해석해줘 결과는 자녀의 부모님에게 설명하는 것 처럼 설명해줘 \n 추가로 위 검사 결과를 바탕으로 아이의 양육방식에 대하여 부모님의 관점으로 10가지 말해줘";
+
+		function flasktest (){
+			$.ajax({
+				url : "http://localhost:5000/chatbot",
+				Type : "get",
+				data : {"message" : testword},
+				dataType : "json",
+				contentType: 'application/json; charset=utf-8',
+				success : function (chatbot_response){
+					console.log(chatbot_response)
+				},
+				error : function (){
+					console.log("flask에서 아무고토 못받음")
+				}
+			})
+		};
+		</script>
+	 
 	
 	    <!-- Template Javascript -->
     <script src="${contextPath}/resources/js/main.js"></script>

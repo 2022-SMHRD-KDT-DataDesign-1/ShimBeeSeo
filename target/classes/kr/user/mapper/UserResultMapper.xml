@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.user.mapper.UserResultMapper">
@@ -18,3 +19,87 @@
 
 
 
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.user.mapper.UserResultMapper">
+
+
+	<!-- 모든 검사 불러오기 -->
+	<select id="viewResult" parameterType="kr.board.entity.User_Result"
+		resultType="kr.board.entity.User_Result">
+		select * from t_user_result order by result_date desc
+	</select>
+	
+	<!-- 직전 검사 결과 불러오기 -->
+	<select id="viewOneResult" parameterType="String"
+		resultType="kr.board.entity.User_Result">
+		SELECT *
+		  FROM (
+		         SELECT result_seq
+		              , user_id
+		              , cate_seq
+		              , result_aggressive
+		              , result_social_anxiety
+		              , result_depressed
+		              , result_avpd
+		              , result_self_esteem
+		              , result_emotional_instability
+		              , result_deprivation
+		              , result_inferiority
+		              , result_regression
+		              , result_path
+		              , result_o_text
+		              , result_c_text
+		              , result_direction
+		              , result_date
+		           FROM t_user_result
+		          WHERE user_id=#{user_id} 
+	              ORDER BY result_date DESC
+       			)
+ 		 WHERE rownum = 1
+	</select>
+	
+	<!-- 검사결과 등록 -->
+	<insert id="insertResult" parameterType="kr.board.entity.User_Result">
+		insert into t_user_result (
+									user_id
+					              , cate_seq
+					              , result_aggressive
+					              , result_social_anxiety
+					              , result_depressed
+					              , result_avpd
+					              , result_self_esteem
+					              , result_emotional_instability
+					              , result_deprivation
+					              , result_inferiority
+					              , result_regression
+					              <!-- , result_path -->
+					              , result_date
+					              ) values (
+					              	#{user_id}
+					              , #{cate_seq}
+					              , #{result_aggressive}
+					              , #{result_social_anxiety}
+					              , #{result_depressed}
+					              , #{result_avpd}
+					              , #{result_self_esteem}
+					              , #{result_emotional_instability}
+					              , #{result_deprivation}
+					              , #{result_inferiority}
+					              , #{result_regression}
+					              <!-- , #{result_path} -->
+					              , sysdate
+					              )
+	</insert>
+
+
+</mapper>
+
+
+
+
+
+
+
+>>>>>>> 2ab3ced08b29c4f6536763a56c6ac3cf331ef3db

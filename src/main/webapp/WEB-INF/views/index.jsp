@@ -44,10 +44,8 @@
 
 </head>
 <body>
-<a href="chat">챗지피티 테스트 ㄱㄱ</a>
 <a href="javascript:GPTTest('content')"> 플라스크에 JSON 보내보기</a>
-<a href="http://localhost:5000/?id=testID1"> 쿼리스트링 테스트</a>
-<a href="UserResult.do">Chart.JS 테스트</a>
+<a href="songSecret.do">들어오지마셈</a>
 
    <div class="container-xxl bg-white p-0">
 		<jsp:include page="common/header.jsp"></jsp:include>
