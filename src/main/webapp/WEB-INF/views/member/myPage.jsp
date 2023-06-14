@@ -333,7 +333,7 @@
     			dataType : "json",
     			success : makeSelect, /* callback 함수 요청되고나서 실행하는 함수*/
     			error : function() {
-    				alert("loadResult error");
+    				alert("검색된 검사 결과가 없습니다. 심리검사를 진행해주세요");
     			}
     		});
     	}

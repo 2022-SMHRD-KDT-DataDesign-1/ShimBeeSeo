@@ -6,45 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageMovementController {
 
-	@GetMapping("about.do")
-	public String about() {
-		return "member/about";
-	}
 	
-	@GetMapping("classes.do")
-	public String classes() {
-		return "member/classes";
-	}
-	
-	@GetMapping("contact.do")
-	public String contact() {
-		return "member/contact";
-	}
-	
-	@GetMapping("facility.do")
-	public String facility() {
-		return "member/facility";
-	}
 
-	@GetMapping("errorPage.do")
-	public String errorPage() {
-		return "member/errorPage";
-	}
-	
-	@GetMapping("appointment.do")
-	public String appointment() {
-		return "member/appointment";
-	}
-	
-	@GetMapping("callToAction.do")
-	public String callToAction() {
-		return "member/callToAction";
-	}
-	
-	@GetMapping("team.do")
-	public String team() {
-		return "member/team";
-	}
+
 	
 	@GetMapping("myPage.do")
 	public String testimonial() {
@@ -61,10 +25,6 @@ public class PageMovementController {
 		return "member/joinPage";
 	}
 	
-	@GetMapping("chat")
-	public String ChatGPT() {
-		return "member/ChatGPT";
-	}
 	
 	@GetMapping("check.do")
 	public String check() {
