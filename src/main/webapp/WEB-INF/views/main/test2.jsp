@@ -162,10 +162,11 @@
 								<div class="flex-container">
 									<div class="wrapper">
 										<h2>FileUpload</h2>
+										<p>아래 버튼을 눌러 사진을 업로드 해주세요</p>
 										<div style="position: relative;">
-											<img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" class="image-box" style="min-width:350px"; height="350px"; />
+											<img src="${contextPath}/resources/images/fileUpload.png" class="image-box" style="min-width:350px"; height="350px"; />
 												<label for="file" class="upload-btn">
-												<input id="file" name="file" type="file" accept="image/*" style="display: none";/>
+												<input id="file" name="file" type="file" accept="image/*" style="display: none;" onchange="changeFile()"/>
 												</label>
 										</div>
 										
@@ -173,7 +174,8 @@
 
 								<!-- 미리보기 이후 파일 업로드하기 -->
 									<!-- if문 써야함 대기중 -->
-									<button type="button" onclick="uploadFunction();" class="form-control btn btn-primary" style="width: 150px">파일업로드</button>
+									<p id="submitInfo" style="margin-top:3vw; display: none;">아래 버튼을 눌러서 AI에게 사진을 보내주세요!!</p>
+									<button type="button" id="submitPicture"onclick="uploadFunction();" class="form-control btn btn-warning" style="width: 150px; display:none; color: white; background-color: #FE5D37">AI에게 사진제출</button>
 								<!--미리보기 테스트 끝 -->
 								</div>
 							</form>
@@ -181,7 +183,7 @@
 			</div>	
 			<div style="margin: 0">
 				<!-- <form name="inputImg" method="POST"> -->
-				<div style="display: flex; width: 100%" class="container">
+				<div style="display: flex; width: 100%; margin-top: 6vw;" class="container">
 					<div style="width: 100%; display: block; margin: 0 auto" class="col-md-4">
 						<form id="checkboxes" action="${contextPath}/ScoreList.do" method="POST">
 							<div style="width:100%;height:auto; min-height:700px;position:relative;overflow:hidden;background-image:url('${contextPath}/resources/img/sk(1).png'); background-repeat : no-repeat; background-size : 100% 100%;">
@@ -261,7 +263,7 @@
 											
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">7. 현관문의 크기와 모양은 어떻게 묘사되었나요?</strong>
-											<input type="checkbox" class="btn-check" name="door" value="23" id="door1" autocomplete="off" checked> 
+											<input type="checkbox" class="btn-check" name="door" value="23" id="door1" autocomplete="off"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="door1">과하게 큼</label>
 											<input type="checkbox" class="btn-check" name="door" value="24" id="door2" autocomplete="off">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="door2">과하게 작음</label>
@@ -279,7 +281,7 @@
 									<div id="que4" class="que" style="display:none;">
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">8. 창문은 어떤 특징이 있나요?</strong>
-											<input type="checkbox" class="btn-check" name="window" value="29" id="window1" autocomplete="off" checked> 
+											<input type="checkbox" class="btn-check" name="window" value="29" id="window1" autocomplete="off"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="window1">없음</label>
 											<input type="checkbox" class="btn-check" name="window" value="30" id="window2" autocomplete="off">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="window2">3개 이상</label>
@@ -291,7 +293,7 @@
 											
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">9. 굴뚝의 모습에 특징이 있나요?</strong>
-											<input type="radio" class="btn-check" name="chimney" value="33" id="chimney1" autocomplete="off" checked> 
+											<input type="radio" class="btn-check" name="chimney" value="33" id="chimney1" autocomplete="off"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="chimney1">없음</label>
 											<input type="radio" class="btn-check" name="chimney" value="34" id="chimney2" autocomplete="off">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="chimney2">연기가 없는 굴뚝</label>
@@ -301,7 +303,7 @@
 											
 										<div class="btn-group-vertical" role="group"aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">10. 그림에 태양이 묘사되어 있나요?</strong>
-											<input type="checkbox" class="btn-check" name="sun" value="36" id="sun1" autocomplete="off" checked> 
+											<input type="checkbox" class="btn-check" name="sun" value="36" id="sun1" autocomplete="off"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sun1">반만 나온 태양</label>
 											<input type="checkbox" class="btn-check" name="sun" value="37" id="sun2" autocomplete="off">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sun2">무채색 태양</label>
@@ -315,7 +317,7 @@
 									<div id="que5" class="que" style="display:none;">
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">11. 그림에 묘사된 다른 모습들이 있나요?</strong>
-											<input type="checkbox" class="btn-check" name="etc" value="40" id="etc1" autocomplete="off" checked> 
+											<input type="checkbox" class="btn-check" name="etc" value="40" id="etc1" autocomplete="off"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc1">산속 또는 숲속 집</label>
 											<input type="checkbox" class="btn-check" name="etc" value="41" id="etc2" autocomplete="off">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc2">울타리가 있거나 울타리같은 지면</label>
@@ -337,7 +339,7 @@
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc10">해당되는 특징 없음</label>
 										</div>
 									</div>
-									<div class="pagingWraper" style="position:absolute;left:35%;bottom:0;padding-bottom:60px">
+									<div class="pagingWraper" style="position:absolute;left:31%;bottom:0;padding-bottom:60px">
 										<button type="button" class="prevBtn" onclick="prevQue();">이전</button>
 										<span class="page"></span>
 										<button type="button" class="nextBtn" onclick="nextQue();">다음</button>
@@ -356,8 +358,8 @@
 							<div>
 								<input type="hidden" name="result_direction" id="result_direction"> 
 								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white;" 
-									id="picSend" type="button" value="이전단계로" onclick="location.href='check.do'" />
-								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white; margin-right:30px;" id="picSend" type="submit" value="검사 완료">
+									id="picSend" type="button" value="검사유형선택" onclick="location.href='check.do'" />
+								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white; margin-right:30px;" id="picSend" type="submit" disabled='disabled' value="모든 질문에 답변해주세요">
 								</div>
 								
 							</form>
@@ -405,6 +407,8 @@
 
 /* =========================이미지 모델에게 확인 요청 ================================= */
 		function uploadFunction() {
+			$('#submitPicture').prop('disabled',true);
+			$('#submitPicture').text('AI가 사진을 분석중입니다.');
 			// 임의 test, id값 쿼리스트링으로 보내기
 			var id = 'samsam';
 			var data = new FormData(form_img);
@@ -530,6 +534,8 @@
 								success : function (chatbot_response){
 									console.log(chatbot_response['response']);
 									$('#result_direction').val(chatbot_response['response']);
+									$('#submitPicture').prop('disabled',false);
+									$('#submitPicture').text('분석완료! 설문을 진행해주세요');
 								},
 								error : function (){
 									console.log("flask에서 아무고토 못받음");
@@ -589,7 +595,23 @@
 	  reader.readAsDataURL(fileDOM.files[0]);
 	});
 
-	
+
 	</script>
+	
+	<script type="text/javascript">
+	function changeFile(){
+		console.log('changeFile 잘 됨');
+		var file = $('#file');
+		console.log(file);
+		if(file != null){
+			$('#submitInfo').css('display','inline-block');
+			$('#submitPicture').css('display','inline-block');
+			
+		}else{
+			$('#submitPicture').css('display','none');
+		}
+	}
+	</script>
+	
 </body>
 </html>
