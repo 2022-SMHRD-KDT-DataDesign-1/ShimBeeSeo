@@ -47,17 +47,6 @@
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	
 
-        <!-- Page Header End -->
-        <div class="container-xxl py-5 page-header position-relative mb-5">
-            <div class="container py-5">
-                <h1 class="display-2 text-white animated slideInDown mb-4">로그인</h1>
-                <nav aria-label="breadcrumb animated slideInDown">
-  
-                </nav>
-            </div>
-        </div>
-        <!-- Page Header End -->
-
 
         <!-- Contact Start -->
          <div class="container-xxl py-5">
@@ -94,7 +83,9 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                       		<div style="background-size:cover;"><a id="kakao-login-btn"></a></div>
+                                       		<div style="background-size:cover;"><a class="btn_yel" href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1ff4c9cbe51272559a48887a3811f7a0&redirect_uri=http://localhost:8081/controller/kakaoLogin">
+                    <span>카카오 로그인</span>
+                </a></div>
                                        		<!-- submit button으로 바꿈 -->
                                             <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">로그인</button>
                                             <button class="btn btn-primary w-100 py-3" type="button" style="margin: 5px 0;" onClick="location.href='joinPage.do'">회원가입</button>
@@ -111,24 +102,7 @@
         <!-- Contact End -->
 
  	<jsp:include page="../common/footer.jsp"></jsp:include> 
-
-    </div>
-    
-          <!-- Modal content-->
-       <div id="messageType" class="modal-content panel-info"> <!-- panel-info >> 하늘색 -->
-        <div class="modal-header panel-heading"> <!-- 메세지 굵게 처리 -->
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">${msgType}</h4>
-        </div>
-        <div class="modal-body">
-          <p id="">${msg}</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
+ 
   </div>
  <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -149,7 +123,7 @@
         Kakao.Auth.createLoginButton({
             container: '#kakao-login-btn',
             success: function (authObj) {
-                alert(JSON.stringify(authObj));
+                console.log(JSON.stringify(authObj));
             },
             fail: function (err) {
                 alert(JSON.stringify(err));

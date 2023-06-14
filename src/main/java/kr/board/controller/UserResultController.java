@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -23,10 +24,10 @@ public class UserResultController {
 	
 	// 검사 후 결과 보여주기
 	@ResponseBody
-	@GetMapping("resultList.do")
-	public List<User_Result> UserResult(User m) {
+	@GetMapping("resultList.do/{user_id}")
+	public List<User_Result> UserResult(@PathVariable("user_id") String user_id) {
 		
-		List<User_Result> result = userResultMapper.viewResult(m);
+		List<User_Result> result = userResultMapper.viewResult(user_id);
 		for(int i = 0 ; i<result.size(); i++) {
 		};
 		System.out.println("컨트롤러에서 페이지로 잘 넘겨짐(list)");
@@ -40,7 +41,8 @@ public class UserResultController {
 		return res;
 	}
 	
-	@GetMapping("testResult.do")
+	@ResponseBody
+	@GetMapping("testResultOne.do")
 	public User_Result UserOneResult(HttpSession session) {
 		
 		User mvo = (User)session.getAttribute("mvo");

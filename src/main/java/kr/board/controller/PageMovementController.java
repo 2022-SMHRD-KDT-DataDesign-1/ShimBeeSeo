@@ -90,12 +90,7 @@ public class PageMovementController {
 		return "main/checkSucces";
 	}
 
-	// 김한송 개인 작업공간
-	@GetMapping("songSecret.do")
-	public String chart() {
-		return "member/songSecret";
 
-	}
 	
 	// 체크리스트
 	@GetMapping("jyjtest.do")
@@ -123,4 +118,8 @@ public class PageMovementController {
 		return "member/testResult";
 	}
 	
+	@GetMapping("resultPopUp.do")
+	public String resultPopUP() {
+		return "member/resultPopUp";
+	}
 }

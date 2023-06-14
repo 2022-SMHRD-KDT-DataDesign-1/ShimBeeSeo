@@ -11,17 +11,19 @@ import lombok.ToString;
 @ToString
 public class Object {
     // 객체 순번 
-    private Double object_seq;
+    private int object_seq;
 
     // 분류 순번 
-    private Double cate_seq;
+    private int cate_seq;
 
     // 객체명 
     private String object_name;
 
     // 객체 유무 
-    private Double object_exist;
+    private int object_exist;
 
     // 내용 
     private String object_content;
+    
+    
 }

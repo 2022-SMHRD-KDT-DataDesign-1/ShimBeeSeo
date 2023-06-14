@@ -7,6 +7,25 @@
 		select * from t_user where user_id=#{user_id}
 	</select>
 
+	<select id="kakaoLogin" resultType="kr.board.entity.User">
+		select * from t_user where user_id=#{user_id}
+	</select>
+
+	<select id="selectUser" parameterType="java.util.HashMap" resultType="kr.board.entity.User">
+		select * from t_user where user_id=#{email}
+	</select>
+	
+	<select id="allUserList" resultType="kr.board.entity.User">
+		select * from t_user
+	</select>
+	
+	<select id="joinPerMonth" resultType="kr.board.entity.CountJoin">
+		select to_char(user_joindate, 'yyyy-mm') as month
+			 , count(user_id)
+		  from t_user
+		group by to_char(user_joindate, 'yyyy-mm') as number
+	</select>
+
 	<insert id="join" parameterType="kr.board.entity.User">
 		INSERT INTO t_user (
 		  user_id
@@ -30,6 +49,41 @@
 		, sysdate
 		, #{user_isagreed})
 	</insert>
+
+	<insert id="kakaoJoin" parameterType="java.util.HashMap">
+		INSERT INTO t_user (
+		  user_id
+		, user_pw
+		, user_name
+		, user_bdate
+		, user_childname
+		, user_childbdate
+		, user_relation
+		, user_address
+		, user_joindate
+		, user_isagreed) VALUES (
+		  #{email}
+		, 1234
+		, #{nickname}
+		, null
+		, null
+		, null
+		, null
+		, null
+		, sysdate
+		, null)
+	</insert>
+
+	<update id="kakaoJoinDetail" parameterType="kr.board.entity.User">
+	update t_user set user_bdate =#{user_bdate}
+		, user_childname = #{user_childname}
+		, user_childbdate = #{user_childbdate}
+		, user_relation = #{user_relation}
+		, user_address =#{user_address}
+		, user_isagreed =#{user_isagreed}
+		where user_id=#{user_id}
+	</update>
+
 
 </mapper>
 

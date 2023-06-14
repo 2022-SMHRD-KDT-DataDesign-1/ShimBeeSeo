@@ -17,6 +17,14 @@ body{
     bottom: 45px;
     z-index: 99;
 }
+#date {
+    font-family : GmarketSansMedium;
+    font-size : 17px;
+}
+#emtion{
+	font-family : GmarketSansMedium;
+    font-size : 17px;
+}
 
 
 /*** Spinner ***/

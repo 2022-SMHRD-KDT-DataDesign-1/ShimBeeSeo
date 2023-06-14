@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.cases.mapper.H_CaseMapper">
+	
+	<!-- 집 겁사 감정단계 유형 불러오기 -->
+	<select id="selectAllList" resultType="kr.board.entity.H_Case">
+		select * from t_h_case
+	</select>
+	
+</mapper>

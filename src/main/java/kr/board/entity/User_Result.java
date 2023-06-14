@@ -60,7 +60,9 @@ public class User_Result {
 
     // 검사일 
     private String result_date;
-
+    
+    // 체크결과 2
+    private String result_c_text2;
 	
 
 }
