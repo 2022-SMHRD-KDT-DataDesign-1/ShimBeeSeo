@@ -20,7 +20,7 @@
 <meta content="" name="description">
 
 <!-- Favicon -->
-<link href="${contextPath}/resources/img/favicon.ico" rel="icon">
+<link href="${contextPath}/resources/img/favicon.icon" rel="icon">
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,15 +96,17 @@
 
 		<div class=".d-md-block gap-2" style="margin-top: 6vw;">
 			<div style="float: left; width: 50%;">
-				<button id="date" style="width: 100%; height: 6vw;"
+				<button id="date" style="width: 100%; height: 10vw; border-radius: 5vw; border: none;     background: #fff5f3;
+    font-family: sans-serif;"
 					onclick="viewDate()">날짜별 검사 결과</button>
 			</div>
 			<div style="float: left; width: 50%;">
-				<button id="emtion" style="width: 100%; height: 6vw;"
+				<button id="emtion" style="width: 100%; height: 10vw; border-radius: 5vw; border: none;     background: #fff5f3;
+    font-family: sans-serif;"
 					onclick="viewEmotion()">감정별 검사 결과</button>
 			</div>
 		</div>
-		<!-- 본문 내용 시작 -->
+		<!-- 날짜별 검사 내용 시작 -->
 
 		<div class="container" id="dateView" style="display: block;">
 			<div class="row">
@@ -148,7 +150,10 @@
 
 
 							</div>
+<<<<<<< HEAD
+=======
 							<!-- <p class="fs-5">아프다 이 아이</p> -->
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DataDesign-1/ShimBeeSeo.git
 						</div>
 
 					</div>
@@ -156,6 +161,7 @@
 				</div>
 				<div class="col-lg-8 col-12 mx-auto">
 					<div class="pb-5 mb-5">
+					<h4 class="section-title text-center">검사 결과</h4>
 						<div class="testimonial-item bg-light rounded p-5">
 							<p class="fs-5" id="result_c_text"></p>
 						</div>
@@ -229,10 +235,10 @@
 			</div>
 
 		</div>
-		<!-- 본문 내용 끝 -->
+		<!-- 날짜별 검사 내용 끝 -->
 
 
-		<!-- 본문 내용 시작 -->
+		<!-- 감정별 검사 내용 시작 -->
 
 		<div class="container" id="emotionView" style="display: none;">
 			<div class="row">
@@ -252,7 +258,7 @@
 						<select name="emotion" id="emotionSelect" onchange="changeEmotion()">
 							<option value="">--감정을 선택해주세요--</option>
 							<option value="result_aggressive" id="e_result_aggressive">공격성</option>
-							<option value="result_anxiety" id="e_result_anxiety">사회불안</option>
+							<option value="result_social_anxiety" id="e_result_social_anxiety">사회불안</option>
 							<option value="result_depressed" id="e_result_depressed">우울</option>
 							<option value="result_avpd" id="e_result_avpd">대인회피</option>
 							<option value="result_self_esteem" id="e_result_self_esteem">자존감</option>
@@ -280,12 +286,13 @@
 
 
 							</div>
-							<p class="fs-5">아프다 이 아이</p>
 						</div>
 
 					</div>
 
 				</div>
+<<<<<<< HEAD
+=======
 				<div class="col-lg-8 col-12 mx-auto">
 					<div class="pb-5 mb-5">
 						<div class="testimonial-item bg-light rounded p-5">
@@ -339,6 +346,7 @@
 
 					</div>
 				</div>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DataDesign-1/ShimBeeSeo.git
 
 			</div>
 
@@ -388,7 +396,7 @@
 			</div>
 
 		</div>
-		<!-- 본문 내용 끝 -->
+		<!-- 감정별 검사 내용 끝 -->
 
 
 
@@ -495,7 +503,7 @@
 					document.getElementById('result_c_text').innerHTML = result_c_text + result_c_text2;
 					document.getElementById('result_direction').innerHTML = result_direction;
 					document.getElementById('resetChart').innerHTML = ""; 
-					document.getElementById('resetChart').innerHTML = "<canvas id='myChart'></canvas>"; 
+					document.getElementById('resetChart').innerHTML = "<canvas id='myChart' width='100%' height='100%' margin-left='15px' padding-left='25px'></canvas>"; 
 					
     	            var context = document.getElementById('myChart').getContext('2d');
     	            var myChart = new Chart(context, {
@@ -608,37 +616,39 @@
     			dataType : "json",
     			success : function(result){
     				var emotion_Select= document.getElementById('emotionSelect').value;
-    				console.log(emotion_Select);~
-    				console.log(result[1].emotion_Select);
+    				console.log(result);
+    				console.log(emotion_Select);
+    				
+    				console.log(result[1][emotion_Select]);
     				var date = [];
     				var emotion = [];
 
 					for(var i = 0; i<result.length;i++){
 						date.push(result[i].result_date);
-						emotion.push(result[i].emotion_Select);
+						emotion.push(result[i][emotion_Select]);
 					};
 					
 					console.log(date);
 					console.log(emotion);
 
-					document.getElementById('resetChart').innerHTML = ""; 
-					document.getElementById('resetChart').innerHTML = "<canvas id='e_myChart'></canvas>"; 
+					document.getElementById('e_resetChart').innerHTML = ""; 
+					document.getElementById('e_resetChart').innerHTML = "<canvas id='e_myChart' width='100%' height='100%' margin-left='15px' padding-left='25px'></canvas>"; 
 					
-    	            var context = document.getElementById('e_myChart').getContext('2d');
-    	            var myChart = new Chart(context, {
+    	            var e_context = document.getElementById('e_myChart').getContext('2d');
+    	            var e_myChart = new Chart(e_context, {
     	                type: 'line', // 차트의 형태
     	                data: { // 차트에 들어갈 데이터
-    	                    labels: [
+    	                    labels: 
     	                        //x 축
     	                        date
-    	                    ],
+    	                    ,
     	                    datasets: [
     	                        { //데이터
-    	                            label: '심리검사 결과', //차트 제목
+    	                            label: emotion_Select, //차트 제목
     	                            fill: true, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
-    	                            data: [
+    	                            data: 
     	                            	emotion //x축 label에 대응되는 데이터 값
-    	                            ],
+    	                            ,
     	                            backgroundColor: [
     	                                //색상
     	                                'rgba(255, 99, 132, 0.2)',
@@ -683,8 +693,8 @@
     	                            	ticks: {
     	                            		/* y축 설정 변경 */
     	            						min: 0,
-    	            						max: 100,
-    	            						stepSize : 10,
+    	            						max: 20,
+    	            						stepSize : 2,
     	            						fontSize : 14,
     	            						
     	            						}
