@@ -100,12 +100,7 @@
 						<!--차트가 그려질 부분-->
 							<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
 	</div>
-								<div id="resetChart">
-
-									<!--차트가 그려질 부분-->
-									<canvas id="myChart" width="300px" height="100%"
-										margin-left="15px" padding-left="25px"></canvas>
-								</div>
+			
 
 
 
