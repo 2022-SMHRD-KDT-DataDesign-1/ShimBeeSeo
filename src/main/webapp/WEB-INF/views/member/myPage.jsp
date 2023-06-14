@@ -10,7 +10,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
 <meta charset="UTF-8">
 <title>내 정보^오^</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,6 +50,7 @@
 <!-- Template Stylesheet -->
 <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
 
+
 </head>
 <body>
 	<div class="container-xxl bg-white p-0">
@@ -59,13 +59,11 @@
 
 		<div class=".d-md-block gap-2" style="margin-top: 6vw;">
 			<div style="float: left; width: 50%;">
-				<button id="date" style="width: 100%; height: 10vw; border-radius: 5vw; border: none;     background: #fff5f3;
-    font-family: sans-serif;"
+				<button id="date" style="width: 100%; height: 10vw; border-radius: 5vw; border: none; background: #fff5f3; font-weight : 550;"
 					onclick="viewDate()">날짜별 검사 결과</button>
 			</div>
 			<div style="float: left; width: 50%;">
-				<button id="emtion" style="width: 100%; height: 10vw; border-radius: 5vw; border: none;     background: #fff5f3;
-    font-family: sans-serif;"
+				<button id="emtion" style="width: 100%; height: 10vw; border-radius: 5vw; border: none; background: #fff5f3; font-weight : 550;"
 					onclick="viewEmotion()">감정별 검사 결과</button>
 			</div>
 		</div>
@@ -177,18 +175,12 @@
 
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
-					<!-- <img src="images/profile/handsome-asian-man-listening-music-through-headphones.jpg"
-                                class="about-image img-fluid" alt=""> -->
 
 					<div class="team-info">
 						<h4 class="mb-2">2번</h4>
 						<br> <img src="${contextPath}/resources/img/why.png"
 							style="width: 100%; height: auto;"
 							class="verified-image img-fluid" alt="">
-
-						<!-- <span class="badge">Creative</span>
-
-                                <span class="badge">Design</span> -->
 					</div>
 
 				</div>
@@ -254,9 +246,6 @@
 
 
 			</div>
-
-
-
 			<div class="col-lg-12 col-12">
 				<div class="section-title-wrap mb-5">
 					<h4 class="section-title">이런 콘텐츠는 어때요?</h4>
@@ -280,6 +269,7 @@
 
 				</div>
 			</div>
+
 
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
@@ -385,7 +375,6 @@
     	    		var result_regression = result[index].result_regression;
 					var result_o_text = result[index].result_o_text;
 					var result_c_text = result[index].result_c_text;
-					var result_c_text2 = result[index].result_c_text2;
 					var result_direction = result[index].result_direction;
 					
 					if(result[index].cate_seq === 1) {
@@ -405,14 +394,14 @@
 					/* $('#result_o_text').text(result_o_text);
 					$('result_direction').text(result_direction); */
 					document.getElementById('result_o_text').innerHTML = result_o_text;
-					document.getElementById('result_c_text').innerHTML = result_c_text + result_c_text2;
+					document.getElementById('result_c_text').innerHTML = result_c_text;
 					document.getElementById('result_direction').innerHTML = result_direction;
 					document.getElementById('resetChart').innerHTML = ""; 
 					document.getElementById('resetChart').innerHTML = "<canvas id='myChart' width='100%' height='100%' margin-left='15px' padding-left='25px'></canvas>"; 
 					
     	            var context = document.getElementById('myChart').getContext('2d');
     	            var myChart = new Chart(context, {
-    	                type: 'horizontalBar', // 차트의 형태
+    	                type: 'bar', // 차트의 형태
     	                data: { // 차트에 들어갈 데이터
     	                    labels: [
     	                        //x 축
