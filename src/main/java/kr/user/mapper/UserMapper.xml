@@ -20,10 +20,12 @@
 	</select>
 	
 	<select id="joinPerMonth" resultType="kr.board.entity.CountJoin">
-		select to_char(user_joindate, 'yyyy-mm') as month
-			 , count(user_id)
-		  from t_user
-		group by to_char(user_joindate, 'yyyy-mm') as number
+		 <![CDATA[
+			select to_char(user_joindate, 'yyyy-mm') as month
+			 	 , count(user_id)
+		  	  from t_user
+			group by to_char(user_joindate, 'yyyy-mm')
+		 ]]>
 	</select>
 
 	<insert id="join" parameterType="kr.board.entity.User">
