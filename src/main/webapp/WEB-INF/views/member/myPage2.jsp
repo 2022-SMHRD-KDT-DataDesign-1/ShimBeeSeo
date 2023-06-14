@@ -37,35 +37,7 @@
     <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
- <script>
-	 $(function() {
-		  var x = 0;
-		  var tabx = 0;
-		  var xx = 0;
-		  var limit = $("table").width() - $(".cc").width();
-		  $("table").bind('touchstart', function(e) {
-		    var event = e.originalEvent;
-		    x = event.touches[0].screenX;
-		    tabx = $("table").css("transform").replace(/[^0-9\-.,]/g, '').split(',')[4];
-		  });
-		  $("table").bind('touchmove', function(e) {
-		    var event = e.originalEvent;
-		    xx = parseInt(tabx) + parseInt(event.touches[0].screenX - x);
-		    $("table").css("transform", "translate(" + xx + "px, 0px)");
-		    event.preventDefault();
-		  });
-		  $("table").bind('touchend', function(e) {
-		    if ((xx > 0) && (tabx <= 0)) {
-		      $("table").css("transform", "translate(0px, 0px)");
-		    }
-		    if (Math.abs(xx) > limit) {
-		      $("table").css("transform", "translate(" + -limit + "px, 0px)");
-		    }
-		  });
-	
-		});
- </script>   
+    <link href="${contextPath}/resources/css/style.css" rel="stylesheet"> 
     
 <style>
     table, th, td {
@@ -100,7 +72,50 @@ strong{
 	line-height: 60px;
 	color: #CBD5E1;
 }
-  
+.bi-heart{
+	font-size: 40px;
+	line-height: 40px;
+	color: gray;
+}
+.bi-file-earmark-check{
+	font-size: 40px;
+	line-height: 40px;
+	color: gray;
+	
+	/* #FFF5F3 */
+}
+.bi-chat-dots{
+	font-size: 40px;
+	line-height: 40px;
+	color: gray;
+}
+.bi-file-text{
+	font-size: 20px;
+	line-height: 20px;
+	color: gray;
+	margin-top:5px;
+}
+.bi-gear{
+	font-size: 20px;
+	line-height: 20px;
+	color: gray;
+}
+.bi-shop{
+	font-size: 20px;
+	line-height: 20px;
+	color: gray;
+}
+.text{
+	font-size: 20px;
+}
+.gg{
+	background-color: #FFF5F3;
+}
+.bi-chevron-left{
+	font-size: 30px;
+	line-height: 20px;
+	color: gray;
+}
 /*   * {
   margin: 0;
   padding: 0;
@@ -121,70 +136,40 @@ strong{
 	<jsp:include page="../common/header.jsp"></jsp:include>
 	<!-- 본문 내용 시작 -->
 	<section class="about-section section-padding" id="section_2">
-    	<div class="container">
-    		<div class="hh"><strong>마이페이지</strong></div>
-    		<div class="col-lg-8 col-12" style="display:flex">
-    			<div style="display:flex; height: 100px;"><i class="bi bi-person-fill"></i><strong>양진영</strong>님, 안녕하세요!</div>
+    	<div class="gg">
+    		<div class="hh">
+    			<div style="padding-top: 30px;">
+    			<a href=""><i class="bi bi-chevron-left"></i></a>
+    			<strong style="margin-bottom:10px; font-size:20px;">마이페이지</strong></div>
     		</div>
-    		<div style="display: flex;">
-    			<div style="text-align: center; display: flex;"><i class="bi bi-file-earmark-check"><br>검사내역</i></div>
-    			<div style="text-align: center; display: flex;"><i class="bi bi-file-earmark-check"><br>검사내역</i></div>
-    			<div style="text-align: center; display: flex;"><i class="bi bi-file-earmark-check"><br>검사내역</i></div>
+    		<div class="col-lg-8 col-12">
+    			<div style="display:flex; height: auto;"><i class="bi bi-person-fill"></i><strong>양진영</strong>님, 안녕하세요!</div>
     		</div>
-        	<div class="row">
+    		<div style="display: flex; margin-top:40px;">
+    			<div style="text-align: center; width: 33%; padding : 25px 0; background-color: rgba( 226, 249, 202, 1);">
+    			<i class="bi bi-heart"><br><p style="font-size: 15px;">찜 목록</p></i>
+    			</div>
+    			<div style="text-align: center; width: 33%; padding : 25px 0; background-color: rgba( 226, 249, 202, 1);">
+    			<i class="bi bi-file-earmark-check"><br><p style="font-size: 15px;">검사내역</p></i>
+    			</div>
+    			<div style="text-align: center; width: 33%; padding : 25px 0; background-color: rgba( 226, 249, 202, 1);">
+    			<i class="bi bi-chat-dots"><br><p style="font-size: 15px;">내 리뷰</p></i>
+    			</div>
+    		</div>
+        	<div class="row" style="margin-top:30px;">
             	<div class="col-lg-8 col-12">
                 	<div class="pb-5 mb-5">
-                   		<!-- <table class="table table-bordered border-dark border border-2" style="width: 1000px;" >
-								<th></th>
-								<th>공격성</th>
-								<th>사회불안</th>
-								<th>우울</th>
-								<th>대인회피</th>
-								<th>자존감</th>
-								<th>정서불안</th>
-								<th>애정결핍</th>
-								<th>열등감</th>
-								<th>퇴행</th>
-							<tr>
-								<td style="width:15%">마지막 검사결과</td>
-								<td>30</td>
-								<td>40</td>
-								<td>50</td>
-								<td>30</td>
-								<td>20</td>
-								<td>45</td>
-								<td>35</td>
-								<td>15</td>
-								<td>10</td>
-							</tr> 
-							<tr>
-								<td>직전 검사결과</td>
-								<td>40</td>
-								<td>50</td>
-								<td>30</td>
-								<td>20</td>
-								<td>20</td>
-								<td>45</td>
-								<td>35</td>
-								<td>15</td>
-								<td>10</td>
-							</tr>
-							<tr>
-								<td>증감치</td>
-								<td>10</td>
-								<td>10</td>
-								<td>-20</td>
-								<td>-10</td>
-								<td>0</td>
-								<td>0</td>
-								<td>0</td>
-								<td>0</td>
-								<td>0</td>
-							</tr> 
-						</table> -->
+                   		<div style="float:left; margin-top:4px;"><i class="bi bi-file-text"></i></div>
+                   		<div style="margin-left: 50px;"><p class="text">결제 내역</p></div>
+                   		<div style="float:left; margin-top:4px;"><i class="bi bi-gear"></i></div>
+                   		<div style="margin-left: 50px;"><p class="text" >내 정보 수정</p></div>
+                   		<div style="float:left; margin-top:4px;"><i class="bi bi-shop"></i></div>
+                   		<div style="margin-left: 50px;"><p class="text">연계 기관 소개</p></div>
                	  	</div>              	 
              	</div>		
         	</div>
+        	
+        	<button class="btn btn-primary w-100 py-3" type="button">로그아웃</button>
 		</div>
                         
 
