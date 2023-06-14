@@ -10,7 +10,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
 <meta charset="UTF-8">
 <title>내 정보^오^</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,44 +49,8 @@
 
 <!-- Template Stylesheet -->
 <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
-=======
-	<meta charset="UTF-8">
-	<title>내 정보^오^</title>
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  	    <meta content="" name="keywords">
-    <meta content="" name="description">
 
-    <!-- Favicon -->
-    <link href="${contextPath}/resources/img/favicon.ico" rel="icon">
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
-    
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="${contextPath}/resources/lib/animate/animate.min.css" rel="stylesheet">
-    <link href="${contextPath}/resources/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
-    
-    <style>
-    	#myChart{
-    		display: block;
-    		height: 310px;
-    		width: 436px;
-    	}
-    </style>
->>>>>>> yjy
 </head>
 <body>
 	<div class="container-xxl bg-white p-0">
@@ -96,13 +59,11 @@
 
 		<div class=".d-md-block gap-2" style="margin-top: 6vw;">
 			<div style="float: left; width: 50%;">
-				<button id="date" style="width: 100%; height: 10vw; border-radius: 5vw; border: none;     background: #fff5f3;
-    font-family: sans-serif;"
+				<button id="date" style="width: 100%; height: 10vw; border-radius: 5vw; border: none; background: #fff5f3; font-weight : 550;"
 					onclick="viewDate()">날짜별 검사 결과</button>
 			</div>
 			<div style="float: left; width: 50%;">
-				<button id="emtion" style="width: 100%; height: 10vw; border-radius: 5vw; border: none;     background: #fff5f3;
-    font-family: sans-serif;"
+				<button id="emtion" style="width: 100%; height: 10vw; border-radius: 5vw; border: none; background: #fff5f3; font-weight : 550;"
 					onclick="viewEmotion()">감정별 검사 결과</button>
 			</div>
 		</div>
@@ -150,10 +111,6 @@
 
 
 							</div>
-<<<<<<< HEAD
-=======
-							<!-- <p class="fs-5">아프다 이 아이</p> -->
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DataDesign-1/ShimBeeSeo.git
 						</div>
 
 					</div>
@@ -217,18 +174,12 @@
 
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
-					<!-- <img src="images/profile/handsome-asian-man-listening-music-through-headphones.jpg"
-                                class="about-image img-fluid" alt=""> -->
 
 					<div class="team-info">
 						<h4 class="mb-2">2번</h4>
 						<br> <img src="${contextPath}/resources/img/why.png"
 							style="width: 100%; height: auto;"
 							class="verified-image img-fluid" alt="">
-
-						<!-- <span class="badge">Creative</span>
-
-                                <span class="badge">Design</span> -->
 					</div>
 
 				</div>
@@ -291,8 +242,7 @@
 					</div>
 
 				</div>
-<<<<<<< HEAD
-=======
+
 				<div class="col-lg-8 col-12 mx-auto">
 					<div class="pb-5 mb-5">
 						<div class="testimonial-item bg-light rounded p-5">
@@ -346,18 +296,9 @@
 
 					</div>
 				</div>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-DataDesign-1/ShimBeeSeo.git
+
 
 			</div>
-
-
-
-			<div class="col-lg-12 col-12">
-				<div class="section-title-wrap mb-5">
-					<h4 class="section-title">이런 콘텐츠는 어때요?</h4>
-				</div>
-			</div>
-
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
 
@@ -375,6 +316,7 @@
 
 				</div>
 			</div>
+
 
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
@@ -507,7 +449,7 @@
 					
     	            var context = document.getElementById('myChart').getContext('2d');
     	            var myChart = new Chart(context, {
-    	                type: 'horizontalBar', // 차트의 형태
+    	                type: 'bar', // 차트의 형태
     	                data: { // 차트에 들어갈 데이터
     	                    labels: [
     	                        //x 축

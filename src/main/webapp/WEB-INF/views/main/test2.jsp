@@ -153,9 +153,9 @@
 	<div class="container-xxl bg-white p-0">
 		<jsp:include page="../common/header.jsp"></jsp:include>
 		<!-- 상자생성하고 사진넣어보기 -->
-		<section style="font-family: 'MaplestoryOTFBold';" id="projects" class="about-section text-center">
+		<section id="projects" class="about-section text-center">
 			<div style="margin-top: 0;" class="testView">
-				<h1><strong style="font-family: 'MaplestoryOTFBold';">집</strong></h1>
+				<h1><strong>집</strong></h1>
 						<div class="uploadPhoto">
 							<form method="POST" enctype="multipart/form-data" id="form_img">
 							
