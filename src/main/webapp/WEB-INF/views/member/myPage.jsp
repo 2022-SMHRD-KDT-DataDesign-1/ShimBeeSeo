@@ -316,13 +316,26 @@
  				<div class="col-lg-8 col-12 mx-auto">
             		<div class="pb-5 mb-5">
                 		<div class="section-title-wrap mb-4">
-                     		<h4 class="section-title text-center">검사 내용</h4>
-                    	</div>
-                            
+
 			<!-- test용 시작-->
     					<div class="testimonial-item bg-light rounded p-5">
                 			<p class="fs-5" id="result_o_text">  </p>
 						</div>
+
+						<div class="testimonial-item bg-light rounded p-5">
+							<p class="fs-5" id="result_c_text"> </p>
+                    	</div>
+               		</div>
+           		</div>
+                        
+                         <div class="col-lg-8 col-12 mx-auto">
+                        <div class="pb-5 mb-5">
+                            <div class="section-title-wrap mb-4">
+                                
+                            </div>
+                            
+    <div class="testimonial-item bg-light rounded p-5">
+>>>>>>> jyj
 
 
 					</div>
@@ -458,8 +471,9 @@
     	    		var result_deprivation =result[index].result_deprivation;
     	    		var result_inferiority =result[index].result_inferiority;
     	    		var result_regression = result[index].result_regression;
-    	    		var result_o_text = result[index].result_o_text;
+					var result_o_text = result[index].result_o_text;
 					var result_c_text = result[index].result_c_text;
+					var result_c_text2 = result[index].result_c_text2;
 					var result_direction = result[index].result_direction;
 					
 					if(result[index].cate_seq === 1) {
@@ -474,16 +488,19 @@
         	    		result_regression = (result[index].result_regression / 11 * 100).toFixed(1);
     				}
 
-					document.getElementById('result_o_text').innerHTML = result_o_text;
-					document.getElementById('result_c_text').innerHTML = result_c_text;
-					document.getElementById('result_direction').innerHTML = result_direction;
 
+					
+					/* $('#result_o_text').text(result_o_text);
+					$('result_direction').text(result_direction); */
+					document.getElementById('result_o_text').innerHTML = result_o_text;
+					document.getElementById('result_c_text').innerHTML = result_c_text + result_c_text2;
+					document.getElementById('result_direction').innerHTML = result_direction;
 					document.getElementById('resetChart').innerHTML = ""; 
 					document.getElementById('resetChart').innerHTML = "<canvas id='myChart'></canvas>"; 
 					
     	            var context = document.getElementById('myChart').getContext('2d');
     	            var myChart = new Chart(context, {
-    	                type: 'bar', // 차트의 형태
+    	                type: 'horizontalBar', // 차트의 형태
     	                data: { // 차트에 들어갈 데이터
     	                    labels: [
     	                        //x 축
