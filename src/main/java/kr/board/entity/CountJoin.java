@@ -11,5 +11,5 @@ import lombok.ToString;
 @ToString
 public class CountJoin {
 	private String month;
-	private int number;
+	private int num;
 }

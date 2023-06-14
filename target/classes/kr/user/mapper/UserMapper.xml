@@ -22,7 +22,7 @@
 	<select id="joinPerMonth" resultType="kr.board.entity.CountJoin">
 		 <![CDATA[
 			select to_char(user_joindate, 'yyyy-mm') as month
-			 	 , count(user_id)
+			 	 , count(user_id) as num
 		  	  from t_user
 			group by to_char(user_joindate, 'yyyy-mm')
 		 ]]>

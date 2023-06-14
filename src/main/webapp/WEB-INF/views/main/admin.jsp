@@ -204,8 +204,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <%-- <script src="${contextPath}/resources/js/scripts.js"></script> --%>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js" crossorigin="anonymous"></script>
-    <%-- ¿<script src="${contextPath}/resources/js/chart-area-demo.js"></script>
-    <script src="${contextPath}/resources/js/chart-bar-demo.js"></script> --%>
+    <script src="${contextPath}/resources/js/chart-area-demo.js"></script>
+    <script src="${contextPath}/resources/js/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <%-- <script src="${contextPath}/resources/js/datatables/datatables-simple-demo.js"></script> --%>
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
@@ -227,9 +227,9 @@
     
     <script type="text/javascript">
     
-    $(document).ready(function() {
+    /* $(document).ready(function() {
     		loadResult();	
-    		});
+    		}); */
     		
     		function number_format(number, decimals, dec_point, thousands_sep) {
     		    // *     example: number_format(1234.56, 2, ',', ' ');

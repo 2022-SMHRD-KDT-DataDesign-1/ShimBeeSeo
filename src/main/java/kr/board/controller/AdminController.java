@@ -28,7 +28,7 @@ public class AdminController {
 		List<CountJoin> result = userMapper.joinPerMonth();
 		
 		
-		
+		System.out.println(result);
 		return result;
 	}
 	
