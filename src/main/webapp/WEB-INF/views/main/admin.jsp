@@ -114,17 +114,17 @@
                                         월별 회원 가입자 수
                                     </div>
                                     <div class="card-body">
-                                        <div class="chart-area"><canvas id="myAreaChart" width="100%" height="30"></canvas></div>
+                                        <div class="chart-area"><canvas id="joinPerMonth" width="100%" height="30"></canvas></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-6 mb-4">
                                 <div class="card card-header-actions h-100">
-                                    <div class="card-header">
+                                    <div id="myBarChart" class="card-header">
                                         유형별 검사 횟수
                                     </div>
                                     <div class="card-body">
-                                        <div class="chart-bar"><canvas id="myBarChart" width="100%" height="30"></canvas></div>
+                                        <div class="chart-bar"><canvas id="countCate" width="100%" height="30"></canvas></div>
                                     </div>
                                 </div>
                             </div>
@@ -134,16 +134,16 @@
                                 <div class="col-lg-6">
                                     <!-- Bar chart example-->
                                     <div class="card h-100">
-                                        <div class="card-header">자녀의 연령</div>
+                                        <div id="myBarChart2" class="card-header">자녀의 연령</div>
                                         <div class="card-body d-flex flex-column justify-content-center">
-                                            <div class="chart-bar"><canvas id="myBarChart2" width="100%" height="30"></canvas></div>
+                                            <div class="chart-bar"><canvas id="kidsAge" width="100%" height="30"></canvas></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <!-- Pie chart example-->
                                     <div class="card h-100">
-                                        <div class="card-header">지역 분포</div>
+                                        <div id="region" class="card-header">지역 분포</div>
                                         <div class="card-body">
                                             <div class="chart-pie mb-4"><canvas id="myPieChart" width="100%" height="50"></canvas></div>
                                             <div class="list-group list-group-flush">
@@ -181,14 +181,15 @@
         </div>
         
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="${contextPath}/resources/js/scripts.js"></script>
+
+    <%-- <script src="${contextPath}/resources/js/scripts.js"></script> --%>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/chart-area-demo.js"></script>
     <script src="${contextPath}/resources/js/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="${contextPath}/resources/js/datatables/datatables-simple-demo.js"></script>
+    <%-- <script src="${contextPath}/resources/js/datatables/datatables-simple-demo.js"></script> --%>
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
-    <script src="${contextPath}/resources/js/litepicker.js"></script>
+    <%-- <script src="${contextPath}/resources/js/litepicker.js"></script> --%>
         
     <script src="${contextPath}/resources/js/chart-pie-demo.js"></script>
 
@@ -203,6 +204,12 @@
 	
 	    <!-- Template Javascript -->
     <script src="${contextPath}/resources/js/main.js"></script>
+    
+    <script type="text/javascript">
+    
+    
+        
+    </script>
 	
 </body>
 </html>

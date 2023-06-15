@@ -79,7 +79,14 @@
 					              , #{result_c_text2}
 					              )
 	</insert>
-
+	
+	<!-- 주제별 검사회수 -->
+	<select id="countCate" resultType="kr.board.entity.CountCate">
+		select cate_seq
+			 , count(user_id) as count_cate
+		  from t_user_result
+		group by cate_seq
+	</select>
 
 </mapper>
 

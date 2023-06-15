@@ -189,25 +189,14 @@
     			url : "testResultOne.do",
     			type : "get",
     			dataType : "json",
-    			success : changeDate, /* callback 함수 요청되고나서 실행하는 함수*/
+    			success : getResult, /* callback 함수 요청되고나서 실행하는 함수*/
     			error : function() {
     				alert("loadResult error");
     			}
     		});
     	}
         
-    	/* 셀렉트에 사용자가 실시했던 검사날짜에 따른 option 추가 */
-        function makeSelect(data){
-        	var listHtml = "<option>--검사 날짜를 선택해주세요--</option>";
-			console.log("makeselect실행완료")
-        	$.each(data,function(index, obj){
-        		listHtml+="<option value='"+(obj.result_date)+"'>"+(obj.result_date)+"</option>";
-        		$("#dateSelect").html(listHtml);
-        	});
-        	  	
-        };
-        
-    	function changeDate(){
+    	function getResult(){
     		$.ajax({
     			url : "testResultOne.do",
     			type:"get",
