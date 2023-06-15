@@ -81,9 +81,9 @@
 		, user_childname = #{user_childname}
 		, user_childbdate = #{user_childbdate}
 		, user_relation = #{user_relation}
-		, user_address =#{user_address}
-		, user_isagreed =#{user_isagreed}
-		where user_id=#{user_id}
+		, user_address = #{user_address}
+		, user_isagreed = #{user_isagreed}
+		where user_id = #{user_id}
 	</update>
 
 

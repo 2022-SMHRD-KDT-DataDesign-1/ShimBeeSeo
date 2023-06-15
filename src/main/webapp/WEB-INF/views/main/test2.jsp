@@ -162,10 +162,11 @@
 								<div class="flex-container">
 									<div class="wrapper">
 										<h2>FileUpload</h2>
+										<p>아래 버튼을 눌러 사진을 업로드 해주세요</p>
 										<div style="position: relative;">
-											<img src="https://i0.wp.com/adventure.co.kr/wp-content/uploads/2020/09/no-image.jpg" class="image-box" style="min-width:350px"; height="350px"; />
+											<img src="${contextPath}/resources/images/fileUpload.png" class="image-box" style="min-width:350px"; height="350px"; />
 												<label for="file" class="upload-btn">
-												<input id="file" name="file" type="file" accept="image/*" style="display: none";/>
+												<input id="file" name="file" type="file" accept="image/*" style="display: none;" onchange="changeFile()"/>
 												</label>
 										</div>
 										
@@ -173,15 +174,22 @@
 
 								<!-- 미리보기 이후 파일 업로드하기 -->
 									<!-- if문 써야함 대기중 -->
-									<button type="button" onclick="uploadFunction();" class="form-control btn btn-primary" style="width: 150px">파일업로드</button>
+									<p id="submitInfo" style="margin-top:3vw; display: none;">아래 버튼을 눌러 AI에게 사진을 보내주세요!!</p>
+									<button type="button" id="submitPicture"onclick="uploadFunction();" class="form-control btn btn-warning" style="width: 150px; display:none; color: white; background-color: #FE5D37">AI에게 사진제출</button>
 								<!--미리보기 테스트 끝 -->
+								
+								
+								
 								</div>
 							</form>
 						</div>
 			</div>	
-			<div style="margin: 0">
+			<div style="margin: 0; display:none;" id="question">
+								<div class="section-title-wrap mb-4" style="margin-top:4vw;">
+							<h1 class="section-title text-center">사진 상세 질문</h1>
+						</div>
 				<!-- <form name="inputImg" method="POST"> -->
-				<div style="display: flex; width: 100%" class="container">
+				<div style="display: flex; width: 100%; margin-top: 6vw;" class="container">
 					<div style="width: 100%; display: block; margin: 0 auto" class="col-md-4">
 						<form id="checkboxes" action="${contextPath}/ScoreList.do" method="POST">
 							<div style="width:100%;height:auto; min-height:700px;position:relative;overflow:hidden;background-image:url('${contextPath}/resources/img/sk(1).png'); background-repeat : no-repeat; background-size : 100% 100%;">
@@ -189,35 +197,35 @@
 									<div id="que1" class="que curQue" style="width:100%;">
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">1. 그림의 전체적인 분위기는 어떤가요?</strong>
-											<input type="radio" class="btn-check" name="mood" value="1" id="mood1" autocomplete="off"> 
+											<input type="radio" class="btn-check" name="mood" value="1" id="mood1" autocomplete="off" onclick="selectCheck()"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="mood1">보통</label>
-											<input type="radio" class="btn-check" name="mood" value="2" id="mood2" autocomplete="off">
+											<input type="radio" class="btn-check" name="mood" value="2" id="mood2" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="mood2">조금 부정적</label>
-											<input type="radio" class="btn-check" name="mood" value="3" id="mood3" autocomplete="off">
+											<input type="radio" class="btn-check" name="mood" value="3" id="mood3" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="mood3">완전 부정적</label> 
 										</div>
 										
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">2. 종이의 전체 면적에서 집이 얼마나 차지하나요?</strong>
-											<input type="checkbox" class="btn-check" name="size" value="4" id="size1" autocomplete="off"> 
+											<input type="checkbox" class="btn-check" name="size" value="4" id="size1" autocomplete="off" onclick="selectCheck()"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="size1">보통(중앙에서 2/3 정도 차지)</label>
-											<input type="checkbox" class="btn-check" name="size" value="5" id="size2" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="size" value="5" id="size2" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="size2">지나치게 큼</label>
-											<input type="checkbox" class="btn-check" name="size" value="6" id="size3" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="size" value="6" id="size3" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="size3">지나치게 작음</label> 
-											<input type="checkbox" class="btn-check" name="size" value="7" id="size4" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="size" value="7" id="size4" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="size4">파손 됨(절단된 집)</label> 
 										</div>
 											
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">3. 그림에서 집은 어느쪽에 위치해 있나요?</strong>
-											<input type="radio" class="btn-check" name="position" value="8" id="position1" autocomplete="off"> 
+											<input type="radio" class="btn-check" name="position" value="8" id="position1" autocomplete="off" onclick="selectCheck()"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="position1">좌측</label>
-											<input type="radio" class="btn-check" name="position" value="9" id="position2" autocomplete="off">
+											<input type="radio" class="btn-check" name="position" value="9" id="position2" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="position2">우측</label>
-											<input type="radio" class="btn-check" name="position" value="10" id="position3" autocomplete="off">
+											<input type="radio" class="btn-check" name="position" value="10" id="position3" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="position3">하단</label> 
-											<input type="radio" class="btn-check" name="position" value="11" id="position4" autocomplete="off">
+											<input type="radio" class="btn-check" name="position" value="11" id="position4" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="position4">중앙</label> 
 										</div>
 									</div>
@@ -225,25 +233,25 @@
 									<div id="que2" class="que" style="display:none;">
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">4. 어떤 시점으로 그림이 그려졌나요?</strong>
-											<input type="radio" class="btn-check" name="sight" value="12" id="sight1" autocomplete="off"> 
+											<input type="radio" class="btn-check" name="sight" value="12" id="sight1" autocomplete="off" onclick="selectCheck()"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sight1">윗면(위에서 내려다보는)</label>
-											<input type="radio" class="btn-check" name="sight" value="13" id="sight2" autocomplete="off">
+											<input type="radio" class="btn-check" name="sight" value="13" id="sight2" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sight2">아랫면(아래에서 올려다보는)</label>
-											<input type="radio" class="btn-check" name="sight" value="14" id="sight3" autocomplete="off">
+											<input type="radio" class="btn-check" name="sight" value="14" id="sight3" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sight3">정면(정면에서 바라보는)</label>
 										</div>
 											
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">5. 지붕은 어떻게 묘사되었나요?</strong>
-											<input type="checkbox" class="btn-check" name="roof" value="15" id="roof1" autocomplete="off"> 
+											<input type="checkbox" class="btn-check" name="roof" value="15" id="roof1" autocomplete="off" onclick="selectCheck()"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="roof1">과도하게 큼, 강한선 묘사</label>
-											<input type="checkbox" class="btn-check" name="roof" value="16" id="roof2" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="roof" value="16" id="roof2" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="roof2">과도한 무늬</label>
-											<input type="checkbox" class="btn-check" name="roof" value="17" id="roof3" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="roof" value="17" id="roof3" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="roof3">뾰족함 또는 세모 모양</label>
-											<input type="checkbox" class="btn-check" name="roof" value="18" id="roof4" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="roof" value="18" id="roof4" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="roof4">지붕을 덧칠 또는 뭉개는 채색</label>
-											<input type="checkbox" class="btn-check" name="roof" value="19" id="roof5" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="roof" value="19" id="roof5" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="roof5">평범한 지붕</label>
 										</div>
 									</div>
@@ -251,27 +259,27 @@
 									<div id="que3" class="que" style="display:none;">
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">6. 집을 구성하는 벽의 모습은 어떤가요?</strong>
-											<input type="radio" class="btn-check" name="wall" value="20" id="wall1" autocomplete="off"> 
+											<input type="radio" class="btn-check" name="wall" value="20" id="wall1" autocomplete="off" onclick="selectCheck()"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="wall1">허술한 벽</label>
-											<input type="radio" class="btn-check" name="wall" value="21" id="wall2" autocomplete="off">
+											<input type="radio" class="btn-check" name="wall" value="21" id="wall2" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="wall2">지나치게 견고한 벽돌이나 벽면</label>
-											<input type="radio" class="btn-check" name="wall" value="22" id="wall3" autocomplete="off">
+											<input type="radio" class="btn-check" name="wall" value="22" id="wall3" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="wall3">평범한 벽</label>
 										</div>
 											
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">7. 현관문의 크기와 모양은 어떻게 묘사되었나요?</strong>
-											<input type="checkbox" class="btn-check" name="door" value="23" id="door1" autocomplete="off" checked> 
+											<input type="checkbox" class="btn-check" name="door" value="23" id="door1" autocomplete="off" onclick="selectCheck()"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="door1">과하게 큼</label>
-											<input type="checkbox" class="btn-check" name="door" value="24" id="door2" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="door" value="24" id="door2" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="door2">과하게 작음</label>
-											<input type="checkbox" class="btn-check" name="door" value="25" id="door3" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="door" value="25" id="door3" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="door3">집의 측면에 위치</label>
-											<input type="checkbox" class="btn-check" name="door" value="26" id="door4" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="door" value="26" id="door4" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="door4">덧칠된 또는 잠금장치가 있는 현관문</label>
-											<input type="checkbox" class="btn-check" name="door" value="27" id="door5" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="door" value="27" id="door5" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="door5">없음</label>
-											<input type="checkbox" class="btn-check" name="door" value="28" id="door6" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="door" value="28" id="door6" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="door6">특징 없는 평범한 현관문</label>
 										</div>
 									</div>
@@ -279,35 +287,35 @@
 									<div id="que4" class="que" style="display:none;">
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">8. 창문은 어떤 특징이 있나요?</strong>
-											<input type="checkbox" class="btn-check" name="window" value="29" id="window1" autocomplete="off" checked> 
+											<input type="checkbox" class="btn-check" name="window" value="29" id="window1" autocomplete="off" onclick="selectCheck()"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="window1">없음</label>
-											<input type="checkbox" class="btn-check" name="window" value="30" id="window2" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="window" value="30" id="window2" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="window2">3개 이상</label>
-											<input type="checkbox" class="btn-check" name="window" value="31" id="window3" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="window" value="31" id="window3" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="window3">커튼으로 가려짐</label>
-											<input type="checkbox" class="btn-check" name="window" value="32" id="window4" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="window" value="32" id="window4" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="window4">2층 이상의 지붕위에만 있음</label>
 										</div>
 											
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">9. 굴뚝의 모습에 특징이 있나요?</strong>
-											<input type="radio" class="btn-check" name="chimney" value="33" id="chimney1" autocomplete="off" checked> 
+											<input type="radio" class="btn-check" name="chimney" value="33" id="chimney1" autocomplete="off" onclick="selectCheck()"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="chimney1">없음</label>
-											<input type="radio" class="btn-check" name="chimney" value="34" id="chimney2" autocomplete="off">
+											<input type="radio" class="btn-check" name="chimney" value="34" id="chimney2" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="chimney2">연기가 없는 굴뚝</label>
-											<input type="radio" class="btn-check" name="chimney" value="35" id="chimney3" autocomplete="off">
+											<input type="radio" class="btn-check" name="chimney" value="35" id="chimney3" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="chimney3">연기나는 굴뚝</label>
 										</div>
 											
 										<div class="btn-group-vertical" role="group"aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">10. 그림에 태양이 묘사되어 있나요?</strong>
-											<input type="checkbox" class="btn-check" name="sun" value="36" id="sun1" autocomplete="off" checked> 
+											<input type="checkbox" class="btn-check" name="sun" value="36" id="sun1" autocomplete="off" onclick="selectCheck()"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sun1">반만 나온 태양</label>
-											<input type="checkbox" class="btn-check" name="sun" value="37" id="sun2" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="sun" value="37" id="sun2" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sun2">무채색 태양</label>
-											<input type="checkbox" class="btn-check" name="sun" value="38" id="sun3" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="sun" value="38" id="sun3" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sun3">없음</label>
-											<input type="checkbox" class="btn-check" name="sun" value="39" id="sun4" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="sun" value="39" id="sun4" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sun4">평범한 태양</label>
 										</div>
 									</div>
@@ -315,29 +323,29 @@
 									<div id="que5" class="que" style="display:none;">
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
 											<strong style="margin-top:2vw; font-size: 20pt; color:black">11. 그림에 묘사된 다른 모습들이 있나요?</strong>
-											<input type="checkbox" class="btn-check" name="etc" value="40" id="etc1" autocomplete="off" checked> 
+											<input type="checkbox" class="btn-check" name="etc" value="40" id="etc1" autocomplete="off" onclick="selectCheck()"> 
 											<label style="margin-top: 1.9vw; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc1">산속 또는 숲속 집</label>
-											<input type="checkbox" class="btn-check" name="etc" value="41" id="etc2" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="etc" value="41" id="etc2" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc2">울타리가 있거나 울타리같은 지면</label>
-											<input type="checkbox" class="btn-check" name="etc" value="42" id="etc3" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="etc" value="42" id="etc3" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc3">연못, 우물, 비 표현</label>
-											<input type="checkbox" class="btn-check" name="etc" value="43" id="etc4" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="etc" value="43" id="etc4" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc4">벽 등을 통해 투시되는 집 내부</label>
-											<input type="checkbox" class="btn-check" name="etc" value="44" id="etc5" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="etc" value="44" id="etc5" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc5">의인화된 집</label>
-											<input type="checkbox" class="btn-check" name="etc" value="45" id="etc6" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="etc" value="45" id="etc6" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc6">음영, 그림자 표현 또는 지웠다 그리기를 반복한 흔적</label>
-											<input type="checkbox" class="btn-check" name="etc" value="46" id="etc7" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="etc" value="46" id="etc7" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc7">평면도형태의 집</label>
-											<input type="checkbox" class="btn-check" name="etc" value="47" id="etc8" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="etc" value="47" id="etc8" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc8">덧칠된 채색</label>
-											<input type="checkbox" class="btn-check" name="etc" value="48" id="etc9" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="etc" value="48" id="etc9" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc9">넓고 자세한 선으로 강조된 지면선</label>
-											<input type="checkbox" class="btn-check" name="etc" value="49" id="etc10" autocomplete="off">
+											<input type="checkbox" class="btn-check" name="etc" value="49" id="etc10" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc10">해당되는 특징 없음</label>
 										</div>
 									</div>
-									<div class="pagingWraper" style="position:absolute;left:35%;bottom:0;padding-bottom:60px">
+									<div class="pagingWraper" style="position:absolute;left:31%;bottom:0;padding-bottom:60px">
 										<button type="button" class="prevBtn" onclick="prevQue();">이전</button>
 										<span class="page"></span>
 										<button type="button" class="nextBtn" onclick="nextQue();">다음</button>
@@ -356,8 +364,8 @@
 							<div>
 								<input type="hidden" name="result_direction" id="result_direction"> 
 								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white;" 
-									id="picSend" type="button" value="이전단계로" onclick="location.href='check.do'" />
-								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white; margin-right:30px;" id="picSend" type="submit" value="검사 완료">
+									id="picSend" type="button" value="검사유형선택" onclick="location.href='check.do'" />
+								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white; margin-right:30px;" id="submitSend" type="submit" disabled='disabled' value="모든 질문에 답변해주세요">
 								</div>
 								
 							</form>
@@ -405,6 +413,8 @@
 
 /* =========================이미지 모델에게 확인 요청 ================================= */
 		function uploadFunction() {
+			$('#submitPicture').prop('disabled',true);
+			$('#submitPicture').text('AI가 사진을 분석중입니다.');
 			// 임의 test, id값 쿼리스트링으로 보내기
 			var id = 'samsam';
 			var data = new FormData(form_img);
@@ -412,6 +422,7 @@
 			saveImageBeforeUpload(data);
 			/* async : false -> 비동기 동기로 변경, 다만 값 받아오기 전에 페이지 이동해 버리면 값 못받고 넘어감!! 주의하자! */
 			// http://211.105.164.246:9000/test
+			$('#question').css('display','block')
 			 $.ajax({
 				type : "POST",
 				enctype : "multipart/form-data",
@@ -530,6 +541,8 @@
 								success : function (chatbot_response){
 									console.log(chatbot_response['response']);
 									$('#result_direction').val(chatbot_response['response']);
+									$('#submitPicture').prop('disabled',false);
+									$('#submitPicture').text('분석완료! 설문을 진행해주세요');
 								},
 								error : function (){
 									console.log("flask에서 아무고토 못받음");
@@ -589,7 +602,51 @@
 	  reader.readAsDataURL(fileDOM.files[0]);
 	});
 
-	
+
 	</script>
+	
+	<script type="text/javascript">
+	function changeFile(){
+		console.log('changeFile 잘 됨');
+		var file = $('#file');
+		console.log(file);
+		if(file != null){
+			$('#submitInfo').css('display','inline-block');
+			$('#submitPicture').css('display','inline-block');
+			
+		}else{
+			$('#submitPicture').css('display','none');
+		}
+	}
+	</script>
+	
+	<script type="text/javascript">
+	function selectCheck(){
+		var mood = $('input[name=mood]').is(":checked");
+		var size = $('input[name=size]').is(":checked");
+		var position = $('input[name=position]').is(":checked");
+		var sight = $('input[name=sight]').is(":checked");
+		var roof = $('input[name=roof]').is(":checked");
+		var wall = $('input[name=wall]').is(":checked");
+		var door = $('input[name=door]').is(":checked");
+		var window = $('input[name=window]').is(":checked");
+		var chimney = $('input[name=chimney]').is(":checked");
+		var sun = $('input[name=sun]').is(":checked");
+		var etc = $('input[name=etc]').is(":checked");
+
+		if(mood == true && size == true && position == true && sight == true && roof == true && wall == true && door == true && window == true && chimney == true && sun == true && etc == true){
+			console.log("전부 체크됨");
+			var checkPicture = $('#submitPicture').text();
+			if(checkPicture == '분석완료! 설문을 진행해주세요'){
+				
+			$('#submitSend').attr("disabled", false);
+			$('#submitSend').attr("value",'제출하기');
+			}
+		}
+		
+	};
+	</script>
+	
+	
 </body>
 </html>
