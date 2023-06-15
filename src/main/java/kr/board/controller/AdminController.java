@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.board.entity.CountCate;
 import kr.board.entity.CountJoin;
 import kr.board.entity.User;
 import kr.user.mapper.UserMapper;
@@ -29,6 +30,15 @@ public class AdminController {
 		
 		
 		System.out.println(result);
+		return result;
+	}
+	
+	@ResponseBody
+	@GetMapping("/countCate.do")
+	public List<CountCate> testCate() {
+		
+		List<CountCate> result = userResultMapper.countCate();
+		
 		return result;
 	}
 	
