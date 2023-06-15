@@ -67,7 +67,7 @@
                     </c:if>
                     <c:if test="${not empty mvo}">
                     	<c:if test="${mvo.user_id eq '진짱' }">
-                    	<a href="loginPage.do" class="nav-item nav-link">관리자페이지</a>
+                    	<a href="admin,do" class="nav-item nav-link">관리자페이지</a>
                     	</c:if>
                     <a href="UserResult.do" class="nav-item nav-link">내정보</a>
                     
