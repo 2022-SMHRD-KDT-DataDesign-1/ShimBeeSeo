@@ -372,6 +372,7 @@
 					var result_c_text = result[index].result_c_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
 					var result_c_text2 = result[index].result_c_text2.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
 					var result_direction = result[index].result_direction.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+
 					
 					if(result[index].cate_seq === 1) {
     					result_aggressive = (result[index].result_aggressive / 9 * 100).toFixed(1);
