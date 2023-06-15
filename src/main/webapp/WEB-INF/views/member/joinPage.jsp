@@ -59,12 +59,6 @@
         <!-- Contact Start -->
         <div class="container-xxl py-5">
             <div class="container">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                    <h1 class="mb-3">Get In Touch</h1>
-                    <p>Eirmod sed ipsum dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd vero ipsum sit
-                        eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</p>
-                </div>
-
                 <div class="bg-light rounded">
                     <div class="row g-0">
                                             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
@@ -75,7 +69,6 @@
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="#">회원가입</a>.</p>
                                 <form action="${contextPath}/join.do" method="post">
                                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                                     <div class="row g-3">
@@ -85,65 +78,74 @@
                                                 <label for="user_Id">아이디</label>
                                             </div>
                                         </div>
-                                         <div class="col-6">
+                                         <div class="col-12">
                                             <div class="form-floating">
                                                 <input type="password" class="form-control border-0" name="user_pw" id="pw1">
                                                 <label for="pw1">비밀번호</label>
                                             </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-12">
                                             <div class="form-floating">
                                                 <input type="password" class="form-control border-0" id="pw2">
                                                 <label for="pw2">비밀번호 확인</label>
                                             </div>
                                         </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control border-0" name="user_name" id="user_Name">
+                                                <label for="user_Name">가입자 이름</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                         	<label class="form-check-label" for="flexRadioDefault1">가입자의 생년월일</label><br>
+                                            <div class="form-floating">
+												<input type="date" name="user_bdate" id="user_Bdate">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control border-0" name="user_childname" id="user_Childname">
+                                                <label for="user_Childname">자녀 이름</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                         	<label class="form-check-label" for="flexRadioDefault1">자녀의 생년월일</label><br>
+                                            <div class="form-floating">
+												<input type="date" name="user_childbdate" id="user_Childbdate">
+                                            </div>
+                                        </div>
                                          <div class="col-12" >
                                          	<label class="form-check-label" for="flexRadioDefault1">자녀와의관계 </label><br>
 											<div class="form-check form-check-inline ">
-												<input class="form-check-input " type="radio" name="parents" id="sunject"  value="부">
+												<input class="form-check-input " type="radio" name="user_relation" id="user_Relation"  value="부">
 											 	<label class="form-check-label" for="flexRadioDefault1">부 </label>
 											</div>
 											<div class="form-check form-check-inline">
-												<input class="form-check-input" type="radio" name="parents" id="sunject"  value="모">
+												<input class="form-check-input" type="radio" name="user_relation" id="user_Relation"  value="모">
 												<label class="form-check-label" for="flexRadioDefault1">모 </label>
 											</div>
 										</div>
-                                         <div class="col-12">
-                                         	<label class="form-check-label" for="flexRadioDefault1">부모의 생년월일</label><br>
-                                            <div class="form-floating">
 
-                                                <input id="someDate" type="date">
-                                            </div>
-                                        </div>
-                                         <div class="col-12">
-                                            <label class="form-check-label" for="flexRadioDefault1">자녀의 생년월일</label><br>
-                                            <div class="form-floating">
-                                                <input id="someDate" type="date">
-                                            </div>
-                                        </div>
                                          <div class="col-12">
 											<div class="dropdown">
-												<button class="btn btn-secondary dropdown-toggle"
-													type="button" id="region"
-													data-bs-toggle="dropdown" aria-expanded="false">
-													지역을 선택하세요</button>
-												<ul class="dropdown-menu"
-													aria-labelledby="dropdownMenuButton1">
-													<li><a class="dropdown-item" href="#">광주</a></li>
-													<li><a class="dropdown-item" href="#">서울</a></li>
-													<li><a class="dropdown-item" href="#">부산</a></li>
-												</ul>
+												<select class="form-select"  aria-label="Default select example" name="user_address" id="user_Address" style="color:black;">
+  													<option selected>지역을 선택하세요</option>
+  													<option value="광주">광주</option>
+  													<option value="서울">서울</option>
+  													<option value="부산">부산</option>
+												</select>
 											</div>
 										</div>
                                          <div class="col-12">
 											<div class="form-check">
 											<label class="form-check-label" for="flexCheckDefault">개인정보 제공동의 </label>
-												<input class="form-check-input" type="checkbox" value="Y" id="flexCheckDefault"> 
+												<input class="form-check-input" type="checkbox" value="Y" name="user_isagreed" id="user_Isagreed"> 
 											</div>
 										</div>
                                         <div class="col-12"><!-- <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">회원가입</button> -->
-                                            <a class="btn btn-primary py-3 px-5" href="joinSucces.do" style="width:100%; height: auto;">회원가입<i class="fa fa-arrow-right ms-2"></i></a>
+                                            <input class="btn btn-primary py-3 px-5" type="submit" value="회원가입" href="join.do" style="width:100%; height: auto;"></a>
                                             <button class="btn btn-primary w-100 py-3 px-5" type="button" onclick="location.href='loginPage.do'" style="margin-top:15px;">취소</button>
+                                        	<!-- <i class="fa fa-arrow-right ms-2"></i> -->
                                         </div>
                                     </div>
                                 </form>

@@ -6,49 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class PageMovementController {
 
-	@GetMapping("about.do")
-	public String about() {
-		return "member/about";
-	}
 	
-	@GetMapping("classes.do")
-	public String classes() {
-		return "member/classes";
-	}
-	
-	@GetMapping("contact.do")
-	public String contact() {
-		return "member/contact";
-	}
-	
-	@GetMapping("facility.do")
-	public String facility() {
-		return "member/facility";
-	}
 
-	@GetMapping("errorPage.do")
-	public String errorPage() {
-		return "member/errorPage";
-	}
-	
-	@GetMapping("appointment.do")
-	public String appointment() {
-		return "member/appointment";
-	}
-	
-	@GetMapping("callToAction.do")
-	public String callToAction() {
-		return "member/callToAction";
-	}
-	
-	@GetMapping("team.do")
-	public String team() {
-		return "member/team";
-	}
+
 	
 	@GetMapping("myPage.do")
 	public String testimonial() {
-		return "member/myPage";
+		return "member/myPage2";
 	}
 	
 	@GetMapping("loginPage.do")
@@ -61,10 +25,6 @@ public class PageMovementController {
 		return "member/joinPage";
 	}
 	
-	@GetMapping("chat")
-	public String ChatGPT() {
-		return "member/ChatGPT";
-	}
 	
 	@GetMapping("check.do")
 	public String check() {
@@ -90,12 +50,7 @@ public class PageMovementController {
 		return "main/checkSucces";
 	}
 
-	// 김한송 개인 작업공간
-	@GetMapping("songSecret.do")
-	public String chart() {
-		return "member/songSecret";
 
-	}
 	
 	// 체크리스트
 	@GetMapping("jyjtest.do")
@@ -118,4 +73,13 @@ public class PageMovementController {
 		return "main/admin";
 	}
 	
+	@GetMapping("TestResult.do")
+	public String TestResult() {
+		return "member/testResult";
+	}
+	
+	@GetMapping("resultPopUp.do")
+	public String resultPopUP() {
+		return "member/resultPopUp";
+	}
 }

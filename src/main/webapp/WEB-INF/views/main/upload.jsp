@@ -220,7 +220,7 @@
 			$.ajax({
 				type : "POST",
 				enctype : 'multipart/form-data',
-				url : "http://192.168.56.1:9000/photo/" + id,
+				url : "http://211.105.164.246:9000/h_photo/",
 				data : data,
 				processData : false,
 				contentType : false,
@@ -231,12 +231,111 @@
 					if (res = !null) {
 						console.log("파일 업로드 성공");
 						// res 출력은 true만 나옴.. 어케 받아오지..?
-						console.log(items);
+						console.log(items['message']);
 						// 값 받아와서 히든태그에 집어 넣기!!
 						// null값 체크해서 페이지 이동 막아줘야 함
+						
+						
+						// ChatGPT에 객체 탐지 결과 불러와서 질문 집어넣기
+						var prompt = "";
+						var cnt = 1;
+						var inputText = items['message'];
+						var keywordExist = inputText.split(";")[0];
+						var kewordNull = inputText.split(";")[1];
+						prompt += "HTP검사중에 집그림 검사를 시작할거야 대상은 8세 미만의 아동이야\n";
+						for(var i = 0 ; i < keywordExist.length; i++){
+							if(kewordExist[i]== 'home'){								
+							prompt+=cnt+".집이 존재함 \n";
+							}
+							if(kewordExist[i]== 'door'){								
+							prompt+=cnt+".문이 존재함 \n";
+							}
+							if(kewordExist[i]== 'window'){								
+							prompt+=cnt+".창문이 존재함 \n";
+							}
+							if(kewordExist[i]== 'wall'){								
+							prompt+=cnt+".벽이 존재함 \n";
+							}
+							if(kewordExist[i]== 'chimney'){								
+							prompt+=cnt+".굴뚝이 존재함 \n";
+							}
+							if(kewordExist[i]== 'roof'){								
+							prompt+=cnt+".지붕이 존재함 \n";
+							}
+							if(kewordExist[i]== 'sun'){								
+							prompt+=cnt+".태양이 존재함 \n";
+							}
+							if(kewordExist[i]== 'c_smoke'){
+							prompt+=cnt+"굴뚝과 연기가 존재함 \n";
+							}
+							if(kewordExist[i]== 'fence'){
+							prompt+=cnt+"울타리가 존재함 \n";
+							}
+							if(kewordExist[i]== 'tree'){
+								prompt+=cnt+"나무가 존재함 \n";
+								}else{
+								prompt+="";
+								}
+							
+							for(var i = 0 ; i < keywordNull.length; i++){
+								if(kewordExist[i]== 'home'){								
+								prompt+=cnt+".집이 없음 \n";
+								}
+								if(kewordExist[i]== 'door'){								
+								prompt+=cnt+".문이 없음 \n";
+								}
+								if(kewordExist[i]== 'window'){								
+								prompt+=cnt+".창문이 없음 \n";
+								}
+								if(kewordExist[i]== 'wall'){								
+								prompt+=cnt+".벽이 없음 \n";
+								}
+								if(kewordExist[i]== 'chimney'){								
+								prompt+=cnt+".굴뚝이 없음 \n";
+								}
+								if(kewordExist[i]== 'roof'){								
+								prompt+=cnt+".지붕이 없음 \n";
+								}
+								if(kewordExist[i]== 'sun'){								
+								prompt+=cnt+".태양이 없음 \n";
+								}
+								if(kewordExist[i]== 'c_smoke'){
+								prompt+=cnt+"굴뚝과 연기가 없음 \n";
+								}
+								if(kewordExist[i]== 'fence'){
+								prompt+=cnt+"울타리가 없음 \n";
+								}
+								if(kewordExist[i]== 'tree'){
+									prompt+=cnt+"나무가 없음 \n";
+									}else{
+									prompt+="";
+									}
+							
+							
+							cnt++;
+						};
+						prompt += "위 검사 결과를 바탕으로 아이의 양육방식에 대하여 부모님의 관점으로 5가지 말해줘";
+						console.log(prompt);
+
+							$.ajax({
+								url : "http://localhost:5000/chatbot",
+								Type : "get",
+								data : {"message" : prompt},
+								dataType : "json",
+								contentType: 'application/json; charset=utf-8',
+								success : function (chatbot_response){
+									console.log(chatbot_response);
+									
+								},
+								error : function (){
+									console.log("flask에서 아무고토 못받음");
+								}
+							});
+						
+						
 					} else {
 						console.log("파일 업로드 실패");
-					}
+					};
 				},
 				error : function(e) {
 					console.log("파일 업로드 에러");

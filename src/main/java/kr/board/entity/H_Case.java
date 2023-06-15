@@ -11,16 +11,16 @@ import lombok.ToString;
 @ToString
 public class H_Case {
     // 집결과유형 순번 
-    private Double case_h_seq;
+    private int case_h_seq;
 
     // 분류 순번 
-    private Double cate_seq;
+    private int cate_seq;
 
     // 범주 시작 
-    private Double case_h_s;
+    private int case_h_s;
 
     // 범주 끝 
-    private Double case_h_e;
+    private int case_h_e;
 
     // 감정 
     private String case_h_emotion;

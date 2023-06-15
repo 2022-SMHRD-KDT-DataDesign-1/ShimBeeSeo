@@ -26,6 +26,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		
 		http.csrf().ignoringAntMatchers("http://192.168.56.1:9000/photo");
+		http.csrf().ignoringAntMatchers("http://localhost:8000");
+
 		http.csrf().ignoringAntMatchers("/upload.do");
 		http.csrf().ignoringAntMatchers("/ScoreList.do");
 		
