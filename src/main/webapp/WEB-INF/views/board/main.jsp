@@ -220,7 +220,7 @@
 	  <div class="panel panel-default">
 	    <div class="panel-heading">Board</div>
 	    <div class="panel-body" id="view">
-
+			
 		</div>
 		
 		<!-- 글쓰기 폼 -->

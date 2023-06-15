@@ -39,19 +39,39 @@
 	                           //           0              1         2
 	  function makeView(data){ // data = [{title="하하"}, {     }, {     }]
 		  console.log(data);
-		  var listHtml = "<table class='table table-bordered'>";
+		  var listHtml = "<table id='datatablesSimple'>";
+		  listHtml += "<thead>"
 		  listHtml += "<tr>";
-		  listHtml += "<td>번호</td>";
-		  listHtml += "<td>제목</td>";
-		  listHtml += "<td>작성자</td>";
-		  listHtml += "<td>작성일</td>";
-		  listHtml += "<td>조회수</td>";
+		  listHtml += "<th>아이디</th>";
+		  listHtml += "<th>이름</th>";
+		  listHtml += "<th>자녀이름</th>";
+		  listHtml += "<th>자녀의 생년월일</th>";
+		  listHtml += "<th>자녀와의 관계</th>";
+		  listHtml += "<th>주소</th>";
+		  listHtml += "<th>가입일</th>";
+		  listHtml += "<th></th>";
 		  listHtml += "</tr>";
+		  listHtml += "</thead>"
+		  
+		  listHtml += "<tfoot>"
+		  listHtml += "<tr>";
+		  listHtml += "<th>아이디</th>";
+		  listHtml += "<th>이름</th>";
+		  listHtml += "<th>자녀이름</th>";
+		  listHtml += "<th>자녀의 생년월일</th>";
+		  listHtml += "<th>자녀와의 관계</th>";
+		  listHtml += "<th>주소</th>";
+		  listHtml += "<th>가입일</th>";
+		  listHtml += "<th></th>";
+		  listHtml += "</tr>";
+		  listHtml += "</tfoot>";
+		  
+		  listHtml += "<tbody>"
 		  
 		  // 반복문을 통해 게시글을 만들어주는 부분 (main부분)
 		  $.each(data, function(index, obj){
 			  listHtml += "<tr>";
-			  listHtml += "<td>" + (index + 1) + "</td>";
+			  listHtml += "<td>" + <div class="d-flex align-items-center"> (index + 1) + "</td>";
 			  listHtml += "<td id='t"+obj.idx+"'><a href='javascript:goContent("+obj.idx+")'>" + obj.title + "</a></td>";
 			  listHtml += "<td>" + obj.writer + "</td>";
 			  listHtml += "<td>" + obj.indate + "</td>";
@@ -59,9 +79,30 @@
 			  listHtml += "</tr>";
 			  
 		listHtml += "</td></tr>";
-			  
+		<td>
+        
+            ${mvo.user_id}
+        </div>
+    </td>
+    <td>${mvo.user_name}</td>
+    <td>${mvo.user_childname}</td>
+    <td>${mvo.user_childbdate}</td>
+    <td>${mvo.user_relation}</span></td>
+    <td>${mvo.user_address}</td>
+    <td>${mvo.user_joindate}</td>
+    <td>
+        <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+        <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+    </td>
 			  
 		  });
+		  	listHtml += "</tbody>";
+			listHtml += "</table>";
+		  
+		  $("#view").html(listHtml);
+		  goList();
+		  
+	};
 	</script>
     </head>
     <body class="nav-fixed">
@@ -117,7 +158,7 @@
                         <div class="card">
                             <div class="card-body datatable-wrapper no-header datatable-container">
                                 <table id="datatablesSimple">
-                                    <thead class="datatable-top">
+                                    <thead>
                                         <tr>
                                             <th>아이디</th>
                                             <th>이름</th>
@@ -129,7 +170,7 @@
                                             <th></th>
                                         </tr>
                                     </thead>
-                                    <tfoot class="datatable-bottom">
+                                    <tfoot>
                                         <tr>
                                             <th>아이디</th>
                                             <th>이름</th>
