@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package kr.user.mapper;
 
 import java.util.HashMap;
@@ -65,4 +64,3 @@ public interface UserMapper {
 
 	
 }
->>>>>>> jyj
