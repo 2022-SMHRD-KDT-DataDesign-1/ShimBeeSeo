@@ -29,7 +29,7 @@
 		  // BoardController에서 게시글 전체목록을 가져오는 기능
 		  // JavaScript에서 객체 표현법 {key:value} -> json
 		  $.ajax({
-			  url : "board/all",
+			  url : "allUserList.do",
 			  type : "get",
 			  dataType : "json",
 			  success : makeView,
@@ -69,31 +69,19 @@
 		  listHtml += "<tbody>"
 		  
 		  // 반복문을 통해 게시글을 만들어주는 부분 (main부분)
-		  $.each(data, function(index, obj){
+		  $.each(data, function(obj){
 			  listHtml += "<tr>";
-			  listHtml += "<td>" + <div class="d-flex align-items-center"> (index + 1) + "</td>";
-			  listHtml += "<td id='t"+obj.idx+"'><a href='javascript:goContent("+obj.idx+")'>" + obj.title + "</a></td>";
-			  listHtml += "<td>" + obj.writer + "</td>";
-			  listHtml += "<td>" + obj.indate + "</td>";
-			  listHtml += "<td>" + obj.count + "</td>";
+			  listHtml += "<td>" + data[obj].user_id+"</td>";
+			  listHtml += "<td>"+ data[obj].user_name+"</td>";
+			  listHtml += "<td>" + data[obj].user_childname+"</td>";
+			  listHtml += "<td>" + data[obj].user_childbdate+"</td>";
+			  listHtml += "<td>" + data[obj].user_relation+"</td>";
+			  listHtml += "<td>" + data[obj].user_address+"</td>";
+			  listHtml += "<td>" + data[obj].user_joindate+"</td>";
+			  listHtml += "<td> <a class='btn btn-datatable btn-icon btn-transparent-dark me-2' href='user-management-edit-user.html'><i data-feather='edit'></i></a><a class='btn btn-datatable btn-icon btn-transparent-dark' href='#!'><i data-feather='trash-2'></i></a> </td>";
 			  listHtml += "</tr>";
 			  
 		listHtml += "</td></tr>";
-		<td>
-        
-            ${mvo.user_id}
-        </div>
-    </td>
-    <td>${mvo.user_name}</td>
-    <td>${mvo.user_childname}</td>
-    <td>${mvo.user_childbdate}</td>
-    <td>${mvo.user_relation}</span></td>
-    <td>${mvo.user_address}</td>
-    <td>${mvo.user_joindate}</td>
-    <td>
-        <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
-        <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
-    </td>
 			  
 		  });
 		  	listHtml += "</tbody>";
@@ -156,8 +144,8 @@
                     <!-- Main page content-->
                     <div class="container-fluid px-4">
                         <div class="card">
-                            <div class="card-body datatable-wrapper no-header datatable-container">
-                                <table id="datatablesSimple">
+                            <div class="card-body datatable-wrapper no-header datatable-container" id="view">
+                                <%-- <table id="datatablesSimple">
                                     <thead>
                                         <tr>
                                             <th>아이디</th>
@@ -184,11 +172,7 @@
                                     </tfoot>
                                     <tbody>
                                         <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    ${mvo.user_id}
-                                                </div>
-                                            </td>
+                                            <td>${mvo.user_id}</td>
                                             <td>${mvo.user_name}</td>
                                             <td>${mvo.user_childname}</td>
                                             <td>${mvo.user_childbdate}</td>
@@ -201,11 +185,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    진짱
-                                                </div>
-                                            </td>
+                                            <td>진짱</td>
                                             <td>양진용</td>
                                             <td>홍길순</td>
                                             <td>2012-06-09</td>
@@ -218,11 +198,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    진짱맨
-                                                </div>
-                                            </td>
+                                            <td>진짱맨</td>
                                             <td>양진용</td>
                                             <td>홍길순</td>
                                             <td>2012-06-09</td>
@@ -235,11 +211,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    1
-                                                </div>
-                                            </td>
+                                            <td>1</td>
                                             <td>하</td>
                                             <td>아</td>
                                             <td>2012-06-09</td>
@@ -252,11 +224,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    qwer
-                                                </div>
-                                            </td>
+                                            <td>qwer</td>
                                             <td>양진영</td>
                                             <td>홍길동</td>
                                             <td>2004-06-08</td>
@@ -269,11 +237,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    jyj
-                                                </div>
-                                            </td>
+                                            <td>jyj</td>
                                             <td>asdf</td>
                                             <td>홍길동</td>
                                             <td>2023-05-26</td>
@@ -286,11 +250,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <div class="d-flex align-items-center">
-                                                    test
-                                                </div>
-                                            </td>
+                                            <td>test</td>
                                             <td>test</td>
                                             <td>test</td>
                                             <td>2023-05-26</td>
@@ -303,7 +263,7 @@
                                             </td>
                                         </tr>
                                     </tbody>
-                                </table>
+                                </table> --%>
                             </div>
                         </div>
                     </div>

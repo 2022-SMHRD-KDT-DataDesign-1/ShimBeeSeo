@@ -14,7 +14,7 @@ import kr.user.mapper.UserMapper;
 import kr.user.mapper.UserResultMapper;
 
 @Controller
-public class AdminController {
+public class AdminController<UserList> {
 	
 	@Autowired
 	private UserMapper userMapper;
@@ -40,6 +40,16 @@ public class AdminController {
 		List<CountCate> result = userResultMapper.countCate();
 		
 		return result;
+	}
+	
+	@ResponseBody
+	@GetMapping("/allUserList.do")
+	public List<User> allUserList() {
+		
+		List<User> list = userMapper.allUserList();
+		
+		return list;
+		
 	}
 	
 }

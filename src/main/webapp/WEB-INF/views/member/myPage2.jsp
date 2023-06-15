@@ -167,8 +167,6 @@ a{
         	<div class="row" style="margin-top:30px;">
             	<div class="col-lg-8 col-12">
                 	<div class="pb-5 mb-5">
-                   		<div style="float:left; margin-top:4px; margin-left:15px;"><i class="bi bi-file-text"></i></div>
-                   		<div style="margin-left: 50px;"><p class="text">결제 내역</p></div>
                    		<div style="float:left; margin-top:4px; margin-left:15px;" ><i class="bi bi-gear"></i></div>
                    		<div style="margin-left: 50px;"><p class="text" >내 정보 수정</p></div>
                    		<div style="float:left; margin-top:4px; margin-left:15px;"><i class="bi bi-shop"></i></div>
