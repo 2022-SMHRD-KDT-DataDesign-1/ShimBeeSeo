@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="kr.cases.mapper.ObjectMapper">
-	
-	<!-- 객체유무 데이터 모두 불러오기 -->
-	<select id="selectAllList" resultType="kr.board.entity.Object">
-		select * from t_object
-	</select>
-</mapper>
