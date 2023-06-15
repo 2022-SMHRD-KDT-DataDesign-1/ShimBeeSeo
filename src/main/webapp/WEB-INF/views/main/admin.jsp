@@ -16,18 +16,15 @@
   	    <meta content="" name="keywords">
     <meta content="" name="description">
     <link href="${contextPath}/resources/css/admin.css" rel="stylesheet" />
-<<<<<<< HEAD
-
-=======
     <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
->>>>>>> 3dc0629c33149870a30b7bbe14b9b414471785de
+
 </head>
 <body class="nav-fixed">
         <div id="layoutSidenav">
-<<<<<<< HEAD
+
         	<jsp:include page="../common/adminHeader.jsp"></jsp:include>
             
-=======
+
             <div id="layoutSidenav_nav">
                 <nav class="sidenav shadow-right sidenav-light">
                     <div class="sidenav-menu">
@@ -83,7 +80,6 @@
                         </div>
                     </div>
             </div>
->>>>>>> 3dc0629c33149870a30b7bbe14b9b414471785de
             <div id="layoutSidenav_content">
                 <main>
                     <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
