@@ -42,4 +42,13 @@ public class AdminController {
 		return result;
 	}
 	
+	@ResponseBody
+	@GetMapping("/kidsAge.do")
+	public List<String> kidsAge() {
+		
+		List<String> result = userMapper.kidsAge();
+		
+		return result;
+	}
+	
 }

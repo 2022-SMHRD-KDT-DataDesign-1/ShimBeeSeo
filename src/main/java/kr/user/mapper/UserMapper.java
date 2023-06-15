@@ -27,6 +27,7 @@ public interface UserMapper {
 
 	public List<CountJoin> joinPerMonth();
 
+	public List<String> kidsAge();
 
 	
 }

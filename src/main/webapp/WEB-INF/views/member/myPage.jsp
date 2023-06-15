@@ -370,6 +370,7 @@
     	    		var result_regression = result[index].result_regression;
 					var result_o_text = result[index].result_o_text;
 					var result_c_text = result[index].result_c_text;
+					var result_c_text2 = result[index].result_c_text2;
 					var result_direction = result[index].result_direction;
 					
 					if(result[index].cate_seq === 1) {
@@ -389,7 +390,7 @@
 					/* $('#result_o_text').text(result_o_text);
 					$('result_direction').text(result_direction); */
 					document.getElementById('result_o_text').innerHTML = result_o_text;
-					document.getElementById('result_c_text').innerHTML = result_c_text;
+					document.getElementById('result_c_text').innerHTML = result_c_text + result_c_text2;
 					document.getElementById('result_direction').innerHTML = result_direction;
 					document.getElementById('resetChart').innerHTML = ""; 
 					document.getElementById('resetChart').innerHTML = "<canvas id='myChart' width='100%' height='100%' margin-left='15px' padding-left='25px'></canvas>"; 
