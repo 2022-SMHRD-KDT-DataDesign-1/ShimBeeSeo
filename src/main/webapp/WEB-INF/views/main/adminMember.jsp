@@ -16,6 +16,53 @@
 	    <link href="${contextPath}/resources/css/admin.css" rel="stylesheet" />
 	    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+	    
+	    <script type="text/javascript">
+	    
+	    $(document).ready(function(){
+  		  // HTML이 다 로딩되고 작동하는 함수
+  		  loadList();
+  	  });
+  
+  
+	  function loadList(){
+		  // BoardController에서 게시글 전체목록을 가져오는 기능
+		  // JavaScript에서 객체 표현법 {key:value} -> json
+		  $.ajax({
+			  url : "board/all",
+			  type : "get",
+			  dataType : "json",
+			  success : makeView,
+			  error : function(){ alert("error"); }
+		  });
+	  }
+	                           //           0              1         2
+	  function makeView(data){ // data = [{title="하하"}, {     }, {     }]
+		  console.log(data);
+		  var listHtml = "<table class='table table-bordered'>";
+		  listHtml += "<tr>";
+		  listHtml += "<td>번호</td>";
+		  listHtml += "<td>제목</td>";
+		  listHtml += "<td>작성자</td>";
+		  listHtml += "<td>작성일</td>";
+		  listHtml += "<td>조회수</td>";
+		  listHtml += "</tr>";
+		  
+		  // 반복문을 통해 게시글을 만들어주는 부분 (main부분)
+		  $.each(data, function(index, obj){
+			  listHtml += "<tr>";
+			  listHtml += "<td>" + (index + 1) + "</td>";
+			  listHtml += "<td id='t"+obj.idx+"'><a href='javascript:goContent("+obj.idx+")'>" + obj.title + "</a></td>";
+			  listHtml += "<td>" + obj.writer + "</td>";
+			  listHtml += "<td>" + obj.indate + "</td>";
+			  listHtml += "<td>" + obj.count + "</td>";
+			  listHtml += "</tr>";
+			  
+		listHtml += "</td></tr>";
+			  
+			  
+		  });
+	</script>
     </head>
     <body class="nav-fixed">
         <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
