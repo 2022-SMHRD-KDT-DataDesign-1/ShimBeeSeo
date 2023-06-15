@@ -71,11 +71,11 @@ public class KakaoServiceController {
 	  
 	}
 
-	@GetMapping("/logout")
+	@GetMapping("/logout.do")
 	public String kakaoLogout(HttpSession session) {
 		session.invalidate();
 
-		return "redirect:/login";
+		return "redirect:/";
 	}
 	
 	// 함수1 - token 가져오는 함수
