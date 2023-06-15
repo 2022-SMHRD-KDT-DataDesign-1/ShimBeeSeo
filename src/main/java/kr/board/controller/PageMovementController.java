@@ -82,4 +82,14 @@ public class PageMovementController {
 	public String resultPopUP() {
 		return "member/resultPopUp";
 	}
+	
+	@GetMapping("adminMember.do")
+	public String adminMember() {
+		return "main/adminMember";
+	}
+	
+	@GetMapping("adminMemberData.do")
+	public String adminMemberData() {
+		return "main/adminMemberData";
+	}
 }

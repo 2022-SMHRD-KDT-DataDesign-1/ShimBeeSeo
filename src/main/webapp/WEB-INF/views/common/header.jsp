@@ -78,7 +78,7 @@
                     <a href="admin.do" class="nav-item nav-link"> 관리자페이지 </a>
                     </c:if>
                     <c:if test="${not empty mvo}">
-           			<a href="${contextPath}/logout.do" class="nav-item nav-link active">로그아웃</a>
+           			<a href="${contextPath}/logout.do" class="nav-item nav-link">로그아웃</a>
                     </c:if>
                 </div>
             </div>

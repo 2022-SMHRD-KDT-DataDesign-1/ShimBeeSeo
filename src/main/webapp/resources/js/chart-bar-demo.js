@@ -29,169 +29,239 @@ function number_format(number, decimals, dec_point, thousands_sep) {
 }
 
 // Bar Chart Example
-var ctx = document.getElementById("myBarChart");
-var myBarChart = new Chart(ctx, {
-    type: "bar",
-    data: {
-        labels: ["집", "나무", "사람", "전체"],
-        datasets: [{
-            label: "시행한 검사 횟수",
-            backgroundColor: "rgba(0, 97, 242, 1)",
-            hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
-            borderColor: "#4e73df",
-            data: [50, 10, 30, 20],
-            maxBarThickness: 25
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        layout: {
-            padding: {
-                left: 10,
-                right: 25,
-                top: 25,
-                bottom: 0
-            }
-        },
-        scales: {
-            xAxes: [{
-                time: {
-                    unit: "month"
-                },
-                gridLines: {
-                    display: false,
-                    drawBorder: false
-                },
-                ticks: {
-                    maxTicksLimit: 6
-                }
-            }],
-            yAxes: [{
-                ticks: {
-                    min: 0,
-                    max: 100,
-                    maxTicksLimit: 5,
-                    padding: 10,
-                    // Include a dollar sign in the ticks
-                    callback: function(value, index, values) {
-                        return number_format(value);
-                    }
-                },
-                gridLines: {
-                    color: "rgb(234, 236, 244)",
-                    zeroLineColor: "rgb(234, 236, 244)",
-                    drawBorder: false,
-                    borderDash: [2],
-                    zeroLineBorderDash: [2]
-                }
-            }]
-        },
-        legend: {
-            display: false
-        },
-        tooltips: {
-            titleMarginBottom: 10,
-            titleFontColor: "#6e707e",
-            titleFontSize: 14,
-            backgroundColor: "rgb(255,255,255)",
-            bodyFontColor: "#858796",
-            borderColor: "#dddfeb",
-            borderWidth: 1,
-            xPadding: 15,
-            yPadding: 15,
-            displayColors: false,
-            caretPadding: 10,
-            callbacks: {
-                label: function(tooltipItem, chart) {
-                    var datasetLabel =
-                        chart.datasets[tooltipItem.datasetIndex].label || "";
-                    return datasetLabel + number_format(tooltipItem.yLabel);
-                }
-            }
-        }
-    }
+$.ajax({
+			url : "countCate.do",
+			type : "get",
+			dataType : "json",
+			success : function(result){
+				
+				var cateArr = [];
+				var countArr = [];
+				for(var i = 0; i < result.length; i++) {
+					if(result[i].cate_seq === 1) {
+						cateArr.push("집");
+					} else if(result[i].cate_seq === 2) {
+						cateArr.push("나무");
+					} else if(result[i].cate_seq === 3) {
+						cateArr.push("사람");
+					} else {
+						cateArr.push("전체");
+					}
+					
+					countArr.push(result[i].count_cate);
+				}
+				console.log(result);
+				console.log(cateArr);
+				console.log(countArr);
+	var ctx = document.getElementById("countCate");
+	var myBarChart = new Chart(ctx, {
+	    type: "bar",
+	    data: {
+	        labels: cateArr,
+	        datasets: [{
+	            label: "시행한 검사 횟수",
+	            backgroundColor: "rgba(0, 97, 242, 1)",
+	            hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
+	            borderColor: "#4e73df",
+	            data: countArr,
+	            maxBarThickness: 25
+	        }]
+	    },
+	    options: {
+	        maintainAspectRatio: false,
+	        layout: {
+	            padding: {
+	                left: 10,
+	                right: 25,
+	                top: 25,
+	                bottom: 0
+	            }
+	        },
+	        scales: {
+	            xAxes: [{
+	                time: {
+	                    unit: "month"
+	                },
+	                gridLines: {
+	                    display: false,
+	                    drawBorder: false
+	                },
+	                ticks: {
+	                    maxTicksLimit: 6
+	                }
+	            }],
+	            yAxes: [{
+	                ticks: {
+	                    min: 0,
+	                    max: 100,
+	                    maxTicksLimit: 5,
+	                    padding: 10,
+	                    // Include a dollar sign in the ticks
+	                    callback: function(value, index, values) {
+	                        return number_format(value);
+	                    }
+	                },
+	                gridLines: {
+	                    color: "rgb(234, 236, 244)",
+	                    zeroLineColor: "rgb(234, 236, 244)",
+	                    drawBorder: false,
+	                    borderDash: [2],
+	                    zeroLineBorderDash: [2]
+	                }
+	            }]
+	        },
+	        legend: {
+	            display: false
+	        },
+	        tooltips: {
+	            titleMarginBottom: 10,
+	            titleFontColor: "#6e707e",
+	            titleFontSize: 14,
+	            backgroundColor: "rgb(255,255,255)",
+	            bodyFontColor: "#858796",
+	            borderColor: "#dddfeb",
+	            borderWidth: 1,
+	            xPadding: 15,
+	            yPadding: 15,
+	            displayColors: false,
+	            caretPadding: 10,
+	            callbacks: {
+	                label: function(tooltipItem, chart) {
+	                    var datasetLabel =
+	                        chart.datasets[tooltipItem.datasetIndex].label || "";
+	                    return datasetLabel + number_format(tooltipItem.yLabel);
+	                }
+	            }
+	        }
+	    }
+	});
+	
+	}, /* callback 함수 요청되고나서 실행하는 함수*/
+    			error : function() {
+    				alert("loadResult error");
+    			}
 });
 
-var ctx = document.getElementById("myBarChart2");
-var myBarChart2 = new Chart(ctx, {
-    type: "bar",
-    data: {
-        labels: ["4세", "5세", "6세", "7세", "8세", "9세", "10세", "기타"],
-        datasets: [{
-            label: "자녀의 나이",
-            backgroundColor: "rgba(0, 97, 242, 1)",
-            hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
-            borderColor: "#4e73df",
-            data: [10, 20, 30, 20, 35, 25, 20, 30],
-            maxBarThickness: 25
-        }]
-    },
-    options: {
-        maintainAspectRatio: false,
-        layout: {
-            padding: {
-                left: 10,
-                right: 25,
-                top: 25,
-                bottom: 0
-            }
-        },
-        scales: {
-            xAxes: [{
-                time: {
-                    unit: "month"
-                },
-                gridLines: {
-                    display: false,
-                    drawBorder: false
-                },
-                ticks: {
-                    maxTicksLimit: 6
-                }
-            }],
-            yAxes: [{
-                ticks: {
-                    min: 0,
-                    max: 100,
-                    maxTicksLimit: 5,
-                    padding: 10,
-                    // Include a dollar sign in the ticks
-                    callback: function(value, index, values) {
-                        return number_format(value);
-                    }
-                },
-                gridLines: {
-                    color: "rgb(234, 236, 244)",
-                    zeroLineColor: "rgb(234, 236, 244)",
-                    drawBorder: false,
-                    borderDash: [2],
-                    zeroLineBorderDash: [2]
-                }
-            }]
-        },
-        legend: {
-            display: false
-        },
-        tooltips: {
-            titleMarginBottom: 10,
-            titleFontColor: "#6e707e",
-            titleFontSize: 14,
-            backgroundColor: "rgb(255,255,255)",
-            bodyFontColor: "#858796",
-            borderColor: "#dddfeb",
-            borderWidth: 1,
-            xPadding: 15,
-            yPadding: 15,
-            displayColors: false,
-            caretPadding: 10,
-            callbacks: {
-                label: function(tooltipItem, chart) {
-                    var datasetLabel =
-                        chart.datasets[tooltipItem.datasetIndex].label || "";
-                    return datasetLabel + number_format(tooltipItem.yLabel);
-                }
-            }
-        }
-    }
+$.ajax({
+			url : "kidsAge.do",
+			type : "get",
+			dataType : "json",
+			success : function(result){
+			
+			var birthday = [];
+			var ages = [];
+			var agesCate = ["4세", "5세", "6세", "7세", "8세", "9세", "10세", "기타"];
+			var agesCount = [0, 0, 0, 0, 0, 0, 0, 0];
+			var today = new Date();
+			
+			for(var i = 0; i < result.length; i++) {
+				birthday.push(new Date(result[i]));
+				var age = today.getFullYear() - birthday[i].getFullYear();
+				if(age < 4 || age > 10){
+					ages.push("기타");
+				} else {
+					ages.push(age+"세");
+				}
+			}
+			
+			for(var i = 0; i < ages.length; i++) {
+				for(var j = 0; j < agesCate.length; j++){
+					if(ages[i] === agesCate[j]) {
+						agesCount[j] += 1;
+					}
+				}
+			}
+			
+				
+			
+			// years 의 값이 실질적으로 구해진 나이이다.
+			/*console.log('계산 된 나이 : ' + years);*/
+				
+			var ctx = document.getElementById("kidsAge");
+			var myBarChart2 = new Chart(ctx, {
+			    type: "bar",
+			    data: {
+			        labels: agesCate,
+			        datasets: [{
+			            label: "자녀의 나이",
+			            backgroundColor: "rgba(0, 97, 242, 1)",
+			            hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
+			            borderColor: "#4e73df",
+			            data: agesCount,
+			            maxBarThickness: 25
+			        }]
+			    },
+			    options: {
+			        maintainAspectRatio: false,
+			        layout: {
+			            padding: {
+			                left: 10,
+			                right: 25,
+			                top: 25,
+			                bottom: 0
+			            }
+			        },
+			        scales: {
+			            xAxes: [{
+			                time: {
+			                    unit: "month"
+			                },
+			                gridLines: {
+			                    display: false,
+			                    drawBorder: false
+			                },
+			                ticks: {
+			                    maxTicksLimit: 6
+			                }
+			            }],
+			            yAxes: [{
+			                ticks: {
+			                    min: 0,
+			                    max: 100,
+			                    maxTicksLimit: 5,
+			                    padding: 10,
+			                    // Include a dollar sign in the ticks
+			                    callback: function(value, index, values) {
+			                        return number_format(value);
+			                    }
+			                },
+			                gridLines: {
+			                    color: "rgb(234, 236, 244)",
+			                    zeroLineColor: "rgb(234, 236, 244)",
+			                    drawBorder: false,
+			                    borderDash: [2],
+			                    zeroLineBorderDash: [2]
+			                }
+			            }]
+			        },
+			        legend: {
+			            display: false
+			        },
+			        tooltips: {
+			            titleMarginBottom: 10,
+			            titleFontColor: "#6e707e",
+			            titleFontSize: 14,
+			            backgroundColor: "rgb(255,255,255)",
+			            bodyFontColor: "#858796",
+			            borderColor: "#dddfeb",
+			            borderWidth: 1,
+			            xPadding: 15,
+			            yPadding: 15,
+			            displayColors: false,
+			            caretPadding: 10,
+			            callbacks: {
+			                label: function(tooltipItem, chart) {
+			                    var datasetLabel =
+			                        chart.datasets[tooltipItem.datasetIndex].label || "";
+			                    return datasetLabel + number_format(tooltipItem.yLabel);
+			                }
+			            }
+			        }
+			    }
+			});
+			}, /* callback 함수 요청되고나서 실행하는 함수*/
+			    			error : function() {
+			    				alert("loadResult error");
+			    			}
 });
 

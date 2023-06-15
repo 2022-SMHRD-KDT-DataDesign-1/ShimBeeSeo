@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import kr.board.entity.CountCate;
 import kr.board.entity.User;
 import kr.board.entity.User_Result;
 
@@ -16,6 +17,11 @@ public interface UserResultMapper {
 	public User_Result viewOneResult(String user_id);
 
 	public void insertResult(User_Result checkedResult);
+
+	public List<CountCate> countCate();
+
+
+	
 	
 
 }

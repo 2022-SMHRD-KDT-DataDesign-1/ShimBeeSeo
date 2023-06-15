@@ -400,10 +400,12 @@ img {
     transition: .5s;
 }
 
-.team-item:hover .team-text {
+.team-item:hover  {
     border-color: var(--primary);
 }
-
+a:hover{
+	color:var(--primary);
+}
 
 /*** Testimonial ***/
 .testimonial-carousel {
