@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.board.entity.CountCate;
 import kr.board.entity.CountJoin;
+import kr.board.entity.Region;
 import kr.board.entity.User;
 import kr.user.mapper.UserMapper;
 import kr.user.mapper.UserResultMapper;
@@ -47,6 +48,15 @@ public class AdminController {
 	public List<String> kidsAge() {
 		
 		List<String> result = userMapper.kidsAge();
+		
+		return result;
+	}
+	
+	@ResponseBody
+	@GetMapping("/region.do")
+	public List<Region> region() {
+		
+		List<Region> result = userMapper.region();
 		
 		return result;
 	}
