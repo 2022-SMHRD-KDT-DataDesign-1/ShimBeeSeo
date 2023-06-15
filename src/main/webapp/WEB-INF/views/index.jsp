@@ -45,6 +45,7 @@
 </head>
 <body>
 
+
    <div class="container-xxl bg-white p-0">
 		<jsp:include page="common/header.jsp"></jsp:include>
 		<a href='admin.do'>관리자페이지ㄱㄱ</a>
@@ -161,6 +162,23 @@
     <!-- Template Javascript -->
     <script src="${contextPath}/resources/js/main.js"></script>
     
+    <script type="text/javascript">
+    $(document).ready(function(){
+    	test();
+    });
+    function test(){
+
+    	    var date = new Date();
+    	    var year = date.getFullYear();
+    	    var month = ("0" + (1 + date.getMonth())).slice(-2);
+    	    var day = ("0" + date.getDate()).slice(-2);
+
+    	    var today= year + "-" + month + "-" + day;
+    	    console.log(today);
+
+    };
+    
+    </script>
 
 </body>
 </html>
