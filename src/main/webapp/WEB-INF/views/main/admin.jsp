@@ -16,12 +16,7 @@
   	    <meta content="" name="keywords">
     <meta content="" name="description">
     <link href="${contextPath}/resources/css/admin.css" rel="stylesheet" />
-
-
-
-
-    
-    
+    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body class="nav-fixed">
         <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
@@ -47,13 +42,9 @@
                     <div class="sidenav-menu">
                         <div class="nav accordion" id="accordionSidenav">
                             <!-- Sidenav Accordion (Dashboard)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                                 <a class="nav-link" href="dashboard-1.html"> Dashboards</a>
-                            </a>
-                            <!-- Sidenav Accordion (Applications)-->
-                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseApps" aria-expanded="false" aria-controls="collapseDashboards">
                                 <a class="nav-link" href="user-management-list.html">Users List</a>
-                            </a>
+                            <!-- Sidenav Accordion (Applications)-->
                             <div class="collapse" id="collapseApps" data-bs-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavAppsMenu">
                                     <!-- Nested Sidenav Accordion (Apps -> Knowledge Base)-->
