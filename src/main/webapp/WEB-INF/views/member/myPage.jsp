@@ -100,17 +100,13 @@
 						<!--차트가 그려질 부분-->
 							<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
 	</div>
-								<div id="resetChart">
-
-									<!--차트가 그려질 부분-->
-									<canvas id="myChart" width="300px" height="100%"
-										margin-left="15px" padding-left="25px"></canvas>
-								</div>
+			
 
 
 
 
 							</div>
+
 						</div>
 
 					</div>
@@ -243,62 +239,14 @@
 
 				</div>
 
-				<div class="col-lg-8 col-12 mx-auto">
-					<div class="pb-5 mb-5">
-						<div class="testimonial-item bg-light rounded p-5">
-							<p class="fs-5" id="e_result_c_text"></p>
-						</div>
-
-						<!-- test용 시작-->
-						<div class="testimonial-item bg-light rounded p-5">
-							<p class="fs-5" id="e_result_o_text"></p>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-lg-8 col-12 mx-auto">
-					<div class="pb-5 mb-5">
-						<div class="section-title-wrap mb-4">
-							<h4 class="section-title text-center">지도 방향</h4>
-						</div>
-
-						<div class="testimonial-item bg-light rounded p-5">
-
-							<p class="fs-5" id="e_result_direction"></p>
-                    </div>
-
-               	  </div>
-               	 
-             </div>
- 				<div class="col-lg-8 col-12 mx-auto">
-            		<div class="pb-5 mb-5">
-                		<div class="section-title-wrap mb-4">
-
-			<!-- test용 시작-->
-    					<div class="testimonial-item bg-light rounded p-5">
-                			<p class="fs-5" id="result_o_text">  </p>
-						</div>
-
-						<div class="testimonial-item bg-light rounded p-5">
-							<p class="fs-5" id="result_c_text"> </p>
-                    	</div>
-               		</div>
-           		</div>
-                        
-                         <div class="col-lg-8 col-12 mx-auto">
-                        <div class="pb-5 mb-5">
-                            <div class="section-title-wrap mb-4">
-                                
-                            </div>
-                            
-    <div class="testimonial-item bg-light rounded p-5">
-
-
-					</div>
-				</div>
-
 
 			</div>
+			<div class="col-lg-12 col-12">
+				<div class="section-title-wrap mb-5">
+					<h4 class="section-title">이런 콘텐츠는 어때요?</h4>
+				</div>
+			</div>
+
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
 
@@ -380,7 +328,7 @@
     			dataType : "json",
     			success : makeSelect, /* callback 함수 요청되고나서 실행하는 함수*/
     			error : function() {
-    				alert("loadResult error");
+    				alert("검색된 검사 결과가 없습니다. 심리검사를 진행해주세요");
     			}
     		});
     	}
@@ -420,10 +368,10 @@
     	    		var result_deprivation =result[index].result_deprivation;
     	    		var result_inferiority =result[index].result_inferiority;
     	    		var result_regression = result[index].result_regression;
-					var result_o_text = result[index].result_o_text;
-					var result_c_text = result[index].result_c_text;
-					var result_c_text2 = result[index].result_c_text2;
-					var result_direction = result[index].result_direction;
+					var result_o_text = result[index].result_o_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_c_text = result[index].result_c_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_c_text2 = result[index].result_c_text2.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_direction = result[index].result_direction.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
 					
 					if(result[index].cate_seq === 1) {
     					result_aggressive = (result[index].result_aggressive / 9 * 100).toFixed(1);
