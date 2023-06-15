@@ -145,7 +145,7 @@
                                     <div class="card h-100">
                                         <div id="myPieChart" class="card-header">지역 분포</div>
                                         <div class="card-body">
-                                            <div class="chart-pie mb-4"><canvas id="region" width="100%" height="50"></canvas></div>
+                                            <div class="chart-pie mb-4" style="margin-top : 5%"><canvas id="region" width="100%" height="50"></canvas></div>
                                             <!-- <div class="list-group list-group-flush">
                                                 <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
                                                     <div class="me-3">

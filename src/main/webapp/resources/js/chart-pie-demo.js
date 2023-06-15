@@ -62,9 +62,9 @@ $.ajax({
 		        },
 		        legend: {
 		            display: true,
-		            position : 'right'
+		            position : 'right',
 		        },
-		        cutoutPercentage: 80
+		        cutoutPercentage: 55
 		    }
 		});
 		}, /* callback 함수 요청되고나서 실행하는 함수*/
