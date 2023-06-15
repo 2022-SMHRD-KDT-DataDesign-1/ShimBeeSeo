@@ -27,6 +27,11 @@
 			group by to_char(user_joindate, 'yyyy-mm')
 		 ]]>
 	</select>
+	
+	<select id="kidsAge" resultType="String">
+		select USER_CHILDBDATE
+		  from t_user
+	</select>
 
 	<insert id="join" parameterType="kr.board.entity.User">
 		INSERT INTO t_user (
