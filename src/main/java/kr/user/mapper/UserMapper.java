@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.board.entity.CountJoin;
+import kr.board.entity.Region;
 import kr.board.entity.User;
 
 @Mapper
@@ -28,6 +29,8 @@ public interface UserMapper {
 	public List<CountJoin> joinPerMonth();
 
 	public List<String> kidsAge();
+
+	public List<Region> region();
 
 	
 }

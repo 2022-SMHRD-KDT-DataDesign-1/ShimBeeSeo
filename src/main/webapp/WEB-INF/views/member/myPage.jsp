@@ -368,10 +368,10 @@
     	    		var result_deprivation =result[index].result_deprivation;
     	    		var result_inferiority =result[index].result_inferiority;
     	    		var result_regression = result[index].result_regression;
-					var result_o_text = result[index].result_o_text;
-					var result_c_text = result[index].result_c_text;
-					var result_c_text2 = result[index].result_c_text2;
-					var result_direction = result[index].result_direction;
+					var result_o_text = result[index].result_o_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_c_text = result[index].result_c_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_c_text2 = result[index].result_c_text2.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_direction = result[index].result_direction.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
 					
 					if(result[index].cate_seq === 1) {
     					result_aggressive = (result[index].result_aggressive / 9 * 100).toFixed(1);
