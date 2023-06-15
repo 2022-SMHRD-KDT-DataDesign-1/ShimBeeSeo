@@ -368,9 +368,10 @@
     	    		var result_deprivation =result[index].result_deprivation;
     	    		var result_inferiority =result[index].result_inferiority;
     	    		var result_regression = result[index].result_regression;
-					var result_o_text = result[index].result_o_text;
-					var result_c_text = result[index].result_c_text;
-					var result_direction = result[index].result_direction;
+					var result_o_text = result[index].result_o_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_c_text = result[index].result_c_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_c_text2 = result[index].result_c_text2.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_direction = result[index].result_direction.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
 					
 					if(result[index].cate_seq === 1) {
     					result_aggressive = (result[index].result_aggressive / 9 * 100).toFixed(1);
@@ -389,7 +390,7 @@
 					/* $('#result_o_text').text(result_o_text);
 					$('result_direction').text(result_direction); */
 					document.getElementById('result_o_text').innerHTML = result_o_text;
-					document.getElementById('result_c_text').innerHTML = result_c_text;
+					document.getElementById('result_c_text').innerHTML = result_c_text + result_c_text2;
 					document.getElementById('result_direction').innerHTML = result_direction;
 					document.getElementById('resetChart').innerHTML = ""; 
 					document.getElementById('resetChart').innerHTML = "<canvas id='myChart' width='100%' height='100%' margin-left='15px' padding-left='25px'></canvas>"; 
