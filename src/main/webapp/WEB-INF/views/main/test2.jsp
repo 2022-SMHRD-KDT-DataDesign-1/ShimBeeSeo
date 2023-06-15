@@ -533,7 +533,7 @@
 						
 
 							$.ajax({
-								url : "http://localhost:5000/chatbot",
+								url : "http://121.147.0.189:9900/chatbot",
 								Type : "get",
 								data : {"message" : prompt},
 								dataType : "json",
