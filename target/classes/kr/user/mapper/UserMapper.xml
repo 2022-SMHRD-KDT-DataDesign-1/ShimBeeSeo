@@ -14,6 +14,19 @@
 	<select id="selectUser" parameterType="java.util.HashMap" resultType="kr.board.entity.User">
 		select * from t_user where user_id=#{email}
 	</select>
+	
+	<select id="allUserList" resultType="kr.board.entity.User">
+		select * from t_user
+	</select>
+	
+	<select id="joinPerMonth" resultType="kr.board.entity.CountJoin">
+		 <![CDATA[
+			select to_char(user_joindate, 'yyyy-mm') as month
+			 	 , count(user_id) as num
+		  	  from t_user
+			group by to_char(user_joindate, 'yyyy-mm')
+		 ]]>
+	</select>
 
 	<insert id="join" parameterType="kr.board.entity.User">
 		INSERT INTO t_user (
@@ -68,9 +81,9 @@
 		, user_childname = #{user_childname}
 		, user_childbdate = #{user_childbdate}
 		, user_relation = #{user_relation}
-		, user_address =#{user_address}
-		, user_isagreed =#{user_isagreed}
-		where user_id=#{user_id}
+		, user_address = #{user_address}
+		, user_isagreed = #{user_isagreed}
+		where user_id = #{user_id}
 	</update>
 
 

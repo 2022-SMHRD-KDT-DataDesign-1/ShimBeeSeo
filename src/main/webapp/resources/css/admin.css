@@ -109,10 +109,10 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 105, 112, 122;
   --bs-body-bg-rgb: 242, 246, 252;
-  --bs-font-sans-serif: "Metropolis", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "GmarketSansMedium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-  --bs-body-font-family: Metropolis, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --bs-body-font-family: GmarketSansMedium, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
@@ -8148,7 +8148,7 @@ textarea.form-control-lg {
   z-index: 1080;
   display: block;
   margin: 0;
-  font-family: "Metropolis", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "GmarketSansMedium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -8250,7 +8250,7 @@ textarea.form-control-lg {
   z-index: 1070;
   display: block;
   max-width: 276px;
-  font-family: "Metropolis", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "GmarketSansMedium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -16272,112 +16272,10 @@ body {
 }
 
 @font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-Thin.otf");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-ThinItalic.otf");
-  font-weight: 100;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-ExtraLight.otf");
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-ExtraLightItalic.otf");
-  font-weight: 200;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-Light.otf");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-LightItalic.otf");
-  font-weight: 300;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-Regular.otf");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-RegularItalic.otf");
-  font-weight: 400;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-Medium.otf");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-MediumItalic.otf");
-  font-weight: 500;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-SemiBold.otf");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-SemiBoldItalic.otf");
-  font-weight: 600;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-Bold.otf");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-BoldItalic.otf");
-  font-weight: 700;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-ExtraBold.otf");
-  font-weight: 800;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-ExtraBoldItalic.otf");
-  font-weight: 800;
-  font-style: italic;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-Black.otf");
-  font-weight: 800;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Metropolis";
-  src: url("../assets/fonts/metropolis/Metropolis-BlackItalic.otf");
-  font-weight: 800;
-  font-style: italic;
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 #layoutAuthentication {
   display: flex;
@@ -20427,7 +20325,7 @@ body {
 }
 
 .litepicker {
-  font-family: "Metropolis", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  font-family: "GmarketSansMedium", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
   font-size: 0.875rem !important;
 }
 .litepicker .container__months {
@@ -20846,7 +20744,7 @@ pre[class*=language-] {
   word-wrap: normal;
   color: #eee;
   background: #2f2f2f;
-  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", monospace;
+  font-family: "GmarketSansMedium", "Consolas", "Liberation Mono", "Menlo", monospace;
   font-size: 0.875rem;
   line-height: 1.5em;
   -moz-tab-size: 4;
