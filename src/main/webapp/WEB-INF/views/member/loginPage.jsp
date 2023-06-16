@@ -83,7 +83,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                       		<div style="background-size:cover;"><a class="btn_yel" href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1ff4c9cbe51272559a48887a3811f7a0&redirect_uri=http://localhost:8081/controller/kakaoLogin">
+                                       		<div style="background-size:cover;"><a class="btn_yel" href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1ff4c9cbe51272559a48887a3811f7a0&redirect_uri=http://121.147.0.189:8081/controller/kakaoLogin">
                     <span>카카오 로그인</span>
                 </a></div>
                                        		<!-- submit button으로 바꿈 -->
