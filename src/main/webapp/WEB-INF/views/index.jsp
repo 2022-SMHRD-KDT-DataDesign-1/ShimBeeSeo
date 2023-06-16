@@ -92,8 +92,11 @@
                         <p class="mb-4">1.집, 나무, 사람은 나이가 어린 아동들에게 친숙하다</p>
                         <p class="mb-4">2.집, 나무 사람 그림은 검사자의 무의식과 관련하여 풍부한 상징을 나타낸다.</p>
                         <p class="mb-4">3.실시가 용이하고 짧은시간안에 파악할 수 있다.</p>
-                        <a class="btn btn-primary py-3 px-5" href="check.do">검사 하러가기<i class="fa fa-arrow-right ms-2"></i>
-                        </a>
+                        <c:choose>
+							<c:when test="${not empty mvo}"> <a class="btn btn-primary py-3 px-5" href="check.do">검사 하러가기<i class="fa fa-arrow-right ms-2"></i></a> </c:when>
+							<c:otherwise> <a class="btn btn-primary py-3 px-5" href="loginPage.do">검사 하러가기<i class="fa fa-arrow-right ms-2"></i></a> </c:otherwise>
+						</c:choose>
+                        
                      </div>
                   </div>
                </div>
