@@ -161,7 +161,6 @@
 							
 								<div class="flex-container">
 									<div class="wrapper">
-										<h2>FileUpload</h2>
 										<p>아래 버튼을 눌러 사진을 업로드 해주세요</p>
 										<div style="position: relative;">
 											<img src="${contextPath}/resources/images/fileUpload.png" class="image-box" style="min-width:350px"; height="350px"; />

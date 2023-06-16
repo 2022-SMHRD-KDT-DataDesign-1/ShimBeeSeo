@@ -27,6 +27,8 @@ public class FileUpDownController {
 		String resultMsg = "success";
 		if(!file.isEmpty()) {
 			String saveImgPath = request.getSession().getServletContext().getRealPath("/").concat("resources")+"/upload/";//"/ShimBeeSeo/src/main/webapp/resources/images/";
+//			String saveImgPath = "/project/upload/";
+			System.out.println(saveImgPath);
 			File saveFolder = new File(saveImgPath);
 			File serverSaveFile = new File(saveImgPath+file.getOriginalFilename());
 			try {

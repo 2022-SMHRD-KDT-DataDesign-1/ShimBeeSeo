@@ -30,8 +30,9 @@
                     <div class="sidenav-menu">
                         <div class="nav accordion" id="accordionSidenav">
                             <!-- Sidenav Accordion (Dashboard)-->
-                                <a class="nav-link" href="dashboard-1.html"> Dashboards</a>
-                                <a class="nav-link" href="user-management-list.html">Users List</a>
+                                <a class="nav-link" href="#"> Dashboards</a>
+                                <a class="nav-link" href="adminMember.do">Users List</a>
+                                <a class="nav-link" href="adminMemberData.do">Users Data</a>
                             <!-- Sidenav Accordion (Applications)-->
                             <div class="collapse" id="collapseApps" data-bs-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavAppsMenu">

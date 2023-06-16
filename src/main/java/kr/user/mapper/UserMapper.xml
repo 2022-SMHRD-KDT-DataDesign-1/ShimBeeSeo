@@ -25,6 +25,7 @@
 			 	 , count(user_id) as num
 		  	  from t_user
 			group by to_char(user_joindate, 'yyyy-mm')
+			order by to_char(user_joindate, 'yyyy-mm')
 		 ]]>
 	</select>
 	

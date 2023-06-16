@@ -15,7 +15,7 @@ import kr.user.mapper.UserMapper;
 import kr.user.mapper.UserResultMapper;
 
 @Controller
-public class AdminController {
+public class AdminController<UserList> {
 	
 	@Autowired
 	private UserMapper userMapper;
@@ -59,6 +59,15 @@ public class AdminController {
 		List<Region> result = userMapper.region();
 		
 		return result;
+	}
+
+	@GetMapping("/allUserList.do")
+	public List<User> allUserList() {
+	
+	List<User> list = userMapper.allUserList();
+	
+	return list;
+		
 	}
 	
 }

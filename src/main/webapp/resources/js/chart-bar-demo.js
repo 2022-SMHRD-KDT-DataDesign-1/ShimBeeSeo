@@ -93,7 +93,7 @@ $.ajax({
 	            yAxes: [{
 	                ticks: {
 	                    min: 0,
-	                    max: 100,
+	                    /*max: 100,*/
 	                    maxTicksLimit: 5,
 	                    padding: 10,
 	                    // Include a dollar sign in the ticks
@@ -217,7 +217,7 @@ $.ajax({
 			            yAxes: [{
 			                ticks: {
 			                    min: 0,
-			                    max: 100,
+			                    /*max: 100,*/
 			                    maxTicksLimit: 5,
 			                    padding: 10,
 			                    // Include a dollar sign in the ticks

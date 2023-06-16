@@ -130,9 +130,12 @@
 											<div class="dropdown">
 												<select class="form-select"  aria-label="Default select example" name="user_address" id="user_Address" style="color:black;">
   													<option selected>지역을 선택하세요</option>
-  													<option value="광주">광주</option>
-  													<option value="서울">서울</option>
-  													<option value="부산">부산</option>
+  													<option value="수도권">수도권</option>
+  													<option value="강원권">강원권</option>
+  													<option value="충청권">충청권</option>
+  													<option value="전라권">전라권</option>
+  													<option value="경상권">경상권</option>
+  													<option value="제주권">제주권</option>
 												</select>
 											</div>
 										</div>
