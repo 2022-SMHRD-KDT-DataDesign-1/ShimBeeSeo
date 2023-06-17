@@ -27,6 +27,17 @@
 			group by to_char(user_joindate, 'yyyy-mm')
 		 ]]>
 	</select>
+	
+	<select id="kidsAge" resultType="String">
+		select USER_CHILDBDATE
+		  from t_user
+	</select>
+	
+	<select id="region" resultType="kr.board.entity.Region">
+		 select user_address, count(user_id) as region_count
+		  from t_user
+		 group by user_address
+	</select>
 
 	<insert id="join" parameterType="kr.board.entity.User">
 		INSERT INTO t_user (

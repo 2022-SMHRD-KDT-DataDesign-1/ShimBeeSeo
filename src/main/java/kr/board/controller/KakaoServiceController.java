@@ -45,6 +45,8 @@ public class KakaoServiceController {
 			String user_id = user.getUser_id();
 			User mvo = userMapper.kakaoLogin(user_id);
 			session.setAttribute("mvo", mvo);
+			session.setAttribute("accessToken", accessToken);
+
 			
 			return "redirect:/";
 		} else {
@@ -52,7 +54,7 @@ public class KakaoServiceController {
 			userMapper.kakaoJoin(userInfo);
 			User UserNew = userMapper.selectUser(userInfo);
 			session.setAttribute("nmvo", UserNew);
-			
+			session.setAttribute("accessToken", accessToken);
 			
 			return "member/kakaoJoinPage";
 		}
@@ -71,11 +73,11 @@ public class KakaoServiceController {
 	  
 	}
 
-	@GetMapping("/logout")
+	@GetMapping("/logout.do")
 	public String kakaoLogout(HttpSession session) {
 		session.invalidate();
 
-		return "redirect:/login";
+		return "redirect:/";
 	}
 	
 	// 함수1 - token 가져오는 함수

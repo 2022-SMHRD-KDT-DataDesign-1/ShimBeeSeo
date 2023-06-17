@@ -364,7 +364,7 @@
 								<input type="hidden" name="result_direction" id="result_direction"> 
 								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white;" 
 									id="picSend" type="button" value="검사유형선택" onclick="location.href='check.do'" />
-								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white; margin-right:30px;" id="submitSend" type="submit" disabled='disabled' value="모든 질문에 답변해주세요">
+								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white; margin-right:30px;" id="submitSend" type="submit" disabled='disabled' value="모든 질문에 답변해주세요" onclick="notification()">
 								</div>
 								
 							</form>
@@ -532,7 +532,7 @@
 						
 
 							$.ajax({
-								url : "http://localhost:5000/chatbot",
+								url : "http://121.147.0.189:9900/chatbot",
 								Type : "get",
 								data : {"message" : prompt},
 								dataType : "json",
@@ -643,6 +643,39 @@
 			}
 		}
 		
+	};
+	</script>
+	
+	<!-- 카카오톡 나에게 보내기 Flask요청 -->
+	<script type="text/javascript">
+	function notification(){
+		var date = new Date();
+	    var year = date.getFullYear();
+	    var month = ("0" + (1 + date.getMonth())).slice(-2);
+	    var day = ("0" + date.getDate()).slice(-2);
+	    var today= year + "-" + month + "-" + day;
+	    console.log(today);
+		var accessToken = "${accessToken}";
+	    console.log(accessToken);
+
+		var name = "${mvo.user_name}";
+	    console.log(name);
+
+		$.ajax({
+			url : "http://localhost:5000/kakao",
+			Type : "get",
+			data : {"accessToken" : accessToken,
+					"name" : name,
+					"today" : today},
+			dataType : "json",
+			contentType: 'application/json; charset=utf-8',
+			success : function(message){
+				console.log(message);
+			},
+			error : function (){
+				console.log("카카오톡 알림 실패 ㅠㅠ");
+			}
+		});
 	};
 	</script>
 	

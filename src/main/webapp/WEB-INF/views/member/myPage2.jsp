@@ -153,8 +153,9 @@ a{
     			<div style="text-align: center; width: 33%; padding : 25px 0; background-color: rgba( 226, 249, 202, 1);">
 
     			<i class="bi bi-heart"><br><a style="font-size: 15px; display:block; color:">찜 목록</a></i>
-    			
+
     			</div>
+    			
     			<div style="text-align: center; width: 33%; padding : 25px 0; background-color: rgba( 226, 249, 202, 1);">
     			<i class="bi bi-file-earmark-check"><br><a style="font-size: 15px; display:block; color:gray;" href="UserResult.do">검사내역</a></i>
     			</div>

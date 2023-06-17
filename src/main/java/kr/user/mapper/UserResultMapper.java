@@ -20,6 +20,7 @@ public interface UserResultMapper {
 
 	public List<CountCate> countCate();
 
+
 	
 	
 
