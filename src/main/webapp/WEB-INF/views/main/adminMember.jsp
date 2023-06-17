@@ -19,78 +19,89 @@
 	    
 	    <script type="text/javascript">
 	    
-	    $(document).ready(function(){
-  		  // HTML이 다 로딩되고 작동하는 함수
-  		  loadList();
-  	  });
-  
-  
-	  function loadList(){
-		  // BoardController에서 게시글 전체목록을 가져오는 기능
-		  // JavaScript에서 객체 표현법 {key:value} -> json
-		  $.ajax({
-			  url : "allUserList.do",
-			  type : "get",
-			  dataType : "json",
-			  success : makeView,
-			  error : function(){ alert("error"); }
-		  });
-	  }
-	                           //           0              1         2
-	  function makeView(data){ // data = [{title="하하"}, {     }, {     }]
-		  console.log(data);
-		  var listHtml = "<table id='datatablesSimple'>";
-		  listHtml += "<thead>"
-		  listHtml += "<tr>";
-		  listHtml += "<th>아이디</th>";
-		  listHtml += "<th>이름</th>";
-		  listHtml += "<th>자녀이름</th>";
-		  listHtml += "<th>자녀의 생년월일</th>";
-		  listHtml += "<th>자녀와의 관계</th>";
-		  listHtml += "<th>주소</th>";
-		  listHtml += "<th>가입일</th>";
-		  listHtml += "<th></th>";
-		  listHtml += "</tr>";
-		  listHtml += "</thead>"
-		  
-		  listHtml += "<tfoot>"
-		  listHtml += "<tr>";
-		  listHtml += "<th>아이디</th>";
-		  listHtml += "<th>이름</th>";
-		  listHtml += "<th>자녀이름</th>";
-		  listHtml += "<th>자녀의 생년월일</th>";
-		  listHtml += "<th>자녀와의 관계</th>";
-		  listHtml += "<th>주소</th>";
-		  listHtml += "<th>가입일</th>";
-		  listHtml += "<th></th>";
-		  listHtml += "</tr>";
-		  listHtml += "</tfoot>";
-		  
-		  listHtml += "<tbody>"
-		  
-		  // 반복문을 통해 게시글을 만들어주는 부분 (main부분)
-		  $.each(data, function(obj){
+	    
+	     $(document).ready(function(){ 
+	  		  // HTML이 다 로딩되고 작동하는 함수
+	    	 loadList()	
+	  	  });
+	  
+	  
+		   function loadList(){
+			  // BoardController에서 게시글 전체목록을 가져오는 기능
+			  // JavaScript에서 객체 표현법 {key:value} -> json
+			   $.ajax({
+				  url : "allUserList.do",
+				  type : "get",
+				  dataType : "json",
+				  async : false,
+				  success : makeView,
+				  error : function(){ alert("error"); }
+			  });
+			
+		  } 
+		                           //           0              1         2
+		  function makeView(data){ // data = [{title="하하"}, {     }, {     }]
+
+			  var listHtml = "";
+			  listHtml += "<thead>";
 			  listHtml += "<tr>";
-			  listHtml += "<td>" + data[obj].user_id+"</td>";
-			  listHtml += "<td>"+ data[obj].user_name+"</td>";
-			  listHtml += "<td>" + data[obj].user_childname+"</td>";
-			  listHtml += "<td>" + data[obj].user_childbdate+"</td>";
-			  listHtml += "<td>" + data[obj].user_relation+"</td>";
-			  listHtml += "<td>" + data[obj].user_address+"</td>";
-			  listHtml += "<td>" + data[obj].user_joindate+"</td>";
-			  listHtml += "<td> <a class='btn btn-datatable btn-icon btn-transparent-dark me-2' href='user-management-edit-user.html'><i data-feather='edit'></i></a><a class='btn btn-datatable btn-icon btn-transparent-dark' href='#!'><i data-feather='trash-2'></i></a> </td>";
+			  listHtml += "<th>아이디</th>";
+			  listHtml += "<th>이름</th>";
+			  listHtml += "<th>자녀이름</th>";
+			  listHtml += "<th>자녀의 생년월일</th>";
+			  listHtml += "<th>자녀와의 관계</th>";
+			  listHtml += "<th>주소</th>";
+			  listHtml += "<th>가입일</th>";
+			  listHtml += "<th></th>";
 			  listHtml += "</tr>";
+			  listHtml += "</thead>"
 			  
-		listHtml += "</td></tr>";
+			  listHtml += "<tfoot>";
+			  listHtml += "<tr>";
+			  listHtml += "<th>아이디</th>";
+			  listHtml += "<th>이름</th>";
+			  listHtml += "<th>자녀이름</th>";
+			  listHtml += "<th>자녀의 생년월일</th>";
+			  listHtml += "<th>자녀와의 관계</th>";
+			  listHtml += "<th>주소</th>";
+			  listHtml += "<th>가입일</th>";
+			  listHtml += "<th></th>";
+			  listHtml += "</tr>";
+			  listHtml += "</tfoot>";
 			  
-		  });
-		  	listHtml += "</tbody>";
-			listHtml += "</table>";
-		  
-		  $("#view").html(listHtml);
-		  goList();
-		  
-	};
+			  listHtml += "<tbody>";
+			  
+			  
+			  // 반복문을 통해 게시글을 만들어주는 부분 (main부분)
+			  $.each(data, function(obj){
+				  listHtml += "<tr>";
+				  listHtml += "<td>" + data[obj].user_id+"</td>";
+				  listHtml += "<td>"+ data[obj].user_name+"</td>";
+				  listHtml += "<td>" + data[obj].user_childname+"</td>";
+				  listHtml += "<td>" + data[obj].user_childbdate+"</td>";
+				  listHtml += "<td>" + data[obj].user_relation+"</td>";
+				  listHtml += "<td>" + data[obj].user_address+"</td>";
+				  listHtml += "<td>" + data[obj].user_joindate+"</td>";
+				  listHtml += "<td> <a class='btn btn-datatable btn-icon btn-transparent-dark me-2' href='user-management-edit-user.html'><i data-feather='edit'></i></a><a class='btn btn-datatable btn-icon btn-transparent-dark' href='#!'><i data-feather='trash-2'></i></a> </td>";
+				  listHtml += "</tr>";
+				  
+				 listHtml += "</td></tr>"; 
+				  
+			   });
+			  	listHtml += "</tbody>";
+				listHtml += "</table>";
+
+			  $("#datatablesSimple1").html(listHtml);
+			  
+			  /* const datatablesSimple = document.getElementById('datatablesSimple');
+			    if (datatablesSimple) {
+			        new simpleDatatables.DataTable(datatablesSimple);
+			        console.log(datatablesSimple)
+			    } */
+			  
+		};
+		
+		
 	</script>
     </head>
     <body class="nav-fixed">
@@ -145,7 +156,8 @@
                     <div class="container-fluid px-4">
                         <div class="card">
                             <div class="card-body datatable-wrapper no-header datatable-container" id="view">
-                                <%-- <table id="datatablesSimple">
+                             <table id='datatablesSimple1'>
+                                <%-- <table id='datatablesSimple'>
                                     <thead>
                                         <tr>
                                             <th>아이디</th>
@@ -170,100 +182,23 @@
                                             <th></th>
                                         </tr>
                                     </tfoot>
-                                    <tbody>
-                                        <tr>
-                                            <td>${mvo.user_id}</td>
-                                            <td>${mvo.user_name}</td>
-                                            <td>${mvo.user_childname}</td>
-                                            <td>${mvo.user_childbdate}</td>
-                                            <td>${mvo.user_relation}</span></td>
-                                            <td>${mvo.user_address}</td>
-                                            <td>${mvo.user_joindate}</td>
-                                            <td>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>진짱</td>
-                                            <td>양진용</td>
-                                            <td>홍길순</td>
-                                            <td>2012-06-09</td>
-                                            <td>부</span></td>
-                                            <td>광주</td>
-                                            <td>23-06-09</td>
-                                            <td>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>진짱맨</td>
-                                            <td>양진용</td>
-                                            <td>홍길순</td>
-                                            <td>2012-06-09</td>
-                                            <td>부</td>
-                                            <td>광주</td>
-                                            <td>23-06-09</td>
-                                            <td>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>하</td>
-                                            <td>아</td>
-                                            <td>2012-06-09</td>
-                                            <td>부</span></td>
-                                            <td>광주</td>
-                                            <td>23-06-09</td>
-                                            <td>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>qwer</td>
-                                            <td>양진영</td>
-                                            <td>홍길동</td>
-                                            <td>2004-06-08</td>
-                                            <td>부</span></td>
-                                            <td>광주</td>
-                                            <td>23-06-12</td>
-                                            <td>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>jyj</td>
-                                            <td>asdf</td>
-                                            <td>홍길동</td>
-                                            <td>2023-05-26</td>
-                                            <td>부</span></td>
-                                            <td>광주</td>
-                                            <td>23-05-26</td>
-                                            <td>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>test</td>
-                                            <td>test</td>
-                                            <td>test</td>
-                                            <td>2023-05-26</td>
-                                            <td>부</span></td>
-                                            <td>광주</td>
-                                            <td>23-05-26</td>
-                                            <td>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
-                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                	<tbody>
+                                	
+                                		<c:forEach var="Us	er" items="${}">
+                                			<tr>
+                                				<td>${data.user_id}</td>
+                                				<td>${data.user_name}</td>
+                                				<td>${data.user_childname}</td>
+                                				<td>${data.user_childbdate}</td>
+                                				<td>${data.user_relation}</td>
+                                				<td>${data.user_address}</td>
+                                				<td>${data.user_joindate}</td>
+                                				<td><a class='btn btn-datatable btn-icon btn-transparent-dark me-2' href='user-management-edit-user.html'><i data-feather='edit'></i></a><a class='btn btn-datatable btn-icon btn-transparent-dark' href='#!'><i data-feather='trash-2'></i></a></td>
+                                			</tr>
+                                		</c:forEach>
+                                	</tbody>
                                 </table> --%>
+                                 </table>
                             </div>
                         </div>
                     </div>
@@ -273,8 +208,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="${contextPath}/resources/js/datatables-simple-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/litepicker.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -288,5 +221,7 @@
 	
 	    <!-- Template Javascript -->
     <script src="${contextPath}/resources/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="${contextPath}/resources/js/datatables-simple-demo.js"></script>
     </body>
 </html>

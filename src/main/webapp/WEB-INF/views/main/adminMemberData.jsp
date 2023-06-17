@@ -16,6 +16,79 @@
 	    <link href="${contextPath}/resources/css/admin.css" rel="stylesheet" />
 	    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+	    
+	   <!--  <script type="text/javascript">
+	    
+	    $(document).ready(function(){
+  		  // HTML이 다 로딩되고 작동하는 함수
+  		  loadList();
+  	  });
+  
+  
+	  function loadList(){
+		  // BoardController에서 게시글 전체목록을 가져오는 기능
+		  // JavaScript에서 객체 표현법 {key:value} -> json
+		  $.ajax({
+			  url : "testAllUserList.do",
+			  type : "get",
+			  dataType : "json",
+			  success : makeView2,
+			  error : function(){ alert("error"); }
+		  });
+	  }
+	                           //           0              1         2
+	  function makeView2(data){ // data = [{title="하하"}, {     }, {     }]
+		  
+		  var listHtml = "<table id='datatablesSimple'>";
+		  listHtml += "<thead>";
+		  listHtml += "<tr>";
+		  listHtml += "<th>아이디</th>";
+		  listHtml += "<th>자녀의 나이</th>";
+		  listHtml += "<th>검사 유형</th>";
+		  listHtml += "<th>검사 결과</th>";
+		  listHtml += "<th>검사일</th>";
+		  listHtml += "<th></th>";
+		  listHtml += "</tr>";
+		  listHtml += "</thead>";
+		  
+		  listHtml += "<tfoot>";
+		  listHtml += "<tr>";
+		  listHtml += "<th>아이디</th>";
+		  listHtml += "<th>자녀의 나이</th>";
+		  listHtml += "<th>검사 유형</th>";
+		  listHtml += "<th>검사 결과</th>";
+		  listHtml += "<th>검사일</th>";
+		  listHtml += "<th></th>";
+		  listHtml += "</tr>";
+		  listHtml += "</tfoot>";
+		  
+		  listHtml += "<tbody>"
+		  
+		  // 반복문을 통해 게시글을 만들어주는 부분 (main부분)
+		  $.each(data, function(){
+			  consol.log(data);
+			  listHtml += "<tr>";
+			  listHtml += "<td>" + data.user_id+"</td>";
+			  listHtml += "<td>" + data.user_id+"</td>";
+			  listHtml += "<td>" + data.user_id+"</td>";
+			  listHtml += "<td>" + data.user_id+"</td>";
+			  listHtml += "<td>" + data.user_id+"</td>";
+
+			  listHtml += "<td> <a class='btn btn-datatable btn-icon btn-transparent-dark me-2' href='user-management-edit-user.html'><i data-feather='edit'></i></a><a class='btn btn-datatable btn-icon btn-transparent-dark' href='#!'><i data-feather='trash-2'></i></a> </td>";
+			  listHtml += "</tr>";
+			  
+		listHtml += "</td></tr>";
+			  
+		  });
+		  	listHtml += "</tbody>";
+			listHtml += "</table>";
+		  
+		  $("#view2").html(listHtml);
+		  goList();
+		  
+	}; 
+	</script>-->
+	
     </head>
     <body class="nav-fixed">
         <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
@@ -66,7 +139,7 @@
                     <!-- Main page content-->
                     <div class="container-fluid px-4">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body datatable-wrapper no-header datatable-container" id="view2">
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
@@ -272,6 +345,265 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    진영
+                                                </div>
+                                            </td>
+                                            <td>홍길순</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">50%</span>
+                                                <span class="badge bg-blue-soft text-blue">40%</span>
+                                                <span class="badge bg-purple-soft text-purple">50%</span>
+                                                <span class="badge bg-green-soft text-green">30%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
+                                                <span class="badge bg-pink-soft text-pink">50%</span>
+                                                <span class="badge bg-peru-soft text-peru">30%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
+
+                                            </td>
+                                            <td>2023-06-12</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    진영
+                                                </div>
+                                            </td>
+                                            <td>홍길순</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">50%</span>
+                                                <span class="badge bg-blue-soft text-blue">40%</span>
+                                                <span class="badge bg-purple-soft text-purple">50%</span>
+                                                <span class="badge bg-green-soft text-green">30%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
+                                                <span class="badge bg-pink-soft text-pink">50%</span>
+                                                <span class="badge bg-peru-soft text-peru">30%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
+
+                                            </td>
+                                            <td>2023-06-12</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    진영
+                                                </div>
+                                            </td>
+                                            <td>홍길순</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">50%</span>
+                                                <span class="badge bg-blue-soft text-blue">40%</span>
+                                                <span class="badge bg-purple-soft text-purple">50%</span>
+                                                <span class="badge bg-green-soft text-green">30%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
+                                                <span class="badge bg-pink-soft text-pink">50%</span>
+                                                <span class="badge bg-peru-soft text-peru">30%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
+
+                                            </td>
+                                            <td>2023-06-12</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    진영
+                                                </div>
+                                            </td>
+                                            <td>홍길순</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">50%</span>
+                                                <span class="badge bg-blue-soft text-blue">40%</span>
+                                                <span class="badge bg-purple-soft text-purple">50%</span>
+                                                <span class="badge bg-green-soft text-green">30%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
+                                                <span class="badge bg-pink-soft text-pink">50%</span>
+                                                <span class="badge bg-peru-soft text-peru">30%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
+
+                                            </td>
+                                            <td>2023-06-12</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    진영
+                                                </div>
+                                            </td>
+                                            <td>홍길순</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">50%</span>
+                                                <span class="badge bg-blue-soft text-blue">40%</span>
+                                                <span class="badge bg-purple-soft text-purple">50%</span>
+                                                <span class="badge bg-green-soft text-green">30%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
+                                                <span class="badge bg-pink-soft text-pink">50%</span>
+                                                <span class="badge bg-peru-soft text-peru">30%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
+
+                                            </td>
+                                            <td>2023-06-12</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    진영
+                                                </div>
+                                            </td>
+                                            <td>홍길순</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">50%</span>
+                                                <span class="badge bg-blue-soft text-blue">40%</span>
+                                                <span class="badge bg-purple-soft text-purple">50%</span>
+                                                <span class="badge bg-green-soft text-green">30%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
+                                                <span class="badge bg-pink-soft text-pink">50%</span>
+                                                <span class="badge bg-peru-soft text-peru">30%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
+
+                                            </td>
+                                            <td>2023-06-12</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    진영
+                                                </div>
+                                            </td>
+                                            <td>홍길순</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">50%</span>
+                                                <span class="badge bg-blue-soft text-blue">40%</span>
+                                                <span class="badge bg-purple-soft text-purple">50%</span>
+                                                <span class="badge bg-green-soft text-green">30%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
+                                                <span class="badge bg-pink-soft text-pink">50%</span>
+                                                <span class="badge bg-peru-soft text-peru">30%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
+
+                                            </td>
+                                            <td>2023-06-12</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    진영
+                                                </div>
+                                            </td>
+                                            <td>홍길순</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">50%</span>
+                                                <span class="badge bg-blue-soft text-blue">40%</span>
+                                                <span class="badge bg-purple-soft text-purple">50%</span>
+                                                <span class="badge bg-green-soft text-green">30%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
+                                                <span class="badge bg-pink-soft text-pink">50%</span>
+                                                <span class="badge bg-peru-soft text-peru">30%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
+
+                                            </td>
+                                            <td>2023-06-12</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    진영
+                                                </div>
+                                            </td>
+                                            <td>홍길순</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">50%</span>
+                                                <span class="badge bg-blue-soft text-blue">40%</span>
+                                                <span class="badge bg-purple-soft text-purple">50%</span>
+                                                <span class="badge bg-green-soft text-green">30%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
+                                                <span class="badge bg-pink-soft text-pink">50%</span>
+                                                <span class="badge bg-peru-soft text-peru">30%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
+
+                                            </td>
+                                            <td>2023-06-12</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    진영
+                                                </div>
+                                            </td>
+                                            <td>홍길순</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">50%</span>
+                                                <span class="badge bg-blue-soft text-blue">40%</span>
+                                                <span class="badge bg-purple-soft text-purple">50%</span>
+                                                <span class="badge bg-green-soft text-green">30%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
+                                                <span class="badge bg-pink-soft text-pink">50%</span>
+                                                <span class="badge bg-peru-soft text-peru">30%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
+
+                                            </td>
+                                            <td>2023-06-12</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

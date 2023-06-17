@@ -16,7 +16,7 @@ public class User_Result {
     // 사용자 아이디 
     private String user_id;
 
-    // 분류 순번 
+    // 분류 순번  1 집 2 나무 3 사람 4 전체
     private int cate_seq;
 
     // 공격성 
