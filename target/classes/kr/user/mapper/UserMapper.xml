@@ -85,11 +85,6 @@
 		, user_isagreed = #{user_isagreed}
 		where user_id = #{user_id}
 	</update>
-	
-	<select id="testAllUserList" parameterType="kr.board.entity.User">
-		select * from t_user a right outer join t_user_result b
-		on a.user_id = b.user_id
-	</select>
 
 
 </mapper>

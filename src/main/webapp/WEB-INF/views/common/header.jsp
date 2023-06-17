@@ -54,17 +54,17 @@
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
             <a href="${contextPath}/" class="navbar-brand">
-                <img src="${contextPath}/resources/images/logo_1.png" style="margin-top:8px;width:24vw;">
+                <img src="${contextPath}/resources/images/logo_1.png" style="width:14vw;">
             </a>
-            <button style="margin-top:9px;" type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                	<c:choose>
-							<c:when test="${not empty mvo}"> <a class="nav-item nav-link" href="check.do">검사하기</a> </c:when>
-							<c:otherwise> <a href="loginPage.do" class="nav-item nav-link">로그인</a> </c:otherwise>
-					</c:choose>
+                    <a href="${contextPath}/" class="nav-item nav-link">Home</a>
+                    <c:if test="${empty mvo}">
+                    <a href="loginPage.do" class="nav-item nav-link">로그인</a>
+                    </c:if>
                     <c:if test="${not empty mvo}">
                     	<c:if test="${mvo.user_id eq '진짱' }">
                     	<a href="admin.do" class="nav-item nav-link">관리자페이지</a>

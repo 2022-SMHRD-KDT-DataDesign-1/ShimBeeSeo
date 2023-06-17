@@ -75,7 +75,7 @@
         <div class="container-xxl py-5">
             <div class="container">
                <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
-                      <div class="row" style="position: relative;">
+                        <div class="row" style="position: relative;">
                             <div class="col-12 text-center">
                                 <img class="img-fluid w-75 rounded-circle bg-light p-3" src="${contextPath}/resources/img/home.jpg" alt="">
                             </div>
@@ -85,24 +85,24 @@
                             <div class="col-6 text-end" style="position: absolute; margin-top: 37%; margin-left: 48%; width: 40%;">
                                 <img class="img-fluid w-100 rounded-circle bg-light p-3" style="height: 145px"; src="${contextPath}/resources/img/person.jpg" alt="">
                             </div>
-               			<div class="h-100 d-flex flex-column justify-content-center p-5">
-                  			<div class="row g-5 align-items-center">
-                     			<div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="margin-top:40%;">
-                        			<h1 class="mb-4">HTP 검사를 이용하는 이유!</h1>
-                        			<p class="mb-4">1.집, 나무, 사람은 나이가 어린 아동들에게 친숙하다</p>
-                        			<p class="mb-4">2.집, 나무 사람 그림은 검사자의 무의식과 관련하여 풍부한 상징을 나타낸다.</p>
-                        			<p class="mb-4">3.실시가 용이하고 짧은시간안에 파악할 수 있다.</p>
-                        			<c:choose>
-									<c:when test="${not empty mvo}"> <a style="width:350px; height: 55px;" class="btn btn-primary" href="check.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:when>
-									<c:otherwise> <a style="width:350px; height: 55px;" class="btn btn-primary" href="loginPage.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:otherwise>
-									</c:choose>
+               <div class="h-100 d-flex flex-column justify-content-center p-5">
+                  <div class="row g-5 align-items-center">
+                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="margin-top:40%;">
+                        <h1 class="mb-4">HTP 검사를 이용하는 이유!</h1>
+                        <p class="mb-4">1.집, 나무, 사람은 나이가 어린 아동들에게 친숙하다</p>
+                        <p class="mb-4">2.집, 나무 사람 그림은 검사자의 무의식과 관련하여 풍부한 상징을 나타낸다.</p>
+                        <p class="mb-4">3.실시가 용이하고 짧은시간안에 파악할 수 있다.</p>
+                        <c:choose>
+							<c:when test="${not empty mvo}"> <a class="btn btn-primary py-3 px-5" href="check.do">검사 하러가기<i class="fa fa-arrow-right ms-2"></i></a> </c:when>
+							<c:otherwise> <a class="btn btn-primary py-3 px-5" href="loginPage.do">검사 하러가기<i class="fa fa-arrow-right ms-2"></i></a> </c:otherwise>
+						</c:choose>
                         
-                     			</div>
-                  			</div>
-               			</div>
-            		</div>
-             	</div>
-        	</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+                </div>
+            </div>
         </div>
         <!-- About End -->
 
@@ -120,10 +120,8 @@
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
-                            	<div class="row g-5 align-items-center">
-                                	<h1 class="mb-4">함께 공유해요</h1>
-                                	<a style="width:350px; height: 55px; margin-left:10px;" class="btn btn-primary" href="main.do">게시판으로 이동<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
-                            	</div>
+                                <h1 class="mb-4">함께 공유해요</h1>
+                                <a class="btn btn-primary py-3 px-5" href="main.do">게시판으로 이동<i class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -142,10 +140,8 @@
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
-                            	<div class="row g-5 align-items-center">
-                                	<h1 class="mb-4">무엇을 도와드릴까요?</h1>
-                                	<a style="width:350px; height: 55px; margin-left:10px;" class="btn btn-primary" href="">문의하러가기!<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
-                                </div>
+                                <h1 class="mb-4">무엇을 도와드릴까요?</h1>
+                                <a class="btn btn-primary py-3 px-5" href="">문의하러가기!<i class="fa fa-arrow-right ms-2"></i></a>
                             </div>
                         </div>
                     </div>

@@ -333,7 +333,7 @@
 											<input type="checkbox" class="btn-check" name="etc" value="44" id="etc5" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc5">의인화된 집</label>
 											<input type="checkbox" class="btn-check" name="etc" value="45" id="etc6" autocomplete="off" onclick="selectCheck()">
-											<label style="font-size:13px; height:40px; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc6"><p style=margin-top:3px;>음영,그림자또는 지웠다 그리기를 반복한흔적</p></label>
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc6">음영, 그림자 표현 또는 지웠다 그리기를 반복한 흔적</label>
 											<input type="checkbox" class="btn-check" name="etc" value="46" id="etc7" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc7">평면도형태의 집</label>
 											<input type="checkbox" class="btn-check" name="etc" value="47" id="etc8" autocomplete="off" onclick="selectCheck()">
@@ -360,11 +360,11 @@
 												
 										
 							</div>
-								<div style="margin-left:10px;">
-									<input type="hidden" name="result_direction" id="result_direction"> 
-									<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white;" 
-										id="picSend" type="button" value="검사유형선택" onclick="location.href='check.do'" />
-									<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white; margin-right:30px;" id="submitSend" type="submit" disabled='disabled' value="모든 질문에 답변해주세요">
+							<div>
+								<input type="hidden" name="result_direction" id="result_direction"> 
+								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white;" 
+									id="picSend" type="button" value="검사유형선택" onclick="location.href='check.do'" />
+								<input class="btn btn-info" style="background-color: #FE5D37; border-color: #FE5D37; color: white; margin-right:30px;" id="submitSend" type="submit" disabled='disabled' value="모든 질문에 답변해주세요">
 								</div>
 								
 							</form>

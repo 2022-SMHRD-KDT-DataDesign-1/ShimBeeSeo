@@ -175,7 +175,7 @@ a{
              	</div>		
         	</div>
         	
-        	<div style="text-align: center;"><button style="width:350px; height: 55px;" class="btn btn-primary w-50 py-3" type="button">로그아웃</button></div>
+        	<button class="btn btn-primary w-100 py-3" type="button">로그아웃</button>
 		</div>
                         
 

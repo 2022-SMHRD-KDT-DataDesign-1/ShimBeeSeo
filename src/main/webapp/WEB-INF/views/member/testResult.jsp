@@ -257,7 +257,7 @@
 					
     	            var context = document.getElementById('myChart').getContext('2d');
     	            var myChart = new Chart(context, {
-    	                type: 'bar', // 차트의 형태
+    	                type: 'horizontalBar', // 차트의 형태
     	                data: { // 차트에 들어갈 데이터
     	                    labels: [
     	                        //x 축

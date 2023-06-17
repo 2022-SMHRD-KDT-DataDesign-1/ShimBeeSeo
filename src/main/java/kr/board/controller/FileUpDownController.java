@@ -27,7 +27,6 @@ public class FileUpDownController {
 		String resultMsg = "success";
 		if(!file.isEmpty()) {
 			String saveImgPath = request.getSession().getServletContext().getRealPath("/").concat("resources")+"/upload/";//"/ShimBeeSeo/src/main/webapp/resources/images/";
-			System.out.println(saveImgPath);
 			File saveFolder = new File(saveImgPath);
 			File serverSaveFile = new File(saveImgPath+file.getOriginalFilename());
 			try {
@@ -49,7 +48,6 @@ public class FileUpDownController {
 	
 	public String copyImageProjectPath(MultipartFile file) {//이클립스 경로에 파일저장
 		String projectPath = "C:\\eGovFrame-4.0.0\\workspace.edu\\ShimBeeSeo\\src\\main\\webapp\\resources\\upload\\";
-		
 		try {
 			file.transferTo(new File(projectPath+file.getOriginalFilename()));
 			System.out.println(projectPath+file.getOriginalFilename());

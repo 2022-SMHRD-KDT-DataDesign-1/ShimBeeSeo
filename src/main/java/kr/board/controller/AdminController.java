@@ -52,14 +52,4 @@ public class AdminController<UserList> {
 		
 	}
 	
-	@ResponseBody
-	@GetMapping("/testAllUserList.do")
-	public List<User> testAllUserList() {
-		
-		List<User> list = userMapper.allUserList();
-		
-		return list;
-		
-	}
-	
 }
