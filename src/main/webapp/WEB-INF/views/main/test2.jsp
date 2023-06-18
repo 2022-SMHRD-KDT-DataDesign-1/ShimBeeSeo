@@ -662,7 +662,7 @@
 	    console.log(name);
 
 		$.ajax({
-			url : "http://localhost:5000/kakao",
+			url : "http://121.147.0.189:9900/kakao",
 			Type : "get",
 			data : {"accessToken" : accessToken,
 					"name" : name,

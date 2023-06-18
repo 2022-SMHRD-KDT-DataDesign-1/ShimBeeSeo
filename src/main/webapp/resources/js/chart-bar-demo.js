@@ -35,20 +35,20 @@ $.ajax({
 			dataType : "json",
 			success : function(result){
 				
-				var cateArr = [];
-				var countArr = [];
+				var cateArr = ["집", "나무", "사람", "전체"];
+				var countArr = [0, 0, 0, 0];
 				for(var i = 0; i < result.length; i++) {
 					if(result[i].cate_seq === 1) {
-						cateArr.push("집");
+						countArr[0] = result[i].count_cate;
 					} else if(result[i].cate_seq === 2) {
-						cateArr.push("나무");
+						countArr[1] = result[i].count_cate;
 					} else if(result[i].cate_seq === 3) {
-						cateArr.push("사람");
+						countArr[2] = result[i].count_cate;
 					} else {
-						cateArr.push("전체");
+						countArr[3] = result[i].count_cate;
 					}
 					
-					countArr.push(result[i].count_cate);
+					/*countArr.push(result[i].count_cate);*/
 				}
 				console.log(result);
 				console.log(cateArr);
@@ -93,7 +93,7 @@ $.ajax({
 	            yAxes: [{
 	                ticks: {
 	                    min: 0,
-	                    max: 100,
+	                    /*max: 100,*/
 	                    maxTicksLimit: 5,
 	                    padding: 10,
 	                    // Include a dollar sign in the ticks
@@ -217,7 +217,7 @@ $.ajax({
 			            yAxes: [{
 			                ticks: {
 			                    min: 0,
-			                    max: 100,
+			                    /*max: 100,*/
 			                    maxTicksLimit: 5,
 			                    padding: 10,
 			                    // Include a dollar sign in the ticks
