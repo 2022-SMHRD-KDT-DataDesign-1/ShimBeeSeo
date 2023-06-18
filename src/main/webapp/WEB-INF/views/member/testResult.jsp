@@ -82,12 +82,12 @@
 			<!-- test용 시작-->
     					<div class="testimonial-item bg-light rounded p-5">
                 			<p style="font-size:25px" id="result_o_text">
-                				공격성: 공격성은 낮은 수준으로 해당 특징에 대해 거의 경험이 없거나 매우 제한적인 양상을 보입니다.<br>
+                				<!-- 공격성: 공격성은 낮은 수준으로 해당 특징에 대해 거의 경험이 없거나 매우 제한적인 양상을 보입니다.<br>
                 				<br>사회불안: 아동은 사회적인 요소에 대한 불안이 거의 없는 것으로 관찰될 수 있습니다.<br>
                 				<br>우울: 우울은 낮은 수준으로 나타나며, 아동은 일상적인 감정 상태에서 가벼운 우울감을 경험할 수 있습니다.<br>
                 				<br>대인회피: 아동은 대인과의 상호작용을 피하거나 피하는 경향이 거의 없습니다.<br>
                 				<br>열등감: 자신을 자주 비판하고, 자신의 능력과 가치를 의심하는 경향이 있습니다.<br>
-                				<br>자존감: 어려운 상황에서는 자신을 도전하기보다는 회피하거나 위축되는 경향이 있습니다.
+                				<br>자존감: 어려운 상황에서는 자신을 도전하기보다는 회피하거나 위축되는 경향이 있습니다. -->
                 			</p>
 						</div>
 	    				<div class="testimonial-item bg-light rounded p-5">
@@ -118,12 +118,12 @@
                             
     				<div class="testimonial-item bg-light rounded p-5">
 						<p id="result_direction" style="font-size:25px;">
-							아이가 안전하게 집 안에서 활동할 수 있는 환경을 지니고 있는 것으로 보이며
+							<!-- 아이가 안전하게 집 안에서 활동할 수 있는 환경을 지니고 있는 것으로 보이며
 							아이가 실내 공간에서 자연의 햇빛과 신선한 공기를 받을 수 있는 환경을 가지고 있는 것으로 보입니다.<br>
 							<br>또한 부모님은 안정적인 환경을 제공하고 아이를 지원해주는 중요한 역할을 잘 수행하고 있고
 							안정된 집에서 성장하고 생활하고 있는 것으로 보입니다.<br>
 							<br>위로 보아 부모님은 아이의 안전과 보호, 안정적인 환경 제공하고 있고 안전한 집 안에서 안정된
-							양육 환경을 제공하여 아이가 자연과 바깥세계와의 접촉을 적절히 유지 할 수 있도록 도와주어야 합니다.
+							양육 환경을 제공하여 아이가 자연과 바깥세계와의 접촉을 적절히 유지 할 수 있도록 도와주어야 합니다. -->
 							
 						</p>
                     </div>
@@ -194,7 +194,7 @@
         <script type="text/javascript">
         
     	$(document).ready(function() {
-    		loadResult();	
+    		getResult();	
     		});
         
         /* JSON형태로 사용자 검사 결과 받아오는 함수 */
@@ -253,11 +253,11 @@
 					/* $('result_direction').text(result_direction); */
 					
 					document.getElementById('resetChart').innerHTML = ""; 
-					document.getElementById('resetChart').innerHTML = "<canvas id='myChart'></canvas>"; 
+					document.getElementById('resetChart').innerHTML = "<canvas id='myChart' width='100%' height='130%' margin-left='15px' padding-left='25px'></canvas>"; 
 					
     	            var context = document.getElementById('myChart').getContext('2d');
     	            var myChart = new Chart(context, {
-    	                type: 'horizontalBar', // 차트의 형태
+    	                type: 'bar', // 차트의 형태
     	                data: { // 차트에 들어갈 데이터
     	                    labels: [
     	                        //x 축
@@ -265,7 +265,7 @@
     	                    ],
     	                    datasets: [
     	                        { //데이터
-    	                            label: '심리검사 결과', //차트 제목
+    	                            label: '심리검사 결과(%)', //차트 제목
     	                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
     	                            data: [
     	                            	result_aggressive,result_social_anxiety,result_depressed,result_avpd,result_self_esteem,result_emotional_instability,result_deprivation,result_inferiority,result_regression //x축 label에 대응되는 데이터 값

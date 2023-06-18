@@ -117,12 +117,6 @@
 					<h4 class="section-title text-center">검사 결과</h4>
 						<div class="testimonial-item bg-light rounded p-5">
 							<p id="result_c_text" style="font-size:25px;">
-								공격성: 공격성이 높은 수준으로 해당 특징을 자주 경험하거나 강하게 나타내는 경향이 있습니다.이러한 양상은 일상 생활에서 주로 관찰되며, 주의를 요하는 정도입니다.<br>
-								<br>사회불안: 아동은 사회적인 요소에 대한 불안이 거의 없는 것으로 관찰될 수 있습니다.<br>
-                				<br>우울: 우울은 낮은 수준으로 나타나며, 아동은 일상적인 감정 상태에서 가벼운 우울감을 경험할 수 있습니다.<br>
-                				<br>대인회피: 아동은 대인과의 상호작용을 피하거나 피하는 경향이 거의 없습니다.<br>
-                				<br>열등감: 자신을 자주 비판하고, 자신의 능력과 가치를 의심하는 경향이 있습니다.<br>
-                				<br>자존감: 어려운 상황에서는 자신을 도전하기보다는 회피하거나 위축되는 경향이 있습니다.
 							</p>
 						</div>
 						<!-- test용 시작-->
@@ -141,10 +135,6 @@
 						<div class="testimonial-item bg-light rounded p-5">
 
 							<p id="result_direction" style="font-size: 25px">
-								만약 공격성이 높은 아이를 가르치려는 상황이라면, 다음과 같은 지도 방향을 고려해 볼 수 있습니다.<br>
-								<br>1.안전한 환경 조성: 아이의 안전을 최우선으로 생각해야 합니다. 아이의 주변 환경을 평가하고 개선해야 합니다. 안정감을 주는 가정 분위기와 폭력이 없는 교육적인 환경을 조성하는 것이 중요합니다.<br>
-								<br>2.감정 관리 교육: 공격적인 아이에게는 감정 관리 기술을 가르치는 것이 중요합니다. 감정 조절을 위한 행동 전환 기술도 함께 가르칠 수 있습니다.<br>
-								<br>3.소셜 스킬 개발: 아이에게 적절한 대인관계 스킬과 소통 기술을 가르치는 것이 필요합니다. 타인의 의견을 경청하고 존중하는 방법, 갈등을 건강하게 해결하는 방법 등을 배울 수 있도록 도와주세요.
 							</p>
 						</div>
 
@@ -156,11 +146,11 @@
 
 
 
-			<div class="col-lg-12 col-12">
+			<!-- <div class="col-lg-12 col-12">
 				<div class="section-title-wrap mb-5">
 					<h4 class="section-title">이런 콘텐츠는 어때요?</h4>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
@@ -335,7 +325,7 @@
         /* JSON형태로 사용자 검사 결과 받아오는 함수 */
     	function loadResult(user_id) {
     		$.ajax({
-    			url : "resultList.do/" + user_id,
+    			url : "resultList.do",
     			type : "get",
     			dataType : "json",
     			success : makeSelect, /* callback 함수 요청되고나서 실행하는 함수*/
@@ -358,7 +348,7 @@
         
     	function changeDate(){
     		$.ajax({
-    			url : "resultList.do/" + user_id,
+    			url : "resultList.do",
     			type:"get",
     			dataType : "json",
     			success : function(result){
@@ -418,7 +408,7 @@
     	                    ],
     	                    datasets: [
     	                        { //데이터
-    	                            label: '심리검사 결과', //차트 제목
+    	                            label: '심리검사 결과(%)', //차트 제목
     	                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
     	                            data: [
     	                            	result_aggressive,result_social_anxiety,result_depressed,result_avpd,result_self_esteem,result_emotional_instability,result_deprivation,result_inferiority,result_regression //x축 label에 대응되는 데이터 값
@@ -514,7 +504,7 @@
         
     	function changeEmotion(){
     		$.ajax({
-    			url : "resultList.do/" + user_id,
+    			url : "resultList.do",
     			type:"get",
     			dataType : "json",
     			success : function(result){
