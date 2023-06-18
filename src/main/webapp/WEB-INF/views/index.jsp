@@ -45,7 +45,6 @@
 </head>
 <body>
 
-
    <div class="container-xxl bg-white p-0">
 		<jsp:include page="common/header.jsp"></jsp:include>
 		<a href='admin.do'>관리자페이지ㄱㄱ</a>
@@ -86,7 +85,7 @@
                             <div class="col-6 text-end" style="position: absolute; margin-top: 37%; margin-left: 48%; width: 40%;">
                                 <img class="img-fluid w-100 rounded-circle bg-light p-3" style="height: 145px"; src="${contextPath}/resources/img/person.jpg" alt="">
                             </div>
-               <div class="h-100 d-flex flex-column justify-content-center p-5">
+               <div class=" d-flex flex-column justify-content-center p-5">
                   <div class="row g-5 align-items-center">
                      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="margin-top:40%;">
                         <h1 class="mb-4">HTP 검사를 이용하는 이유!</h1>
@@ -94,8 +93,8 @@
                         <p class="mb-4">2.집, 나무 사람 그림은 검사자의 무의식과 관련하여 풍부한 상징을 나타낸다.</p>
                         <p class="mb-4">3.실시가 용이하고 짧은시간안에 파악할 수 있다.</p>
                         <c:choose>
-							<c:when test="${not empty mvo}"> <a class="btn btn-primary py-3 px-5" href="check.do">검사 하러가기<i class="fa fa-arrow-right ms-2"></i></a> </c:when>
-							<c:otherwise> <a class="btn btn-primary py-3 px-5" href="loginPage.do">검사 하러가기<i class="fa fa-arrow-right ms-2"></i></a> </c:otherwise>
+							<c:when test="${not empty mvo}"> <a style="width:100%; height: 55px;" class="btn btn-primary" href="check.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:when>
+							<c:otherwise> <a style="width:100%; height: 55px;" class="btn btn-primary" href="loginPage.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:otherwise>
 						</c:choose>
                         
                      </div>
@@ -109,10 +108,10 @@
 
 
         <!-- Call To Action Start -->
-       <div class="container-xxl py-5">
+      <div class="container-xxl py-5">
             <div class="container">
-                <div class="bg-light rounded">
-                    <div class="row g-0">
+               <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="row" style="position: relative;">
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s" style="min-height: 400px;">
                             <div class="position-relative h-100">
                                 <img class="position-absolute w-100 h-100 rounded" src="${contextPath}/resources/img/board.png" style="object-fit: fill;">
@@ -120,9 +119,11 @@
                             <!-- call-to-action.jpg -->
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                            <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <h1 class="mb-4">함께 공유해요</h1>
-                                <a class="btn btn-primary py-3 px-5" href="main.do">게시판으로 이동<i class="fa fa-arrow-right ms-2"></i></a>
+                            <div class=" d-flex flex-column justify-content-center p-5">
+                            	<div class="row g-5 align-items-center">
+                                	<h1 class="mb-4">함께 공유해요</h1>
+                                	<a style="width:100%; height: 55px;" class="btn btn-primary" href="main.do">게시판으로 이동<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
+                            	</div>
                             </div>
                         </div>
                     </div>
@@ -140,10 +141,12 @@
                             </div>
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                            <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <h1 class="mb-4">무엇을 도와드릴까요?</h1>
-                                <a class="btn btn-primary py-3 px-5" href="">문의하러가기!<i class="fa fa-arrow-right ms-2"></i></a>
-                            </div>
+                            <div class="d-flex flex-column justify-content-center p-5">
+                            	<div class=" d-flex flex-column justify-content-center p-5">
+                                	<h1 class="mb-4">무엇을 도와드릴까요?</h1>
+                                	<a style="width:100%; height: 55px;" class="btn btn-primary" href="">문의하러가기!<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
+                            	</div>
+                            </div>	
                         </div>
                     </div>
                 </div>
@@ -165,23 +168,6 @@
     <!-- Template Javascript -->
     <script src="${contextPath}/resources/js/main.js"></script>
     
-    <script type="text/javascript">
-    $(document).ready(function(){
-    	test();
-    });
-    function test(){
-
-    	    var date = new Date();
-    	    var year = date.getFullYear();
-    	    var month = ("0" + (1 + date.getMonth())).slice(-2);
-    	    var day = ("0" + date.getDate()).slice(-2);
-
-    	    var today= year + "-" + month + "-" + day;
-    	    console.log(today);
-
-    };
-    
-    </script>
 
 </body>
 </html>
