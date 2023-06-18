@@ -89,7 +89,7 @@
                <div class="h-100 d-flex flex-column justify-content-center p-5">
                   <div class="row g-5 align-items-center">
                      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="margin-top:40%;">
-                        <h1 class="mb-4">HTP 검사를 이용하는 이유!</h1>
+                        <h1 class="mb-4">HTP 검사란?</h1>
                         <p class="mb-4">1.집, 나무, 사람은 나이가 어린 아동들에게 친숙하다</p>
                         <p class="mb-4">2.집, 나무 사람 그림은 검사자의 무의식과 관련하여 풍부한 상징을 나타낸다.</p>
                         <p class="mb-4">3.실시가 용이하고 짧은시간안에 파악할 수 있다.</p>
