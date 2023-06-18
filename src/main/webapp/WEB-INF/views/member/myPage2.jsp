@@ -154,7 +154,6 @@ a{
 
     			<i class="bi bi-heart"><br><a style="font-size: 15px; display:block; color:">찜 목록</a></i>
 
-=
     			</div>
     			
     			<div style="text-align: center; width: 33%; padding : 25px 0; background-color: rgba( 226, 249, 202, 1);">
@@ -177,8 +176,11 @@ a{
                	  	</div>              	 
              	</div>		
         	</div>
-        	
-        	<button class="btn btn-primary w-100 py-3" type="button">로그아웃</button>
+        	<div class=" d-flex flex-column justify-content-center p-5">
+            	<div class="row g-5 align-items-center">
+        			<button class="btn btn-primary w-100 py-3" type="button">로그아웃</button>
+        		</div>
+        	</div>
 		</div>
                         
 

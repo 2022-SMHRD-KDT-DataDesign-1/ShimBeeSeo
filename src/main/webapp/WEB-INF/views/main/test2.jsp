@@ -333,7 +333,7 @@
 											<input type="checkbox" class="btn-check" name="etc" value="44" id="etc5" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc5">의인화된 집</label>
 											<input type="checkbox" class="btn-check" name="etc" value="45" id="etc6" autocomplete="off" onclick="selectCheck()">
-											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc6">음영, 그림자 표현 또는 지웠다 그리기를 반복한 흔적</label>
+											<label style="font-size:13px; margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc6">음영,그림자표현 또는지웠다그리기를 반복한흔적</label>
 											<input type="checkbox" class="btn-check" name="etc" value="46" id="etc7" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="etc7">평면도형태의 집</label>
 											<input type="checkbox" class="btn-check" name="etc" value="47" id="etc8" autocomplete="off" onclick="selectCheck()">

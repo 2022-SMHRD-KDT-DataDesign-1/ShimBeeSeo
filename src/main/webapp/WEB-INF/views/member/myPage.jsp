@@ -127,7 +127,7 @@
 						</div>
 						<!-- test용 시작-->
 						<div class="testimonial-item bg-light rounded p-5">
-							<p class="fs-5" id="result_o_text"></p>
+							<p id="result_o_text" style="font-size:25px;"></p>
 						</div>
 					</div>
 				</div>
@@ -140,7 +140,7 @@
 
 						<div class="testimonial-item bg-light rounded p-5">
 
-							<p id="result_direction" style="font-size: 25px">
+							<p id="result_direction" style="font-size:25px;">
 								만약 공격성이 높은 아이를 가르치려는 상황이라면, 다음과 같은 지도 방향을 고려해 볼 수 있습니다.<br>
 								<br>1.안전한 환경 조성: 아이의 안전을 최우선으로 생각해야 합니다. 아이의 주변 환경을 평가하고 개선해야 합니다. 안정감을 주는 가정 분위기와 폭력이 없는 교육적인 환경을 조성하는 것이 중요합니다.<br>
 								<br>2.감정 관리 교육: 공격적인 아이에게는 감정 관리 기술을 가르치는 것이 중요합니다. 감정 조절을 위한 행동 전환 기술도 함께 가르칠 수 있습니다.<br>
