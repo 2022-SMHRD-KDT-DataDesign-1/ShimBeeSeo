@@ -44,6 +44,14 @@ public class AdminController<UserList> {
 	}
 	
 	@ResponseBody
+	@GetMapping("/allUserList.do")
+	public List<User> allUserList() {
+		
+		List<User> list = userMapper.allUserList();
+		
+		return list;
+	}
+
 	@GetMapping("/kidsAge.do")
 	public List<String> kidsAge() {
 		
@@ -59,15 +67,6 @@ public class AdminController<UserList> {
 		List<Region> result = userMapper.region();
 		
 		return result;
-	}
-
-	@GetMapping("/allUserList.do")
-	public List<User> allUserList() {
-	
-	List<User> list = userMapper.allUserList();
-	
-	return list;
-		
 	}
 	
 }
