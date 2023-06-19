@@ -83,10 +83,8 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                       		<div style="background-size:cover;">
-                                       		<button class="btn_yel" onClick="location.href='https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1ff4c9cbe51272559a48887a3811f7a0&redirect_uri=http://211.227.224.146:8081/controller/kakaoLogin'">
-                   							 <img style="height:55px; border-radius: 10px;" src="${contextPath}/resources/images/kakao_login.png"/>
-                							</button></div>
+                                       	
+                							<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1ff4c9cbe51272559a48887a3811f7a0&redirect_uri=http://localhost:8081/controller/kakaoLogin"><img src="${contextPath}/resources/img/kakao_login.png"></a>
                                        		<!-- submit button으로 바꿈 -->
                                             <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">로그인</button>
                                             <button class="btn btn-primary w-100 py-3" type="button" style="margin: 5px 0;" onClick="location.href='joinPage.do'">회원가입</button>
@@ -114,25 +112,7 @@
     <script src="${contextPath}/resources/lib/owlcarousel/owl.carousel.min.js"></script>
 
 
-<!-- 카카오 로그인 API 시작-->
 
-<script type='text/javascript'>
-        //<![CDATA[
-        // 사용할 앱의 JavaScript 키를 설정해 주세요.
-        Kakao.init('d394e2fa88e8e559fa9dda45fb5d339c');
-        // 카카오 로그인 버튼을 생성합니다.
-        Kakao.Auth.createLoginButton({
-            container: '#kakao-login-btn',
-            success: function (authObj) {
-                console.log(JSON.stringify(authObj));
-            },
-            fail: function (err) {
-                alert(JSON.stringify(err));
-            }
-        });
-      //]]>
-    </script>
-<!-- 카카오 로그인 API 끝 -->
 
 
     <!-- Template Javascript -->

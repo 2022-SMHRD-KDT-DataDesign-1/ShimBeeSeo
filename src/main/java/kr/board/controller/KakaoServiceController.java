@@ -97,7 +97,7 @@ public class KakaoServiceController {
 			StringBuilder sb = new StringBuilder();
 			sb.append("grant_type=authorization_code");
 			sb.append("&client_id=1ff4c9cbe51272559a48887a3811f7a0"); // 본인이 발급받은 key
-			sb.append("&redirect_uri=http://121.147.0.189:8081/controller/kakaoLogin"); // 본인이 설정해 놓은 경로
+			sb.append("&redirect_uri=http://localhost:8081/controller/kakaoLogin"); // 본인이 설정해 놓은 경로
 			sb.append("&code=" + code);
 			bw.write(sb.toString());
 			bw.flush();
