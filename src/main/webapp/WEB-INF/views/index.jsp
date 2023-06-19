@@ -78,37 +78,30 @@
                         <div class="row" style="position: relative;">
                         	<iframe width="560" height="315" src="https://www.youtube.com/embed/Cglof_FF_c8?start=35" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/cEz8EHHU5W4?start=13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            <%-- <div class="col-12 text-center">
-                                <img class="img-fluid w-75 rounded-circle bg-light p-3" src="${contextPath}/resources/img/home.jpg" alt="">
-                            </div>
-                            <div class="col-6 text-start" style="position: absolute; margin-top: 35%; margin-left: 10%;">
-                                <img class="img-fluid w-70 rounded-circle bg-light p-3" style="width: 80%; height: auto;" src="${contextPath}/resources/img/tree.png" alt="">
-                            </div>
-                            <div class="col-6 text-end" style="position: absolute; margin-top: 37%; margin-left: 48%; width: 40%;">
-                                <img class="img-fluid w-100 rounded-circle bg-light p-3" style="height: 145px"; src="${contextPath}/resources/img/person.jpg" alt="">
-                            </div> --%>
-               <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                            <div class=" d-flex flex-column justify-content-center">
-                            	<div class="row g-5 align-items-center">
-                        <div style="width:500px;" class="py-5">
-                        <h1 class="mb-1">HTP 검사를 이용하는 이유!</h1>
-                        <!-- <div class="align-items-center" style="width:300px; text-align: center;">
-                        <p class="mb-5" >1.집, 나무, 사람은 나이가 어린 아동들에게 친숙하다</p>
-                        <p class="mb-5" >2.집, 나무 사람 그림은 검사자의 무의식과 관련하여 풍부한 상징을 나타낸다.</p>
-                        <p class="mb-5" >3.실시가 용이하고 짧은시간안에 파악할 수 있다.</p>
-                        </div> -->
-                        </div>
+                        </div> 
+              
+               <div class=" d-flex flex-column justify-content-center">
+                  <div class="row g-5 align-items-center">
+                  	<div style="width:500px;" class="py-5">
+                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="margin-top:10%;">
+                        <h1 class="mb-4">HTP 검사란?</h1>
+
+                        <p class="mb-4">1.검사 대상에게 집, 나무, 인물화 등 3개의 그림을 그리게 하는 검사입니다.</p>
+                        <p class="mb-4">2.그려진 그림의 크기, 선의 강약, 그려진 그림의 위치 등등 표현의 양상에 따라 그린 사람의 심리를 파악할 수 있는 검사 방법입니다.</p>
+                        <p class="mb-4">3.언어 표현이 어려운 아동에게도 적용이 가능합니다.</p>
+                        <p class="mb-4">4.실시가 용이하고 짧은시간안에 파악할 수 있습니다.</p>
+                        
                         <c:choose>
-							<c:when test="${not empty mvo}"> <a style="margin-left:30px; width:300px; height: 55px;" class="btn btn-primary" href="check.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:when>
-							<c:otherwise> <a style="margin-left:30px; width:300px; height: 55px;" class="btn btn-primary" href="loginPage.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:otherwise>
+							<c:when test="${not empty mvo}"> <a style="margin-left:10px; width:310px; height: 55px;" class="btn btn-primary" href="check.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:when>
+							<c:otherwise> <a style="margin-left:5px; width:300px; height: 55px;" class="btn btn-primary" href="loginPage.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:otherwise>
 						</c:choose>
                         
                      </div>
                   </div>
                </div>
             </div>
-                </div>
-            </div>
+        </div>
+        </div>
         </div>
         <!-- About End -->
 
@@ -130,7 +123,7 @@
                             		<div style="width:500px;" class="py-5">
                                 	<h1 class="mb-4">함께 공유해요</h1>
                                 	</div>
-                                	<a style="margin-top:10px; margin-left:30px; width:300px;; height: 55px;" class="btn btn-primary" href="main.do">게시판으로 이동<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
+                                	<a style="margin-top:10px; margin-left:25px; width:300px;; height: 55px;" class="btn btn-primary" href="main.do">게시판으로 이동<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
                             	</div>
                             </div>
                         </div>
@@ -154,7 +147,7 @@
                             		<div style="width:500px;" class="py-5">
                                 	<h1 class="mb-4">무엇을 도와드릴까요?</h1>
                                 	</div>
-                                	<a style="margin-top:10px; margin-left:30px; width:300px; height: 55px;" class="btn btn-primary" href="">문의하러가기!<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
+                                	<a style="margin-top:10px; margin-left:25px; width:300px; height: 55px;" class="btn btn-primary" href="">문의하러가기!<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
                             	</div>
                             </div>	
                         </div>

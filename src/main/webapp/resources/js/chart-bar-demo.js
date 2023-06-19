@@ -60,8 +60,8 @@ $.ajax({
 	        labels: cateArr,
 	        datasets: [{
 	            label: "시행한 검사 횟수",
-	            backgroundColor: "rgba(0, 97, 242, 1)",
-	            hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
+	            backgroundColor: "rgba(21, 21, 174, 0.7)",
+	            hoverBackgroundColor: "rgba(21, 21, 174, 0.4)",
 	            borderColor: "#4e73df",
 	            data: countArr,
 	            maxBarThickness: 25
@@ -184,8 +184,8 @@ $.ajax({
 			        labels: agesCate,
 			        datasets: [{
 			            label: "자녀의 나이",
-			            backgroundColor: "rgba(0, 97, 242, 1)",
-			            hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
+			            backgroundColor: "rgba(187, 51, 255, 0.5)",
+			            hoverBackgroundColor: "rgba(187, 51, 255, 0.3)",
 			            borderColor: "#4e73df",
 			            data: agesCount,
 			            maxBarThickness: 25

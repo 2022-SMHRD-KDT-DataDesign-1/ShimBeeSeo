@@ -30,9 +30,9 @@
                     <div class="sidenav-menu">
                         <div class="nav accordion" id="accordionSidenav">
                             <!-- Sidenav Accordion (Dashboard)-->
-                                <a class="nav-link" href="#"> Dashboards</a>
-                                <a class="nav-link" href="adminMember.do">Users List</a>
-                                <a class="nav-link" href="adminMemberData.do">Users Data</a>
+                                <a class="nav-link" href="#"> 심비서 이용현황</a>
+                                <a class="nav-link" href="adminMember.do">사용자 목록</a>
+                                <a class="nav-link" href="adminMemberData.do">사용자 데이터</a>
                             <!-- Sidenav Accordion (Applications)-->
                             <div class="collapse" id="collapseApps" data-bs-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavAppsMenu">
@@ -89,7 +89,7 @@
                                 <div class="row align-items-center justify-content-between">
                                     <div class="col-auto mt-4">
                                         <h1 class="page-header-title">
-                                            Dashboard
+                                            심비서 이용현황
                                         </h1>
                                     </div>
                                     <div class="col-12 col-xl-auto mt-4">
@@ -111,7 +111,7 @@
                         <div class="row">
                             <div class="col-xl-6 mb-4">
                                 <div class="card card-header-actions h-100">
-                                    <div class="card-header">
+                                    <div class="card-header" style="font-size:20px;">
                                         월별 회원 가입자 수
                                     </div>
                                     <div class="card-body">

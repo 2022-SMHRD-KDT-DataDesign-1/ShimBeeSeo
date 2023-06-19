@@ -84,7 +84,7 @@
                                         </div>
                                         <div class="col-12">
                                        		<div style="background-size:cover;">
-                                       		<button class="btn_yel" href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1ff4c9cbe51272559a48887a3811f7a0&redirect_uri=http://121.147.0.189:8081/controller/kakaoLogin">
+                                       		<button class="btn_yel" onClick="location.href='https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1ff4c9cbe51272559a48887a3811f7a0&redirect_uri=http://211.227.224.146:8081/controller/kakaoLogin'">
                    							 <img style="height:55px; border-radius: 10px;" src="${contextPath}/resources/images/kakao_login.png"/>
                 							</button></div>
                                        		<!-- submit button으로 바꿈 -->

@@ -19,145 +19,12 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
 	    
 	    
-	    <!-- <script type="text/javascript">
-
-	    
-	  
-	    
-	     $(document).ready(function(){
-	  		  // HTML이 다 로딩되고 작동하는 함수
-	  		  loadList();
-	  	  });
-	  
-	  
-		  function loadList(){
-			  // BoardController에서 게시글 전체목록을 가져오는 기능
-			  // JavaScript에서 객체 표현법 {key:value} -> json
-			  $.ajax({
-				  url : "user.do",
-				  type : "get",
-				  dataType : "json",
-				  success : makeView,
-				  error : function(){ alert("error"); }
-			  });
-		  }
-		                           //           0              1         2
-		   function makeView(data){ // data = [{title="하하"}, {     }, {     }]
-			  console.log(data);
-			  
-			  var listHtml = "<divclass='datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns'>";
-			  listHtml += "<div class='datatable-top'>";
-			  listHtml += "<label>";
-			  listHtml += "<select class='datatable-selector'>";
-			  listHtml += "<option value='5'>5</option>";
-			  listHtml += "<option value='10'>10</option>";
-			  listHtml += "<option value='15'>15</option>";
-			  listHtml += "<option value='20'>20</option>";
-			  listHtml += "<option value='25'>25</option>";
-			  listHtml += "</select>" 
-			  listHtml += "출력될 페이지 개수";
-			  listHtml += "</label>";
-			  listHtml += "</div>";
-			  listHtml += "<div class='datatable-search'>";
-			  listHtml += "<input class='datatable-input' placeholder='검색' type='search' title='Search within table' aria-controls='datatablesSimple'>";
-			  listHtml += "</div>";
-			  listHtml += "::after";
-			  listHtml += "</div>";
-			  listHtml += "<div class='datatable-container'>";
-			  listHtml += "<table id='datatablesSimple' class='datatable-table'>";
-			  listHtml += "<thead>";
-			  listHtml += "<th data-sortable='true' style='width: 8.19672131147541%;'>";
-			  listHtml += "<a href='#' class=datatable-sorter>";
-			  listHtml += "::before";
-			  listHtml += "아이디";
-			  listHtml += "::after";
-			  listHtml += "</a>";
-			  listHtml += "</th>";
-			  
-			  listHtml += "<th data-sortable='true' style='width: 12.547288776796975%;'>";
-			  listHtml += "<a href='#' class='datatable=sorter'>";
-			  listHtml += "::before";
-			  listHtml += "자녀의 나이";
-			  listHtml += "::after";
-			  listHtml += "</a>";
-			  listHtml += "</th>";
-			  listHtml += "<th data-sortable='true' style='width: 10.08827238335435%;'>";
-			  listHtml += "<a href='#' class='datatable=sorter'>";
-			  listHtml += "::before";
-			  listHtml += "검사유형";
-			  listHtml += "::after";
-			  listHtml += "</a>";
-			  listHtml += "</th>";
-			  listHtml += "<th data-sortable='true' style='width: 48.23455233291299%;'>";
-			  listHtml += "<a href='#' class='datatable=sorter'>";
-			  listHtml += "::before";
-			  listHtml += "검사결과";
-			  listHtml += "::after";
-			  listHtml += "</a>";
-			  listHtml += "</th>";
-			  listHtml += "<th data-sortable='true' style='width: 12.23203026481715%;'>";
-			  listHtml += "<a href='#' class='datatable=sorter'>";
-			  listHtml += "::before";
-			  listHtml += "검사 일";
-			  listHtml += "::after";
-			  listHtml += "</a>";
-			  listHtml += "</th>";
-			  listHtml += "<th data-sortable='true' style='width: 8.701134930643127%;'>";
-			  listHtml += "<a href='#' class='datatable=sorter'>";
-			  listHtml += "::before";
-			  listHtml += "::after";
-			  listHtml += "</a>";
-			  listHtml += "</th>";
-			  listHtml += "</tr>";
-			  listHtml += "</thead>";
-			  listHtml += "<tbody>"
-				// 반복문을 통해 게시글을 만들어주는 부분 (main부분)
-			  $.each(data, function(obj){
-					  listHtml += "<tr data-index='data[obj]'>";
-					  listHtml += "<td>" + data[obj].user_id + "</td>";
-					  listHtml += "<td>" + data[obj].user_id + "</td>";
-					  listHtml += "<td>" + data[obj].user_id + "</td>";
-					  listHtml += "<td>" + data[obj].user_id + "</td>";
-					  listHtml += "<td>" + data[obj].user_id + "</td>";
-					  listHtml += "<td>" + data[obj].user_id + "</td>";
-					  
-					  listHtml += "</tr>";
-			  });
-			  listHtml += "</tbody>";
-			  listHtml += "</tabel>"  
-			  listHtml += "</div>"
-			  
-			  listHtml += "<div class='datatable-bottom'>";
-			  listHtml += "<div class='datatable-info'></div>";
-			  listHtml += "<nav class='datatable-pagination'>";
-			  listHtml += "<ul class='datatable-pagination-list'></ul>";
-			  listHtml += "</nav>";
-			  listHtml += "::after";
-			  listHtml += "</div>";
-			  listHtml += "</div>";
-			  
-			  				  
-			  
-			  listHtml += "</table>";
-			  
-			  $("#view").html(listHtml);
-			  
-		     } 
-	    </script> -->
-	    
-	    
     </head>
     <body class="nav-fixed">
         <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
-            <!-- Sidenav Toggle Button-->
             <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i data-feather="menu"></i></button>
-            <!-- Navbar Brand-->
-            <!-- * * Tip * * You can use text or an image for your navbar brand.-->
-            <!-- * * * * * * When using an image, we recommend the SVG format.-->
-            <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
+           
             <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="admin.do">심비서</a>
-            <!-- Navbar Search Input-->
-            <!-- * * Note: * * Visible only on and above the lg breakpoint-->
             <form class="form-inline me-auto d-none d-lg-block me-3">
                 <div class="input-group input-group-joined input-group-solid">
                     <input class="form-control pe-0" type="search" placeholder="Search" aria-label="Search" />
@@ -170,7 +37,6 @@
                 <nav class="sidenav shadow-right sidenav-light">
                     <div class="sidenav-menu">
                         <div class="nav accordion" id="accordionSidenav">
-                            <!-- Sidenav Accordion (Dashboard)-->
                             <a class="nav-link" href="admin.do">Dashboards</a>
                             <a class="nav-link" href="adminMember.do">Users List</a>
                             <a class="nav-link" href="#">Users Data</a>
@@ -223,24 +89,24 @@
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    진짱
+                                                    qwer1234
                                                 </div>
                                             </td>
-                                            <td>홍길동</td>
+                                            <td>8세</td>
                                             <td>집</td>
                                             <td>
-                                                <span class="badge bg-red-soft text-red">50%</span>
-                                                <span class="badge bg-blue-soft text-blue">40%</span>
-                                                <span class="badge bg-purple-soft text-purple">50%</span>
-                                                <span class="badge bg-green-soft text-green">30%</span>
-                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
-                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
-                                                <span class="badge bg-pink-soft text-pink">50%</span>
-                                                <span class="badge bg-peru-soft text-peru">30%</span>
-                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
+                                                <span class="badge bg-red-soft text-red">5</span>
+                                                <span class="badge bg-blue-soft text-blue">5</span>
+                                                <span class="badge bg-purple-soft text-purple">6</span>
+                                                <span class="badge bg-green-soft text-green">4</span>
+                                                <span class="badge bg-yellow-soft text-yellow">12</span>
+                                                <span class="badge bg-cyan-soft text-cyan">9</span>
+                                                <span class="badge bg-pink-soft text-pink">3</span>
+                                                <span class="badge bg-peru-soft text-peru">6</span>
+                                                <span class="badge bg-salmon-soft text-salmon">2</span>
 
                                             </td>
-                                            <td>2023-06-12</td>
+                                            <td>2023-06-19</td>
                                             <td>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
@@ -249,24 +115,24 @@
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    진짱
+                                                    ee2
                                                 </div>
                                             </td>
-                                            <td>홍길동</td>
+                                            <td>8세</td>
                                             <td>집</td>
                                             <td>
-                                                <span class="badge bg-red-soft text-red">50%</span>
-                                                <span class="badge bg-blue-soft text-blue">40%</span>
-                                                <span class="badge bg-purple-soft text-purple">50%</span>
-                                                <span class="badge bg-green-soft text-green">30%</span>
-                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
-                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
-                                                <span class="badge bg-pink-soft text-pink">50%</span>
-                                                <span class="badge bg-peru-soft text-peru">30%</span>
-                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
+                                                <span class="badge bg-red-soft text-red">4</span>
+                                                <span class="badge bg-blue-soft text-blue">5</span>
+                                                <span class="badge bg-purple-soft text-purple">5</span>
+                                                <span class="badge bg-green-soft text-green">4</span>
+                                                <span class="badge bg-yellow-soft text-yellow">11</span>
+                                                <span class="badge bg-cyan-soft text-cyan">9</span>
+                                                <span class="badge bg-pink-soft text-pink">3</span>
+                                                <span class="badge bg-peru-soft text-peru">5</span>
+                                                <span class="badge bg-salmon-soft text-salmon">2</span>
 
                                             </td>
-                                            <td>2023-06-12</td>
+                                            <td>2023-06-19</td>
                                             <td>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
@@ -275,7 +141,7 @@
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    진짱
+                                                    ready1
                                                 </div>
                                             </td>
                                             <td>홍길동</td>

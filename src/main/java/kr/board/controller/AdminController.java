@@ -50,7 +50,6 @@ public class AdminController<UserList> {
 	}
 	
 	@ResponseBody
-
 	@GetMapping("/kidsAge.do")
 	public List<String> kidsAge() {
 		

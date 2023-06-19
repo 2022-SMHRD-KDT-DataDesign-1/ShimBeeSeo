@@ -225,7 +225,7 @@
 											<input type="radio" class="btn-check" name="position" value="10" id="position3" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="position3">하단</label> 
 											<input type="radio" class="btn-check" name="position" value="11" id="position4" autocomplete="off" onclick="selectCheck()">
-											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="position4">중앙</label> 
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="position4">해당되는 특징이 없음</label> 
 										</div>
 									</div>
 										
@@ -237,7 +237,7 @@
 											<input type="radio" class="btn-check" name="sight" value="13" id="sight2" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sight2">아랫면(아래에서 올려다보는)</label>
 											<input type="radio" class="btn-check" name="sight" value="14" id="sight3" autocomplete="off" onclick="selectCheck()">
-											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sight3">정면(정면에서 바라보는)</label>
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sight3">해당되는 특징이 없음</label>
 										</div>
 											
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
@@ -251,7 +251,7 @@
 											<input type="checkbox" class="btn-check" name="roof" value="18" id="roof4" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="roof4">지붕을 덧칠 또는 뭉개는 채색</label>
 											<input type="checkbox" class="btn-check" name="roof" value="19" id="roof5" autocomplete="off" onclick="selectCheck()">
-											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="roof5">평범한 지붕</label>
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="roof5">해당되는 특징이 없음</label>
 										</div>
 									</div>
 										
@@ -263,7 +263,7 @@
 											<input type="radio" class="btn-check" name="wall" value="21" id="wall2" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="wall2">지나치게 견고한 벽돌이나 벽면</label>
 											<input type="radio" class="btn-check" name="wall" value="22" id="wall3" autocomplete="off" onclick="selectCheck()">
-											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="wall3">평범한 벽</label>
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="wall3">해당되는 특징이 없음</label>
 										</div>
 											
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
@@ -279,7 +279,7 @@
 											<input type="checkbox" class="btn-check" name="door" value="27" id="door5" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="door5">없음</label>
 											<input type="checkbox" class="btn-check" name="door" value="28" id="door6" autocomplete="off" onclick="selectCheck()">
-											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="door6">특징 없는 평범한 현관문</label>
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="door6">해당되는 특징이 없음</label>
 										</div>
 									</div>
 										
@@ -294,6 +294,8 @@
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="window3">커튼으로 가려짐</label>
 											<input type="checkbox" class="btn-check" name="window" value="32" id="window4" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="window4">2층 이상의 지붕위에만 있음</label>
+											<input type="checkbox" class="btn-check" name="window" value="50" id="window5" autocomplete="off" onclick="selectCheck()">
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="window5">해당되는 특징이 없음</label>
 										</div>
 											
 										<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
@@ -315,7 +317,7 @@
 											<input type="checkbox" class="btn-check" name="sun" value="38" id="sun3" autocomplete="off" onclick="selectCheck()">
 											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sun3">없음</label>
 											<input type="checkbox" class="btn-check" name="sun" value="39" id="sun4" autocomplete="off" onclick="selectCheck()">
-											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sun4">평범한 태양</label>
+											<label style="margin-bottom: 1.9vw; border-radius: .6rem;" class="btn btn-outline-danger" for="sun4">해당되는 특징이 없음</label>
 										</div>
 									</div>
 										
@@ -458,82 +460,94 @@
 						console.log(keywordNull);
 						prompt += "HTP검사중에 집그림 검사를 시작할거야 대상은 8세 미만의 아동이야\n";
 						for(var i = 0 ; i < keywordExist.length; i++){
-							if(keywordExist[i]== 'house'){								
-							prompt+=cnt+".집이 존재함 \n";
-							}
 							if(keywordExist[i]== 'door'){								
 							prompt+=cnt+".문이 존재함 \n";
+							cnt++;
 							}
 							if(keywordExist[i]== 'window'){								
 							prompt+=cnt+".창문이 존재함 \n";
+							cnt++;
 							}
 							if(keywordExist[i]== 'wall'){								
 							prompt+=cnt+".벽이 존재함 \n";
+							cnt++;
 							}
 							if(keywordExist[i]== 'chimney'){								
 							prompt+=cnt+".굴뚝이 존재함 \n";
+							cnt++;
 							}
 							if(keywordExist[i]== 'roof'){								
 							prompt+=cnt+".지붕이 존재함 \n";
+							cnt++;
 							}
 							if(keywordExist[i]== 'sun'){								
 							prompt+=cnt+".태양이 존재함 \n";
+							cnt++;
 							}
 							if(keywordExist[i]== 'c_smoke'){
 							prompt+=cnt+"굴뚝과 연기가 존재함 \n";
+							cnt++;
 							}
 							if(keywordExist[i]== 'fence'){
 							prompt+=cnt+"울타리가 존재함 \n";
+							cnt++;
 							}
 							if(keywordExist[i]== 'tree'){
 								prompt+=cnt+"나무가 존재함 \n";
+								cnt++;
 							}else{
 								prompt+="";
 								}
-							cnt++;
+							
 						}
 							for(var i = 0 ; i < keywordNull.length; i++){
-								if(keywordNull[i]== 'house'){								
-								prompt+=cnt+".집이 없음 \n";
-								}
 								if(keywordNull[i]== 'door'){								
 								prompt+=cnt+".문이 없음 \n";
+								cnt++;
 								}
 								if(keywordNull[i]== 'window'){								
 								prompt+=cnt+".창문이 없음 \n";
+								cnt++;
 								}
 								if(keywordNull[i]== 'wall'){								
 								prompt+=cnt+".벽이 없음 \n";
+								cnt++;
 								}
 								if(keywordNull[i]== 'chimney'){								
 								prompt+=cnt+".굴뚝이 없음 \n";
+								cnt++;
 								}
 								if(keywordNull[i]== 'roof'){								
 								prompt+=cnt+".지붕이 없음 \n";
+								cnt++;
 								}
 								if(keywordNull[i]== 'sun'){								
 								prompt+=cnt+".태양이 없음 \n";
+								cnt++;
 								}
 								if(keywordNull[i]== 'c_smoke'){
 								prompt+=cnt+"굴뚝과 연기가 없음 \n";
+								cnt++;
 								}
 								if(keywordNull[i]== 'fence'){
 								prompt+=cnt+"울타리가 없음 \n";
+								cnt++;
 								}
 								if(keywordNull[i]== 'tree'){
 									prompt+=cnt+"나무가 없음 \n";
+									cnt++;
 									}else{
 									prompt+="";
 									}
-							cnt++;
 						};
 						prompt += "위 검사 결과를 바탕으로 아이의 양육방식에 대하여 부모님의 관점으로 5가지 말해줘";
 						console.log(prompt);
 						
 
 							$.ajax({
-								url : "http://121.147.0.189:9900/chatbot",
+								url : "http://alrrla.pythonanywhere.com/chatbot",
 								Type : "get",
+								async : true,
 								data : {"message" : prompt},
 								dataType : "json",
 								contentType: 'application/json; charset=utf-8',
@@ -541,7 +555,8 @@
 									console.log(chatbot_response['response']);
 									$('#result_direction').val(chatbot_response['response']);
 									$('#submitPicture').prop('disabled',false);
-									$('#submitPicture').text('분석완료! 설문을 진행해주세요');
+									$('#submitPicture').text('ChatGPT 답변완료!');
+									completeCheck();
 								},
 								error : function (){
 									console.log("flask에서 아무고토 못받음");
@@ -572,6 +587,7 @@
 	    		 },
 				success : function(data){
 					if(data == "success"){
+						console.log(data);
 						alert(data);
 					} else {
 						var addInput = document.querySelector('#que1');
@@ -635,15 +651,39 @@
 
 		if(mood == true && size == true && position == true && sight == true && roof == true && wall == true && door == true && window == true && chimney == true && sun == true && etc == true){
 			console.log("전부 체크됨");
-			var checkPicture = $('#submitPicture').text();
+			/* var checkPicture = $('#submitPicture').text();
 			if(checkPicture == '분석완료! 설문을 진행해주세요'){
 				
 			$('#submitSend').attr("disabled", false);
 			$('#submitSend').attr("value",'제출하기');
+			} */
+			if($('#submitPicture').text() == 'ChatGPT 답변완료!') {
+				completeCheck;
+				$('#submitSend').attr("disabled", false);
+				$('#submitSend').attr("value",'제출하기');
+			} else {
+				$('#submitSend').attr("disabled", true);
+				$('#submitSend').attr("value",'ChatGPT의 답변을 기다리고 있습니다.');
+				completeCheck;
 			}
+
+			return true;
+		} else {
+			completeCheck;
+			return false;
 		}
+			
 		
 	};
+	
+	function completeCheck() {
+		var checkPicture = $('#submitPicture').text();
+		if(checkPicture == 'ChatGPT 답변완료!' && selectCheck()){
+			
+		$('#submitSend').attr("disabled", false);
+		$('#submitSend').attr("value",'제출하기');
+		}
+	}
 	</script>
 	
 	<!-- 카카오톡 나에게 보내기 Flask요청 -->
@@ -662,7 +702,7 @@
 	    console.log(name);
 
 		$.ajax({
-			url : "http://121.147.0.189:9900/kakao",
+			url : "http://alrrla.pythonanywhere.com/kakao",
 			Type : "get",
 			data : {"accessToken" : accessToken,
 					"name" : name,
