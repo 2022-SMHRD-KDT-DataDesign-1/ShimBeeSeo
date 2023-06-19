@@ -76,7 +76,6 @@
             <div class="container">
                <div class="col-lg-6 about-img wow fadeInUp" data-wow-delay="0.5s">
                         <div class="row" style="position: relative;">
-                        	<iframe width="560" height="315" src="https://www.youtube.com/embed/Cglof_FF_c8?start=35" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/cEz8EHHU5W4?start=13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div> 
               
