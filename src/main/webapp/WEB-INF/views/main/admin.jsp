@@ -186,7 +186,7 @@
     <script src="${contextPath}/resources/js/chart-area-demo.js"></script>
     <script src="${contextPath}/resources/js/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="${contextPath}/resources/js/datatables/datatables-simple-demo.js"></script>
+    <script src="${contextPath}/resources/js/datatables-simple-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/litepicker.js"></script>
         
