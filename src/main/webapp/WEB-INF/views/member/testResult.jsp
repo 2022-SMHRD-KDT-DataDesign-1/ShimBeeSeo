@@ -98,6 +98,8 @@
            	<div class="col-lg-8 col-12 mx-auto">
            		<div class="pb-5 mb-5">
                 	<div class="section-title-wrap mb-4">
+                		<div class="section-title-wrap mb-4">
+                     		<h4 class="section-title text-center" style="font-size:30px">지도 방향</h4>
                     	<!-- <h4 class="section-title text-center">지도 방향</h4>
                     	<p>공격성과 사회불안이 높은 아이에 대한 지도교육 방향은 다양한 전략과 접근법을 조합하여 개별적인 상황에 맞게 결정되어야 합니다. 아래의 지도교육 방향은 참고할 수 있는 일반적인 가이드라인입니다.
 						<br>

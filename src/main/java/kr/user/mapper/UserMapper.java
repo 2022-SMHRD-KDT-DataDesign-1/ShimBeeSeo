@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.board.entity.CountJoin;
+import kr.board.entity.PagingVO;
 import kr.board.entity.Region;
 import kr.board.entity.User;
 
@@ -24,13 +25,17 @@ public interface UserMapper {
 
 	public void kakaoJoinDetail(User m);
 
-	public List<User> allUserList();
+	public List<User> allUserList(PagingVO pagingVo);
 
 	public List<CountJoin> joinPerMonth();
 
 	public List<String> kidsAge();
 
 	public List<Region> region();
-
 	
+	public int getTotalUserCount(PagingVO pagingVo) throws Exception;
+	
+	public List<User> user();
+	
+
 }

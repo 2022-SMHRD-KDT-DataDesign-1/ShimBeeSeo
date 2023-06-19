@@ -10,12 +10,142 @@
 		<title>Template</title>
 	  	<meta name="viewport" content="width=device-width, initial-scale=1">
 	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	  	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	  	<meta content="" name="keywords">
 	    <meta content="" name="description">
 	    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
 	    <link href="${contextPath}/resources/css/admin.css" rel="stylesheet" />
 	    <script data-search-pseudo-elements defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" crossorigin="anonymous"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous"></script>
+	    
+	    
+	    <!-- <script type="text/javascript">
+
+	    
+	  
+	    
+	     $(document).ready(function(){
+	  		  // HTML이 다 로딩되고 작동하는 함수
+	  		  loadList();
+	  	  });
+	  
+	  
+		  function loadList(){
+			  // BoardController에서 게시글 전체목록을 가져오는 기능
+			  // JavaScript에서 객체 표현법 {key:value} -> json
+			  $.ajax({
+				  url : "user.do",
+				  type : "get",
+				  dataType : "json",
+				  success : makeView,
+				  error : function(){ alert("error"); }
+			  });
+		  }
+		                           //           0              1         2
+		   function makeView(data){ // data = [{title="하하"}, {     }, {     }]
+			  console.log(data);
+			  
+			  var listHtml = "<divclass='datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns'>";
+			  listHtml += "<div class='datatable-top'>";
+			  listHtml += "<label>";
+			  listHtml += "<select class='datatable-selector'>";
+			  listHtml += "<option value='5'>5</option>";
+			  listHtml += "<option value='10'>10</option>";
+			  listHtml += "<option value='15'>15</option>";
+			  listHtml += "<option value='20'>20</option>";
+			  listHtml += "<option value='25'>25</option>";
+			  listHtml += "</select>" 
+			  listHtml += "출력될 페이지 개수";
+			  listHtml += "</label>";
+			  listHtml += "</div>";
+			  listHtml += "<div class='datatable-search'>";
+			  listHtml += "<input class='datatable-input' placeholder='검색' type='search' title='Search within table' aria-controls='datatablesSimple'>";
+			  listHtml += "</div>";
+			  listHtml += "::after";
+			  listHtml += "</div>";
+			  listHtml += "<div class='datatable-container'>";
+			  listHtml += "<table id='datatablesSimple' class='datatable-table'>";
+			  listHtml += "<thead>";
+			  listHtml += "<th data-sortable='true' style='width: 8.19672131147541%;'>";
+			  listHtml += "<a href='#' class=datatable-sorter>";
+			  listHtml += "::before";
+			  listHtml += "아이디";
+			  listHtml += "::after";
+			  listHtml += "</a>";
+			  listHtml += "</th>";
+			  
+			  listHtml += "<th data-sortable='true' style='width: 12.547288776796975%;'>";
+			  listHtml += "<a href='#' class='datatable=sorter'>";
+			  listHtml += "::before";
+			  listHtml += "자녀의 나이";
+			  listHtml += "::after";
+			  listHtml += "</a>";
+			  listHtml += "</th>";
+			  listHtml += "<th data-sortable='true' style='width: 10.08827238335435%;'>";
+			  listHtml += "<a href='#' class='datatable=sorter'>";
+			  listHtml += "::before";
+			  listHtml += "검사유형";
+			  listHtml += "::after";
+			  listHtml += "</a>";
+			  listHtml += "</th>";
+			  listHtml += "<th data-sortable='true' style='width: 48.23455233291299%;'>";
+			  listHtml += "<a href='#' class='datatable=sorter'>";
+			  listHtml += "::before";
+			  listHtml += "검사결과";
+			  listHtml += "::after";
+			  listHtml += "</a>";
+			  listHtml += "</th>";
+			  listHtml += "<th data-sortable='true' style='width: 12.23203026481715%;'>";
+			  listHtml += "<a href='#' class='datatable=sorter'>";
+			  listHtml += "::before";
+			  listHtml += "검사 일";
+			  listHtml += "::after";
+			  listHtml += "</a>";
+			  listHtml += "</th>";
+			  listHtml += "<th data-sortable='true' style='width: 8.701134930643127%;'>";
+			  listHtml += "<a href='#' class='datatable=sorter'>";
+			  listHtml += "::before";
+			  listHtml += "::after";
+			  listHtml += "</a>";
+			  listHtml += "</th>";
+			  listHtml += "</tr>";
+			  listHtml += "</thead>";
+			  listHtml += "<tbody>"
+				// 반복문을 통해 게시글을 만들어주는 부분 (main부분)
+			  $.each(data, function(obj){
+					  listHtml += "<tr data-index='data[obj]'>";
+					  listHtml += "<td>" + data[obj].user_id + "</td>";
+					  listHtml += "<td>" + data[obj].user_id + "</td>";
+					  listHtml += "<td>" + data[obj].user_id + "</td>";
+					  listHtml += "<td>" + data[obj].user_id + "</td>";
+					  listHtml += "<td>" + data[obj].user_id + "</td>";
+					  listHtml += "<td>" + data[obj].user_id + "</td>";
+					  
+					  listHtml += "</tr>";
+			  });
+			  listHtml += "</tbody>";
+			  listHtml += "</tabel>"  
+			  listHtml += "</div>"
+			  
+			  listHtml += "<div class='datatable-bottom'>";
+			  listHtml += "<div class='datatable-info'></div>";
+			  listHtml += "<nav class='datatable-pagination'>";
+			  listHtml += "<ul class='datatable-pagination-list'></ul>";
+			  listHtml += "</nav>";
+			  listHtml += "::after";
+			  listHtml += "</div>";
+			  listHtml += "</div>";
+			  
+			  				  
+			  
+			  listHtml += "</table>";
+			  
+			  $("#view").html(listHtml);
+			  
+		     } 
+	    </script> -->
+	    
+	    
     </head>
     <body class="nav-fixed">
         <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white" id="sidenavAccordion">
@@ -66,9 +196,9 @@
                     <!-- Main page content-->
                     <div class="container-fluid px-4">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body" id="view">
                                 <table id="datatablesSimple">
-                                    <thead>
+                                	<thead>
                                         <tr>
                                             <th>아이디</th>
                                             <th>자녀의 나이</th>
@@ -88,6 +218,7 @@
                                             <th></th>
                                         </tr>
                                     </tfoot>
+
                                     <tbody>
                                         <tr>
                                             <td>
@@ -274,6 +405,7 @@
                                         <tr>
                                     </tbody>
                                 </table>
+                                
                             </div>
                         </div>
                     </div>
@@ -287,7 +419,6 @@
     <script src="${contextPath}/resources/js/datatables-simple-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/litepicker.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="${contextPath}/resources/lib/wow/wow.min.js"></script>
     <script src="${contextPath}/resources/lib/easing/easing.min.js"></script>
