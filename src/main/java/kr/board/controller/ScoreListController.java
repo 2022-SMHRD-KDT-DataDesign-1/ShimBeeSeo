@@ -105,12 +105,9 @@ public class ScoreListController {
 					break;
 				case "chimney":
 					o = "굴뚝";
-<<<<<<< HEAD
 					break;	
 				case "c_smoke":
 					o = "연기나는 굴뚝";
-=======
->>>>>>> jyj
 					break;
 				case "roof":
 					o = "지붕";
