@@ -372,10 +372,10 @@
     	    		var result_deprivation =result[index].result_deprivation;
     	    		var result_inferiority =result[index].result_inferiority;
     	    		var result_regression = result[index].result_regression;
-					var result_o_text = result[index].result_o_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_c_text = result[index].result_c_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_c_text2 = result[index].result_c_text2.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_direction = result[index].result_direction.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_o_text = result[index].result_o_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_c_text = result[index].result_c_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_c_text2 = result[index].result_c_text2.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_direction = result[index].result_direction.replaceAll('\n', '</p><p>');
 
 					
 					if(result[index].cate_seq === 1) {
@@ -612,6 +612,24 @@
     				alert("error");
     			}
     		});
+    	}
+    	
+    	// p태그에 따른 컨텐츠 더보기 함수
+    	function showContent(clicked_id) {
+    		console.log(clicked_id);
+    		var names = ["window", "door", "roof", "wall", "c_smoke", "chimney", "sun", "aggressive", "anxiety", "depressed", "avpd", "esteem", "instability", "deprivation", "inferiority", "regression"];
+    		var title = $("#"+clicked_id+">strong").text();
+    		for(var i = 0; i < names.length; i++) {
+    			if(clicked_id == names[i]) {
+    				if( $("#"+names[i]+"C").css("display") == "none" ) {
+    					$("#"+names[i]+"C").css("display", "inline-block");
+    					$("#"+clicked_id+">strong").text(title.replace("▸", "▾"));
+    				} else {
+    					$("#"+names[i]+"C").css("display", "none");
+    					$("#"+clicked_id+">strong").text(title.replace("▾", "▸"));
+    				}
+    			}
+    		}
     	}
         
         

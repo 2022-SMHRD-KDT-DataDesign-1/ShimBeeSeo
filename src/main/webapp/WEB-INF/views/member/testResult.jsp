@@ -323,6 +323,7 @@
     		});
     	}
     	
+    	// p태그에 따른 컨텐츠 더보기 함수
     	function showContent(clicked_id) {
     		console.log(clicked_id);
     		var names = ["window", "door", "roof", "wall", "c_smoke", "chimney", "sun", "aggressive", "anxiety", "depressed", "avpd", "esteem", "instability", "deprivation", "inferiority", "regression"];
