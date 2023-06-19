@@ -47,7 +47,7 @@
 
    <div class="container-xxl bg-white p-0">
 		<jsp:include page="common/header.jsp"></jsp:include>
-		<a href='admin.do'>관리자페이지ㄱㄱ</a>
+		<!-- <a href='admin.do'>관리자페이지ㄱㄱ</a> -->
         <!-- Carousel Start -->
         <div class="container-fluid p-0 mb-5">
             <div class="owl-carousel header-carousel position-relative">

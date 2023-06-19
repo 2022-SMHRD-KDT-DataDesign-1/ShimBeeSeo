@@ -81,11 +81,16 @@
                             
 			<!-- test용 시작-->
     					<div class="testimonial-item bg-light rounded p-5">
+<<<<<<< HEAD
                 			<p style="font-size:25px" id="result_o_text">
                 			</p>
+=======
+                			<div style="font-size:25px" id="result_o_text">
+                			</div>
+>>>>>>> jyj
 						</div>
 	    				<div class="testimonial-item bg-light rounded p-5">
-							<p id="result_c_text" style="font-size:25px"> </p>
+							<div id="result_c_text" style="font-size:25px"> </div>
 	                    </div>
                		</div>
            		</div>
@@ -153,9 +158,24 @@
         
         <script type="text/javascript">
         
+        
     	$(document).ready(function() {
-    		getResult();	
-    		});
+    		getResult();
+    		
+    		$(document).on('click', ".title", (e) => {
+    			console.log(e.next());
+            	if( $(this).next().css('display') == 'none') {
+            		$(this).siblings().css('display', 'inline-block');
+            	} else {
+            		$(this).siblings().css('display', 'none');
+            	}
+            })
+    	});
+        
+        
+        /* function showContent(){
+        	
+        } */
         
         /* JSON형태로 사용자 검사 결과 받아오는 함수 */
     	function loadResult() {
@@ -163,7 +183,11 @@
     			url :  "testResultOne.do" ,
     			type : "get",
     			dataType : "json",
-    			success : getResult, /* callback 함수 요청되고나서 실행하는 함수*/
+    			success : function () {
+    				getResult
+    				/* $('.content').css('display', 'none'); */
+    				$('.content').style.display = 'none';	
+    			}, /* callback 함수 요청되고나서 실행하는 함수*/
     			error : function() {
     				alert("loadResult error");
     			}
@@ -297,12 +321,6 @@
     		});
     	}
     	
-    	
-
-    		
-
-        
-        
         </script>
 	
 </body>

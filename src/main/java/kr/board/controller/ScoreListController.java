@@ -85,7 +85,7 @@ public class ScoreListController {
 					o = "굴뚝";
 				}
 				if(items_yu[i].equals(objects.get(j).getObject_name()) && objects.get(j).getObject_exist() == 1) {
-					result_o_text += "<strong>" + o + ": </strong>" + objects.get(j).getObject_content() + "\t";
+					result_o_text += "<strong class='title'>" + o + "</strong><div style='display : none;'>" + objects.get(j).getObject_content() + "</div>";
 				} 
 				
 			}
@@ -105,9 +105,12 @@ public class ScoreListController {
 					break;
 				case "chimney":
 					o = "굴뚝";
+<<<<<<< HEAD
 					break;	
 				case "c_smoke":
 					o = "연기나는 굴뚝";
+=======
+>>>>>>> jyj
 					break;
 				case "roof":
 					o = "지붕";
@@ -117,7 +120,7 @@ public class ScoreListController {
 					break;
 				}
 				if(items_mu[i].equals(objects.get(j).getObject_name()) && objects.get(j).getObject_exist() == 0) {
-					result_o_text += "<strong>" + o + ": </strong>" + objects.get(j).getObject_content() + "\t";
+					result_o_text += "<strong class='title'>" + o + "</strong><div style='display : none;'>" + objects.get(j).getObject_content() + "</div>";
 				}
 			}
 		}
@@ -190,23 +193,23 @@ public class ScoreListController {
 		
 		for(int i = 0; i < h_cases.size(); i++) {
 			if(h_cases.get(i).getCase_h_emotion().equals("공격성") && (aggressive >= h_cases.get(i).getCase_h_s() && aggressive <= h_cases.get(i).getCase_h_e())) {
-				result_c_text +=  "<strong>공격성</strong>\t" + h_cases.get(i).getCase_h_content() + "\t";
+				result_c_text +=  "<p><strong class='title'>공격성</strong></p><div style='display : none;'>" + h_cases.get(i).getCase_h_content() + "</div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("사회불안") && (anxiety >= h_cases.get(i).getCase_h_s() && anxiety <= h_cases.get(i).getCase_h_e())) {
-				result_c_text +=  "<strong>사회불안</strong>\t" + h_cases.get(i).getCase_h_content() + "\t";
+				result_c_text +=  "<p><strong class='title'>사회불안</strong></p><div style='display : none;'>" + h_cases.get(i).getCase_h_content() + "</div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("우울") && (depressed >= h_cases.get(i).getCase_h_s() && depressed <= h_cases.get(i).getCase_h_e())) {
-				result_c_text +=  "<strong>우울</strong>\t" + h_cases.get(i).getCase_h_content() + "\t";
+				result_c_text +=  "<p><div><strong class='title'>우울</strong></p><div style='display : none;'>" + h_cases.get(i).getCase_h_content() + "</div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("대인회피") && (avpd >= h_cases.get(i).getCase_h_s() && avpd <= h_cases.get(i).getCase_h_e())) {
-				result_c_text +=  "<strong>대인회피</strong>\t" + h_cases.get(i).getCase_h_content() + "\t";
+				result_c_text +=  "<p><strong class='title'>대인회피</strong></p><div style='display : none;'>" + h_cases.get(i).getCase_h_content() + "</div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("자존감") && (esteem >= h_cases.get(i).getCase_h_s() && esteem <= h_cases.get(i).getCase_h_e())) {
-				result_c_text +=  "<strong>자존감</strong>\t" + h_cases.get(i).getCase_h_content() + "\t";
+				result_c_text +=  "<p><strong class='title'>자존감</strong></p><div style='display : none;'>" + h_cases.get(i).getCase_h_content() + "</div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("정서불안") && (instability >= h_cases.get(i).getCase_h_s() && instability <= h_cases.get(i).getCase_h_e())) {
-				result_c_text2 +=  "<strong>정서불안</strong>\t" + h_cases.get(i).getCase_h_content() + "\t";
+				result_c_text2 +=  "<p><strong class='title'>정서불안</strong></p><div style='display : none;'>" + h_cases.get(i).getCase_h_content() + "</div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("애정결핍") && (deprivation >= h_cases.get(i).getCase_h_s() && deprivation <= h_cases.get(i).getCase_h_e())) {
-				result_c_text2 +=  "<strong>애정결핍</strong>\t" + h_cases.get(i).getCase_h_content() + "\t";
+				result_c_text2 +=  "<p><strong class='title'>애정결핍</strong></p><div style='display : none;'>" + h_cases.get(i).getCase_h_content() + "</div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("열등감") && (inferiority >= h_cases.get(i).getCase_h_s() && inferiority <= h_cases.get(i).getCase_h_e())) {
-				result_c_text2 +=  "<strong>열등감</strong>\t" + h_cases.get(i).getCase_h_content() + "\t";
+				result_c_text2 +=  "<p><strong class='title'>열등감</strong></p><div style='display : none;'>" + h_cases.get(i).getCase_h_content() + "</div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("퇴행") && (regression >= h_cases.get(i).getCase_h_s() && regression <= h_cases.get(i).getCase_h_e())) {
-				result_c_text2 +=  "<strong>퇴행</strong>\t" + h_cases.get(i).getCase_h_content() + "\t";
+				result_c_text2 +=  "<p><strong class='title'>퇴행</strong></p><div style='display : none;'>" + h_cases.get(i).getCase_h_content() + "</div>";
 			}
 		}
 		System.out.println(result_c_text);
