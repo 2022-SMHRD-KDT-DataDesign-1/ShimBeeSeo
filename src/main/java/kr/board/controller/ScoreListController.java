@@ -69,6 +69,9 @@ public class ScoreListController {
 				case "wall":
 					o = "벽";
 					break;
+				case "chimney":
+					o = "굴뚝";
+					break;
 				case "c_smoke":
 					o = "연기나는 굴뚝";
 					break;
@@ -100,6 +103,9 @@ public class ScoreListController {
 				case "wall":
 					o = "벽";
 					break;
+				case "chimney":
+					o = "굴뚝";
+					break;	
 				case "c_smoke":
 					o = "연기나는 굴뚝";
 					break;

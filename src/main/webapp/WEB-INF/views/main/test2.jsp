@@ -545,7 +545,7 @@
 						
 
 							$.ajax({
-								url : "http://121.147.0.189:9900/chatbot",
+								url : "http://alrrla.pythonanywhere.com/chatbot",
 								Type : "get",
 								async : true,
 								data : {"message" : prompt},
@@ -702,7 +702,7 @@
 	    console.log(name);
 
 		$.ajax({
-			url : "http://121.147.0.189:9900/kakao",
+			url : "http://alrrla.pythonanywhere.com/kakao",
 			Type : "get",
 			data : {"accessToken" : accessToken,
 					"name" : name,

@@ -97,6 +97,7 @@
            		</div>
            	<div class="col-lg-8 col-12 mx-auto">
            		<div class="pb-5 mb-5">
+           		
                 	<div class="section-title-wrap mb-4">
                     	<!-- <h4 class="section-title text-center">지도 방향</h4>
                     	<p>공격성과 사회불안이 높은 아이에 대한 지도교육 방향은 다양한 전략과 접근법을 조합하여 개별적인 상황에 맞게 결정되어야 합니다. 아래의 지도교육 방향은 참고할 수 있는 일반적인 가이드라인입니다.
@@ -115,7 +116,11 @@
 						<br>
 						이러한 지도교육 방향은 전문가의 도움과 함께 개별 아이에게 맞추어 적용되어야 하며, 학교와 가정의 협력과 지원이 필요합니다.</p> -->
                     </div>
-                            
+                        
+                        
+                        	<div class="section-title-wrap mb-4">
+                     		<h4 class="section-title text-center" style="font-size:30px">지도 방향</h4>
+                    	</div>    
     				<div class="testimonial-item bg-light rounded p-5">
 						<p id="result_direction" style="font-size:25px;">
 							<!-- 아이가 안전하게 집 안에서 활동할 수 있는 환경을 지니고 있는 것으로 보이며
