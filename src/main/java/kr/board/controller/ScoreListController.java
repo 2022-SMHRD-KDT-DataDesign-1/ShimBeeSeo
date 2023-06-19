@@ -78,6 +78,8 @@ public class ScoreListController {
 				case "sun":
 					o = "태양";
 					break;
+				default:
+					o = "굴뚝";
 				}
 				if(items_yu[i].equals(objects.get(j).getObject_name()) && objects.get(j).getObject_exist() == 1) {
 					result_o_text += "<strong>" + o + ": </strong>" + objects.get(j).getObject_content() + "\t";
