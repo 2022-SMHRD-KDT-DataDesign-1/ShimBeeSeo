@@ -676,6 +676,8 @@
 			return true;
 		} else {
 			console.log("체크 누락됨")
+			$('#submitSend').attr("disabled", true);
+			$('#submitSend').attr("value",'답변을 완료해주세요.');
 			completeCheck;
 			return false;
 		}
