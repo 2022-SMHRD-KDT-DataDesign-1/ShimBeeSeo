@@ -430,7 +430,7 @@
 			 $.ajax({
 				type : "POST",
 				enctype : "multipart/form-data",
-				url : "http://211.105.164.246:9000/h_photo",
+				url : "http://211.105.164.246:9000/h_photo/" + 1,
 				data : data,
 				async : false,
 				processData : false,

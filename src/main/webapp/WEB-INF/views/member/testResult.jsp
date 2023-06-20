@@ -206,9 +206,9 @@
     	    		var result_deprivation =result.result_deprivation;
     	    		var result_inferiority =result.result_inferiority;
     	    		var result_regression = result.result_regression;
-					var result_o_text = result.result_o_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
-					var result_c_text = result.result_c_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
-					var result_c_text2 = result.result_c_text2.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_o_text = result.result_o_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:8px; margin-bottom:10px;box-shadow:2px 2px 2px 2px gray; padding-top:2px; padding-left:2px; padding-right:2px;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "');
+					var result_c_text = result.result_c_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:8px; margin-bottom:10px;box-shadow:2px 2px 2px 2px gray; padding-top:2px; padding-left:2px; padding-right:2px;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_c_text2 = result.result_c_text2.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:8px; margin-bottom:10px;box-shadow:2px 2px 2px 2px gray; padding-top:2px; padding-left:2px; padding-right:2px;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
 					var result_direction = result.result_direction.replaceAll('\n', '</p><p>');
 					
 					if(result.cate_seq === 1) {

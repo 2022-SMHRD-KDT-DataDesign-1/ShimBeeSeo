@@ -190,23 +190,23 @@ public class ScoreListController {
 		
 		for(int i = 0; i < h_cases.size(); i++) {
 			if(h_cases.get(i).getCase_h_emotion().equals("공격성") && (aggressive >= h_cases.get(i).getCase_h_s() && aggressive <= h_cases.get(i).getCase_h_e())) {
-				result_c_text +=  "<p id='aggressive'\\><strong>공격성</strong></p><div id='aggressiveC'\t>" + h_cases.get(i).getCase_h_content() + "</div>";
+				result_c_text +=  "//<p id='aggressive'\\><strong>공격성</strong></p><div id='aggressiveC'\t>" + h_cases.get(i).getCase_h_content() + "</div></div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("사회불안") && (anxiety >= h_cases.get(i).getCase_h_s() && anxiety <= h_cases.get(i).getCase_h_e())) {
-				result_c_text +=  "<p id='anxiety'\\><strong>사회불안</strong></p><div id='anxietyC'\t>" + h_cases.get(i).getCase_h_content() + "</div>";
+				result_c_text +=  "//<p id='anxiety'\\><strong>사회불안</strong></p><div id='anxietyC'\t>" + h_cases.get(i).getCase_h_content() + "</div></div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("우울") && (depressed >= h_cases.get(i).getCase_h_s() && depressed <= h_cases.get(i).getCase_h_e())) {
-				result_c_text +=  "<p id='depressed'\\><strong>우울</strong></p><div id='depressedC'\t>" + h_cases.get(i).getCase_h_content() + "</div>";
+				result_c_text +=  "//<p id='depressed'\\><strong>우울</strong></p><div id='depressedC'\t>" + h_cases.get(i).getCase_h_content() + "</div></div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("대인회피") && (avpd >= h_cases.get(i).getCase_h_s() && avpd <= h_cases.get(i).getCase_h_e())) {
-				result_c_text +=  "<p id='avpd'\\><strong>대인회피</strong></p><div id='avpdC'\t>" + h_cases.get(i).getCase_h_content() + "</div>";
+				result_c_text +=  "//<p id='avpd'\\><strong>대인회피</strong></p><div id='avpdC'\t>" + h_cases.get(i).getCase_h_content() + "</div></div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("자존감") && (esteem >= h_cases.get(i).getCase_h_s() && esteem <= h_cases.get(i).getCase_h_e())) {
-				result_c_text +=  "<p id='esteem'\\><strong>자존감</strong></p><div id='esteemC'\t>" + h_cases.get(i).getCase_h_content() + "</div>";
+				result_c_text +=  "//<p id='esteem'\\><strong>자존감</strong></p><div id='esteemC'\t>" + h_cases.get(i).getCase_h_content() + "</div></div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("정서불안") && (instability >= h_cases.get(i).getCase_h_s() && instability <= h_cases.get(i).getCase_h_e())) {
-				result_c_text2 +=  "<p id='instability'\\><strong>정서불안</strong></p><div id='instabilityC'\t>" + h_cases.get(i).getCase_h_content() + "</div>";
+				result_c_text2 +=  "//<p id='instability'\\><strong>정서불안</strong></p><div id='instabilityC'\t>" + h_cases.get(i).getCase_h_content() + "</div></div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("애정결핍") && (deprivation >= h_cases.get(i).getCase_h_s() && deprivation <= h_cases.get(i).getCase_h_e())) {
-				result_c_text2 +=  "<p id='deprivation'\\><strong>애정결핍</strong></p><div id='deprivationC'\t>" + h_cases.get(i).getCase_h_content() + "</div>";
+				result_c_text2 +=  "//<p id='deprivation'\\><strong>애정결핍</strong></p><div id='deprivationC'\t>" + h_cases.get(i).getCase_h_content() + "</div></div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("열등감") && (inferiority >= h_cases.get(i).getCase_h_s() && inferiority <= h_cases.get(i).getCase_h_e())) {
-				result_c_text2 +=  "<p id='inferiority'\\><strong>열등감</strong></p><div id='inferiorityC'\t>" + h_cases.get(i).getCase_h_content() + "</div>";
+				result_c_text2 +=  "//<p id='inferiority'\\><strong>열등감</strong></p><div id='inferiorityC'\t>" + h_cases.get(i).getCase_h_content() + "</div></div>";
 			} else if(h_cases.get(i).getCase_h_emotion().equals("퇴행") && (regression >= h_cases.get(i).getCase_h_s() && regression <= h_cases.get(i).getCase_h_e())) {
-				result_c_text2 +=  "<p id='regression'\\><strong>퇴행</strong></p><div id='regressionC'\t>" + h_cases.get(i).getCase_h_content() + "</div>";
+				result_c_text2 +=  "//<p id='regression'\\><strong>퇴행</strong></p><div id='regressionC'\t>" + h_cases.get(i).getCase_h_content() + "</div></div>";
 			}
 		}
 		System.out.println(result_c_text);
