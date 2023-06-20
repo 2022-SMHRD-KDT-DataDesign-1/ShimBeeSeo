@@ -81,13 +81,9 @@
                             
 			<!-- test용 시작-->
     					<div class="testimonial-item bg-light rounded p-5">
-<<<<<<< HEAD
-                			<p style="font-size:25px" id="result_o_text">
-                			</p>
-=======
+
                 			<div style="font-size:25px" id="result_o_text">
                 			</div>
->>>>>>> jyj
 						</div>
 	    				<div class="testimonial-item bg-light rounded p-5">
 							<div id="result_c_text" style="font-size:25px"> </div>
@@ -156,20 +152,27 @@
 		<!-- Chart 내용 Javascript -->
 
         
-        <script type="text/javascript">
+    <script type="text/javascript">
         
         
     	$(document).ready(function() {
     		getResult();
     		
-    		$(document).on('click', ".title", (e) => {
-    			console.log(e.next());
+    		/* $("#result_o_text").on({
+    			mouseover:function(){
+    				var tg = $(this);
+    				tg.removeClass().addClass()
+    			
+    		}}) */
+    		
+    		/* $(document).on('mouseover', ".title", (e) => {
+    			console.log(e);
             	if( $(this).next().css('display') == 'none') {
             		$(this).siblings().css('display', 'inline-block');
             	} else {
             		$(this).siblings().css('display', 'none');
             	}
-            })
+            })*/ 
     	});
         
         
@@ -178,21 +181,21 @@
         } */
         
         /* JSON형태로 사용자 검사 결과 받아오는 함수 */
-    	function loadResult() {
+    	/* function loadResult() {
     		$.ajax({
     			url :  "testResultOne.do" ,
     			type : "get",
     			dataType : "json",
     			success : function () {
     				getResult
-    				/* $('.content').css('display', 'none'); */
+    				$('.content').css('display', 'none');
     				$('.content').style.display = 'none';	
-    			}, /* callback 함수 요청되고나서 실행하는 함수*/
+    			}, // callback 함수 요청되고나서 실행하는 함수
     			error : function() {
     				alert("loadResult error");
     			}
     		});
-    	}
+    	} */
         
     	function getResult(){
     		$.ajax({
@@ -202,7 +205,6 @@
     			success : function(result){
     				
     				console.log(result);
-    				
     				var result_aggressive = result.result_aggressive;
     	    		var result_social_anxiety = result.result_social_anxiety;
     	    		var result_depressed = result.result_depressed;
@@ -212,10 +214,10 @@
     	    		var result_deprivation =result.result_deprivation;
     	    		var result_inferiority =result.result_inferiority;
     	    		var result_regression = result.result_regression;
-					var result_o_text = result.result_o_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_c_text = result.result_c_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_c_text2 = result.result_c_text2.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_direction = result.result_direction.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_o_text = result.result_o_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_c_text = result.result_c_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_c_text2 = result.result_c_text2.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_direction = result.result_direction.replaceAll('\n', '</p><p>');
 					
 					if(result.cate_seq === 1) {
     					result_aggressive = (result.result_aggressive / 9 * 100).toFixed(1);
@@ -321,7 +323,25 @@
     		});
     	}
     	
-        </script>
+    	// p태그에 따른 컨텐츠 더보기 함수
+    	function showContent(clicked_id) {
+    		console.log(clicked_id);
+    		var names = ["window", "door", "roof", "wall", "c_smoke", "chimney", "sun", "aggressive", "anxiety", "depressed", "avpd", "esteem", "instability", "deprivation", "inferiority", "regression"];
+    		var title = $("#"+clicked_id+">strong").text();
+    		for(var i = 0; i < names.length; i++) {
+    			if(clicked_id == names[i]) {
+    				if( $("#"+names[i]+"C").css("display") == "none" ) {
+    					$("#"+names[i]+"C").css("display", "inline-block");
+    					$("#"+clicked_id+">strong").text(title.replace("▸", "▾"));
+    				} else {
+    					$("#"+names[i]+"C").css("display", "none");
+    					$("#"+clicked_id+">strong").text(title.replace("▾", "▸"));
+    				}
+    			}
+    		}
+    	}
+    	
+       </script>
 	
 </body>
 </html>
