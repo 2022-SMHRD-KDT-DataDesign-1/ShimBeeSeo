@@ -54,6 +54,9 @@
 		//$(".page").
 		pagingSetting();
 		$("#queWrap").css("display","");
+		$(document).on('change', 'input', function(){
+			selectCheck();
+		})
 	});
 
 	function pagingSetting() {
@@ -161,7 +164,7 @@
 							
 								<div class="flex-container">
 									<div class="wrapper">
-										<p>아래 버튼을 눌러 사진을 업로드 해주세요</p>
+										<p id="fileInfo">아래 버튼을 눌러 사진을 업로드 해주세요</p>
 										<div style="position: relative;">
 											<img src="${contextPath}/resources/images/fileUpload.png" class="image-box" style="min-width:350px"; height="350px"; />
 												<label for="file" class="upload-btn">
@@ -173,7 +176,7 @@
 
 								<!-- 미리보기 이후 파일 업로드하기 -->
 									<!-- if문 써야함 대기중 -->
-									<p id="submitInfo" style="margin-top:3vw; display: none;">아래 버튼을 눌러 AI에게 사진을 보내주세요!!</p>
+									<p id="submitInfo" style="margin-top:3vw; display: none;">제출 버튼을 눌러 AI에게 사진을 보내주세요!!</p>
 									<button type="button" id="submitPicture"onclick="uploadFunction();" class="form-control btn btn-warning" style="width: 150px; display:none; color: white; background-color: #FE5D37">AI에게 사진제출</button>
 								<!--미리보기 테스트 끝 -->
 								
@@ -626,6 +629,7 @@
 		var file = $('#file');
 		console.log(file);
 		if(file != null){
+			$('#fileInfo').css('display', 'none');
 			$('#submitInfo').css('display','inline-block');
 			$('#submitPicture').css('display','inline-block');
 			
@@ -634,8 +638,10 @@
 		}
 	}
 	</script>
+
 	
 	<script type="text/javascript">
+	
 	function selectCheck(){
 		var mood = $('input[name=mood]').is(":checked");
 		var size = $('input[name=size]').is(":checked");
@@ -669,6 +675,7 @@
 
 			return true;
 		} else {
+			console.log("체크 누락됨")
 			completeCheck;
 			return false;
 		}
