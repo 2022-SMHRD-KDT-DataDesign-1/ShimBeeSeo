@@ -24,8 +24,12 @@ public class UserResultController {
 	
 	// 검사 후 결과 보여주기
 	@ResponseBody
-	@GetMapping("resultList.do/{user_id}")
-	public List<User_Result> UserResult(@PathVariable("user_id") String user_id) {
+//	@GetMapping("resultList.do/{user_id}")
+	@GetMapping("resultList.do")
+	public List<User_Result> UserResult(HttpSession session) {
+		
+		User mvo = (User)session.getAttribute("mvo");
+		String user_id = mvo.getUser_id();
 		
 		List<User_Result> result = userResultMapper.viewResult(user_id);
 		for(int i = 0 ; i<result.size(); i++) {

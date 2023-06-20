@@ -68,7 +68,6 @@
 	
 	
 						</div>
-						<p class="fs-5"> 아프다 이 아이</p>
                     </div>
 
                	  </div>
@@ -77,55 +76,38 @@
  				<div class="col-lg-8 col-12 mx-auto">
             		<div class="pb-5 mb-5">
                 		<div class="section-title-wrap mb-4">
-                     		<h4 class="section-title text-center">검사 내용</h4>
+                     		<h4 class="section-title text-center" style="font-size:30px">검사 내용</h4>
                     	</div>
                             
 			<!-- test용 시작-->
     					<div class="testimonial-item bg-light rounded p-5">
-                			<p class="fs-5" id="result_o_text">  </p>
+
+                			<div style="font-size:25px" id="result_o_text">
+                			</div>
 						</div>
 	    				<div class="testimonial-item bg-light rounded p-5">
-							<p class="fs-5" id="result_c_text"> </p>
+							<div id="result_c_text" style="font-size:25px"> </div>
 	                    </div>
                		</div>
            		</div>
            	<div class="col-lg-8 col-12 mx-auto">
            		<div class="pb-5 mb-5">
                 	<div class="section-title-wrap mb-4">
-                    	<!-- <h4 class="section-title text-center">지도 방향</h4>
-                    	<p>공격성과 사회불안이 높은 아이에 대한 지도교육 방향은 다양한 전략과 접근법을 조합하여 개별적인 상황에 맞게 결정되어야 합니다. 아래의 지도교육 방향은 참고할 수 있는 일반적인 가이드라인입니다.
-						<br>
-						1.개별 평가와 개별화된 계획 수립: 아이의 공격성과 사회불안의 원인을 파악하기 위해 개별 평가가 필요합니다. 전문가인 심리학자, 교사, 상담사 등과 협력하여 아이의 강점, 약점, 관심사, 학습 스타일 등을 평가하고 개별화된 교육 계획을 수립해야 합니다.
-						<br>
-						2.감정 조절 및 자기조절 교육: 아이에게 감정을 인식하고 조절하는 방법을 가르쳐야 합니다. 감정을 인식하고 표현할 수 있는 활동이나 도구를 활용하여 아이가 감정을 인지하고 조절할 수 있도록 지원해야 합니다. 사회적 역량을 강화하기 위해 동료와의 상호작용을 장려하고, 사회적 문제 해결 능력을 향상시킬 수 있는 시뮬레이션 게임 등을 활용할 수도 있습니다.
-						<br>
-						3.대인 관계 기술 훈련: 아이가 적절한 대인 관계 기술을 습득하도록 도와야 합니다. 이를 위해 상호작용, 대화, 협력, 타인의 감정 이해 등을 강화하는 프로그램이나 활동을 제공할 수 있습니다. 집단 활동, 롤플레이, 사회적 기술을 강화하는 연습 등을 포함시킬 수 있습니다.
-						<br>
-						4.문제 해결 및 대처 전략 제공: 아이에게 문제 해결 및 대처 전략을 가르쳐야 합니다. 아이가 문제 상황에 직면했을 때 적절한 대안적인 행동 및 전략을 습득할 수 있도록 도와줍니다. 사회적 문제 상황에 대한 시뮬레이션, 롤플레이, 문제 해결 게임 등을 활용할 수 있습니다.
-						<br>
-						5.안정적인 환경 제공: 아이가 안정감을 느낄 수 있는 환경을 조성해야 합니다. 일정한 루틴, 구조, 예측 가능한 규칙을 제공하여 안정성과 안전성을 확보합니다. 또한, 아이가 편안하게 표현하고 이해받을 수 있는 환경을 조성하여 자신의 감정을 표현할 수 있도록 지원합니다.
-						<br>
-						6.보호자 교육 및 지원: 아이의 보호자에게 지원과 교육이 필요합니다. 아동의 공격성과 사회불안에 대한 이해를 높이고, 아이의 교육을 위한 적절한 전략과 기술을 습득할 수 있도록 상담 및 교육 프로그램을 제공하는 것이 중요합니다. 보호자와 교사, 상담사 등의 협력과 연계를 강화하여 아이에게 일관된 지원을 제공할 수 있도록 합니다.
-						<br>
-						이러한 지도교육 방향은 전문가의 도움과 함께 개별 아이에게 맞추어 적용되어야 하며, 학교와 가정의 협력과 지원이 필요합니다.</p> -->
-                    </div>
-                            
-    				<div class="testimonial-item bg-light rounded p-5">
-						<p class="fs-5" id="result_direction"> </p>
-                    </div>
-
+                    	<h4 class="section-title text-center" style="font-size:30px">지도 방향</h4>
+                    </div>    
+    			<div class="testimonial-item bg-light rounded p-5">
+					<p id="result_direction" style="font-size:25px;">
+					</p>
+                </div>
 
                </div>
          	</div>
-
-
 
             <div class="col-lg-12 col-12">
             	<div class="section-title-wrap mb-5">
                 	<h4 class="section-title">이 콘텐츠는 어떠세요?</h4>
                 </div>
             </div>
-
             <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
             	<div class="team-thumb bg-white shadow-lg">
 					
@@ -138,20 +120,13 @@
 
         	<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
             	<div class="team-thumb bg-white shadow-lg">
-                	<!-- <img src="images/profile/handsome-asian-man-listening-music-through-headphones.jpg"
-                    	class="about-image img-fluid" alt=""> -->
 
                 	<div class="team-info">
                 		<h4 class="mb-2">2번</h4> <br>
                     	<img src="${contextPath}/resources/img/why.png" style="width: 100%; height: auto;" class="verified-image img-fluid" alt="">
-                                <!-- <span class="badge">Creative</span>
-                                <span class="badge">Design</span> -->
                 	</div>
-
                	</div>
            </div>
-
-
     </section>
  					
  		
@@ -177,34 +152,59 @@
 		<!-- Chart 내용 Javascript -->
 
         
-        <script type="text/javascript">
+    <script type="text/javascript">
+        
         
     	$(document).ready(function() {
-    		loadResult();	
-    		});
+    		getResult();
+    		
+    		/* $("#result_o_text").on({
+    			mouseover:function(){
+    				var tg = $(this);
+    				tg.removeClass().addClass()
+    			
+    		}}) */
+    		
+    		/* $(document).on('mouseover', ".title", (e) => {
+    			console.log(e);
+            	if( $(this).next().css('display') == 'none') {
+            		$(this).siblings().css('display', 'inline-block');
+            	} else {
+            		$(this).siblings().css('display', 'none');
+            	}
+            })*/ 
+    	});
+        
+        
+        /* function showContent(){
+        	
+        } */
         
         /* JSON형태로 사용자 검사 결과 받아오는 함수 */
-    	function loadResult() {
+    	/* function loadResult() {
     		$.ajax({
-    			url : "testResultOne.do",
+    			url :  "testResultOne.do" ,
     			type : "get",
     			dataType : "json",
-    			success : getResult, /* callback 함수 요청되고나서 실행하는 함수*/
+    			success : function () {
+    				getResult
+    				$('.content').css('display', 'none');
+    				$('.content').style.display = 'none';	
+    			}, // callback 함수 요청되고나서 실행하는 함수
     			error : function() {
     				alert("loadResult error");
     			}
     		});
-    	}
+    	} */
         
     	function getResult(){
     		$.ajax({
-    			url : "testResultOne.do",
+    			url :  "testResultOne.do",
     			type:"get",
     			dataType : "json",
     			success : function(result){
     				
     				console.log(result);
-    				
     				var result_aggressive = result.result_aggressive;
     	    		var result_social_anxiety = result.result_social_anxiety;
     	    		var result_depressed = result.result_depressed;
@@ -214,10 +214,10 @@
     	    		var result_deprivation =result.result_deprivation;
     	    		var result_inferiority =result.result_inferiority;
     	    		var result_regression = result.result_regression;
-					var result_o_text = result.result_o_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_c_text = result.result_c_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_c_text2 = result.result_c_text2.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_direction = result.result_direction.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_o_text = result.result_o_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_c_text = result.result_c_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_c_text2 = result.result_c_text2.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_direction = result.result_direction.replaceAll('\n', '</p><p>');
 					
 					if(result.cate_seq === 1) {
     					result_aggressive = (result.result_aggressive / 9 * 100).toFixed(1);
@@ -239,11 +239,11 @@
 					/* $('result_direction').text(result_direction); */
 					
 					document.getElementById('resetChart').innerHTML = ""; 
-					document.getElementById('resetChart').innerHTML = "<canvas id='myChart'></canvas>"; 
+					document.getElementById('resetChart').innerHTML = "<canvas id='myChart' width='100%' height='130%' margin-left='15px' padding-left='25px'></canvas>"; 
 					
     	            var context = document.getElementById('myChart').getContext('2d');
     	            var myChart = new Chart(context, {
-    	                type: 'horizontalBar', // 차트의 형태
+    	                type: 'bar', // 차트의 형태
     	                data: { // 차트에 들어갈 데이터
     	                    labels: [
     	                        //x 축
@@ -251,7 +251,7 @@
     	                    ],
     	                    datasets: [
     	                        { //데이터
-    	                            label: '심리검사 결과', //차트 제목
+    	                            label: '심리검사 결과(%)', //차트 제목
     	                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
     	                            data: [
     	                            	result_aggressive,result_social_anxiety,result_depressed,result_avpd,result_self_esteem,result_emotional_instability,result_deprivation,result_inferiority,result_regression //x축 label에 대응되는 데이터 값
@@ -323,13 +323,25 @@
     		});
     	}
     	
+    	// p태그에 따른 컨텐츠 더보기 함수
+    	function showContent(clicked_id) {
+    		console.log(clicked_id);
+    		var names = ["window", "door", "roof", "wall", "c_smoke", "chimney", "sun", "aggressive", "anxiety", "depressed", "avpd", "esteem", "instability", "deprivation", "inferiority", "regression"];
+    		var title = $("#"+clicked_id+">strong").text();
+    		for(var i = 0; i < names.length; i++) {
+    			if(clicked_id == names[i]) {
+    				if( $("#"+names[i]+"C").css("display") == "none" ) {
+    					$("#"+names[i]+"C").css("display", "inline-block");
+    					$("#"+clicked_id+">strong").text(title.replace("▸", "▾"));
+    				} else {
+    					$("#"+names[i]+"C").css("display", "none");
+    					$("#"+clicked_id+">strong").text(title.replace("▾", "▸"));
+    				}
+    			}
+    		}
+    	}
     	
-
-    		
-
-        
-        
-        </script>
+       </script>
 	
 </body>
 </html>

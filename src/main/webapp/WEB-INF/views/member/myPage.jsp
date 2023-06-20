@@ -116,11 +116,12 @@
 					<div class="pb-5 mb-5">
 					<h4 class="section-title text-center">검사 결과</h4>
 						<div class="testimonial-item bg-light rounded p-5">
-							<p class="fs-5" id="result_c_text"></p>
+							<p id="result_c_text" style="font-size:25px;">
+							</p>
 						</div>
 						<!-- test용 시작-->
 						<div class="testimonial-item bg-light rounded p-5">
-							<p class="fs-5" id="result_o_text"></p>
+							<p id="result_o_text" style="font-size:25px;"></p>
 						</div>
 					</div>
 				</div>
@@ -133,7 +134,10 @@
 
 						<div class="testimonial-item bg-light rounded p-5">
 
-							<p class="fs-5" id="result_direction"></p>
+
+							<p id="result_direction" style="font-size: 25px">
+
+							</p>
 						</div>
 
 
@@ -144,11 +148,11 @@
 
 
 
-			<div class="col-lg-12 col-12">
+			<!-- <div class="col-lg-12 col-12">
 				<div class="section-title-wrap mb-5">
 					<h4 class="section-title">이런 콘텐츠는 어때요?</h4>
 				</div>
-			</div>
+			</div> -->
 
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
@@ -323,7 +327,7 @@
         /* JSON형태로 사용자 검사 결과 받아오는 함수 */
     	function loadResult(user_id) {
     		$.ajax({
-    			url : "resultList.do/" + user_id,
+    			url : "resultList.do",
     			type : "get",
     			dataType : "json",
     			success : makeSelect, /* callback 함수 요청되고나서 실행하는 함수*/
@@ -346,7 +350,7 @@
         
     	function changeDate(){
     		$.ajax({
-    			url : "resultList.do/" + user_id,
+    			url : "resultList.do",
     			type:"get",
     			dataType : "json",
     			success : function(result){
@@ -368,10 +372,10 @@
     	    		var result_deprivation =result[index].result_deprivation;
     	    		var result_inferiority =result[index].result_inferiority;
     	    		var result_regression = result[index].result_regression;
-					var result_o_text = result[index].result_o_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_c_text = result[index].result_c_text.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_c_text2 = result[index].result_c_text2.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
-					var result_direction = result[index].result_direction.replaceAll('\t', '</p><p>').replaceAll('\n', '</p><p>');
+					var result_o_text = result[index].result_o_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_c_text = result[index].result_c_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_c_text2 = result[index].result_c_text2.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_direction = result[index].result_direction.replaceAll('\n', '</p><p>');
 
 					
 					if(result[index].cate_seq === 1) {
@@ -406,7 +410,7 @@
     	                    ],
     	                    datasets: [
     	                        { //데이터
-    	                            label: '심리검사 결과', //차트 제목
+    	                            label: '심리검사 결과(%)', //차트 제목
     	                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
     	                            data: [
     	                            	result_aggressive,result_social_anxiety,result_depressed,result_avpd,result_self_esteem,result_emotional_instability,result_deprivation,result_inferiority,result_regression //x축 label에 대응되는 데이터 값
@@ -502,7 +506,7 @@
         
     	function changeEmotion(){
     		$.ajax({
-    			url : "resultList.do/" + user_id,
+    			url : "resultList.do",
     			type:"get",
     			dataType : "json",
     			success : function(result){
@@ -608,6 +612,24 @@
     				alert("error");
     			}
     		});
+    	}
+    	
+    	// p태그에 따른 컨텐츠 더보기 함수
+    	function showContent(clicked_id) {
+    		console.log(clicked_id);
+    		var names = ["window", "door", "roof", "wall", "c_smoke", "chimney", "sun", "aggressive", "anxiety", "depressed", "avpd", "esteem", "instability", "deprivation", "inferiority", "regression"];
+    		var title = $("#"+clicked_id+">strong").text();
+    		for(var i = 0; i < names.length; i++) {
+    			if(clicked_id == names[i]) {
+    				if( $("#"+names[i]+"C").css("display") == "none" ) {
+    					$("#"+names[i]+"C").css("display", "inline-block");
+    					$("#"+clicked_id+">strong").text(title.replace("▸", "▾"));
+    				} else {
+    					$("#"+names[i]+"C").css("display", "none");
+    					$("#"+clicked_id+">strong").text(title.replace("▾", "▸"));
+    				}
+    			}
+    		}
     	}
         
         
