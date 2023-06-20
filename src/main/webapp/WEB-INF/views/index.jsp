@@ -40,6 +40,10 @@
     <style>
     	p{
     	color:black;}
+    	
+    	.btn2{
+    	 background: #F86C85;
+    	}
     </style>
 
 </head>
@@ -96,8 +100,8 @@
                         <p class="mb-4">4.실시가 용이하고 짧은시간안에 파악할 수 있습니다.</p>
                         </div>
                         <c:choose>
-							<c:when test="${not empty mvo}"> <a style="width:300px; height: 55px;" class="btn btn-primary" href="check.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:when>
-							<c:otherwise> <a style="width:300px; height: 55px;" class="btn btn-primary" href="loginPage.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:otherwise>
+							<c:when test="${not empty mvo}"> <a style="width:300px; height: 55px;" class="btn btn2 btn-primary" href="check.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:when>
+							<c:otherwise> <a style="width:300px; height: 55px;" class="btn btn2 btn-primary" href="loginPage.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:otherwise>
 						</c:choose>
                         
                      </div>
@@ -127,7 +131,7 @@
                             		<div style="width:500px;" class="py-5">
                                 	<h1 class="mb-4">함께 공유해요</h1>
                                 	</div>
-                                	<a style="margin-top:10px; margin-left:25px; width:300px;; height: 55px;" class="btn btn-primary" href="main.do">게시판으로 이동<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
+                                	<a style="margin-top:10px; margin-left:25px; width:300px;; height: 55px;" class="btn btn2 btn-primary" href="main.do">게시판으로 이동<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
                             	</div>
                             </div>
                         </div>
@@ -151,7 +155,7 @@
                             		<div style="width:500px;" class="py-5">
                                 	<h1 class="mb-4">무엇을 도와드릴까요?</h1>
                                 	</div>
-                                	<a style="margin-top:10px; margin-left:25px; width:300px; height: 55px;" class="btn btn-primary" href="">문의하러가기!<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
+                                	<a style="margin-top:10px; margin-left:25px; width:300px; height: 55px;" class="btn btn2 btn-primary" href="">문의하러가기!<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
                             	</div>
                             </div>	
                         </div>

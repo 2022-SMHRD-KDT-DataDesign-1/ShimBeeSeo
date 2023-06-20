@@ -66,7 +66,7 @@
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
-                                <p class="mb-4">회원이 아니신가요? <a href="joinPage.do">회원가입</a></p>
+                                <p class="mb-4">회원이 아니신가요? <a href="joinPage.do" style="color:#F86C85;">회원가입</a></p>
                                 <form action="${contextPath}/login.do" method="post">
                                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
                                     <div class="row g-3">
