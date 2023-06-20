@@ -15,29 +15,6 @@
 		select * from t_user where user_id=#{email}
 	</select>
 	
-	<select id="allUserList" parameterType="kr.board.entity.PagingVO" resultType="kr.board.entity.User">
-		select * from(
-    		select rownum RN, A.*
-        		from(
-           		 select * 
-           		 from t_user
-           		 where 
-           		 <choose>
-           		 <when test="searchGubun == 'userId'">user_id like '%'|| #{searchText} ||'%'</when>
-           		 <when test="searchGubun == 'userName'">user_name like '%'|| #{searchText} ||'%'</when>
-           		 <when test="searchGubun == 'childName'">user_childName like '%'|| #{searchText} ||'%'</when>
-           		 <otherwise>
-           		 user_id like '%'|| #{searchText} ||'%' 
-           		 OR user_name like '%'|| #{searchText} ||'%'
-           		 OR user_childName like '%'|| #{searchText} ||'%'
-           		 </otherwise>
-           		 </choose>
-           		 order by user_joindate desc
-           			 ) A
-   			 )
-    		where rn between #{start} and #{end}
-	</select>
-	
 	<select id="joinPerMonth" resultType="kr.board.entity.CountJoin">
 		 <![CDATA[
 			select to_char(user_joindate, 'yyyy-mm') as month
@@ -116,21 +93,6 @@
 		, user_isagreed = #{user_isagreed}
 		where user_id = #{user_id}
 	</update>
-
-	<select id="getTotalUserCount" parameterType="kr.board.entity.PagingVO" resultType="int">
-		select count(*) from t_user
-			 where 
-           		 <choose>
-	           		 <when test="searchGubun == 'userId'">user_id like '%'|| #{searchText} ||'%'</when>
-	           		 <when test="searchGubun == 'userName'">user_name like '%'|| #{searchText} ||'%'</when>
-	           		 <when test="searchGubun == 'childName'">user_childName like '%'|| #{searchText} ||'%'</when>
-	           		 <otherwise>
-	           		 user_id like '%'|| #{searchText} ||'%' 
-	           		 OR user_name like '%'|| #{searchText} ||'%'
-	           		 OR user_childName like '%'|| #{searchText} ||'%'
-	           		 </otherwise>
-           		 </choose>
-	</select>
 	
 	<select id="user" resultType="kr.board.entity.User">
 		select * from t_user

@@ -9,14 +9,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Template</title>
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  	<!-- 카카오 로그인 API 스크립트 -->
-  	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-  	    <meta content="" name="keywords">
+   <meta charset="UTF-8">
+   <title>Template</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     <!-- 카카오 로그인 API 스크립트 -->
+     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+         <meta content="" name="keywords">
     <meta content="" name="description">
 
     <!-- Favicon -->
@@ -44,8 +44,8 @@
 <body>
   <div class="container-xxl bg-white p-0">
 
-	<jsp:include page="../common/header.jsp"></jsp:include>
-	
+   <jsp:include page="../common/header.jsp"></jsp:include>
+   
 
 
         <!-- Contact Start -->
@@ -58,8 +58,8 @@
 
                 <div class="bg-light rounded">
                     <div class="row g-0">
-                    	<div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
-                        	<div class="position-relative h-100">
+                       <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                           <div class="position-relative h-100">
                                                <img src="${contextPath}/resources/images/logo.png" class="position-relative rounded"
                                 frameborder="0" style="height:90%; width:90%; margin-left:5%;margin-top:5%;" >
                             </div>
@@ -100,7 +100,7 @@
         </div>  
         <!-- Contact End -->
 
- 	<jsp:include page="../common/footer.jsp"></jsp:include> 
+    <jsp:include page="../common/footer.jsp"></jsp:include> 
  
   </div>
  <!-- JavaScript Libraries -->

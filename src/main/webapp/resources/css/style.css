@@ -226,7 +226,7 @@ h6,
 }
 
 .header-carousel .owl-nav .owl-prev{
-	margin: 7px 0;
+   margin: 7px 0;
     width: 45px;
     height: 45px;
     display: flex;
@@ -239,8 +239,8 @@ h6,
     font-size: 22px;
     transition: .5s;
     position: absolute;
-    margin-left: -80vw;
-	
+    margin-left: -73vw;
+   
 }
 
 
