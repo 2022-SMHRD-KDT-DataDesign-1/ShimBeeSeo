@@ -55,21 +55,26 @@
                     <img class="img-fluid" src="${contextPath}/resources/img/ma.png" alt="">
                     <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
                         <div class="container">
-                            <div class="row justify-content-start">
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="owl-carousel-item position-relative">
-                    <img class="img-fluid" src="${contextPath}/resources/img/i.png"  alt="">
-                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .2);">
+                    <img class="img-fluid" src="${contextPath}/resources/img/bg-2.jpg"  alt="">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, 0);">
                         <div class="container">
-                            </div>
                         </div>
                     </div>
-                </div>
+                 </div>
+                 <div class="owl-carousel-item position-relative">
+                    <img class="img-fluid" src="${contextPath}/resources/img/bg-3.jpg"  alt="">
+                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, 0);">
+                        <div class="container">
+                        </div>
+                    </div>
+                 </div>
             </div>
         </div>
+    </div>
 
         <!-- About Start -->
         <div class="container-xxl py-5">

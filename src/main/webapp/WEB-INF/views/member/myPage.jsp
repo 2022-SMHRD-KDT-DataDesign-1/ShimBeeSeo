@@ -78,7 +78,7 @@
 							<h1 class="section-title text-center">날짜별 검사 결과</h1>
 						</div>
 						<div class="section-title-wrap mb-4">
-							<h4 class="section-title text-center">감정 그래프</h4>
+							<h2 class="section-title text-center" style="font-size:28px;">감정 그래프</h2>
 						</div>
 
 						<input type="hidden" value="${mvo.user_id}" id="idCheck">
@@ -100,11 +100,6 @@
 						<!--차트가 그려질 부분-->
 							<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
 	</div>
-			
-
-
-
-
 							</div>
 
 						</div>
@@ -113,30 +108,29 @@
 
 				</div>
 				<div class="col-lg-8 col-12 mx-auto">
-					<div class="pb-5 mb-5">
-					<h4 class="section-title text-center">검사 결과</h4>
-						<div class="testimonial-item bg-light rounded p-5">
-							<p id="result_c_text" style="font-size:25px;">
+					<div>
+					<h1 class="section-title text-center" style="margin-bottom:40px;">검사 결과</h1>
+						<div class="testimonial-item bg-light rounded p-4">
+							<h2 class="section-title text-center" style="font-size:28px;">감정분석 결과</h2>
+							<p id="result_c_text" style="font-size:24px;">
 							</p>
 						</div>
 						<!-- test용 시작-->
-						<div class="testimonial-item bg-light rounded p-5">
-							<p id="result_o_text" style="font-size:25px;"></p>
+						<div class="testimonial-item bg-light rounded p-4">
+							<h2 class="section-title text-center" style="font-size:28px; margin-bottom:40px;">그림 결과</h2>
+							<p id="result_o_text" style="font-size:24px;"></p>
 						</div>
 					</div>
 				</div>
 
 				<div class="col-lg-8 col-12 mx-auto">
-					<div class="pb-5 mb-5">
+					<div>
 						<div class="section-title-wrap mb-4">
-							<h4 class="section-title text-center">지도 방향</h4>
+							<h1 class="section-title text-center" style="margin-bottom:40px; margin-top:40px;">지도 방향</h1>
 						</div>
 
-						<div class="testimonial-item bg-light rounded p-5">
-
-
-							<p id="result_direction" style="font-size: 25px">
-
+						<div class="testimonial-item bg-light rounded p-4">
+							<p id="result_direction" style="font-size: 24px;">
 							</p>
 						</div>
 
@@ -162,7 +156,6 @@
 					<div class="row">
 						<iframe width="560" height="315" src="https://www.youtube.com/embed/AuV4E43g4vQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
-
 
 				</div>
 			</div>
@@ -209,10 +202,7 @@
 							<option value="result_inferiority" id="e_result_inferiority">열등감</option>
 							<option value="result_regression" id="e_result_regression">퇴행</option>
 						</select>
-
-
-
-
+						
 						<div class="bg-light rounded">
 							<div style="width: 100%; height: 100%;">
 
@@ -222,68 +212,40 @@
 									<canvas id="e_myChart" width="300px" height="100%"
 										margin-left="15px" padding-left="25px"></canvas>
 								</div>
-
-
-
-
 							</div>
 						</div>
 
 					</div>
 
 				</div>
-
-
 			</div>
 			<div class="col-lg-12 col-12">
 				<div class="section-title-wrap mb-5">
-					<h4 class="section-title">이런 콘텐츠는 어때요?</h4>
+					<h4 class="section-title">콘텐츠 추천</h4>
 				</div>
 			</div>
 
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
-
-					<h4 class="mb-2">1번</h4>
-					<br>
-					<div class="team-info">
-
-						<img src="${contextPath}/resources/img/oh.png"
-							style="width: 100%; height: auto;"
-							class="verified-image img-fluid" alt="">
-
-
+					<div class="row">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/AuV4E43g4vQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
-
-
 				</div>
 			</div>
-
 
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
 					<!-- <img src="images/profile/handsome-asian-man-listening-music-through-headphones.jpg"
                                 class="about-image img-fluid" alt=""> -->
 
-					<div class="team-info">
-						<h4 class="mb-2">2번</h4>
-						<br> <img src="${contextPath}/resources/img/why.png"
-							style="width: 100%; height: auto;"
-							class="verified-image img-fluid" alt="">
-
-						<!-- <span class="badge">Creative</span>
-
-                                <span class="badge">Design</span> -->
+					<div class="row">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/BnwcFZxd-OQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
 
 				</div>
 			</div>
 
 		</div>
-		<!-- 감정별 검사 내용 끝 -->
-
-
-
 
 		<jsp:include page="../common/footer.jsp"></jsp:include>
 	</div>
