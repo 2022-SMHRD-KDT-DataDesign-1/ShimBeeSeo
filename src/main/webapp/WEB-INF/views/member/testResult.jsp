@@ -114,7 +114,7 @@
 
         	<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
             	<div class="row">
-                	<div class="team-info">
+                	<div class="row">
                     	<<iframe width="560" height="315" src="https://www.youtube.com/embed/BnwcFZxd-OQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 	</div>
                	</div>

@@ -46,26 +46,20 @@
     font-weight: normal;
     font-style: normal;
 }
-
-    table, th, td {
-    border: 5px; 
-    text-align: center;
+@font-face {
+    font-family: 'KOTRA_BOLD-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
-table {
-    width: 800px;
-    height: 10px;
-    transform: translate(0px, 0px);
-    transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
-    transition-duration: 400ms;
-  }
-  th, td{
-  	width: 200px;
-  }
 
-.cc{
-  overflow: hidden;
-  position: relative;
+@font-face {
+    font-family: 'ImcreSoojin';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
+
 .hh{
 	margin-bottom: 50px;
 }
@@ -124,9 +118,7 @@ strong{
 	color: gray;
 }
 
-a{
-	color: gray;
-}
+
 .bi-arrow-right-circle-fill{
 	color: gray;
 	font-size: 30px;
@@ -164,30 +156,30 @@ a{
 	<section class="about-section section-padding" id="section_2">
     	<div class="gg">
     		<div class="hh" style="position: relative;">
-    			<div style="margin-top:-30px; padding-top: 66px; height: 260px; position: absolute; background: #F5B4A6; width: 100%;">
+    			<div style="margin-top:-14vw; padding-top: 66px; height: 72vw; position: absolute; background: #F5B4A6; width: 100%;">
     			<strong style="margin-left:20px; font-size:20px; color:white;"><strong style="color:white;">${mvo.user_name}</strong>님, 안녕하세요!</strong></div>
     		</div>
     		
     		<div class="col-lg-8 col-12" style="position: absolute; z-index: 3;">
-    			<div style="display:inline-block; height: auto; border-radius: 50%; background: white; margin-top: 104px; margin-left: 142px;">
+    			<div style="display:inline-block; height: auto; border-radius: 50%; background: white; margin-top: 25vw; margin-left: 38vw;">
     				<i class="bi bi-person-fill"></i>
     			</div>
     		</div>
     		<div style="position:absolute; display: flex; margin-left:36px; width: 80%; margin-top: 150px; background: white;
     			border-radius: 30px 30px 30px 30px / 30px 30px 30px 30px;">
     			<div style="width: 100%; display: flex">
-	    			<div class="divclass" style="text-align: center; width: 33%; padding : 25px 0; margin-top:50px;">
+	    			<div class="divclass" style="text-align: center; width: 33%; padding : 4vw 0; margin-top:11vw;">
 	
-	    			<i class="bi bi-heart"><br><a style="font-size: 15px;font-family: 'SBAggroB';  display:block; color:">찜 목록</a></i>
+	    			<i class="bi bi-heart"><br></i><a style="margin-top:10px; font-size: 15px;font-family: 'SBAggroB';  display:block; color:black">찜 목록</a>
 	
 	    			</div>
 	    			
-	    			<div class="divclass" style="text-align: center; width: 33%; padding : 25px 0; margin-top:50px;">
-	    			<i class="bi bi-file-earmark-check"><br><a style="font-size: 15px; font-family: 'SBAggroB'; display:block; color:black;" href="UserResult.do">검사내역</a></i>
+	    			<div class="divclass" style="text-align: center; width: 33%; padding : 4vw 0; margin-top:11vw;">
+	    			<i class="bi bi-file-earmark-check"><br></i><a style="margin-top:10px; font-size: 15px; font-family: 'SBAggroB'; display:block; color:black;" href="UserResult.do">검사내역</a>
 	    			</div>
-	    			<div class="divclass divclass_l" style="text-align: center; width: 33%; padding : 25px 0; margin-top:50px; ">
+	    			<div class="divclass divclass_l" style="text-align: center; width: 33%; padding : 4vw 0; margin-top:11vw; ">
 	
-	    			<i class="bi bi-chat-dots"><br><a style="font-size: 15px; font-family: 'SBAggroB'; display:block;">내 리뷰</a></i>
+	    			<i class="bi bi-chat-dots"><br></i><a style="margin-top:10px; font-size: 15px; font-family: 'SBAggroB'; display:block; color:black">내 리뷰</a>
 	    			</div>
     			</div>
     		</div>
