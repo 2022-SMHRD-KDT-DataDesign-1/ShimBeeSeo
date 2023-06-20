@@ -47,7 +47,6 @@ public class KakaoServiceController {
 			session.setAttribute("mvo", mvo);
 			session.setAttribute("accessToken", accessToken);
 
-			
 			return "redirect:/";
 		} else {
 			// 신규회원인 경우

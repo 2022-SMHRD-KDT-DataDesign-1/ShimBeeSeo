@@ -53,7 +53,7 @@
             <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                     <h1 class="mb-3">로그인</h1>
-                    <p>심비서는 개인정보를 무단으로 사용하지 않습니다.</p>
+                    <p>로그인을 진행해 주세요.</p>
                 </div>
 
                 <div class="bg-light rounded">
@@ -83,9 +83,8 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                       		<div style="background-size:cover;"><a class="btn_yel" href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1ff4c9cbe51272559a48887a3811f7a0&redirect_uri=http://localhost:8081/controller/kakaoLogin">
-                    <span>카카오 로그인</span>
-                </a></div>
+                                       	
+                							<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1ff4c9cbe51272559a48887a3811f7a0&redirect_uri=http://localhost:8081/controller/kakaoLogin"><img src="${contextPath}/resources/img/kakao_login.png"></a>
                                        		<!-- submit button으로 바꿈 -->
                                             <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">로그인</button>
                                             <button class="btn btn-primary w-100 py-3" type="button" style="margin: 5px 0;" onClick="location.href='joinPage.do'">회원가입</button>
@@ -113,25 +112,7 @@
     <script src="${contextPath}/resources/lib/owlcarousel/owl.carousel.min.js"></script>
 
 
-<!-- 카카오 로그인 API 시작-->
 
-<script type='text/javascript'>
-        //<![CDATA[
-        // 사용할 앱의 JavaScript 키를 설정해 주세요.
-        Kakao.init('d394e2fa88e8e559fa9dda45fb5d339c');
-        // 카카오 로그인 버튼을 생성합니다.
-        Kakao.Auth.createLoginButton({
-            container: '#kakao-login-btn',
-            success: function (authObj) {
-                console.log(JSON.stringify(authObj));
-            },
-            fail: function (err) {
-                alert(JSON.stringify(err));
-            }
-        });
-      //]]>
-    </script>
-<!-- 카카오 로그인 API 끝 -->
 
 
     <!-- Template Javascript -->

@@ -24,13 +24,15 @@ public interface UserMapper {
 
 	public void kakaoJoinDetail(User m);
 
-	public List<User> allUserList();
-
 	public List<CountJoin> joinPerMonth();
 
 	public List<String> kidsAge();
 
 	public List<Region> region();
-
 	
+	public List<User> user();
+
+	public List<User> allUserList();
+	
+
 }
