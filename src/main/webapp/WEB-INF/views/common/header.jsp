@@ -42,8 +42,8 @@
     
 </head>
 <body>
-  <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+  <!-- Spinner Start --><!-- bg-white -->
+        <div id="spinner" class="show  position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
@@ -52,7 +52,7 @@
 
 
         <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+        <nav class="navbar navbar-expand-lg  navbar-light sticky-top px-4 px-lg-5 py-lg-0">
             <a href="${contextPath}/" class="navbar-brand">
                 <img src="${contextPath}/resources/images/logo_1.png" style="width:27vw; margin-top:3px;">
             </a>

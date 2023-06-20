@@ -92,4 +92,9 @@ public class PageMovementController {
 	public String adminMemberData() {
 		return "main/adminMemberData";
 	}
+	
+	@GetMapping("t.do")
+	public String t() {
+		return "member/template";
+	}
 }

@@ -69,7 +69,17 @@
                                             <th>아이디</th>
                                             <th>자녀의 나이</th>
                                             <th>검사유형</th>
-                                            <th>검사결과</th>
+                                            <th>검사결과 &nbsp&nbsp
+                                            	<span class="badge bg-red-soft text-red">공격성</span>&nbsp&nbsp
+                                                <span class="badge bg-blue-soft text-blue">사회불안</span>&nbsp&nbsp
+                                                <span class="badge bg-purple-soft text-purple">우울</span>&nbsp&nbsp
+                                                <span class="badge bg-green-soft text-green">대인회피</span>&nbsp&nbsp
+                                                <span class="badge bg-yellow-soft text-yellow">자존감</span>&nbsp&nbsp
+                                                <span class="badge bg-cyan-soft text-cyan">정서불안</span>&nbsp&nbsp
+                                                <span class="badge bg-pink-soft text-pink">애정결핍</span>&nbsp&nbsp
+                                                <span class="badge bg-peru-soft text-peru">열등감</span>&nbsp&nbsp
+                                                <span class="badge bg-salmon-soft text-salmon">퇴행</span>
+                                            </th>
                                             <th>검사일</th>
                                             <th></th>
                                         </tr>
@@ -95,16 +105,15 @@
                                             <td>8세</td>
                                             <td>집</td>
                                             <td>
-                                                <span class="badge bg-red-soft text-red">5</span>
-                                                <span class="badge bg-blue-soft text-blue">5</span>
-                                                <span class="badge bg-purple-soft text-purple">6</span>
-                                                <span class="badge bg-green-soft text-green">4</span>
-                                                <span class="badge bg-yellow-soft text-yellow">12</span>
-                                                <span class="badge bg-cyan-soft text-cyan">9</span>
-                                                <span class="badge bg-pink-soft text-pink">3</span>
-                                                <span class="badge bg-peru-soft text-peru">6</span>
-                                                <span class="badge bg-salmon-soft text-salmon">2</span>
-
+                                                <span class="badge bg-red-soft text-red">30%</span>
+                                                <span class="badge bg-blue-soft text-blue">20%</span>
+                                                <span class="badge bg-purple-soft text-purple">40%</span>
+                                                <span class="badge bg-green-soft text-green">30%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">50%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">20%</span>
+                                                <span class="badge bg-pink-soft text-pink">40%</span>
+                                                <span class="badge bg-peru-soft text-peru">15%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
                                             </td>
                                             <td>2023-06-19</td>
                                             <td>
@@ -121,16 +130,15 @@
                                             <td>8세</td>
                                             <td>집</td>
                                             <td>
-                                                <span class="badge bg-red-soft text-red">4</span>
-                                                <span class="badge bg-blue-soft text-blue">5</span>
-                                                <span class="badge bg-purple-soft text-purple">5</span>
-                                                <span class="badge bg-green-soft text-green">4</span>
-                                                <span class="badge bg-yellow-soft text-yellow">11</span>
-                                                <span class="badge bg-cyan-soft text-cyan">9</span>
-                                                <span class="badge bg-pink-soft text-pink">3</span>
-                                                <span class="badge bg-peru-soft text-peru">5</span>
-                                                <span class="badge bg-salmon-soft text-salmon">2</span>
-
+                                                <span class="badge bg-red-soft text-red">30%</span>
+                                                <span class="badge bg-blue-soft text-blue">25%</span>
+                                                <span class="badge bg-purple-soft text-purple">40%</span>
+                                                <span class="badge bg-green-soft text-green">35%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">15%</span>
+                                                <span class="badge bg-pink-soft text-pink">40%</span>
+                                                <span class="badge bg-peru-soft text-peru">35%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
                                             </td>
                                             <td>2023-06-19</td>
                                             <td>
@@ -144,21 +152,20 @@
                                                     ready1
                                                 </div>
                                             </td>
-                                            <td>홍길동</td>
+                                            <td>9세</td>
                                             <td>집</td>
                                             <td>
-                                                <span class="badge bg-red-soft text-red">50%</span>
-                                                <span class="badge bg-blue-soft text-blue">40%</span>
-                                                <span class="badge bg-purple-soft text-purple">50%</span>
-                                                <span class="badge bg-green-soft text-green">30%</span>
-                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
-                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
-                                                <span class="badge bg-pink-soft text-pink">50%</span>
-                                                <span class="badge bg-peru-soft text-peru">30%</span>
+                                                <span class="badge bg-red-soft text-red">60%</span>
+                                                <span class="badge bg-blue-soft text-blue">30%</span>
+                                                <span class="badge bg-purple-soft text-purple">70%</span>
+                                                <span class="badge bg-green-soft text-green">40%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">80%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">30%</span>
+                                                <span class="badge bg-pink-soft text-pink">55%</span>
+                                                <span class="badge bg-peru-soft text-peru">45%</span>
                                                 <span class="badge bg-salmon-soft text-salmon">20%</span>
-
                                             </td>
-                                            <td>2023-06-12</td>
+                                            <td>2023-06-18</td>
                                             <td>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
@@ -167,24 +174,23 @@
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    진짱
+                                                    cur2
                                                 </div>
                                             </td>
-                                            <td>홍길동</td>
+                                            <td>10세</td>
                                             <td>집</td>
                                             <td>
-                                                <span class="badge bg-red-soft text-red">50%</span>
-                                                <span class="badge bg-blue-soft text-blue">40%</span>
-                                                <span class="badge bg-purple-soft text-purple">50%</span>
-                                                <span class="badge bg-green-soft text-green">30%</span>
-                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
-                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
-                                                <span class="badge bg-pink-soft text-pink">50%</span>
-                                                <span class="badge bg-peru-soft text-peru">30%</span>
-                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
-
+                                                <span class="badge bg-red-soft text-red">55%</span>
+                                                <span class="badge bg-blue-soft text-blue">75%</span>
+                                                <span class="badge bg-purple-soft text-purple">60%</span>
+                                                <span class="badge bg-green-soft text-green">40%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">55%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">65%</span>
+                                                <span class="badge bg-pink-soft text-pink">70%</span>
+                                                <span class="badge bg-peru-soft text-peru">20%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">15%</span>
                                             </td>
-                                            <td>2023-06-12</td>
+                                            <td>2023-06-18</td>
                                             <td>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
@@ -193,24 +199,23 @@
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    진짱
+                                                    wogk12
                                                 </div>
                                             </td>
-                                            <td>홍길동</td>
+                                            <td>8세</td>
                                             <td>집</td>
                                             <td>
-                                                <span class="badge bg-red-soft text-red">50%</span>
-                                                <span class="badge bg-blue-soft text-blue">40%</span>
-                                                <span class="badge bg-purple-soft text-purple">50%</span>
-                                                <span class="badge bg-green-soft text-green">30%</span>
-                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
-                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
-                                                <span class="badge bg-pink-soft text-pink">50%</span>
-                                                <span class="badge bg-peru-soft text-peru">30%</span>
+                                                <span class="badge bg-red-soft text-red">10%</span>
+                                                <span class="badge bg-blue-soft text-blue">30%</span>
+                                                <span class="badge bg-purple-soft text-purple">40%</span>
+                                                <span class="badge bg-green-soft text-green">20%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">50%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">60%</span>
+                                                <span class="badge bg-pink-soft text-pink">30%</span>
+                                                <span class="badge bg-peru-soft text-peru">50%</span>
                                                 <span class="badge bg-salmon-soft text-salmon">20%</span>
-
                                             </td>
-                                            <td>2023-06-12</td>
+                                            <td>2023-06-18</td>
                                             <td>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
@@ -219,24 +224,23 @@
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    진짱
+                                                    qcyy
                                                 </div>
                                             </td>
-                                            <td>홍길동</td>
+                                            <td>8세</td>
                                             <td>집</td>
                                             <td>
-                                                <span class="badge bg-red-soft text-red">50%</span>
-                                                <span class="badge bg-blue-soft text-blue">40%</span>
-                                                <span class="badge bg-purple-soft text-purple">50%</span>
-                                                <span class="badge bg-green-soft text-green">30%</span>
-                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
+                                                <span class="badge bg-red-soft text-red">10%</span>
+                                                <span class="badge bg-blue-soft text-blue">30%</span>
+                                                <span class="badge bg-purple-soft text-purple">20%</span>
+                                                <span class="badge bg-green-soft text-green">20%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">30%</span>
                                                 <span class="badge bg-cyan-soft text-cyan">40%</span>
-                                                <span class="badge bg-pink-soft text-pink">50%</span>
-                                                <span class="badge bg-peru-soft text-peru">30%</span>
-                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
-
+                                                <span class="badge bg-pink-soft text-pink">10%</span>
+                                                <span class="badge bg-peru-soft text-peru">20%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">15%</span>
                                             </td>
-                                            <td>2023-06-12</td>
+                                            <td>2023-06-18</td>
                                             <td>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
@@ -245,30 +249,253 @@
                                         <tr>
                                             <td>
                                                 <div class="d-flex align-items-center">
-                                                    진영
+                                                    koko1214
                                                 </div>
                                             </td>
-                                            <td>홍길순</td>
+                                            <td>8세</td>
                                             <td>집</td>
                                             <td>
-                                                <span class="badge bg-red-soft text-red">50%</span>
-                                                <span class="badge bg-blue-soft text-blue">40%</span>
-                                                <span class="badge bg-purple-soft text-purple">50%</span>
-                                                <span class="badge bg-green-soft text-green">30%</span>
-                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
-                                                <span class="badge bg-cyan-soft text-cyan">40%</span>
-                                                <span class="badge bg-pink-soft text-pink">50%</span>
-                                                <span class="badge bg-peru-soft text-peru">30%</span>
-                                                <span class="badge bg-salmon-soft text-salmon">20%</span>
-
+                                                <span class="badge bg-red-soft text-red">10%</span>
+                                                <span class="badge bg-blue-soft text-blue">20%</span>
+                                                <span class="badge bg-purple-soft text-purple">30%</span>
+                                                <span class="badge bg-green-soft text-green">40%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">10%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">30%</span>
+                                                <span class="badge bg-pink-soft text-pink">20%</span>
+                                                <span class="badge bg-peru-soft text-peru">10%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">15%</span>
                                             </td>
-                                            <td>2023-06-12</td>
+                                            <td>2023-06-17</td>
                                             <td>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
                                                 <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
                                             </td>
                                         </tr>
-                                        <tr>
+                                         <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                   power3
+                                                </div>
+                                            </td>
+                                            <td>10세</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">35%</span>
+                                                <span class="badge bg-blue-soft text-blue">25%</span>
+                                                <span class="badge bg-purple-soft text-purple">10%</span>
+                                                <span class="badge bg-green-soft text-green">20%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">50%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">10%</span>
+                                                <span class="badge bg-pink-soft text-pink">30%</span>
+                                                <span class="badge bg-peru-soft text-peru">40%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">35%</span>
+                                            </td>
+                                            <td>2023-06-17</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                   qcia12
+                                                </div>
+                                            </td>
+                                            <td>10세</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">15%</span>
+                                                <span class="badge bg-blue-soft text-blue">30%</span>
+                                                <span class="badge bg-purple-soft text-purple">35%</span>
+                                                <span class="badge bg-green-soft text-green">20%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">30%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">10%</span>
+                                                <span class="badge bg-pink-soft text-pink">40%</span>
+                                                <span class="badge bg-peru-soft text-peru">50%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">35%</span>
+                                            </td>
+                                            <td>2023-06-16</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    qwe123
+                                                </div>
+                                            </td>
+                                            <td>8세</td>
+                                            <td>나무</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">15%</span>
+                                                <span class="badge bg-blue-soft text-blue">25%</span>
+                                                <span class="badge bg-purple-soft text-purple">40%</span>
+                                                <span class="badge bg-green-soft text-green">20%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">30%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">20%</span>
+                                                <span class="badge bg-pink-soft text-pink">10%</span>
+                                                <span class="badge bg-peru-soft text-peru">15%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">35%</span>
+                                            </td>
+                                            <td>2023-06-16</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    ekdlekdl2
+                                                </div>
+                                            </td>
+                                            <td>11세</td>
+                                            <td>나무</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">15%</span>
+                                                <span class="badge bg-blue-soft text-blue">25%</span>
+                                                <span class="badge bg-purple-soft text-purple">10%</span>
+                                                <span class="badge bg-green-soft text-green">20%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">10%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">20%</span>
+                                                <span class="badge bg-pink-soft text-pink">10%</span>
+                                                <span class="badge bg-peru-soft text-peru">20%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">15%</span>
+                                            </td>
+                                            <td>2023-06-16</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    ekdls12
+                                                </div>
+                                            </td>
+                                            <td>11세</td>
+                                            <td>나무</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">20%</span>
+                                                <span class="badge bg-blue-soft text-blue">30%</span>
+                                                <span class="badge bg-purple-soft text-purple">40%</span>
+                                                <span class="badge bg-green-soft text-green">10%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">15%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">20%</span>
+                                                <span class="badge bg-pink-soft text-pink">30%</span>
+                                                <span class="badge bg-peru-soft text-peru">5%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">15%</span>
+                                            </td>
+                                            <td>2023-06-15</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    cha12
+                                                </div>
+                                            </td>
+                                            <td>12세</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">10%</span>
+                                                <span class="badge bg-blue-soft text-blue">25%</span>
+                                                <span class="badge bg-purple-soft text-purple">20%</span>
+                                                <span class="badge bg-green-soft text-green">10%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">20%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">20%</span>
+                                                <span class="badge bg-pink-soft text-pink">20%</span>
+                                                <span class="badge bg-peru-soft text-peru">10%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">15%</span>
+                                            </td>
+                                            <td>2023-06-15</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    gamst
+                                                </div>
+                                            </td>
+                                            <td>3세</td>
+                                            <td>집</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">10%</span>
+                                                <span class="badge bg-blue-soft text-blue">10%</span>
+                                                <span class="badge bg-purple-soft text-purple">15%</span>
+                                                <span class="badge bg-green-soft text-green">25%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">30%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">10%</span>
+                                                <span class="badge bg-pink-soft text-pink">20%</span>
+                                                <span class="badge bg-peru-soft text-peru">10%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">15%</span>
+                                            </td>
+                                            <td>2023-06-15</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    toy10
+                                                </div>
+                                            </td>
+                                            <td>11세</td>
+                                            <td>나무</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">10%</span>
+                                                <span class="badge bg-blue-soft text-blue">20%</span>
+                                                <span class="badge bg-purple-soft text-purple">40%</span>
+                                                <span class="badge bg-green-soft text-green">20%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">10%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">30%</span>
+                                                <span class="badge bg-pink-soft text-pink">20%</span>
+                                                <span class="badge bg-peru-soft text-peru">10%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">15%</span>
+                                            </td>
+                                            <td>2023-06-14</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
+                                         <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    tack
+                                                </div>
+                                            </td>
+                                            <td>12세</td>
+                                            <td>나무</td>
+                                            <td>
+                                                <span class="badge bg-red-soft text-red">10%</span>
+                                                <span class="badge bg-blue-soft text-blue">30%</span>
+                                                <span class="badge bg-purple-soft text-purple">20%</span>
+                                                <span class="badge bg-green-soft text-green">30%</span>
+                                                <span class="badge bg-yellow-soft text-yellow">40%</span>
+                                                <span class="badge bg-cyan-soft text-cyan">10%</span>
+                                                <span class="badge bg-pink-soft text-pink">20%</span>
+                                                <span class="badge bg-peru-soft text-peru">10%</span>
+                                                <span class="badge bg-salmon-soft text-salmon">15%</span>
+                                            </td>
+                                            <td>2023-06-14</td>
+                                            <td>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="user-management-edit-user.html"><i data-feather="edit"></i></a>
+                                                <a class="btn btn-datatable btn-icon btn-transparent-dark" href="#!"><i data-feather="trash-2"></i></a>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                                 

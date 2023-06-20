@@ -40,5 +40,13 @@ public class User {
 
     // 개인정보 제공 동의 
     private String user_isagreed;
+
+	public User(String user_id, String user_pw, String user_name) {
+		this.user_id = user_id;
+		this.user_pw = user_pw;
+		this.user_name = user_name;
+	}
 	
+    
+    
 }

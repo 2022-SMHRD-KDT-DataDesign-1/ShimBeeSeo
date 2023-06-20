@@ -76,7 +76,7 @@
                                                 <input type="hidden" class="form-control border-0" name="user_pw" id="pw1" value="${nmvo.user_pw}">
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" name="user_name" id="user_Name">
+                                                <input type="text" class="form-control border-0" name="user_name" id="user_name">
                                                 <label for="user_Name">가입자 이름</label>
                                             </div>
                                         </div>
@@ -114,9 +114,12 @@
 											<div class="dropdown">
 												<select class="form-select"  aria-label="Default select example" name="user_address" id="user_Address" style="color:black;">
   													<option selected>지역을 선택하세요</option>
-  													<option value="광주">광주</option>
-  													<option value="서울">서울</option>
-  													<option value="부산">부산</option>
+  													<option value="수도권">수도권</option>
+  													<option value="강원권">강원권</option>
+  													<option value="충청권">충청권</option>
+  													<option value="전라권">전라권</option>
+  													<option value="경상권">경상권</option>
+  													<option value="제주권">제주권</option>
 												</select>
 											</div>
 										</div>
@@ -127,7 +130,7 @@
 											</div>
 										</div>
                                         <div class="col-12"><!-- <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">회원가입</button> -->
-                                            <input class="btn btn-primary py-3 px-5" type="submit" value="회원가입" href="join.do" style="width:100%; height: auto;"></a>
+                                            <input id="submitSend" class="btn btn-primary py-3 px-5" type="submit" value="회원가입" href="join.do" style="width:100%; height: auto;"></a>
                                             <button class="btn btn-primary w-100 py-3 px-5" type="button" onclick="location.href='loginPage.do'" style="margin-top:15px;">취소</button>
                                         	<!-- <i class="fa fa-arrow-right ms-2"></i> -->
                                         </div>
@@ -172,5 +175,46 @@
 
     <!-- Template Javascript -->
     <script src="${contextPath}/resources/js/main.js"></script>
+    
+    <script type="text/javascript">
+    
+    $(document).ready(function() {
+		$(document).on('change', 'input', function(){
+			inputCheck();
+		})
+	});
+	
+	function inputCheck(){
+		var user_name = $('input[name=user_name]').val == '' ? false : true;
+		var user_bdate = $('input[name=user_bdate]').val;
+		var user_childname = $('input[name=user_childname]').val == '' ? false : true;
+		var user_childbdate = $('input[name=user_childbdate]').val;
+		var user_relation = $('input[name=user_relation]').is(":checked");
+		var user_address = $('input[name=user_address]').val == '' ? false : true;
+		var user_isagreed = $('input[name=user_isagreed]').is(":checked");
+
+
+		if(user_name && user_bdate && user_childname && user_childbdate && user_relation && user_address && user_isagreed){
+			console.log("전부 입력됨");
+			/* var checkPicture = $('#submitPicture').text();
+			if(checkPicture == '분석완료! 설문을 진행해주세요'){
+				
+			$('#submitSend').attr("disabled", false);
+			$('#submitSend').attr("value",'제출하기');
+			} */
+			$('#submitSend').attr("disabled", false);
+			$('#submitSend').attr("value", "제출하기");
+			
+		} else {
+			console.log("답변 누락됨");
+			$('#submitSend').attr("disabled", true);
+			$('#submitSend').attr("value",'답변을 완료해주세요.');
+			return false;
+		}
+			
+		
+	};
+	
+	</script>
 </body>
 </html>
