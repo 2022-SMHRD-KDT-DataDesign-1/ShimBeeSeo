@@ -130,7 +130,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Example DataTable for Dashboard Demo-->
                             <div class="row">
                                 <div class="col-lg-6">
                                     <!-- Bar chart example-->
@@ -147,29 +146,6 @@
                                         <div id="myPieChart" class="card-header" style="font-size:20px; color:black;">지역 분포</div>
                                         <div class="card-body">
                                             <div class="chart-pie mb-4" style="margin-top : 5%"><canvas id="region" width="100%" height="50"></canvas></div>
-                                            <!-- <div class="list-group list-group-flush">
-                                                <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
-                                                    <div class="me-3">
-                                                        <i class="fas fa-circle fa-sm me-1 text-blue"></i>
-                                                        광주
-                                                    </div>
-                                                    <div class="fw-500 text-dark">55%</div>
-                                                </div>
-                                                <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
-                                                    <div class="me-3">
-                                                        <i class="fas fa-circle fa-sm me-1 text-purple"></i>
-                                                        서울
-                                                    </div>
-                                                    <div class="fw-500 text-dark">15%</div>
-                                                </div>
-                                                <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
-                                                    <div class="me-3">
-                                                        <i class="fas fa-circle fa-sm me-1 text-green"></i>
-                                                        부산
-                                                    </div>
-                                                    <div class="fw-500 text-dark">30%</div>
-                                                </div>
-                                            </div> -->
                                         </div>
                                     </div>
                                     <div style="height: 50px"></div>

@@ -50,6 +50,18 @@
 <!-- Template Stylesheet -->
 <link href="${contextPath}/resources/css/style.css" rel="stylesheet">
 
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+
+<!-- <style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+</style> -->
+
 
 </head>
 <body>
@@ -59,11 +71,11 @@
 
 		<div class=".d-md-block gap-2" style="margin-top: 6vw;">
 			<div style="float: left; width: 50%;">
-				<button id="date" style="width: 100%; height: 10vw; border-radius: 5vw; border: none; background: #fff5f3; font-weight : 550;"
+				<button id="date" style="width: 94%; height: 10vw; border-radius: 2vw 0 0 2vw; border: none; background: #fff5f3; font-weight : 550; margin-left:2vw;"
 					onclick="viewDate()">날짜별 검사 결과</button>
 			</div>
 			<div style="float: left; width: 50%;">
-				<button id="emtion" style="width: 100%; height: 10vw; border-radius: 5vw; border: none; background: #fff5f3; font-weight : 550;"
+				<button id="emtion" style="width: 94%; height: 10vw; border-radius: 0 2vw 2vw 0; border: none; background: #fff5f3; font-weight : 550; margin-right:2vw;"
 					onclick="viewEmotion()">감정별 검사 결과</button>
 			</div>
 		</div>
@@ -74,17 +86,17 @@
 
 				<div class="col-lg-8 col-12">
 					<div class="pb-5 mb-5">
-						<div class="section-title-wrap mb-4" style="margin-top: 6vw;">
+						<!-- <div class="section-title-wrap mb-4" style="margin-top: 6vw;">
 							<h1 class="section-title text-center">날짜별 검사 결과</h1>
-						</div>
+						</div> -->
 						<div class="section-title-wrap mb-4">
-							<h4 class="section-title text-center">감정 그래프</h4>
+							<h2 class="section-title text-center" style="font-size:28px; padding:4vw; padding-top:8vw;">감정 그래프</h2>
 						</div>
 
 						<input type="hidden" value="${mvo.user_id}" id="idCheck">
 						<!-- 날짜선택 -->
-						<label for="dateSelect">검사 날짜 선택:</label> <select name="date"
-							id="dateSelect" onchange="changeDate()">
+						<label for="dateSelect" style="padding-bottom:2vw;">검사 날짜 선택:</label> <select name="date"
+							id="dateSelect" onchange="changeDate()" style="margin-bottom:2vw;">
 							<option value="">--검사 날짜를 선택해주세요--</option>
 							<option id="result_date"></option>
 
@@ -100,11 +112,6 @@
 						<!--차트가 그려질 부분-->
 							<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
 	</div>
-			
-
-
-
-
 							</div>
 
 						</div>
@@ -113,30 +120,29 @@
 
 				</div>
 				<div class="col-lg-8 col-12 mx-auto">
-					<div class="pb-5 mb-5">
-					<h4 class="section-title text-center">검사 결과</h4>
-						<div class="testimonial-item bg-light rounded p-5">
-							<p id="result_c_text" style="font-size:25px;">
+					<div>
+					<h1 class="section-title text-center" style="margin-bottom:40px;">검사 결과</h1>
+						<div class="testimonial-item bg-light rounded p-4">
+							<h2 class="section-title text-center" style="font-size:28px; padding-top:4vw; padding-bottom:6vw;">감정분석 결과</h2>
+							<p id="result_c_text" style="font-size:3vw;">
 							</p>
 						</div>
 						<!-- test용 시작-->
-						<div class="testimonial-item bg-light rounded p-5">
-							<p id="result_o_text" style="font-size:25px;"></p>
+						<div class="testimonial-item bg-light rounded p-4">
+							<h2 class="section-title text-center" style="font-size:28px; margin-bottom:12vw;">그림 결과</h2>
+							<p id="result_o_text" style="font-size:24px;"></p>
 						</div>
 					</div>
 				</div>
 
 				<div class="col-lg-8 col-12 mx-auto">
-					<div class="pb-5 mb-5">
+					<div>
 						<div class="section-title-wrap mb-4">
-							<h4 class="section-title text-center">지도 방향</h4>
+							<h1 class="section-title text-center" style="margin-bottom:8vw; margin-top:12vw;">지도 방향</h1>
 						</div>
 
-						<div class="testimonial-item bg-light rounded p-5">
-
-
-							<p id="result_direction" style="font-size: 25px">
-
+						<div class="testimonial-item bg-light rounded p-4">
+							<p id="result_direction" style="font-size: 24px;">
 							</p>
 						</div>
 
@@ -159,29 +165,18 @@
 
 					<h4 class="mb-2">1번</h4>
 					<br>
-					<div class="team-info">
-
-						<img src="${contextPath}/resources/img/oh.png"
-							style="width: 100%; height: auto;"
-							class="verified-image img-fluid" alt="">
-
-
+					<div class="row">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/AuV4E43g4vQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
-
 
 				</div>
 			</div>
 
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
-
-					<div class="team-info">
-						<h4 class="mb-2">2번</h4>
-						<br> <img src="${contextPath}/resources/img/why.png"
-							style="width: 100%; height: auto;"
-							class="verified-image img-fluid" alt="">
+					<div class="row" style="position: relative";>
+                    	<iframe width="560" height="315" src="https://www.youtube.com/embed/BnwcFZxd-OQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
-
 				</div>
 			</div>
 
@@ -196,18 +191,18 @@
 
 				<div class="col-lg-8 col-12">
 					<div class="pb-5 mb-5">
-						<div class="section-title-wrap mb-4" style="margin-top: 6vw;">
+						<!-- <div class="section-title-wrap mb-4" style="margin-top: 6vw;">
 							<h1 class="section-title text-center">감정별 검사 결과</h1>
-						</div>
+						</div> -->
 						<div class="section-title-wrap mb-4">
-							<h4 class="section-title text-center">감정 그래프</h4>
+							<h4 class="section-title text-center" style="font-size:28px; padding:4vw; padding-top:8vw;">감정 그래프</h4>
 						</div>
 
 						<input type="hidden" value="${mvo.user_id}" id="e_idCheck">
 						<!-- 날짜선택 -->
-						<label for="emotionSelect">감정 선택:</label> 
-						<select name="emotion" id="emotionSelect" onchange="changeEmotion()">
-							<option value="">--감정을 선택해주세요--</option>
+						<label for="emotionSelect" style="padding-bottom:2vw;">감정 선택:</label> 
+						<select name="emotion" id="emotionSelect" onchange="changeEmotion()" style="margin-bottom:2vw;">
+							<!-- <option value="">--감정을 선택해주세요--</option> -->
 							<option value="result_aggressive" id="e_result_aggressive">공격성</option>
 							<option value="result_social_anxiety" id="e_result_social_anxiety">사회불안</option>
 							<option value="result_depressed" id="e_result_depressed">우울</option>
@@ -219,10 +214,7 @@
 							<option value="result_inferiority" id="e_result_inferiority">열등감</option>
 							<option value="result_regression" id="e_result_regression">퇴행</option>
 						</select>
-
-
-
-
+						
 						<div class="bg-light rounded">
 							<div style="width: 100%; height: 100%;">
 
@@ -232,68 +224,40 @@
 									<canvas id="e_myChart" width="300px" height="100%"
 										margin-left="15px" padding-left="25px"></canvas>
 								</div>
-
-
-
-
 							</div>
 						</div>
 
 					</div>
 
 				</div>
-
-
 			</div>
 			<div class="col-lg-12 col-12">
 				<div class="section-title-wrap mb-5">
-					<h4 class="section-title">이런 콘텐츠는 어때요?</h4>
+					<h4 class="section-title">콘텐츠 추천</h4>
 				</div>
 			</div>
 
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
-
-					<h4 class="mb-2">1번</h4>
-					<br>
-					<div class="team-info">
-
-						<img src="${contextPath}/resources/img/oh.png"
-							style="width: 100%; height: auto;"
-							class="verified-image img-fluid" alt="">
-
-
+					<div class="row">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/AuV4E43g4vQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
-
-
 				</div>
 			</div>
-
 
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
 					<!-- <img src="images/profile/handsome-asian-man-listening-music-through-headphones.jpg"
                                 class="about-image img-fluid" alt=""> -->
 
-					<div class="team-info">
-						<h4 class="mb-2">2번</h4>
-						<br> <img src="${contextPath}/resources/img/why.png"
-							style="width: 100%; height: auto;"
-							class="verified-image img-fluid" alt="">
-
-						<!-- <span class="badge">Creative</span>
-
-                                <span class="badge">Design</span> -->
+					<div class="row">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/BnwcFZxd-OQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
 
 				</div>
 			</div>
 
 		</div>
-		<!-- 감정별 검사 내용 끝 -->
-
-
-
 
 		<jsp:include page="../common/footer.jsp"></jsp:include>
 	</div>
@@ -321,7 +285,9 @@
     	$(document).ready(function() {
     		user_id = "${mvo.user_id}";
     		console.log(user_id);
-    		loadResult(user_id);	
+    		loadResult(user_id);
+    		getResult();
+    		loadEmotionAggressive();
     		});
         
         /* JSON형태로 사용자 검사 결과 받아오는 함수 */
@@ -337,12 +303,143 @@
     		});
     	}
         
+    	function getResult(){
+    		$.ajax({
+    			url :  "testResultOne.do",
+    			type:"get",
+    			dataType : "json",
+    			success : function(result){
+    				
+    				console.log(result);
+    				var result_aggressive = result.result_aggressive;
+    	    		var result_social_anxiety = result.result_social_anxiety;
+    	    		var result_depressed = result.result_depressed;
+    	    		var result_avpd = result.result_avpd;
+    	    		var result_self_esteem = result.result_self_esteem;
+    	    		var result_emotional_instability = result.result_emotional_instability;
+    	    		var result_deprivation =result.result_deprivation;
+    	    		var result_inferiority =result.result_inferiority;
+    	    		var result_regression = result.result_regression;
+					var result_o_text = result.result_o_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 2vw; padding-right: 2vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br><br>');
+					var result_c_text = result.result_c_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 2vw; padding-right: 2vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "');
+					var result_c_text2 = result.result_c_text2.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 2vw; padding-right: 2vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "');
+					var result_direction = result.result_direction.replaceAll('\n', '</p><p>');
+					
+					if(result.cate_seq === 1) {
+    					result_aggressive = (result.result_aggressive / 9 * 100).toFixed(1);
+        	    		result_social_anxiety = (result.result_social_anxiety / 12 * 100).toFixed(1);
+        	    		result_depressed = (result.result_depressed / 18 * 100).toFixed(1);
+        	    		result_avpd = (result.result_avpd / 8 * 100).toFixed(1);
+        	    		result_self_esteem = (result.result_self_esteem / 29 * 100).toFixed(1);
+        	    		result_emotional_instability = (result.result_emotional_instability / 24 * 100).toFixed(1);
+        	    		result_deprivation = (result.result_deprivation / 13 * 100).toFixed(1);
+        	    		result_inferiority = (result.result_inferiority / 16 * 100).toFixed(1);
+        	    		result_regression = (result.result_regression / 11 * 100).toFixed(1);
+    				}
+					
+					$('#result_o_text').text(result_o_text);
+					/* $('#result_c_text').text(result_c_text); */
+					document.getElementById('result_o_text').innerHTML = result_o_text;
+					document.getElementById('result_c_text').innerHTML = result_c_text + result_c_text2;
+					document.getElementById('result_direction').innerHTML = result_direction;
+					/* $('result_direction').text(result_direction); */
+					
+					document.getElementById('resetChart').innerHTML = ""; 
+					document.getElementById('resetChart').innerHTML = "<canvas id='myChart' width='100%' height='130%' margin-left='15px' padding-left='25px'></canvas>"; 
+					
+    	            var context = document.getElementById('myChart').getContext('2d');
+    	            var myChart = new Chart(context, {
+    	                type: 'bar', // 차트의 형태
+    	                data: { // 차트에 들어갈 데이터
+    	                    labels: [
+    	                        //x 축
+    	                        '공격성','사회불안','우울','대인회피','자존감','정서불안','애정결핍','열등감','퇴행'
+    	                    ],
+    	                    datasets: [
+    	                        { //데이터
+    	                            label: '심리검사 결과(%)', //차트 제목
+    	                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+    	                            data: [
+    	                            	result_aggressive,result_social_anxiety,result_depressed,result_avpd,result_self_esteem,result_emotional_instability,result_deprivation,result_inferiority,result_regression //x축 label에 대응되는 데이터 값
+    	                            ],
+    	                            backgroundColor: [
+    	                                //색상
+    	                                'rgba(255, 99, 132, 0.2)',
+    	                                'rgba(54, 162, 235, 0.2)',
+    	                                'rgba(255, 206, 86, 0.2)',
+    	                                'rgba(75, 192, 192, 0.2)',
+    	                                'rgba(153, 102, 255, 0.2)',
+    	                                'rgba(255, 159, 64, 0.2)',
+    	                                'rgba(255, 99, 132, 0.2)',
+    	                                'rgba(54, 162, 235, 0.2)',
+    	                                'rgba(255, 206, 86, 0.2)'
+    	                            ],
+    	                            borderColor: [
+    	                                //경계선 색상
+    	                                'rgba(255, 99, 132, 1)',
+    	                                'rgba(54, 162, 235, 1)',
+    	                                'rgba(255, 206, 86, 1)',
+    	                                'rgba(75, 192, 192, 1)', 
+    	                                'rgba(153, 102, 255, 1)',
+    	                                'rgba(255, 159, 64, 1)',
+    	                                'rgba(255, 99, 132, 1)',
+    	                                'rgba(54, 162, 235, 1)',
+    	                                'rgba(255, 206, 86, 1)'
+    	                            ],
+    	                            borderWidth: 1 //경계선 굵기
+    	                        }/* ,
+    	                        {
+    	                            label: 'test2',
+    	                            fill: false,
+    	                            data: [
+    	                                8, 34, 12, 24
+    	                            ],
+    	                            backgroundColor: 'rgb(157, 109, 12)',
+    	                            borderColor: 'rgb(157, 109, 12)'
+    	                        } */
+    	                    ]
+    	                },
+    	                options: {
+    	                    scales: {
+    	                        yAxes: [
+    	                            {
+    	                            	ticks: {
+    	                            		/* y축 설정 변경 */
+    	            						min: 0,
+    	            						max: 100,
+    	            						stepSize : 10,
+    	            						fontSize : 14,
+    	            						
+    	            						}
+    	                            }
+    	                        ]
+    	                    }
+    	                }
+    	            });
+    	            	
+    	            }
+    	    		
+    	    		
+    	    		
+    	    		
+    			
+    			,error : function(){
+    				alert("error");
+    			}
+    		});
+    	}
+        
     	/* 셀렉트에 사용자가 실시했던 검사날짜에 따른 option 추가 */
         function makeSelect(data){
-        	var listHtml = "<option>--검사 날짜를 선택해주세요--</option>";
+    		/* $("#date").css("border", "4px solid rgba(255, 99, 132, 0.5)"); */
+    		$("#date").css("background-color", "rgba(255, 99, 132, 0.5)");
+    		$("#emtion").css("background-color", "#fff5f3");
+        	var listHtml = "<option>"+ data[0].result_date.split(" ")[0]+"</option>";
+         	/* var listHtml = "<option>--검사 날짜를 선택해주세요--</option>"; */
 			console.log("makeselect실행완료")
         	$.each(data,function(index, obj){
-        		listHtml+="<option value='"+(obj.result_date)+"'>"+(obj.result_date)+"</option>";
+        		var result_date = obj.result_date.split(" ")[0];
+        		listHtml+="<option value='"+(obj.result_date)+"'>"+(result_date)+"</option>";
         		$("#dateSelect").html(listHtml);
         	});
         	  	
@@ -372,9 +469,9 @@
     	    		var result_deprivation =result[index].result_deprivation;
     	    		var result_inferiority =result[index].result_inferiority;
     	    		var result_regression = result[index].result_regression;
-					var result_o_text = result[index].result_o_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
-					var result_c_text = result[index].result_c_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
-					var result_c_text2 = result[index].result_c_text2.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_o_text = result[index].result_o_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
+					var result_c_text = result[index].result_c_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
+					var result_c_text2 = result[index].result_c_text2.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
 					var result_direction = result[index].result_direction.replaceAll('\n', '</p><p>');
 
 					
@@ -482,6 +579,8 @@
     	
     	/* 날짜별 데이터 보기 */
     	function viewDate(){
+    		$("#date").css("background-color", "rgba(255, 99, 132, 0.5)");
+    		$("#emtion").css("background-color", "#fff5f3");
     		console.log("viewDate잘됨");
     		$('#dateView').css('display','block');
     		$('#emotionView').css('display','none');
@@ -490,6 +589,8 @@
     	/* 감정별 데이터 보기 */
 		function viewEmotion(){
     		console.log("viewEmotion잘됨");
+    		$("#date").css("background-color", "#fff5f3");
+    		$("#emtion").css("background-color", "rgba(255, 99, 132, 0.5)");
     		$('#emotionView').css('display','block');
     		$('#dateView').css('display','none');
 		}
@@ -497,12 +598,123 @@
 /* 위쪽 날짜별 데이터 자바 스크립트 */
 /* 아래쪽 감정별 데이터 자바 스크립트 */    
 
+		function loadEmotionAggressive(){
+    		$.ajax({
+    			url : "resultList.do",
+    			type:"get",
+    			dataType : "json",
+    			success : function(result){
+    				var emotion_Select= 'result_aggressive';
+    				console.log(result);
+    				console.log(emotion_Select);
+    				
+    				console.log(result[1][emotion_Select]);
+    				var date = [];
+    				var emotion = [];
+
+					for(var i = 0; i<result.length;i++){
+						date.push(result[i].result_date);
+						emotion.push(result[i][emotion_Select]);
+					};
+					
+					console.log(date);
+					console.log(emotion);
+
+					document.getElementById('e_resetChart').innerHTML = ""; 
+					document.getElementById('e_resetChart').innerHTML = "<canvas id='e_myChart' width='100%' height='100%' margin-left='15px' padding-left='25px'></canvas>"; 
+					
+    	            var e_context = document.getElementById('e_myChart').getContext('2d');
+    	            var e_myChart = new Chart(e_context, {
+    	                type: 'line', // 차트의 형태
+    	                data: { // 차트에 들어갈 데이터
+    	                    labels: 
+    	                        //x 축
+    	                        date
+    	                    ,
+    	                    datasets: [
+    	                        { //데이터
+    	                            label: emotion_Select, //차트 제목
+    	                            fill: true, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+    	                            data: 
+    	                            	emotion //x축 label에 대응되는 데이터 값
+    	                            ,
+    	                            backgroundColor: [
+    	                                //색상
+    	                                'rgba(255, 99, 132, 0.2)',
+    	                                'rgba(54, 162, 235, 0.2)',
+    	                                'rgba(255, 206, 86, 0.2)',
+    	                                'rgba(75, 192, 192, 0.2)',
+    	                                'rgba(153, 102, 255, 0.2)',
+    	                                'rgba(255, 159, 64, 0.2)',
+    	                                'rgba(255, 99, 132, 0.2)',
+    	                                'rgba(54, 162, 235, 0.2)',
+    	                                'rgba(255, 206, 86, 0.2)'
+    	                            ],
+    	                            borderColor: [
+    	                                //경계선 색상
+    	                                'rgba(255, 99, 132, 1)',
+    	                                'rgba(54, 162, 235, 1)',
+    	                                'rgba(255, 206, 86, 1)',
+    	                                'rgba(75, 192, 192, 1)', 
+    	                                'rgba(153, 102, 255, 1)',
+    	                                'rgba(255, 159, 64, 1)',
+    	                                'rgba(255, 99, 132, 1)',
+    	                                'rgba(54, 162, 235, 1)',
+    	                                'rgba(255, 206, 86, 1)'
+    	                            ],
+    	                            borderWidth: 1 //경계선 굵기
+    	                        }/* ,
+    	                        {
+    	                            label: 'test2',
+    	                            fill: false,
+    	                            data: [
+    	                                8, 34, 12, 24
+    	                            ],
+    	                            backgroundColor: 'rgb(157, 109, 12)',
+    	                            borderColor: 'rgb(157, 109, 12)'
+    	                        } */
+    	                    ]
+    	                },
+    	                options: {
+    	                    scales: {
+    	                        yAxes: [
+    	                            {
+    	                            	ticks: {
+    	                            		/* y축 설정 변경 */
+    	            						min: 0,
+    	            						max: 20,
+    	            						stepSize : 2,
+    	            						fontSize : 14,
+    	            						
+    	            						}
+    	                            }
+    	                        ]
+    	                    }
+    	                }
+    	            });
+    	            	
+    	            
+    	         
+    	            
+    	            }
+    	    		
+    	    		
+    	    		
+    	    		
+    			
+    			,error : function(){
+    				alert("error");
+    			}
+    		});
+    	}
+
 	       
 	       
 	       /* JSON형태로 사용자 검사 결과 받아오는 함수 */
 
     	/* 셀렉트에 사용자가 실시했던 검사날짜에 따른 option 추가 */
 
+    	
         
     	function changeEmotion(){
     		$.ajax({
@@ -624,9 +836,11 @@
     				if( $("#"+names[i]+"C").css("display") == "none" ) {
     					$("#"+names[i]+"C").css("display", "inline-block");
     					$("#"+clicked_id+">strong").text(title.replace("▸", "▾"));
+    					$("#"+names[i]+"C").parent().css("padding-bottom", "4vw");
     				} else {
     					$("#"+names[i]+"C").css("display", "none");
     					$("#"+clicked_id+">strong").text(title.replace("▾", "▸"));
+    					$("#"+names[i]+"C").parent().css("padding-bottom", "0");
     				}
     			}
     		}

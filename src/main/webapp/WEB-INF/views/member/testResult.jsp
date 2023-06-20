@@ -63,10 +63,6 @@
 						<!--차트가 그려질 부분-->
 							<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
 	</div>
-
-
-	
-	
 						</div>
                     </div>
 
@@ -105,25 +101,21 @@
 
             <div class="col-lg-12 col-12">
             	<div class="section-title-wrap mb-5">
-                	<h4 class="section-title">이 콘텐츠는 어떠세요?</h4>
+                	<h4 class="section-title">추천 콘텐츠</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-            	<div class="team-thumb bg-white shadow-lg">
-					
- 					<h4 class="mb-2">1번</h4> <br>
-                	<div class="team-info">
-						<img src="${contextPath}/resources/img/oh.png" style="width: 100%; height: auto;" class="verified-image img-fluid" alt="">
+            	<div class="row">
+                	<div class="row">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/AuV4E43g4vQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       				</div>
       			</div>
            	</div>
 
         	<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-            	<div class="team-thumb bg-white shadow-lg">
-
+            	<div class="row">
                 	<div class="team-info">
-                		<h4 class="mb-2">2번</h4> <br>
-                    	<img src="${contextPath}/resources/img/why.png" style="width: 100%; height: auto;" class="verified-image img-fluid" alt="">
+                    	<<iframe width="560" height="315" src="https://www.youtube.com/embed/BnwcFZxd-OQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 	</div>
                	</div>
            </div>
@@ -214,9 +206,9 @@
     	    		var result_deprivation =result.result_deprivation;
     	    		var result_inferiority =result.result_inferiority;
     	    		var result_regression = result.result_regression;
-					var result_o_text = result.result_o_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
-					var result_c_text = result.result_c_text.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
-					var result_c_text2 = result.result_c_text2.replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none;"');
+					var result_o_text = result.result_o_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
+					var result_c_text = result.result_c_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');;
+					var result_c_text2 = result.result_c_text2.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');;
 					var result_direction = result.result_direction.replaceAll('\n', '</p><p>');
 					
 					if(result.cate_seq === 1) {
