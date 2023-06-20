@@ -47,7 +47,7 @@
 
    <div class="container-xxl bg-white p-0">
 		<jsp:include page="common/header.jsp"></jsp:include>
-		<a href='admin.do'>관리자페이지ㄱㄱ</a>
+		<!-- <a href='admin.do'>관리자페이지ㄱㄱ</a> -->
         <!-- Carousel Start -->
         <div class="container-fluid p-0 mb-5">
             <div class="owl-carousel header-carousel position-relative">
@@ -84,15 +84,15 @@
                   	<div style="width:500px;" class="py-5">
                      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="margin-top:10%;">
                         <h1 class="mb-4">HTP 검사란?</h1>
-
+						<div style="width:300px;">
                         <p class="mb-4">1.검사 대상에게 집, 나무, 인물화 등 3개의 그림을 그리게 하는 검사입니다.</p>
                         <p class="mb-4">2.그려진 그림의 크기, 선의 강약, 그려진 그림의 위치 등등 표현의 양상에 따라 그린 사람의 심리를 파악할 수 있는 검사 방법입니다.</p>
                         <p class="mb-4">3.언어 표현이 어려운 아동에게도 적용이 가능합니다.</p>
                         <p class="mb-4">4.실시가 용이하고 짧은시간안에 파악할 수 있습니다.</p>
-                        
+                        </div>
                         <c:choose>
-							<c:when test="${not empty mvo}"> <a style="margin-left:10px; width:310px; height: 55px;" class="btn btn-primary" href="check.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:when>
-							<c:otherwise> <a style="margin-left:5px; width:300px; height: 55px;" class="btn btn-primary" href="loginPage.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:otherwise>
+							<c:when test="${not empty mvo}"> <a style="width:300px; height: 55px;" class="btn btn-primary" href="check.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:when>
+							<c:otherwise> <a style="width:300px; height: 55px;" class="btn btn-primary" href="loginPage.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:otherwise>
 						</c:choose>
                         
                      </div>

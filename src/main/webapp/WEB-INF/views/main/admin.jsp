@@ -111,7 +111,7 @@
                         <div class="row">
                             <div class="col-xl-6 mb-4">
                                 <div class="card card-header-actions h-100">
-                                    <div class="card-header" style="font-size:20px;">
+                                    <div class="card-header" style="font-size:20px; color:black;">
                                         월별 회원 가입자 수
                                     </div>
                                     <div class="card-body">
@@ -121,7 +121,7 @@
                             </div>
                             <div class="col-xl-6 mb-4">
                                 <div class="card card-header-actions h-100">
-                                    <div id="myBarChart" class="card-header" style="font-size:20px;">
+                                    <div id="myBarChart" class="card-header" style="font-size:20px; color:black;">
                                         유형별 검사 횟수
                                     </div>
                                     <div class="card-body">
@@ -130,12 +130,11 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Example DataTable for Dashboard Demo-->
                             <div class="row">
                                 <div class="col-lg-6">
                                     <!-- Bar chart example-->
                                     <div class="card h-100">
-                                        <div id="myBarChart2" class="card-header" style="font-size:20px;">자녀의 연령</div>
+                                        <div id="myBarChart2" class="card-header" style="font-size:20px; color:black;">자녀의 연령</div>
                                         <div class="card-body d-flex flex-column justify-content-center">
                                             <div class="chart-bar"><canvas id="kidsAge" width="100%" height="30"></canvas></div>
                                         </div>
@@ -144,32 +143,9 @@
                                 <div class="col-lg-6">
                                     <!-- Pie chart example-->
                                     <div class="card h-100">
-                                        <div id="myPieChart" class="card-header" style="font-size:20px;">지역 분포</div>
+                                        <div id="myPieChart" class="card-header" style="font-size:20px; color:black;">지역 분포</div>
                                         <div class="card-body">
                                             <div class="chart-pie mb-4" style="margin-top : 5%"><canvas id="region" width="100%" height="50"></canvas></div>
-                                            <!-- <div class="list-group list-group-flush">
-                                                <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
-                                                    <div class="me-3">
-                                                        <i class="fas fa-circle fa-sm me-1 text-blue"></i>
-                                                        광주
-                                                    </div>
-                                                    <div class="fw-500 text-dark">55%</div>
-                                                </div>
-                                                <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
-                                                    <div class="me-3">
-                                                        <i class="fas fa-circle fa-sm me-1 text-purple"></i>
-                                                        서울
-                                                    </div>
-                                                    <div class="fw-500 text-dark">15%</div>
-                                                </div>
-                                                <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
-                                                    <div class="me-3">
-                                                        <i class="fas fa-circle fa-sm me-1 text-green"></i>
-                                                        부산
-                                                    </div>
-                                                    <div class="fw-500 text-dark">30%</div>
-                                                </div>
-                                            </div> -->
                                         </div>
                                     </div>
                                     <div style="height: 50px"></div>
@@ -186,7 +162,7 @@
     <script src="${contextPath}/resources/js/chart-area-demo.js"></script>
     <script src="${contextPath}/resources/js/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="${contextPath}/resources/js/datatables/datatables-simple-demo.js"></script>
+    <script src="${contextPath}/resources/js/datatables-simple-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
     <script src="${contextPath}/resources/js/litepicker.js"></script>
         

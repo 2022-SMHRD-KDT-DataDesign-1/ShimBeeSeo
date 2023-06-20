@@ -159,13 +159,8 @@
 
 					<h4 class="mb-2">1번</h4>
 					<br>
-					<div class="team-info">
-
-						<img src="${contextPath}/resources/img/oh.png"
-							style="width: 100%; height: auto;"
-							class="verified-image img-fluid" alt="">
-
-
+					<div class="row">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/AuV4E43g4vQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
 
 
@@ -174,14 +169,9 @@
 
 			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
 				<div class="team-thumb bg-white shadow-lg">
-
-					<div class="team-info">
-						<h4 class="mb-2">2번</h4>
-						<br> <img src="${contextPath}/resources/img/why.png"
-							style="width: 100%; height: auto;"
-							class="verified-image img-fluid" alt="">
+					<div class="row" style="position: relative";>
+                    	<iframe width="560" height="315" src="https://www.youtube.com/embed/BnwcFZxd-OQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 					</div>
-
 				</div>
 			</div>
 

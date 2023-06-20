@@ -83,10 +83,6 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                       		<div style="background-size:cover;">
-                                       		<button class="btn_yel" onClick="location.href='https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1ff4c9cbe51272559a48887a3811f7a0&redirect_uri=http://211.227.224.146:8081/controller/kakaoLogin'">
-                   							 <img style="height:55px; border-radius: 10px;" src="${contextPath}/resources/images/kakao_login.png"/>
-                							</button></div>
                                        		<!-- submit button으로 바꿈 -->
                                             <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">로그인</button>
                                             <button class="btn btn-primary w-100 py-3" type="button" style="margin: 5px 0;" onClick="location.href='joinPage.do'">회원가입</button>

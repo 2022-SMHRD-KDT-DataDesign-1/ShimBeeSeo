@@ -63,10 +63,6 @@
 						<!--차트가 그려질 부분-->
 							<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
 	</div>
-
-
-	
-	
 						</div>
                     </div>
 
@@ -81,11 +77,12 @@
                             
 			<!-- test용 시작-->
     					<div class="testimonial-item bg-light rounded p-5">
-                			<p style="font-size:25px" id="result_o_text">
-                			</p>
+
+                			<div style="font-size:25px" id="result_o_text">
+                			</div>
 						</div>
 	    				<div class="testimonial-item bg-light rounded p-5">
-							<p id="result_c_text" style="font-size:25px"> </p>
+							<div id="result_c_text" style="font-size:25px"> </div>
 	                    </div>
                		</div>
            		</div>
@@ -104,25 +101,21 @@
 
             <div class="col-lg-12 col-12">
             	<div class="section-title-wrap mb-5">
-                	<h4 class="section-title">이 콘텐츠는 어떠세요?</h4>
+                	<h4 class="section-title">추천 콘텐츠</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-            	<div class="team-thumb bg-white shadow-lg">
-					
- 					<h4 class="mb-2">1번</h4> <br>
-                	<div class="team-info">
-						<img src="${contextPath}/resources/img/oh.png" style="width: 100%; height: auto;" class="verified-image img-fluid" alt="">
+            	<div class="row">
+                	<div class="row">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/AuV4E43g4vQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       				</div>
       			</div>
            	</div>
 
         	<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-            	<div class="team-thumb bg-white shadow-lg">
-
+            	<div class="row">
                 	<div class="team-info">
-                		<h4 class="mb-2">2번</h4> <br>
-                    	<img src="${contextPath}/resources/img/why.png" style="width: 100%; height: auto;" class="verified-image img-fluid" alt="">
+                    	<<iframe width="560" height="315" src="https://www.youtube.com/embed/BnwcFZxd-OQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 	</div>
                	</div>
            </div>
@@ -153,9 +146,24 @@
         
         <script type="text/javascript">
         
+        
     	$(document).ready(function() {
-    		getResult();	
-    		});
+    		getResult();
+    		
+    		$(document).on('click', ".title", (e) => {
+    			console.log(e.next());
+            	if( $(this).next().css('display') == 'none') {
+            		$(this).siblings().css('display', 'inline-block');
+            	} else {
+            		$(this).siblings().css('display', 'none');
+            	}
+            })
+    	});
+        
+        
+        /* function showContent(){
+        	
+        } */
         
         /* JSON형태로 사용자 검사 결과 받아오는 함수 */
     	function loadResult() {
@@ -163,7 +171,11 @@
     			url :  "testResultOne.do" ,
     			type : "get",
     			dataType : "json",
-    			success : getResult, /* callback 함수 요청되고나서 실행하는 함수*/
+    			success : function () {
+    				getResult
+    				/* $('.content').css('display', 'none'); */
+    				$('.content').style.display = 'none';	
+    			}, /* callback 함수 요청되고나서 실행하는 함수*/
     			error : function() {
     				alert("loadResult error");
     			}
@@ -297,12 +309,6 @@
     		});
     	}
     	
-    	
-
-    		
-
-        
-        
         </script>
 	
 </body>
