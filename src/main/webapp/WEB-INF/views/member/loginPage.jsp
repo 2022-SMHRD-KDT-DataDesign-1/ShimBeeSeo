@@ -84,7 +84,7 @@
                                         </div>
                                         <div class="col-12">
                                        	
-                							<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1ff4c9cbe51272559a48887a3811f7a0&redirect_uri=http://localhost:8081/controller/kakaoLogin"><img src="${contextPath}/resources/img/kakao_login.png"></a>
+                							<a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1ff4c9cbe51272559a48887a3811f7a0&redirect_uri=http://121.147.0.189:8081/controller/kakaoLogin"><img src="${contextPath}/resources/img/kakao_login.png"></a>
                                        		<!-- submit button으로 바꿈 -->
                                             <button class="btn btn-primary w-100 py-3" type="submit" style="margin: 5% 0;">로그인</button>
                                             <button class="btn btn-primary w-100 py-3" type="button" style="margin: 5px 0;" onClick="location.href='joinPage.do'">회원가입</button>

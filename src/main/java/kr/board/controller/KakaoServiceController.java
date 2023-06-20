@@ -50,8 +50,9 @@ public class KakaoServiceController {
 			return "redirect:/";
 		} else {
 			// 신규회원인 경우
-			userMapper.kakaoJoin(userInfo);
-			User UserNew = userMapper.selectUser(userInfo);
+//			userMapper.kakaoJoin(userInfo);
+//			User UserNew = userMapper.selectUser(userInfo);
+			User UserNew = new User((String)userInfo.get("email"), "1234", (String)userInfo.get("nickname"));
 			session.setAttribute("nmvo", UserNew);
 			session.setAttribute("accessToken", accessToken);
 			
@@ -97,7 +98,7 @@ public class KakaoServiceController {
 			StringBuilder sb = new StringBuilder();
 			sb.append("grant_type=authorization_code");
 			sb.append("&client_id=1ff4c9cbe51272559a48887a3811f7a0"); // 본인이 발급받은 key
-			sb.append("&redirect_uri=http://localhost:8081/controller/kakaoLogin"); // 본인이 설정해 놓은 경로
+			sb.append("&redirect_uri=http://121.147.0.189:8081/controller/kakaoLogin"); // 본인이 설정해 놓은 경로
 			sb.append("&code=" + code);
 			bw.write(sb.toString());
 			bw.flush();
