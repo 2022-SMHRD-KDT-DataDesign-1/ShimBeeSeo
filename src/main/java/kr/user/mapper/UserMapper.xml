@@ -84,7 +84,7 @@
 		, null)
 	</insert>
 
-	<update id="kakaoJoinDetail" parameterType="kr.board.entity.User">
+	<!-- <update id="kakaoJoinDetail" parameterType="kr.board.entity.User">
 	update t_user set user_bdate =#{user_bdate}
 		, user_childname = #{user_childname}
 		, user_childbdate = #{user_childbdate}
@@ -92,7 +92,31 @@
 		, user_address = #{user_address}
 		, user_isagreed = #{user_isagreed}
 		where user_id = #{user_id}
-	</update>
+	</update> -->
+	
+	<insert id="kakaoJoinDetail" parameterType="kr.board.entity.User">
+		INSERT INTO t_user (
+			  user_id
+			, user_pw
+			, user_name
+			, user_bdate
+			, user_childname
+			, user_childbdate
+			, user_relation
+			, user_address
+			, user_joindate
+			, user_isagreed) VALUES (
+			  #{user_id}
+			, #{user_pw}
+			, #{user_name}
+			, #{user_bdate}
+			, #{user_childname}
+			, #{user_childbdate}
+			, #{user_relation}
+			, #{user_address}
+			, sysdate
+			, #{user_isagreed})
+	</insert>
 	
 	<select id="user" resultType="kr.board.entity.User">
 		select * from t_user

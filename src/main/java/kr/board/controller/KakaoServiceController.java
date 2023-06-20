@@ -50,8 +50,9 @@ public class KakaoServiceController {
 			return "redirect:/";
 		} else {
 			// 신규회원인 경우
-			userMapper.kakaoJoin(userInfo);
-			User UserNew = userMapper.selectUser(userInfo);
+//			userMapper.kakaoJoin(userInfo);
+//			User UserNew = userMapper.selectUser(userInfo);
+			User UserNew = new User((String)userInfo.get("email"), "1234", (String)userInfo.get("nickname"));
 			session.setAttribute("nmvo", UserNew);
 			session.setAttribute("accessToken", accessToken);
 			

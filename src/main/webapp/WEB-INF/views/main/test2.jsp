@@ -429,7 +429,7 @@
 			 $.ajax({
 				type : "POST",
 				enctype : "multipart/form-data",
-				url : "http://211.105.164.246:9000/h_photo",
+				url : "http://211.105.164.246:9000/h_photo/" + 1,
 				data : data,
 				async : false,
 				processData : false,
@@ -675,6 +675,8 @@
 			return true;
 		} else {
 			console.log("체크 누락됨")
+			$('#submitSend').attr("disabled", true);
+			$('#submitSend').attr("value",'답변을 완료해주세요.');
 			completeCheck;
 			return false;
 		}
