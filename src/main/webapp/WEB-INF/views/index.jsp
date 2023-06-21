@@ -129,8 +129,8 @@
                             <div class=" d-flex flex-column justify-content-center">
                             	<div class="row g-5 align-items-center">
                             		<div style="width:500px;" class="">
-                                	<h1 class="mb-4" style="text-align: center; margin-top:10%">함께 공유해요</h1>
-                                	<a style="margin-top:10px; width:300px; height: 55px; margin-left:4vw;" class="btn btn2 btn-primary" href="main.do">게시판으로 이동<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
+                                		<h1 class="mb-4" style="text-align: center; margin-top:10%">함께 공유해요</h1>
+                                		<a style="margin-top:10px; width:300px; height: 55px; margin-left:4vw;" class="btn btn2 btn-primary" href="main.do">게시판으로 이동<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
                                 	</div>
                             	</div>
                             </div>
