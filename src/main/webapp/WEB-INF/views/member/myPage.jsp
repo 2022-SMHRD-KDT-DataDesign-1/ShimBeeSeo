@@ -124,13 +124,13 @@
 					<h1 class="section-title text-center" style="margin-bottom:40px;">검사 결과</h1>
 						<div class="testimonial-item bg-light rounded p-4">
 							<h2 class="section-title text-center" style="font-size:28px; padding-top:4vw; padding-bottom:6vw;">감정분석 결과</h2>
-							<p id="result_c_text" style="font-size:3vw;">
+							<p id="result_c_text" style="font-size:5vw; padding:1vw;">
 							</p>
 						</div>
 						<!-- test용 시작-->
 						<div class="testimonial-item bg-light rounded p-4">
 							<h2 class="section-title text-center" style="font-size:28px; margin-bottom:12vw;">그림 결과</h2>
-							<p id="result_o_text" style="font-size:24px;"></p>
+							<p id="result_o_text" style="font-size:5vw; padding:1vw;"></p>
 						</div>
 					</div>
 				</div>
@@ -142,7 +142,7 @@
 						</div>
 
 						<div class="testimonial-item bg-light rounded p-4">
-							<p id="result_direction" style="font-size: 24px;">
+							<p id="result_direction" style="font-size:5vw; padding:1vw;">
 							</p>
 						</div>
 
@@ -320,9 +320,9 @@
     	    		var result_deprivation =result.result_deprivation;
     	    		var result_inferiority =result.result_inferiority;
     	    		var result_regression = result.result_regression;
-					var result_o_text = result.result_o_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 2vw; padding-right: 2vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br><br>');
-					var result_c_text = result.result_c_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 2vw; padding-right: 2vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "');
-					var result_c_text2 = result.result_c_text2.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 2vw; padding-right: 2vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "');
+					var result_o_text = result.result_o_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 2vw; padding-right: 2vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
+					var result_c_text = result.result_c_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 2vw; padding-right: 2vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
+					var result_c_text2 = result.result_c_text2.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 2vw; padding-right: 2vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
 					var result_direction = result.result_direction.replaceAll('\n', '</p><p>');
 					
 					if(result.cate_seq === 1) {
@@ -469,9 +469,9 @@
     	    		var result_deprivation =result[index].result_deprivation;
     	    		var result_inferiority =result[index].result_inferiority;
     	    		var result_regression = result[index].result_regression;
-					var result_o_text = result[index].result_o_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
-					var result_c_text = result[index].result_c_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
-					var result_c_text2 = result[index].result_c_text2.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 2vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
+					var result_o_text = result[index].result_o_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 4vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
+					var result_c_text = result[index].result_c_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 4vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
+					var result_c_text2 = result[index].result_c_text2.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 4vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
 					var result_direction = result[index].result_direction.replaceAll('\n', '</p><p>');
 					
 					if(result[index].cate_seq === 1) {

@@ -40,6 +40,10 @@
     <style>
     	p{
     	color:black;}
+    	
+    	.btn2{
+    	 background: #F86C85;
+    	}
     </style>
 
 </head>
@@ -86,18 +90,18 @@
               
                <div class=" d-flex flex-column justify-content-center">
                   <div class="row g-5 align-items-center">
-                  	<div style="width:500px;" class="py-5">
+                  	<div style="width:500px;" class="">
                      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="margin-top:10%;">
-                        <h1 class="mb-4">HTP 검사란?</h1>
-						<div style="width:300px;">
+                        <h1 class="mb-4" style="text-align: center;">HTP 검사란?</h1>
+						<div style="width:90%; margin-left:5vw;">
                         <p class="mb-4">1.검사 대상에게 집, 나무, 인물화 등 3개의 그림을 그리게 하는 검사입니다.</p>
                         <p class="mb-4">2.그려진 그림의 크기, 선의 강약, 그려진 그림의 위치 등등 표현의 양상에 따라 그린 사람의 심리를 파악할 수 있는 검사 방법입니다.</p>
                         <p class="mb-4">3.언어 표현이 어려운 아동에게도 적용이 가능합니다.</p>
                         <p class="mb-4">4.실시가 용이하고 짧은시간안에 파악할 수 있습니다.</p>
                         </div>
                         <c:choose>
-							<c:when test="${not empty mvo}"> <a style="width:300px; height: 55px;" class="btn btn-primary" href="check.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:when>
-							<c:otherwise> <a style="width:300px; height: 55px;" class="btn btn-primary" href="loginPage.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:otherwise>
+							<c:when test="${not empty mvo}"> <a style="width:300px; height: 55px; margin-left:4vw;" class="btn btn2 btn-primary" href="check.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:when>
+							<c:otherwise> <a style="width:300px; height: 55px; margin-left:4vw;" class="btn btn2 btn-primary" href="loginPage.do">검사 하러가기<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a> </c:otherwise>
 						</c:choose>
                         
                      </div>
@@ -124,10 +128,10 @@
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
                             <div class=" d-flex flex-column justify-content-center">
                             	<div class="row g-5 align-items-center">
-                            		<div style="width:500px;" class="py-5">
-                                	<h1 class="mb-4">함께 공유해요</h1>
+                            		<div style="width:500px;" class="">
+                                		<h1 class="mb-4" style="text-align: center; margin-top:10%">함께 공유해요</h1>
+                                		<a style="margin-top:10px; width:300px; height: 55px; margin-left:4vw;" class="btn btn2 btn-primary" href="main.do">게시판으로 이동<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
                                 	</div>
-                                	<a style="margin-top:10px; margin-left:25px; width:300px;; height: 55px;" class="btn btn-primary" href="main.do">게시판으로 이동<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
                             	</div>
                             </div>
                         </div>
@@ -146,12 +150,12 @@
                             </div>
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
-                            <div class="h-100 d-flex flex-column justify-content-center">
+                            <div class=" d-flex flex-column justify-content-center">
                             	<div class="row g-5 align-items-center">
-                            		<div style="width:500px;" class="py-5">
-                                	<h1 class="mb-4">무엇을 도와드릴까요?</h1>
+                            		<div style="width:500px;" class="">
+                                	<h1 class="mb-4" style="text-align: center; margin-top:10%">무엇을 도와드릴까요?</h1>
+                                	<a style="margin-top:10px; width:300px; height: 55px; margin-left:4vw;" class="btn btn2 btn-primary" href="">문의하러가기!<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
                                 	</div>
-                                	<a style="margin-top:10px; margin-left:25px; width:300px; height: 55px;" class="btn btn-primary" href="">문의하러가기!<i style="margin-top:10px;" class="fa fa-arrow-right ms-2"></i></a>
                             	</div>
                             </div>	
                         </div>
