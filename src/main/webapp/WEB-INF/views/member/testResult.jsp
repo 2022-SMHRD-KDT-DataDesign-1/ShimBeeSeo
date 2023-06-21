@@ -46,47 +46,41 @@
 	
 	
 
-	<section class="about-section section-padding" id="section_2">
-    	<div class="container">
-        	<div class="row">
-
-            	<div class="col-lg-8 col-12">
-                	<div class="pb-5 mb-5">
-                    	<div class="section-title-wrap mb-4">
-							<h2 class="section-title text-center" style="font-size:28px; padding:4vw; padding-top:8vw;">감정 그래프</h2>
-						</div>
+	
+    <div class="container">
+        <div class="row">
+        	<div class="col-lg-8 col-12">
+                <div class="pb-5 mb-5">
+                    <div class="section-title-wrap mb-4">
+						<h2 class="section-title text-center" style="font-size:28px; padding:4vw; padding-top:8vw;">감정 그래프</h2>
+					</div>
                     	<!-- <div class="section-title-wrap mb-4">
                         	<h4 class="section-title text-center">검사 결과</h4>
                        	</div> -->
-    					<div class="bg-light rounded">
-							<div style="width: 100%; height: 100%;">
-	
-	<div id="resetChart">
-	
-						<!--차트가 그려질 부분-->
-							<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
-	</div>
+    				<div class="bg-light rounded">
+						<div style="width: 100%; height: 100%;">
+							<div id="resetChart">
+							<!--차트가 그려질 부분-->
+								<canvas id="myChart" width="100%" height="130%" margin-left="15px" padding-left="25px"></canvas>
+							</div>
 						</div>
                     </div>
-
-               	  </div>
-               	 
-             </div>
-             <div class="col-lg-8 col-12 mx-auto">
-					<div>
+               	</div>
+            </div>
+            <div class="col-lg-8 col-12 mx-auto">
+				<div>
 					<h1 class="section-title text-center" style="margin-bottom:40px;">검사 결과</h1>
 						<div class="testimonial-item bg-light rounded p-4">
 							<h2 class="section-title text-center" style="font-size:28px; padding-top:4vw; padding-bottom:6vw;">감정분석 결과</h2>
-							<p id="result_c_text" style="font-size:5vw; padding:1vw;">
-							</p>
+							<p id="result_c_text" style="font-size:5vw; padding:1vw;"></p>
 						</div>
 						<!-- test용 시작-->
 						<div class="testimonial-item bg-light rounded p-4">
 							<h2 class="section-title text-center" style="font-size:28px; margin-bottom:12vw;">그림 결과</h2>
 							<p id="result_o_text" style="font-size:5vw; padding:1vw;"></p>
 						</div>
-					</div>
 				</div>
+			</div>
  				<!-- <div class="col-lg-8 col-12 mx-auto">
             		<div class="pb-5 mb-5">
                 		<div class="section-title-wrap mb-4">
@@ -102,47 +96,36 @@
 	    				<!-- <div class="testimonial-item bg-light rounded p-5">
 							<div id="result_c_text" style="font-size:25px"> </div>
 	                    </div> -->
-               		</div>
-           		</div>
-           	<div class="col-lg-8 col-12 mx-auto">
-           		<div class="pb-5 mb-5">
-                	<div class="section-title-wrap mb-4">
-                    	<h4 class="section-title text-center" style="font-size:30px">지도 방향</h4>
-                    </div>    
-    			<div class="testimonial-item bg-light rounded p-5">
-					<p id="result_direction" style="font-size:5vw; padding:1vw;">
-					</p>
-                </div>
-
-               </div>
-         	</div>
-
-            <div class="col-lg-12 col-12">
-            	<div class="section-title-wrap mb-5">
-                	<h4 class="section-title">추천 콘텐츠</h4>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-            	<div class="row">
-                	<div class="row">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/AuV4E43g4vQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      				</div>
-      			</div>
            	</div>
+       
+           	<div class="col-lg-8 col-12 mx-auto">
+           		<div>
+           			<h1 class="section-title text-center" style="font-size:40px;">지도 방향</h1>
+           			<div class="testimonial-item bg-light rounded p-4">
+           				<p id="result_direction" style="font-size:5vw; padding:1vw;"></p>
+           			</div>
+           		</div>
+            </div>
 
-        	<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-            	<div class="row">
-                	<div class="row">
-                    	<<iframe width="560" height="315" src="https://www.youtube.com/embed/BnwcFZxd-OQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                	</div>
-               	</div>
-           </div>
-    </section>
- 					
- 		
+            <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+				<div class="team-thumb bg-white shadow-lg">
 
-	
-	
+					<h4 class="mb-2">1번</h4>
+					<br>
+					<div class="row">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/AuV4E43g4vQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+
+				</div>
+			</div>
+		</div>
+			<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+				<div class="team-thumb bg-white shadow-lg">
+					<div class="row">
+                    	<iframe width="56d0" height="315" src="https://www.youtube.com/embed/BnwcFZxd-OQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
 	<!-- 본문 내용 끝 -->
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 </div>
