@@ -66,13 +66,13 @@
 						<c:otherwise> <a class="nav-item nav-link" href="loginPage.do">로그인</a> </c:otherwise>
 					</c:choose>
                     <c:if test="${not empty mvo}">
-                    	<c:if test="${mvo.user_id eq '진짱' }">
+                    	<c:if test="${mvo.user_id eq 'admin' }">
                     	<a href="admin.do" class="nav-item nav-link">관리자페이지</a>
                     	</c:if>
                     <a href="myPage.do" class="nav-item nav-link">내정보</a>
                     
                     </c:if>
-                    <a href="classes.do" class="nav-item nav-link">공유 게시판</a>
+                    <a href="" class="nav-item nav-link">공유 게시판</a>
                     <a href="" class="nav-item nav-link">문의 게시판</a>
                     <c:if test="${mvo.user_id eq 'admin'}">
                     <a href="admin.do" class="nav-item nav-link"> 관리자페이지 </a>
