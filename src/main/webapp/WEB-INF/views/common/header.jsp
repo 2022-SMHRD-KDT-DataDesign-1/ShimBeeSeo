@@ -52,7 +52,7 @@
 
 
         <!-- Navbar Start -->
-        <nav class="navbar navbar-expand-lg  navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
             <a href="${contextPath}/" class="navbar-brand">
                 <img src="${contextPath}/resources/images/logo_1.png" style="width:27vw; margin-top:3px;">
             </a>

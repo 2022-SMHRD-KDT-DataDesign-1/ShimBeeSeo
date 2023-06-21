@@ -85,7 +85,7 @@ public class ScoreListController {
 					o = "굴뚝";
 				}
 				if(items_yu[i].equals(objects.get(j).getObject_name()) && objects.get(j).getObject_exist() == 1) {
-					result_o_text += "//<p id='"+items_yu[i]+"'\\><strong>" + o + "</strong><div id='"+items_yu[i]+"C'\t>" + objects.get(j).getObject_content() + "</div>";
+					result_o_text += "//<p id='"+items_yu[i]+"'\\><strong>" + o + "</strong><div id='"+items_yu[i]+"C'\t>" + objects.get(j).getObject_content() + "</div></div>";
 				} 
 				
 			}
@@ -117,7 +117,7 @@ public class ScoreListController {
 					break;
 				}
 				if(items_mu[i].equals(objects.get(j).getObject_name()) && objects.get(j).getObject_exist() == 0) {
-					result_o_text += "//<p id='"+items_mu[i]+"'\\><strong>" + o + "</strong></p><div id='"+items_mu[i]+"C'\t>" + objects.get(j).getObject_content() + "</div>";
+					result_o_text += "//<p id='"+items_mu[i]+"'\\><strong>" + o + "</strong></p><div id='"+items_mu[i]+"C'\t>" + objects.get(j).getObject_content() + "</div></div>";
 				}
 			}
 		}

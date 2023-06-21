@@ -6,6 +6,7 @@ body{
 
 :root {
     --primary: #FE5D37;
+    --logo: #F86C85;
     --light: #FFF5F3;
     --dark: #103741;
 }
@@ -43,9 +44,10 @@ body{
 
 
 /*** Button ***/
-.btn {
+.btn.btn-primary {
     font-weight: 500;
     transition: .5s;
+    background: #F86C85;
 }
 
 .btn.btn-primary {
@@ -472,8 +474,8 @@ a:hover{
 }
 
 .footer .btn.btn-social:hover {
-    border-color: var(--primary);
-    background: var(--primary);
+    border-color: var(--logo);
+    background: var(--logo);
 }
 #kakao-login-btn{
 	width: 100%;
@@ -500,7 +502,7 @@ a:hover{
 }
 
 .footer .btn.btn-link:hover {
-    color: var(--primary) !important;
+    color: var(--logo) !important;
     letter-spacing: 1px;
     box-shadow: none;
 }
