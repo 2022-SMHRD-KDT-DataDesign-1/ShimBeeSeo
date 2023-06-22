@@ -208,7 +208,7 @@
 					var result_o_text = result.result_o_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 4vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
 					var result_c_text = result.result_c_text.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 4vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
 					var result_c_text2 = result.result_c_text2.replaceAll('//', '<div class="titleC" style="background-color:white;border-radius:4vw; margin-bottom:2vw;border: 1px solid #d2d2d2; padding-left: 4vw; padding-right: 4vw; padding-top: 4vw; text-align:justify;">').replaceAll('\\><strong>', 'class="title" onClick="showContent(this.id)"><strong>▸').replaceAll('\t', 'style="display : none; "').replaceAll('\n', '<br>');
-					var result_direction = result.result_direction.replaceAll('\n', '</p><p>');
+					var result_direction = result.result_direction.replaceAll('\n', '</p><p>').replaceAll('아이가', '${mvo.user_childname}님이').replaceAll('아이의', '${mvo.user_childname}님의');
 					
 					if(result.cate_seq === 1) {
     					result_aggressive = (result.result_aggressive / 9 * 100).toFixed(1);
